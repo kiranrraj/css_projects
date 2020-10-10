@@ -385,17 +385,16 @@ html {
     color: var(--text-color-p);
 }
 
-.about__main-p1,
-.about__main-p2,
-.about__main-p3{
-    padding-bottom: 3rem;
+.about_abt_us{
+    padding: 10rem;
 }
 
 .about__main-p1 .p1,  
 .about__main-p2 .p2,
-.about__main-p3 .p3 {
+.about__main-p3 .p3,
+.about__mission_heading {
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 5rem 1rem;
 }
 
 .about__main-p1 p {
@@ -408,3 +407,72 @@ html {
 }
 
 /* Services Ends */
+
+.about_ph-info{
+    border: 0.2rem solid var(--text-color-p);
+    padding: 2rem;
+}
+
+.about_Branches{
+
+}
+
+.about_Branches h2{
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.about_pharmacy{
+    padding: 2rem;
+}
+
+.sw_cards{
+    border-bottom: 0.1rem solid white;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.sw_cards h3 {
+    padding: 2rem;
+    text-align: center;
+    grid-column: span 12;
+}
+
+.sw_cards-left{
+    background-image: url("https://source.unsplash.com/150x150/?office-space");
+    background-size: cover;
+    background-position: center;
+    grid-column: 1 / span 6;
+    /* margin-top: -5rem; */
+}
+
+.sw_cards-right{
+    grid-column: 7 / span 6;
+    padding: 2rem;
+}
+
+.sw_cards li {
+    list-style: none
+}
+
+.about_pharmacy{
+    text-align: center;
+}
+
+.about_pharmacy h2 {
+    padding: 3rem;
+}
+
+.ph__cards{
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-areas: "a b c" "d e f";
+}
+
+.ph__card{
+    border: 1px solid skyblue;
+    padding: 1rem;
+    display: grid;
+    grid-gap: 1rem;
+}
