@@ -294,19 +294,117 @@ html {
     padding: 1.4rem 0;
 }
 
+/* Logo slider */
+
+.logo_slider{
+    margin: auto;
+    padding: 1rem;
+    overflow: hidden;
+    box-shadow: 2px 2px 10px 3px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes autoScroll{
+    0%{
+        transform: translateX(0px);
+    }
+    100%{
+        transform: translateX(-3500px);
+    }
+}
+
 .slide-gallery{
     display: flex;
-    height: 12rem;
+    animation: autoScroll 80s linear infinite;
 }
 
 .logo{
-    min-height: 100%;
-    padding: 1rem 5rem;
-
+    padding: 1rem 1.5rem;
 }
 
+/* Logo slider Ends*/
 
+/* Services */
 
+.services_header{
+    background-color: #0d7377;
+    display: grid;
+    grid-template-areas: "head head" "left right";
+    padding: 5rem 2rem;
+    text-align: center;
+    position: relative;
+}
 
+.services_h1{
+    grid-area: head;
+    text-align: center;
+}
 
-/* .img__container  */
+.services_h1::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0%;
+    right: 50%;
+    width: 2rem;
+    height: 2rem;
+    background-color: #32e0c4;
+}
+
+.services_left{
+    grid-area: left;
+    font-size: 1.6rem;
+    color: var(--text-color-p);
+    padding: 3rem;
+    text-align: left;
+}
+
+.services_right{
+    grid-area: right;
+}
+
+.services_text{
+    display: grid;
+    grid-gap: 2rem;
+}
+
+.services_right img {
+    padding: 3rem;
+    width: 100%;
+}
+
+.services_h1{
+    font-size: 4rem;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.about{
+    background-color: var(--text-color-s);
+    font-size: 1.5rem;
+    padding: 5rem;
+    color: var(--text-color-p);
+}
+
+.about__main-p1,
+.about__main-p2,
+.about__main-p3{
+    padding-bottom: 3rem;
+}
+
+.about__main-p1 .p1,  
+.about__main-p2 .p2,
+.about__main-p3 .p3 {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.about__main-p1 p {
+    text-align: left;
+    padding-bottom: 3rem;
+}
+
+.about__main-p1 .p2{
+    padding: 2rem;
+}
+
+/* Services Ends */

@@ -1,0 +1,29 @@
+
+.slider{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    margin: auto;
+    box-shadow:  0 10px 10px -5px rgba(0, 0, 0, 0.15);
+}
+
+.gallery{
+    display: flex;
+    animation: autoScroll 60s linear infinite;
+}
+
+.logo{
+    padding-left: 3rem;
+}
+
+@keyframes autoScroll{
+    0%{
+        transform: translateX(0px);
+    }
+    100%{
+        transform: translateX(-3500px);
+    }
+}
+
