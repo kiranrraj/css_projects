@@ -1,0 +1,268 @@
+:root {
+
+    --text-color-p:#eeeeee;
+    --text-color-s:#212121;
+    --bg-color-p:#32e0c4;
+    --bg-color-s:#0d7377;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    font-family: 'Antic Slab', serif;
+}
+
+.top_header {
+    display: flex;
+    background-color: #212121;
+    font-size: 1.3rem;
+    height: 3rem;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--bg-color-p);
+}
+
+.top_header p:hover{
+    color: tomato;
+}
+
+.navBar {
+    display:flex;
+    background: var(--bg-color-s);
+}
+
+.navBar img {
+    width: 10%;
+    margin-right: 3rem;
+}
+
+.navBar ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    align-items: center;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+}
+
+.navBar ul li {
+    padding: 20px;
+    color: var(--text-color-s);
+    font-weight: 600;
+}
+
+.navBar ul li:hover{
+    color: var(--bg-color-p);
+}
+
+.landing {
+    height: 50rem;
+    background-image: url('../images/Products/landing_page.jpg');
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    color: var(--bg-color-p);
+}
+
+.landing__content{
+    background-color: rgba(10, 10, 10, 0.3);
+    padding: 2rem 6rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.landing__content--header{
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+.landing__content--sub{
+    font-size: 3rem;
+    text-align: right;
+}
+
+.landing__content--btn{
+    padding: 1rem;
+    font-size: 1.4rem;
+    background-color: var(--bg-color-s);
+    border-radius: 1rem;
+    box-shadow: 1px 1px 3px var(--text-color-p);
+}
+
+.landing__content--btn:hover{
+    background-color: var(--bg-color-p);
+    box-shadow: none;
+    
+}
+
+/* Products */
+
+.products{
+    font-size: 2rem;
+    padding: 2rem;
+    margin: 10rem;
+}
+
+.products_header{
+    display: grid;
+    grid-template-areas: "header header""text image";
+}
+
+.products_header--h1{
+    grid-area: header;
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+.products_header--text{
+  margin-top: 2rem;
+  grid-area: text;
+  display: grid;
+  grid-gap: 2rem;
+}
+
+.products_header--h1{
+    margin-bottom: 3rem;
+}
+
+.products_hero{
+    grid-area: image;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.products_hero img {  
+    width: 100%;
+}
+
+.products_header--h1{
+    text-align: center;
+}
+
+
+/* Product Gallery */
+
+.products_gallery{
+    height: 75rem;
+    widows: 100%;
+    padding: 4rem 3rem;
+    background-color: #212121;
+}
+
+.gallery{
+    height: 100%;
+    display: grid;
+    grid-template-areas: "a b c d" "e f g h";
+    grid-gap: 2rem;
+    
+}
+
+/* Card Animation Starts*/
+
+.g_card{
+    perspective: 200rem;
+    position: relative;
+    height: 100%
+}
+
+.face{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0.2rem solid var(--text-color-s);
+    padding: 1rem;
+    font-size: 1.4rem;
+    background: var(--bg-color-s);
+    justify-content: center;
+    transform-style: preserve-3d;
+    transition: all 0.6s ease;
+    backface-visibility: hidden;
+    overflow: hidden; 
+}
+
+.img_img{
+    height: 100%;
+}
+
+.front_face{
+    background-color: #fff;
+    
+    /* Internal Styling */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.back_face{
+    transform: rotateY(180deg);
+    background-color: grey;
+}
+
+.g_card:hover .front_face {
+    transform: rotateY(-180deg);
+}
+
+.g_card:hover .back_face{
+    transform: rotateY(0);
+}
+
+/* Card Animation Ends */
+
+.ff-1{
+    background-image: url("https://source.unsplash.com/200x201/?computer");
+    background-size: cover;
+    background-position: center;
+}
+
+.img_img{
+    grid-column: 1 / span 12;
+}
+
+
+.details_container{
+    padding: 1rem;
+    color: var(--text-color-p);
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
+.btn_container{
+    display: grid;
+    justify-content: center;
+}
+
+.btn{
+    color: #32e0c4;
+    background-color: #0d7377;
+    font-size: 1.5rem;
+    padding: 0.5rem 3rem;
+}
+
+.d_head{
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.d_para{
+    font-size: 1.3rem;
+}
+
+
+
+
+
+
+
+/* .img__container  */

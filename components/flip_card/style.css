@@ -1,0 +1,47 @@
+.main{
+    display: grid;
+    grid-template-areas: "card1 card2 card3";
+    grid-gap: 20px;
+}
+
+.card_container{
+    position: relative;
+    -webkit-perspective: 2000px;
+    perspective: 2000px;
+    height: 400px;
+    text-align: center;
+}
+
+.card{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 400px;
+    width: 100%;
+    border: 1px solid black;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+    transition: all 0.6s ease;
+}
+
+.card_front{
+    background: burlywood;
+}
+
+.card_back{
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    background: gold;
+}
+
+.card_container:hover .card_front{
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+}
+
+.card_container:hover .card_back{
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+}
