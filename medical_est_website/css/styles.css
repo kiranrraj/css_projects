@@ -153,7 +153,7 @@ html {
 .products_gallery{
     height: 75rem;
     widows: 100%;
-    padding: 4rem 3rem;
+    padding: 8rem 3rem;
     background-color: #212121;
 }
 
@@ -218,23 +218,43 @@ html {
 
 /* Card Animation Ends */
 
-.ff-1{
-    background-image: url("https://source.unsplash.com/200x201/?computer");
+.ff-0, .ff-1, .ff-2, .ff-3, .ff-4, .ff-5, .ff-6, .ff-7{
     background-size: cover;
     background-position: center;
 }
 
-.img_img{
-    grid-column: 1 / span 12;
-}
+ .ff-0{
+    background-image: url("../images/Products/c_img_1.jpg");
+ }
 
+ .ff-1{
+    background-image: url("../images/Products/c_img_2.jpg");
+ }
+ .ff-2{
+    background-image: url("../images/Products/c_img_3.jpg");
+ }
+ .ff-3{
+    background-image: url("../images/Products/c_img_4.jpg");
+ }
+ .ff-4{
+    background-image: url('../images/Products/c_img_5.jpg');
+ }
+ .ff-5{
+    background-image: url("../images/Products/c_img_6.jpg");
+ }
+ .ff-6{
+    background-image: url("../images/Products/c_img_7.jpg");
+ }
+ .ff-7{
+    background-image: url("../images/Products/c_img_8.jpg");
+ }
 
 .details_container{
     padding: 1rem;
     color: var(--text-color-p);
-    font-size: 3rem;
-    text-transform: uppercase;
     letter-spacing: 0.2rem;
+    display: grid;
+    text-align: center;
 }
 
 .btn_container{
@@ -243,6 +263,7 @@ html {
 }
 
 .btn{
+    margin-top: 1rem;
     color: #32e0c4;
     background-color: #0d7377;
     font-size: 1.5rem;
@@ -250,16 +271,39 @@ html {
 }
 
 .d_head{
+    text-transform: uppercase;
+    background-color: rgba(10, 10, 10, 0.5);
     font-size: 1.8rem;
     text-align: center;
     margin-bottom: 1rem;
+    padding: 1rem 2rem;
+}
+
+.cName{
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    padding: 1rem 0;
+}
+
+.pName{
+    text-transform: uppercase;
+    font-size: 2.2rem;
 }
 
 .d_para{
-    font-size: 1.3rem;
+    padding: 1.4rem 0;
 }
 
+.slide-gallery{
+    display: flex;
+    height: 12rem;
+}
 
+.logo{
+    min-height: 100%;
+    padding: 1rem 5rem;
+
+}
 
 
 
