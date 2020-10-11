@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger Menu</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        nav{
+            height: 100px;
+            background-color: gold;
+        }
+
+        .nav_list{
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            padding: 20px;
+        }
+
+        .nav_list a {
+            color: teal;
+            text-decoration: none;
+            padding: 20px;
+            font-size: 20px;
+            
+        }
+
+        @media only screen and (max-width : 500px){
+
+            nav{
+                position: relative;
+            }
+
+            .hamburger{
+               position: absolute;
+               cursor: pointer;
+               left: 5%;
+               top: 50%; 
+               transform: translate(-5%, -50%);
+               z-index: 1;
+            }
+
+            .line{
+                width: 40px;
+                height: 4px;
+                background-color: brown;
+                margin: 5px;
+            }
+
+            .nav_list{
+                position: fixed;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                background: skyblue;
+                height: 100vh;
+                width: 100%;
+                pointer-events: none;
+                clip-path: circle(100px at 90% -20%);
+                -webkit-clip-path: circle(100px at 90% -20%);
+                transition: all 2s ease-in-out;
+            }
+
+            .nav_list li {
+                 opacity: 0;
+                 transition: all 1.5s ease;
+            }
+
+            .nav_list.open{
+                pointer-events: all;
+                clip-path: circle(100px at 90% -20%);
+                -webkit-clip-path: circle(1000px at 90% -20%);
+            }
+
+            .nav_list li.fade {
+                opacity: 1;
+            }
+
+            
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <ul class="nav_list">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Product</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navList = document.querySelector(".nav_list");
+        const links = document.querySelectorAll('.nav_list li');
+
+        hamburger.addEventListener('click', ()=>{
+            navList.classList.toggle('open');
+            links.forEach(link => {
+                link.classList.toggle('fade')
+            })
+        });
+
+        
+    </script>
+</body>
+</html>
