@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient background</title>
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-color: #ddd;
+        }
+        .container {
+            height: 100vh;
+            display: grid;
+            justify-content: center;
+            align-content: center;
+        }
+
+        .element{
+            display: grid;
+            padding: 20px;
+            height: 100px;
+            width: 100px;
+            position: relative;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            background-color: white;
+            /* border: 1px solid black; */
+        }
+
+        .element::after{
+            content: "";
+            display: block;
+            position: absolute;
+            z-index: -1;
+            top: -5px;
+            left: -5px;
+            width: calc(100% + 10px);
+            height: calc(100% + 10px);
+            background : linear-gradient(70deg, #5f86f2, #a65ff2, #f25fd0,
+             #f25f61, #f2cb5f, #abf25f, #5ff281);
+            background-size: 300% 300%;
+            background-position: 0 50%;
+            animation: glow 5s alternate infinite;
+        }
+
+        @keyframes glow {
+            25% {
+                background-position: 50% 100%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            75% {
+                background-position: 200% 50%;
+            }
+
+
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="element">Hello World</div>
+    </div>
+</body>
+</html>

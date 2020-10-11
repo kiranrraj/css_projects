@@ -33,6 +33,7 @@ body{
     display: flex;
     background-color: var(--text-color-s);
     font-size: 1.3rem;
+    padding: 1rem;
     height: 3rem;
     justify-content: space-around;
     align-items: center;
@@ -43,17 +44,24 @@ body{
     color: tomato;
 }
 
+.line{
+    height: 0.2rem;
+    width: 100%;
+    background-color: orange;
+    box-shadow: -1px -1px 3px 2px orangered;
+}
+
 /* Top Nav Ends */
 
 /* Nav Bar */
 
 .navBar {
     display:flex;
-    background: var(--bg-color-s);
+    /* background: var(--bg-color-p); */
 }
 
 .navBar img {
-    padding: 2rem;
+    padding: 0.8rem;
 }
 
 .navBar ul {
@@ -67,12 +75,13 @@ body{
 
 .navBar ul li {
     padding: 2rem;
-    color: var(--text-color-s);
+    color: var(--bg-color-p);
     font-weight: 600;
 }
 
 .navBar ul li:hover{
-    color: var(--bg-color-p);
+    color: var(--text-color-p);
+    cursor: pointer;
 }
 
 .landing {
@@ -83,12 +92,12 @@ body{
     display: grid;
     justify-content: center;
     align-content: center;
-    color: var(--text-color-p);
+    color: var(--text-color-s);
     
 }
 
 .landing__content{
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(255,255,255,0.4);
     padding: 2rem 6rem;
     display: flex;
     flex-direction: column;
@@ -96,7 +105,9 @@ body{
 }
 
 .landing__content span {
-    color: var(--bg-color-p);
+    color: var(--bg-color-s);
+    font-size: 4rem;
+    text-shadow: 2px 2px 3px var(--text-color-s);
     opacity: 1;
 }
 
@@ -111,18 +122,23 @@ body{
     font-size: 3rem;
 }
 
-.landing__content--btn{
-    margin-top: 5rem;
+.landing_btn_container input{
+    margin-top: 2rem;
     padding: 1rem;
-    font-size: 1.4rem;
-    border-radius: 1rem;
-    text-align: center;
+    font-size: 1.6rem;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 2px 1px var(--text-color-s);
+    cursor: pointer;
+    background-color: var(--bg-color-p);
+    color: var(--text-color-p);
+    text-shadow: 1px 1px 1px var(--text-color-s);
 }
 
-.landing__content--btn:hover{
-    background-color: var(--bg-color-p);
+.landing_btn_container input:hover{
     box-shadow: none;
-    
+    color: var(--bg-color-s);
+    background-color: var(--text-color-p);
+
 }
 
 /* Products */
@@ -158,6 +174,29 @@ body{
 
 .products_header--h1{
     padding-bottom: 5rem;
+}
+
+.products_btn_container{
+    text-align: left;
+    padding: 3rem 0;
+}
+
+.products_btn_container input{
+    padding: 1rem;
+    font-size: 1.6rem;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 2px 1px var(--text-color-s);
+    cursor: pointer;
+    background-color: var(--bg-color-p);
+    color: var(--text-color-p);
+    text-shadow: 1px 1px 1px var(--text-color-s);
+}
+
+.products_btn_container input:hover{
+    box-shadow: none;
+    color: var(--bg-color-s);
+    background-color: var(--text-color-p);
+
 }
 
 .products_hero{
@@ -521,21 +560,23 @@ body{
     padding-bottom: 2rem;
 }
 
-
 .sw_cards{
-    padding: 2rem;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+    "heading heading " 
+    "b1 b2"
 }
 
-.sw_cards h3 {
+.sw_head_info {
+    grid-area: heading;
+    grid-column: span 12;
     padding: 2rem;
     text-align: center;
-    grid-column: span 12;
 }
 
 .sw_cards-left{
-    grid-column: 1 / span 6;
+    grid-column: 1/ span 6;
     display: grid;
     grid-template-areas: "pic1 pic2";
     grid-gap: 1rem;
@@ -587,7 +628,6 @@ body{
     perspective: 200rem;
 }
 
-
 .left-p2-front{
     transform: rotateY(0deg);
     background-image: url("https://source.unsplash.com/800x801/?nature");
@@ -607,12 +647,15 @@ body{
 }
 
 .sw_cards-right{
-    grid-column: 7 / span 6;
+    grid-area: b2;
+    grid-column: 7/ span 6;
     padding: 2rem;
     position: relative;
 }
 .sw_cards-right ul{
     padding: 1rem;
+    line-height: 3rem;
+    letter-spacing: 0.15rem;
 }
 
 .sw_cards-right::before {
@@ -633,6 +676,7 @@ body{
 
 .about_pharmacy{
     text-align: center;
+    padding: 3rem 0;
 }
 
 .about_pharmacy h2 {
@@ -642,24 +686,73 @@ body{
 .ph__cards{
     display: grid;
     grid-gap: 2rem;
-    grid-template-areas: "a b c" "d e f";
+    grid-template-areas: "a b c d e f";
 }
 
 .ph__card{
+    position: relative;
     border: 1px solid var(--extra);
     padding: 1rem;
     display: grid;
     grid-gap: 1rem;
+    transition: all 3s ease-in;
+    backface-visibility: hidden;
 }
+
+.abt-back {
+    position: absolute;
+    top:0%;
+    left:0%;
+    /* background-color: var(--bg-color-p); */
+    transition: all 1s ease-in;
+    opacity: 0;
+}
+
+.ph__card:hover .abt-back{
+    transform: translateY(150px);
+    opacity: 1;
+}
+
+.ph__card:hover h3 {
+    transition: all 1s ease-in;
+}
+
+
+.ph__card:hover h3{
+    font-size: 1.5rem;
+}
+
+
 
 /* Branch Details Ends */
 
 /* About Ends */
 
+/* Footer */
+.end_footer{
+    background-color: var(--text-color-s);
+    color: var(--text-color-p);
+    font-size: 1.4rem;
+    padding: 1rem;
+}
+
+.footer_content{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.footer_content a {
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: var(--extra);
+}
+
+/* Footer Ends */
 
 
-@media only screen and (min-width:1400px) {
+/* @media only screen and (min-width:1400px) {
     .container{
         border: 0.2rem solid var(--text-color-s);
     }
-}
+} */
