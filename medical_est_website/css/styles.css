@@ -10,11 +10,13 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    line-height: 3rem;
+    letter-spacing: 0.15rem;
 }
 
 html {
     font-size: 10px;
-    font-family: 'Antic Slab', serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 body{
@@ -73,19 +75,25 @@ body{
     text-transform: uppercase;
 }
 
-.navBar ul li {
+.navBar a {
     padding: 2rem;
     color: var(--bg-color-p);
     font-weight: 600;
 }
 
-.navBar ul li:hover{
+.navBar a:hover{
     color: var(--text-color-p);
     cursor: pointer;
 }
 
+a{
+    text-decoration: none;
+}
+
+/* Navbar Ends */
+
 .landing {
-    height: 50rem;
+    height: 60rem;
     background-image: url('../images/Products/landing_page.jpg');
     background-size: cover;
     background-position: center;
@@ -446,7 +454,7 @@ body{
     right: 50%;
     width: 2rem;
     height: 2rem;
-    background-color: var(--text-color-p)
+    background-color: var(--text-color-s)
 }
 
 .services_left{
@@ -522,6 +530,8 @@ body{
 .about__mission_para{
     font-size: 2rem;
     padding: 1rem 5rem 5rem;
+    line-height: 3rem;
+    letter-spacing: 0.15rem;
     /* border-bottom: 0.2rem solid black; */
 }
 
@@ -531,7 +541,7 @@ body{
     padding: 0rem 5rem 5rem;
     list-style: none;
     line-height: 3rem;
-    text-align: center;
+    text-align: left;
 }
 
 .about_main-p2{
@@ -722,11 +732,28 @@ body{
     font-size: 1.5rem;
 }
 
-
-
 /* Branch Details Ends */
 
 /* About Ends */
+
+/* Media Icons */
+.smedia_bar{
+    display: flex;
+    padding: 2rem;
+    justify-content: center;
+}
+
+i{
+    font-size: 3rem;
+    color: var(--text-color-p);
+    padding: 0.5rem 1rem;
+}
+
+i:hover{
+    color: var(--bg-color-p);
+}
+
+/* Media Icons Ends */
 
 /* Footer */
 .end_footer{
