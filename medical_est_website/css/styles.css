@@ -1,5 +1,5 @@
 :root {
-
+    --extra: #7CDF64;
     --text-color-p:#eeeeee;
     --text-color-s:#212121;
     --bg-color-p:#32e0c4;
@@ -17,9 +17,21 @@ html {
     font-family: 'Antic Slab', serif;
 }
 
+body{
+    background-color: var(--text-color-s);
+    display: grid;
+    justify-content: center;
+}
+
+.container {
+    max-width: 130rem;
+}
+
+/* Top Nav */
+
 .top_header {
     display: flex;
-    background-color: #212121;
+    background-color: var(--text-color-s);
     font-size: 1.3rem;
     height: 3rem;
     justify-content: space-around;
@@ -31,14 +43,17 @@ html {
     color: tomato;
 }
 
+/* Top Nav Ends */
+
+/* Nav Bar */
+
 .navBar {
     display:flex;
     background: var(--bg-color-s);
 }
 
 .navBar img {
-    width: 10%;
-    margin-right: 3rem;
+    padding: 2rem;
 }
 
 .navBar ul {
@@ -51,7 +66,7 @@ html {
 }
 
 .navBar ul li {
-    padding: 20px;
+    padding: 2rem;
     color: var(--text-color-s);
     font-weight: 600;
 }
@@ -68,32 +83,40 @@ html {
     display: grid;
     justify-content: center;
     align-content: center;
-    color: var(--bg-color-p);
+    color: var(--text-color-p);
+    
 }
 
 .landing__content{
-    background-color: rgba(10, 10, 10, 0.3);
+    background-color: rgba(0,0,0,0.4);
     padding: 2rem 6rem;
     display: flex;
     flex-direction: column;
+    text-align: center;
+}
+
+.landing__content span {
+    color: var(--bg-color-p);
+    opacity: 1;
 }
 
 .landing__content--header{
     font-size: 4rem;
+    padding: 1rem 0;
     font-weight: 600;
+    
 }
 
 .landing__content--sub{
     font-size: 3rem;
-    text-align: right;
 }
 
 .landing__content--btn{
+    margin-top: 5rem;
     padding: 1rem;
     font-size: 1.4rem;
-    background-color: var(--bg-color-s);
     border-radius: 1rem;
-    box-shadow: 1px 1px 3px var(--text-color-p);
+    text-align: center;
 }
 
 .landing__content--btn:hover{
@@ -107,10 +130,12 @@ html {
 .products{
     font-size: 2rem;
     padding: 2rem;
-    margin: 10rem;
+    color: var(--text-color-s);
+    background-color: var(--text-color-p);
 }
 
 .products_header{
+    padding: 7rem 2rem 2rem;
     display: grid;
     grid-template-areas: "header header""text image";
 }
@@ -122,14 +147,17 @@ html {
 }
 
 .products_header--text{
-  margin-top: 2rem;
-  grid-area: text;
-  display: grid;
-  grid-gap: 2rem;
+ grid-area: text;
+ letter-spacing: 0.1rem;
+ line-height: 3rem;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-around;
+ padding:0 3rem;
 }
 
 .products_header--h1{
-    margin-bottom: 3rem;
+    padding-bottom: 5rem;
 }
 
 .products_hero{
@@ -147,6 +175,7 @@ html {
     text-align: center;
 }
 
+/* Products */
 
 /* Product Gallery */
 
@@ -154,7 +183,7 @@ html {
     height: 75rem;
     widows: 100%;
     padding: 8rem 3rem;
-    background-color: #212121;
+    background-color:var(--text-color-p);
 }
 
 .gallery{
@@ -195,8 +224,7 @@ html {
 }
 
 .front_face{
-    background-color: #fff;
-    
+    background-color:var(--text-color-p);
     /* Internal Styling */
     display: flex;
     flex-direction: column;
@@ -204,8 +232,10 @@ html {
 }
 
 .back_face{
+    padding: 0;
+    margin: 0;
     transform: rotateY(180deg);
-    background-color: grey;
+    background-color: var(--text-color-p);
 }
 
 .g_card:hover .front_face {
@@ -250,44 +280,57 @@ html {
  }
 
 .details_container{
-    padding: 1rem;
-    color: var(--text-color-p);
+    color: var(--bg-color-p);
     letter-spacing: 0.2rem;
     display: grid;
     text-align: center;
+    background-color: var(--text-color-s);
+    opacity: 0.7;
+}
+
+.back_face .details_container{
+    padding: 2rem;
 }
 
 .btn_container{
+    height: 100%;
     display: grid;
     justify-content: center;
 }
 
 .btn{
     margin-top: 1rem;
-    color: #32e0c4;
-    background-color: #0d7377;
+    color:var(--bg-color-s);
+    background-color: var(--text-color-p);
     font-size: 1.5rem;
     padding: 0.5rem 3rem;
 }
 
 .d_head{
     text-transform: uppercase;
-    background-color: rgba(10, 10, 10, 0.5);
     font-size: 1.8rem;
     text-align: center;
     margin-bottom: 1rem;
     padding: 1rem 2rem;
 }
 
+
 .cName{
     text-transform: uppercase;
     font-size: 1.8rem;
-    padding: 1rem 0;
+}
+
+.front_face .cName{
+    font-size: 1.5rem;
 }
 
 .pName{
     text-transform: uppercase;
     font-size: 2.2rem;
+}
+
+.front_face .pName{
+    font-size: 1.8rem;
 }
 
 .d_para{
@@ -296,11 +339,15 @@ html {
 
 /* Logo slider */
 
+.logo_container {
+    position: relative;
+}
+
 .logo_slider{
     margin: auto;
     padding: 1rem;
     overflow: hidden;
-    box-shadow: 2px 2px 10px 3px rgba(0, 0, 0, 0.15);
+    background-color: var(--text-color-p);
 }
 
 @keyframes autoScroll{
@@ -317,6 +364,19 @@ html {
     animation: autoScroll 80s linear infinite;
 }
 
+.logo_slider::before,
+.logo_slider::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 6rem;
+    height: 100%;
+    z-index: 20;
+    background: linear-gradient(to right,  rgb(238, 238, 238,1) 0%,rgba(255,255,255,0) 100%);
+}
+
 .logo{
     padding: 1rem 1.5rem;
 }
@@ -326,7 +386,7 @@ html {
 /* Services */
 
 .services_header{
-    background-color: #0d7377;
+    background-color: var(--text-color-p);
     display: grid;
     grid-template-areas: "head head" "left right";
     padding: 5rem 2rem;
@@ -347,13 +407,13 @@ html {
     right: 50%;
     width: 2rem;
     height: 2rem;
-    background-color: #32e0c4;
+    background-color: var(--text-color-p)
 }
 
 .services_left{
     grid-area: left;
     font-size: 1.6rem;
-    color: var(--text-color-p);
+    color: var(--text-color-s);
     padding: 3rem;
     text-align: left;
 }
@@ -365,6 +425,9 @@ html {
 .services_text{
     display: grid;
     grid-gap: 2rem;
+    font-size: 2rem;
+    letter-spacing: 0.15rem;
+    line-height: 3rem;
 }
 
 .services_right img {
@@ -378,43 +441,79 @@ html {
     padding-bottom: 1rem;
 }
 
-.about{
-    background-color: var(--text-color-s);
-    font-size: 1.5rem;
-    padding: 5rem;
-    color: var(--text-color-p);
-}
-
-.about_abt_us{
-    padding: 10rem;
-}
-
-.about__main-p1 .p1,  
-.about__main-p2 .p2,
-.about__main-p3 .p3,
-.about__mission_heading {
-    text-align: center;
-    padding: 5rem 1rem;
-}
-
-.about__main-p1 p {
-    text-align: left;
-    padding-bottom: 3rem;
-}
-
-.about__main-p1 .p2{
-    padding: 2rem;
-}
-
 /* Services Ends */
 
-.about_ph-info{
-    border: 0.2rem solid var(--text-color-p);
+/* About */
+
+/* Channels */
+.about{
+    background-color: var(--text-color-p);
+    color: var(--text-color-s);
     padding: 2rem;
 }
 
-.about_Branches{
+.channels{
+    display: grid;
+    grid-template-areas: 
+    "main main"
+    "channel1 channel2"
+    "mission mission";
+}
 
+.about_main-p1{
+    grid-area: main;
+}
+
+.about_main-p1 .p1
+{
+    font-size: 4rem;
+    padding-bottom: 4rem;
+    text-align: center;
+}
+
+.about_main-p2 .p2,
+.about_main-p3 .p3,
+.about__mission_heading{
+    font-size: 3rem;
+    padding-bottom: 3rem;
+    text-align: center; 
+}
+
+.about_main-p1 p,
+.about__mission_para{
+    font-size: 2rem;
+    padding: 1rem 5rem 5rem;
+    /* border-bottom: 0.2rem solid black; */
+}
+
+.about_main-p2 ul,
+.about_main-p3 ul{
+    font-size: 2rem;
+    padding: 0rem 5rem 5rem;
+    list-style: none;
+    line-height: 3rem;
+    text-align: center;
+}
+
+.about_main-p2{
+    grid-area: channel1;
+}
+
+.about_main-p3{
+    grid-area: channel2;
+}
+
+.about_mission{
+    grid-area: mission;
+}
+
+/* Channels Ends*/
+
+/* Brach Details */
+
+.about_ph-info{
+    padding: 2rem;
+    font-size: 2rem;
 }
 
 .about_Branches h2{
@@ -422,12 +521,8 @@ html {
     padding-bottom: 2rem;
 }
 
-.about_pharmacy{
-    padding: 2rem;
-}
 
 .sw_cards{
-    border-bottom: 0.1rem solid white;
     padding: 2rem;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -440,16 +535,96 @@ html {
 }
 
 .sw_cards-left{
-    background-image: url("https://source.unsplash.com/150x150/?office-space");
+    grid-column: 1 / span 6;
+    display: grid;
+    grid-template-areas: "pic1 pic2";
+    grid-gap: 1rem;
+    /* margin-top: -5rem; */
+}
+
+
+.sw_card_f{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
     background-size: cover;
     background-position: center;
-    grid-column: 1 / span 6;
-    /* margin-top: -5rem; */
+    overflow: hidden;
+    transition: all 0.3s ease;
+    backface-visibility: hidden;
+    border: 2px solid #0d7377;
+}
+
+.sw_card-left-p1{
+    grid-area: pic1;
+    position: relative;
+    perspective: 200rem;
+}
+
+.left-p1-front{
+    transform: rotateY(0deg);
+    background-image: url("https://source.unsplash.com/800x803/?nature");
+}
+
+.left-p1-back{
+    transform: rotateY(180deg);
+    background-image: url("https://source.unsplash.com/800x804/?nature");
+}
+
+.sw_card-left-p1:hover .left-p1-front{
+    transform: rotateY(-180deg);
+}
+
+.sw_card-left-p1:hover .left-p1-back{
+    transform: rotateY(0deg);
+}
+
+.sw_card-left-p2{
+    grid-area: pic2;
+    position: relative;
+    perspective: 200rem;
+}
+
+
+.left-p2-front{
+    transform: rotateY(0deg);
+    background-image: url("https://source.unsplash.com/800x801/?nature");
+}
+
+.left-p2-back{
+    transform: rotateY(180deg);
+    background-image: url("https://source.unsplash.com/800x802/?nature");
+}
+
+.sw_card-left-p2:hover .left-p2-front{
+    transform: rotateY(-180deg);
+}
+
+.sw_card-left-p2:hover .left-p2-back{
+    transform: rotateY(0deg);
 }
 
 .sw_cards-right{
     grid-column: 7 / span 6;
     padding: 2rem;
+    position: relative;
+}
+.sw_cards-right ul{
+    padding: 1rem;
+}
+
+.sw_cards-right::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    transform: translate(0, -50%);
+    height: 70%;
+    width: 0.5rem;
+    background-color: var(--extra)
 }
 
 .sw_cards li {
@@ -471,8 +646,20 @@ html {
 }
 
 .ph__card{
-    border: 1px solid skyblue;
+    border: 1px solid var(--extra);
     padding: 1rem;
     display: grid;
     grid-gap: 1rem;
+}
+
+/* Branch Details Ends */
+
+/* About Ends */
+
+
+
+@media only screen and (min-width:1400px) {
+    .container{
+        border: 0.2rem solid var(--text-color-s);
+    }
 }
