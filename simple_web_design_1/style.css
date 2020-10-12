@@ -343,7 +343,49 @@ img{
 }
 
 /* Products ends */
+/* Team */
+.team{
+    position: relative;
+    font-size: 4rem;
+    font-weight: 500;
+    padding-bottom: 2rem;
+    margin-bottom: 6rem;
+    text-align: center;
+}
 
+.team .title::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 18rem;
+    height: 0.3rem;
+    background: #222;
+    transform: translateX(-50%);
+}
+
+.team .title::after{
+    content: "We are";
+    position: absolute;
+    padding: 0 0.2rem;
+    bottom: -1rem;
+    left: 50%;
+    font-size: 2rem;
+    background: white;
+    color: orangered;
+    transform: translateX(-50%);
+}
+
+.card img {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid orangered;
+}
+
+
+/* Team Ends */
 
 /* Media Query Section */
 
