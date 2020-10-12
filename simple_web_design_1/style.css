@@ -1,0 +1,412 @@
+
+/* Reset */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root{
+    font-size: 62.5%;
+}
+
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+
+/* Nav bar */
+
+.navbar{
+    width: 100%;
+    padding: 1rem;
+    background: rgb(214, 156, 30);
+    text-align: center;
+    margin: 0 auto;
+    transition: all 0.8s ease-in-out;
+}
+
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a{
+    font-size: 3rem;
+    font-weight: 500;
+    color: white;
+}
+
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+    font-size: 1.8rem;
+    padding: 0 2rem;
+    font-weight: 500;
+}
+
+.menu li a {
+    color: white;
+    text-shadow: 2px 2px 2px black;
+}
+
+.menu li a:hover {
+    color: olivedrab;
+}
+
+.sticky{
+    background: orangered;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    padding: 0.2rem;
+}
+
+.menu-btn{
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+}
+
+
+/* Navbar ends */
+
+/* Home */
+
+.home {
+    display: flex;
+    min-height: 100vh;
+    background: url('./image/landing_hero.jpg') no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: beige;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.home .max-width{
+    margin: auto 0 auto 0;
+}
+
+.text-1{
+    font-size: 2.5rem;
+}
+
+.name{
+    color: springgreen;
+    text-shadow: 2px 2px 2px black;
+}
+
+.name:hover{
+    color: orangered;
+}
+
+.text-2{
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+.text-3{
+    font-size: 2.5rem;
+}
+
+
+/* About */
+
+    .title{
+        position: relative;
+        font-size: 4rem;
+        font-weight: 500;
+        padding-bottom: 2rem;
+        margin-bottom: 6rem;
+        text-align: center;
+    }
+
+    .about .title::before{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 18rem;
+        height: 0.3rem;
+        background: #222;
+        transform: translateX(-50%);
+    }
+
+    .about .title::after{
+        content: "who we are";
+        position: absolute;
+        padding: 0 0.2rem;
+        bottom: -1rem;
+        left: 50%;
+        font-size: 2rem;
+        background: white;
+        color: orangered;
+        transform: translateX(-50%);
+    }
+
+    .about-content{
+        display: flex;
+        height: 40rem;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .text{
+        padding: 1rem 0;
+    }
+
+    .btn-c{
+        padding: 2rem 0;
+    }
+
+    .btn{
+        padding: 1rem ;
+        border: 1px solid black;
+        background-color: orangered;
+        color: black;
+    }
+
+    .btn:hover{
+        border: 1px solid orangered;
+        background-color: orange;
+        color: white;
+    }
+
+    .left{
+        width: 45%;
+        font-size: 1.6rem;
+    }
+
+    .left img {
+        /* height: 40rem; */
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .right{
+        width: 45%;
+    }
+
+/* About End */
+
+/* services */
+
+.services{
+    position: relative;
+    font-size: 4rem;
+    font-weight: 500;
+    padding-bottom: 2rem;
+    margin-bottom: 6rem;
+    text-align: center;
+}
+
+.services .title::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 18rem;
+    height: 0.3rem;
+    background: #222;
+    transform: translateX(-50%);
+}
+
+.services .title::after{
+    content: "what we do";
+    position: absolute;
+    padding: 0 0.2rem;
+    bottom: -1rem;
+    left: 50%;
+    font-size: 2rem;
+    background: white;
+    color: orangered;
+    transform: translateX(-50%);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    justify-content: space-between;
+}
+
+.card{
+    width: calc(33%-2rem);
+    font-size: 1.6rem;
+    border: 0.2rem solid black;
+    padding: 1.5rem;
+    width: 100%;
+}
+
+
+.box .fas{
+    font-size: 5rem;
+    padding: 2rem;
+    color: orangered;
+}
+
+.box .text {
+    font-size: 2.2rem;
+    font-weight: 600;
+    padding-bottom: 1rem;
+}
+
+.box p {
+    font-size: 1.2rem;
+}
+
+.card:hover{
+    background-color: orangered;
+    color: white;
+}
+
+.card:hover .fas{
+    color: white;
+}
+
+/* services End */
+
+/* Products */
+.products{
+    position: relative;
+    font-size: 4rem;
+    font-weight: 500;
+    padding-bottom: 2rem;
+    margin-bottom: 6rem;
+    text-align: center;
+}
+
+.products .title::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 18rem;
+    height: 0.3rem;
+    background: #222;
+    transform: translateX(-50%);
+}
+
+.products .title::after{
+    content: "What we sell";
+    position: absolute;
+    padding: 0 0.2rem;
+    bottom: -1rem;
+    left: 50%;
+    font-size: 2rem;
+    background: white;
+    color: orangered;
+    transform: translateX(-50%);
+}
+
+.gallery{
+    display: flex;
+    align-items: center;
+}
+
+.wrapper{
+    position: relative;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-items: center;
+}
+
+img{
+    height: 100%;
+}
+
+.column1, .column2, .column3{
+    display: flex;
+    justify-content: center;
+}
+
+.column2,.column3  {
+    margin-top: -10rem;
+}
+
+.img_con{
+    grid-column: span 2;
+    transition: all .25s;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.img_con:hover {
+    z-index: 100;
+    transform: scale(1.5);
+}
+
+/* Products ends */
+
+
+/* Media Query Section */
+
+@media screen and (max-width: 1300px){
+    .max-width{
+        margin: 0;
+    } 
+}
+
+@media screen and (max-width: 1104px){
+
+}
+
+@media screen and (max-width: 991px){
+    .max-width{
+        padding: 0 50px;
+    }
+
+    .menu-btn{
+        display: block;
+        z-index: 10;
+        color: white;
+    }
+    
+    .navbar .menu {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        right: 0;
+        top: 0;
+        clip-path: circle(100px at 100% -20%);
+        text-align: center;
+        padding: 8rem 0;
+        background: #222;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        transition: all 0.5s ease;
+    }
+
+    .menu.active {
+        clip-path: circle(1400px at 100% -20%);
+    }
+    
+    .menu li {
+        display: block;
+    }
+
+    .menu li a:hover {
+        color: orangered;
+        font-size: 2rem;
+    }
+
+    i.active:before{
+        content: "\f00d";
+    }
+
+    .text-2{
+        font-size: 3rem;
+        font-weight: 600;
+    }
+    
+    .text-3{
+        font-size: 2rem;
+    }
+}
