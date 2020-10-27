@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            list-style: none;
+            text-transform: uppercase;
+            color: rebeccapurple;
+            font-size: 1.5rem;
+            font-weight: 600;
+
+        }
+
+        .item {
+            display: block;
+            cursor: pointer;
+            position: relative;
+            padding: 0.5rem 1rem;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .item a:before,
+        .item a:after {
+            position: absolute;
+            opacity: 0;
+            font-size: 2rem;
+            top: 0px;
+            transition: all 0.4s ease-in;
+            color: tomato;
+        }
+
+        .item a:before {
+            content: '[';
+            left: 0px;
+            transform: translateX(1rem);
+        }
+
+        .item a:after {
+            content: ']';
+            right: 0px;
+            transform: translateX(-1rem);
+        }
+
+        .item a:hover:before,
+        .item a:hover:after {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <ul class="container">
+            <li class="item"><a href="">link1</a></li>
+            <li class="item"><a href="">link2</a></li>
+            <li class="item"><a href="">link3</a></li>
+            <li class="item"><a href="">link4</a></li>
+            <li class="item"><a href="">link5</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>

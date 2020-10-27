@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            list-style: none;
+            text-transform: uppercase;
+            background-color: black;
+            font-size: 1.5rem;
+            font-weight: 600;
+            padding: 1rem 2rem;
+
+        }
+
+        .item {
+            display: block;
+            cursor: pointer;
+            position: relative;
+            padding: 0.5rem 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.7);
+            /* text-shadow: 1px 1px 1px white; */
+        }
+
+        .one::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 0.2rem;
+            transition: all 0.5s ease;
+        }
+
+        .one::after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            transition: all 0.5s ease;
+        }
+
+        .item:hover .one::before {
+            height: 0.2rem;
+            width: 100%;
+            background-color: white;
+        }
+
+        .item:hover .one::after {
+            height: 0.2rem;
+            width: 100%;
+            background-color: white;
+        }
+
+        .two::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 0.2rem;
+            transition: all 0.8s ease;
+            color: white;
+        }
+
+        .two::after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            transition: all 0.8s ease;
+            color: white;
+        }
+
+        .item:hover .two::before {
+            height: 100%;
+            width: 100%;
+            background-color: red;
+            opacity: 0;
+        }
+
+        .item:hover .two::after {
+            height: 100%;
+            width: 100%;
+            background-color: green;
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <ul class="container">
+            <li class="item"><a class="one" href="">link1</a></li>
+            <li class="item"><a class="one" href="">link2</a></li>
+            <li class="item"><a class="one" href="">link3</a></li>
+            <li class="item"><a class="one" href="">link4</a></li>
+            <li class="item"><a class="one" href="">link5</a></li>
+        </ul>
+    </div>
+    <div class="navbar">
+        <ul class="container">
+            <li class="item"><a class="two" href="">link1</a></li>
+            <li class="item"><a class="two" href="">link2</a></li>
+            <li class="item"><a class="two" href="">link3</a></li>
+            <li class="item"><a class="two" href="">link4</a></li>
+            <li class="item"><a class="two" href="">link5</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>

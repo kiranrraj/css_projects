@@ -1,0 +1,60 @@
+.contact{
+    background-color: $color-secondary;
+    grid-column: cs 7 / fbe;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    &__heading-3{
+        display: grid;
+        text-align: center;
+        align-items: center;
+        font-size: 3rem;
+        color: $color-primary;
+
+        &::after{
+            content: "";
+            height: 2px;
+            display: block;
+            width: 60%;
+            justify-self: center;
+            background-color: $color-extra;
+        }
+    }
+
+    &__text{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .ct__email,
+    .ct__ph,
+    .ct__wapp,
+    .ct__sicons{
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.3rem;
+        color: white;
+        border-bottom: 2px solid $color-extra;
+        margin-bottom: 2rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .contact__sicons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .icon{
+            font-size: 3rem;
+            padding: 0.3rem 0.6rem;
+            color: white;
+            }
+    }
+
+}
+
+.icon1{
+    padding-right: 1rem;
+}
+

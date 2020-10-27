@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            list-style: none;
+            text-transform: uppercase;
+            background-color: black;
+            font-size: 1.5rem;
+            font-weight: 600;
+            padding: 1rem 2rem;
+
+        }
+
+        .item {
+            display: block;
+            cursor: pointer;
+            position: relative;
+            padding: 0.5rem 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.7);
+            transition: all 0.3s ease-out;
+            /* text-shadow: 1px 1px 1px white; */
+        }
+
+        a::before {
+            content: attr(alt);
+            display: block;
+            padding: 0.5rem 1rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: greenyellow;
+            transition: all 0.3s ease-out;
+            opacity: 0;
+            transform: scale(1.5);
+        }
+
+        .item:hover a::before {
+            transform: scale(1);
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <ul class="container">
+            <li class="item"><a href="" alt="LINK1">link1</a></li>
+            <li class="item"><a href="" alt="LINK2">link2</a></li>
+            <li class="item"><a href="" alt="LINK3">link3</a></li>
+            <li class="item"><a href="" alt="LINK4">link4</a></li>
+            <li class="item"><a href="" alt="LINK5">link5</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>
