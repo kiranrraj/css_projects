@@ -1,0 +1,323 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.container {
+    background-image: linear-gradient(to bottom, #d16bd1, #fe6dac, #ff8188, #ffa06f, #fbc068, #e7d26f, #cfe181, #b7ef9b, #9ff4af, #88f7c5, #71fadb, #5ffbf1);
+    display: grid;
+    grid-template-areas: "c_form sales" "pharmacy contact";
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem;
+    font-size: 1.6rem;
+    grid-gap: 2rem;
+}
+
+.contact_form{
+    grid-area: c_form;
+}
+
+.contact_address{
+    grid-area:contact ;
+}
+
+.sales_contact{
+    grid-area: sales;
+}
+
+.showroom_details{
+    grid-area: pharmacy;
+}
+
+.contact_form,
+.contact_address,
+.showroom_details,
+.sales_contact {
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 6px 24px 32px -1px rgba(30, 30, 60, 0.31);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 5rem;
+}
+
+.form_text,
+.address_text {
+    color: #fff;
+    text-shadow: 1px 1px 2px black;
+    padding: 1rem;
+}
+
+.form_text h3 {
+    font-size: 3rem;
+    padding-bottom: 1rem;
+}
+
+.form_text p {
+    font-size: 1.4rem;
+    padding-bottom: 2rem;
+}
+
+#contact__form {
+    padding: 0rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+}
+
+.form_group {
+    padding: 1rem 0rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.fg-3 {
+    padding-bottom: 3rem;
+}
+
+.fg-4,
+.fg-3 {
+    grid-template-columns: 1fr;
+}
+
+.fg-5 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.s_btn {
+    grid-column: 2/span 1;
+}
+
+.s_btn {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    outline: none;
+    box-shadow: 2px 2px 2px 1px black;
+    background-color: transparent;
+    color: purple;
+    font-size: 1.5rem;
+    border: 1px solid rebeccapurple;
+}
+
+.s_btn:hover,
+.s_btn:focus {
+    background-color: rebeccapurple;
+    border: 1px solid purple;
+    color: white;
+    box-shadow: none;
+}
+
+.form_group input:nth-child(odd) {
+    margin-right: 5rem;
+}
+
+input[type=text],
+input[type=email],
+select {
+    font-size: 1.7rem;
+    padding: 0.5rem;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid rebeccapurple;
+    border-left: 2px solid rebeccapurple;
+    border-top-left-radius: 0.5rem;
+    background-color: transparent;
+}
+
+#umsg {
+    resize: none;
+    background-color: transparent;
+    border: 2px solid rebeccapurple;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.address_text h3 {
+    font-size: 3rem;
+    padding-bottom: 1rem;
+}
+
+.address_text p {
+    font-size: 1.4rem;
+    padding-bottom: 2rem;
+}
+
+.address {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    font-size: 2.2rem;
+    color: rebeccapurple;
+}
+
+.address_po,
+.address_phone {
+    display: flex;
+    flex-direction: column;
+    line-height: 3rem;
+}
+
+.address_po {
+    padding-bottom: 2rem;
+}
+
+.address_phone span {
+    font-weight: 600;
+}
+
+.showroom_details-text {
+    padding: 1rem 0 3rem;
+    color: #fff;
+    text-shadow: 1px 1px 2px black;
+}
+
+.showroom_details-text h3 {
+    font-size: 3rem;
+    padding-bottom: 1rem;
+}
+
+.showroom_details-text p {
+    font-size: 1.4rem;
+    padding-bottom: 1rem;
+}
+
+table.address_table {
+    font-family: "Arial", Gadget, sans-serif;
+    background-color: #ddd;
+    text-align: center;
+    border-collapse: collapse;
+    border: 0.5rem solid white;
+}
+
+table.address_table td,
+table.address_table th {
+    padding: 0.5rem 1rem;
+    text-align: left;
+    border: 0.5rem solid white;
+}
+
+table.address_table tbody td {
+    font-size: 1.5rem;
+    color: black;
+}
+
+table.address_table tr:nth-child(even) {
+    background: #111;
+}
+
+table.address_table tr:nth-child(even) td {
+    color: white;
+}
+
+table.address_table thead th {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+    padding: 10px 5px;
+}
+
+table.address_table tfoot {
+    font-size: 1.2rem;
+    font-weight: normal;
+    color: #000;
+}
+
+table.address_table td {
+    border: 0.5rem solid #fff;
+}
+
+table.sales_team {
+    background-color: #555555;
+    text-align: center;
+    border-collapse: collapse;
+    font-family: "Arial", Gadget, sans-serif;
+}
+
+table.sales_team td,
+table.sales_team th {
+    border: 1px solid black;
+    padding: 1rem 1.5rem;
+}
+
+table.sales_team tbody td {
+    font-size: 1.5rem;
+    color: #FFFFFF;
+}
+
+table.sales_team td:nth-child(even) {
+    background: #398AA4;
+}
+
+table.sales_team thead {
+    background: #398AA4;
+}
+
+table.sales_team thead th {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: left;
+    border-left: 2px solid #398AA4;
+}
+
+table.sales_team thead th:first-child {
+    border-left: none;
+}
+
+table.sales_team tfoot td {
+    font-size: 13px;
+}
+
+table.sales_team tfoot .links {
+    text-align: right;
+}
+
+table.sales_team tfoot .links a {
+    display: inline-block;
+    background: #FFFFFF;
+    color: #398AA4;
+    padding: 2px 8px;
+    border-radius: 5px;
+}
+
+.sales_contact{
+    padding: 5rem 2rem 2rem;
+}
+
+.sales_text {
+    padding: 1rem 0 3rem;
+    color: #fff;
+    text-shadow: 1px 1px 2px black;
+}
+
+.sales_text h3 {
+    font-size: 3rem;
+    padding-bottom: 1rem;
+}
+
+.sales_text p {
+    font-size: 1.4rem;
+    padding-bottom: 1rem;
+}
+
+@media all and (max-width: 699px){
+    .container{
+        display: grid;
+        grid-template-areas: "c_form" "sales" "pharmacy" "contact";
+    }
+}
+
+@media all and (max-width: 500px){
+    .container{
+        display: grid;
+        grid-template-areas: "c_form" "sales" "pharmacy" "contact";
+    }
+
+}
