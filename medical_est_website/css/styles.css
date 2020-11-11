@@ -20,9 +20,12 @@ html {
 }
 
 body {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+
 }
+
 
 .c_icon,
 .c_btn {
@@ -268,26 +271,66 @@ body {
     padding: 5rem 2rem;
     color: var(--text-color-p);
     height: 100vh;
+    display: grid;
 }
 
 .products__container--section {
     padding-top: 5rem;
 }
 
-.section__header {
-    padding: 2rem 2rem;
-    display: grid;
-    grid-template-areas: "header header""text image";
+.product__container--box {
+    display: flex;
 }
 
-.section__header--h1 {
-    grid-area: header;
-    font-size: 4rem;
-    font-weight: 600;
-    text-align: center;
+.image__container img{
+    width: 50%;
+}
+
+.section__header--h2 {
     margin-bottom: 5rem;
 }
 
+.section__header--h2 h2{
+    font-size: 4rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+.section__header--h2 h2::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 10%;
+    height: 0.5rem;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--extra);
+    transition: all 0.3s ease;
+}
+
+.section__header--h2 h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 10%;
+    height: 0.5rem;
+    top: 0;
+    right: 50%;
+    background-color: var(--extra);
+    transition: all 0.3s ease;
+}
+
+.section__header--h2:hover h2::after{
+    right: 40%;
+}
+
+.section__header--h2:hover h2::before{
+    left: 40%;
+}
+
+.section__header--h2:hover  h2 span{
+    color: var(--extra);
+}
 
 .section__header--text {
     grid-area: text;
@@ -304,147 +347,54 @@ body {
     padding-bottom: 5rem;
 }
 
-.products_btn_container {
+.products__btn--container {
+    position: relative;
     text-align: center;
-    padding: 3rem 0;
-
 }
 
-.products_btn_container input {
-    padding: 1rem;
+.btn-2 {
     font-size: 1.6rem;
-    border-radius: 0.5rem;
-    border: 2px solid var(--extra);
-    cursor: pointer;
-    background-color: var(--text-color-s);
-    color: var(--text-color-p);
-    box-shadow: 1px 1px 1px 2px var(--text-color-p);
-}
-
-.products_btn_container input:hover {
-    box-shadow: none;
+    padding: 1rem 2rem;
+    border: 5px solid var(--text-color-p);
+    border-radius: 5rem;
     color: var(--text-color-s);
-    background-color: var(--bg-color-p);
-    border: 2px solid var(--bg-color-s);
+    cursor: pointer;
+    outline: none;
+    background: var(--text-color-p);
+    transition: all 0.3s ease;
 }
 
-.image__container{
-    grid-area: image;
-    /* margin:auto 0; */
-    height: 50vh;
-    width: 50vw;
-    position: relative;
-    overflow: hidden;
-    padding-right: 1rem;
-}
-
-/* .products__hero {
-    width: 600px;
-    height: 400px;
-  }
-  
-.products__hero img {
-    width: 100%;
+.products__btn--container:before {
+    content: " ";
     position: absolute;
-    top: 0;
-    bottom: 0;
-} */
-
-.image__container--product {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    height: 100%;
-    width: 100%;
-    transform: translate(-50%, -50%);
-    padding-right: 1rem;
-  }
-  
-  .image__container--product li {
-    list-style: none;
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    transition: 0.5s;
-    overflow: hidden;
-    opacity: 0.5;
-  }
-  
-  .image__container--product li:hover {
-    opacity: 1;
-  }
-  
-  .image__container--product li.img-1 {
     top: 0;
     left: 0;
-  }
-  
-  .image__container--product li.img-2 {
-    bottom: 0;
-    left: 0%;
-  }
-  
-  .image__container--product li.img-3 {
-    top: 0;
-    left: 35%;
-  }
-  
-  .image__container--product li.img-4 {
-    bottom: 0;
-    left: 35%;
-  }
+    width: 0%;
+    height: 3px;
+    background-color: var(--extra);
+    transition: all 0.3s ease;
+}
 
-  .image__container--product li.img-5 {
-    top: 0%;
-    left: 70%;
-  }
+.products__btn--container:after {
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0%;
+    height: 3px;
+    background-color: var(--extra);
+    transition: all 0.3s ease;
+}
 
-  .image__container--product li.img-6 {
-    bottom: 0%;
-    left: 70%;
-  }
-  
-  .image__container--product li .img {
+.products__btn--container:hover:after,
+.products__btn--container:hover:before {
     width: 100%;
-    height: 100%;
-    transform: scale(1.1);
-  }
-  
-  .image__container--product .img {
-    background: url(../images/Products/p_img_1.jpg);
-    background-size: cover;
-    background-position: center;
-  }
-  
-  .image__container--product li.img-2 .img {
-    background: url(../images/Products/p_img_2.png);
-    background-size: cover;
-    background-position: center;
-  }
-  
-  .image__container--product li.img-3 .img {
-    background: url(../images/Products/p_img_3.png);
-    background-size: cover;
-    background-position: center;
-  }
-  
-  .image__container--product li.img-4 .img {
-    background: url(../images/Products/p_img_4.png);
-    background-size: cover;
-    background-position: center;
-  }
-  
-  .image__container--product li.img-5 .img {
-    background: url(../images/Products/p_img_5.png);
-    background-size: cover;
-    background-position: center;
-  }
+    opacity: 0
+}
 
-  .image__container--product li.img-6 .img {
-    background: url(../images/Products/p_img_6.png);
-    background-size: cover;
-    background-position: center;
-  }
+.products__btn--container:hover .btn-2 {
+    border: 5px solid var(--extra);
+}
 /* Products */
 
 /* Gallery */
@@ -699,15 +649,18 @@ body {
     position: relative;
 }
 
-.services_h1 {
+.services_h2 {
     grid-area: head;
     text-align: center;
     position: relative;
-    padding: 1.5rem;
-    font-size: 2rem;
 }
 
-.services_h1 h1::before {
+.services_h2 h2{
+    font-size: 4rem;
+    padding: 2rem;
+}
+
+.services_h2 h2::before {
     content: "";
     position: absolute;
     display: block;
@@ -719,7 +672,7 @@ body {
     transition: all 0.3s ease;
 }
 
-.services_h1 h1::after {
+.services_h2 h2::after {
     content: "";
     position: absolute;
     display: block;
@@ -731,15 +684,15 @@ body {
     transition: all 0.3s ease;
 }
 
-.services_h1:hover h1::after{
+.services_h2:hover h2::after{
     right: 40%;
 }
 
-.services_h1:hover h1::before{
+.services_h2:hover h2::before{
     left: 40%;
 }
 
-.services_h1:hover  h1 span{
+.services_h2:hover  h2 span{
     color: var(--extra);
 }
 
@@ -771,7 +724,255 @@ body {
 
 /* Services Ends */
 
+/* About */
 
+/* Channels */
+.about {
+    background-color: var(--text-color-p);
+    color: var(--text-color-s);
+    padding: 5rem 2rem;
+}
+
+.about__main{
+    
+}
+
+.channels {
+    display: grid;
+    grid-template-areas:
+        "main main"
+        "channel1 channel2"
+        "mission mission";
+}
+
+.about_main-p1 {
+    grid-area: main;
+}
+
+.about_main-p1 .p1 {
+    font-size: 4rem;
+    padding-bottom: 4rem;
+    text-align: center;
+}
+
+.about_main-p2 .p2,
+.about_main-p3 .p3,
+.about__mission_heading {
+    font-size: 3rem;
+    padding-bottom: 3rem;
+    text-align: center;
+}
+
+.about_main-p1 p,
+.about__mission_para {
+    font-size: 2rem;
+    padding: 1rem 5rem 5rem;
+    line-height: 3rem;
+    letter-spacing: 0.15rem;
+    /* border-bottom: 0.2rem solid black; */
+}
+
+.about_main-p2 ul,
+.about_main-p3 ul {
+    font-size: 2rem;
+    padding: 0rem 5rem 5rem;
+    list-style: none;
+    line-height: 3rem;
+    text-align: left;
+}
+
+.about_main-p2 {
+    grid-area: channel1;
+}
+
+.about_main-p3 {
+    grid-area: channel2;
+}
+
+.about_mission {
+    grid-area: mission;
+}
+
+/* Channels Ends*/
+
+/* Brach Details */
+
+.about_ph-info {
+    padding: 2rem;
+    font-size: 2rem;
+}
+
+.about_Branches h2 {
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.sw_cards {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+        "heading heading "
+        "b1 b2"
+}
+
+.sw_head_info {
+    grid-area: heading;
+    grid-column: span 12;
+    padding: 2rem;
+    text-align: center;
+}
+
+.sw_cards-left {
+    grid-column: 1/ span 6;
+    display: grid;
+    grid-template-areas: "pic1 pic2";
+    grid-gap: 1rem;
+    /* margin-top: -5rem; */
+}
+
+
+.sw_card_f {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    backface-visibility: hidden;
+    border: 2px solid #0d7377;
+}
+
+.sw_card-left-p1 {
+    grid-area: pic1;
+    position: relative;
+    perspective: 200rem;
+}
+
+.left-p1-front {
+    transform: rotateY(0deg);
+    background-image: url("https://source.unsplash.com/800x803/?nature");
+}
+
+.left-p1-back {
+    transform: rotateY(180deg);
+    background-image: url("https://source.unsplash.com/800x804/?nature");
+}
+
+.sw_card-left-p1:hover .left-p1-front {
+    transform: rotateY(-180deg);
+}
+
+.sw_card-left-p1:hover .left-p1-back {
+    transform: rotateY(0deg);
+}
+
+.sw_card-left-p2 {
+    grid-area: pic2;
+    position: relative;
+    perspective: 200rem;
+}
+
+.left-p2-front {
+    transform: rotateY(0deg);
+    background-image: url("https://source.unsplash.com/800x801/?nature");
+}
+
+.left-p2-back {
+    transform: rotateY(180deg);
+    background-image: url("https://source.unsplash.com/800x802/?nature");
+}
+
+.sw_card-left-p2:hover .left-p2-front {
+    transform: rotateY(-180deg);
+}
+
+.sw_card-left-p2:hover .left-p2-back {
+    transform: rotateY(0deg);
+}
+
+.sw_cards-right {
+    grid-area: b2;
+    grid-column: 7/ span 6;
+    padding: 2rem;
+    position: relative;
+}
+
+.sw_cards-right ul {
+    padding: 1rem;
+    line-height: 3rem;
+    letter-spacing: 0.15rem;
+}
+
+.sw_cards-right::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    transform: translate(0, -50%);
+    height: 70%;
+    width: 0.5rem;
+    background-color: var(--extra)
+}
+
+.sw_cards li {
+    list-style: none
+}
+
+.about_pharmacy {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.about_pharmacy h2 {
+    padding: 3rem;
+}
+
+.ph__cards {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-areas: "a b c d e f";
+}
+
+.ph__card {
+    position: relative;
+    border: 1px solid var(--extra);
+    padding: 1rem;
+    display: grid;
+    grid-gap: 1rem;
+    transition: all 3s ease-in;
+    backface-visibility: hidden;
+}
+
+.abt-back {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    /* background-color: var(--bg-color-p); */
+    transition: all 1s ease-in;
+    opacity: 0;
+}
+
+.ph__card:hover .abt-back {
+    transform: translateY(150px);
+    opacity: 1;
+}
+
+.ph__card:hover h3 {
+    transition: all 1s ease-in;
+}
+
+
+.ph__card:hover h3 {
+    font-size: 1.5rem;
+}
+
+/* Branch Details Ends */
+
+/* About Ends */
 
 
 
