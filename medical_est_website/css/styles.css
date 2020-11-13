@@ -188,7 +188,7 @@ body {
     position: relative;
 }
 
-.btn-1 {
+.landing .btn-1 {
     font-size: 1.6rem;
     padding: 1rem 2rem;
     border: 5px solid var(--text-color-p);
@@ -198,9 +198,10 @@ body {
     outline: none;
     background: var(--text-color-p);
     transition: all 0.3s ease;
+    width: max-content;
 }
 
-.landing__content--btn:before {
+.landing .landing__content--btn:before {
     content: " ";
     position: absolute;
     top: 0;
@@ -211,7 +212,7 @@ body {
     transition: all 0.3s ease;
 }
 
-.landing__content--btn:after {
+.landing .landing__content--btn:after {
     content: " ";
     position: absolute;
     bottom: 0;
@@ -247,80 +248,143 @@ body {
     grid-template-columns: repeat(2, 1fr);
 }
 
-.about__container--left {
-    display: grid;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-.slide__prev {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-}
-
-.slide__prev--2{
-    display: flex;
-    list-style: none;
-}
-
-.slide__prev a,
-.slide__prev--2 a {
-    display: block;
-    text-align: end;
-  }
-
-.slide__prev img {
-    width: 20%;
-}
-
-.slide__prev--2 img{
-    width: 100%;
-}
-
-.slides {
-    list-style: none;
-    overflow: hidden;
-    margin: auto 0;
-}
-
-.slides li {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 75%;
-    z-index: 1;
-}
-
-.slides li img {
-    width: 80%;
-}
-
-.slides li:target{
-    animation: display 0.5s linear ;
-}
-
-.slides li:not(:target) {
+/* --------------------------------------- */
+input[type="radio"] {
     display: none;
 }
 
-@keyframes display {
-    0% {
-      transform: translateY(-100%);
-      opacity: 0;
-    }
+.container {
+    position: relative;
+    height: 50vh;
+    width: 100%;
+    padding: 1rem;
+}
 
-    90%{
-        opacity: 0.4;
-    }
+.slide-wrapper {
+    position: relative;
+    margin: 0 auto;
+    padding: 3rem;
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    box-shadow: 2px 2px 2px 2px rgba(1,1,1, 0.6);
+    overflow: hidden;
+}
 
-    100% {
-      opacity: 1;
-      transform: translateY(0%);
-    }
-  }
+#slide-role {
+    background: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400%;
+    height: 100%;
+    z-index: 100;
+    transition: left .5s ease-in;
+    display: flex;
+}
 
+.slide {
+    width: 50%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.slide-1 {
+    background-image: url("https://images.pexels.com/photos/1562/italian-landscape-mountains-nature.jpg?auto=compress&cs=tinysrgb&h=650&w=940");
+}
+
+.slide-2 {
+    background-image: url("https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&h=650&w=940");
+}
+
+.slide-3 {
+    background-image: url("https://images.pexels.com/photos/448714/pexels-photo-448714.jpeg?auto=compress&cs=tinysrgb&h=650&w=940");
+}
+
+.slide-4 {
+    background-image: url("https://images.pexels.com/photos/38136/pexels-photo-38136.jpeg?auto=compress&cs=tinysrgb&h=650&w=940");
+}
+
+
+.btn,
+.btn::after {
+    border-radius: 50%;
+    transition: all .5s ease-in-out;
+}
+
+.btn {
+    border: 1px solid rgba(0, 0, 0, 0.281);
+    background: rgb(255, 255, 255);
+    position: absolute;
+    bottom: 2rem;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    transform: scale(1.1);
+    z-index: 1000;
+}
+
+.btn:nth-of-type(1) {
+    left: 35%;
+}
+
+.btn:nth-of-type(2) {
+    left: 45%;
+}
+
+.btn:nth-of-type(3) {
+    left: 55%;
+}
+
+.btn:nth-of-type(4) {
+    left: 65%;
+}
+
+.btn:hover {
+    transform: scale(1.2);
+}
+
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    border: 1px solid white;
+    background: var(--extra);
+    width: 20px;
+    height: 20px;
+    margin: 3px 3px;
+    transform: scale(.5, .5);
+    box-shadow: 0px 1px 5px rgba(56, 56, 56, 0.822);
+}
+
+
+
+input[type="radio"]:checked#slide-2-trigger~div.slide-wrapper>div#slide-role {
+    left: -100%;
+}
+
+input[type="radio"]:checked#slide-3-trigger~div.slide-wrapper>div#slide-role {
+    left: -200%;
+}
+
+input[type="radio"]:checked#slide-4-trigger~div.slide-wrapper>div#slide-role {
+    left: -300%;
+}
+
+
+input[type="radio"]:checked+label.btn {
+    transform: scale(1.2);
+    border: 1px solid rgba(53, 53, 53, 0.308);
+}
+
+input[type="radio"]:checked+label.btn::after {
+    transform: scale(1.1, 1.1);
+    background: var(--extra);
+}
+
+
+/* --------------------------------------- */
 
 .image__container:after {
     content: " ";
@@ -447,7 +511,7 @@ body {
 
 /* Channels */
 
-.about__container--other{
+.about__container--other {
     padding: 7rem 2rem;
 }
 
@@ -644,148 +708,93 @@ body {
     color: var(--extra);
 }
 
-.content-wrapper {
+.gallery__product {
     margin: 0 auto;
     max-width: 1200px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5rem;
     padding: 0.5rem;
-  }
-  
-  .news-card {
-    border: 0px solid aqua;
-    margin: 0.5rem;
+}
+
+.product__card {
     position: relative;
-    height: 12rem;
+    height: 20rem;
     overflow: hidden;
-    border-radius: 0.5rem;
-    flex: 1;
-    min-width: 290px;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem 2px rgba(0, 0, 0, 0.5);
     backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
-  }
-  
-  @media (min-width: 900px) {
-  
-  .news-card {
-      height: 20rem
-  }
-    }
-  
-  .news-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 80%);;
-        z-index: 0;
-      }
-  
-  .news-card__card-link {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-    }
-  
-  .news-card__image {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-      transition: transform 3s ease;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      position: relative;
-      z-index: -1;
-    }
-  
-  .news-card__text-wrapper {
-      position: absolute;
-      bottom: 0rem;
-      padding: 1rem;
-      color: white;
-      transition: background-color 1.5s ease;
-    }
-  
-  .news-card__title {
-      transition: color 1s ease;
-      margin-bottom: .5rem;
-    }
-  
-  .news-card__post-date {
-      font-size: .7rem;
-      margin-bottom: .5rem;
-      color: #CCC;
-    }
-  
-  .news-card__details-wrapper {
-      max-height: 0;
-      opacity: 0;
-      transition: max-height 1.5s ease, opacity 1s ease;
-    }
-  
-  @media (min-width: 900px) {
-      .news-card:hover .news-card__details-wrapper {
-        max-height: 20rem;
-        opacity: 1;
-      }
-      .news-card:hover .news-card__text-wrapper {
-        background-color: rgba(0, 0, 0, 0.6);
-      }
-      .news-card:hover .news-card__title {
-        color: yellow;
-      }
-      .news-card:hover .news-card__image {
-        transform: scale(1.2);
-        z-index: -1;
-      }
-    }
-  
-  .news-card__excerpt {
-      font-weight: 300;
-    }
-  
-  .news-card__read-more {
-      background: black;
-      color: #bbb;
-      display: block;
-      padding: 0.4rem 0.6rem;
-      border-radius: 0.3rem;
-      margin-top: 1rem;
-      border: 1px solid #444;
-      font-size: 0.8rem;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      text-decoration: none;
-      width: 7rem;
-      margin-left: auto;
-      position: relative;
-      z-index: 5;
-    }
-  
-  .news-card__read-more i {
-        position: relative;
-        left: 0.2rem;
-        color: #888;
-        transition: left 0.5s ease, color 0.6s ease;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-      }
-  
-  .news-card__read-more:hover i {
-        left: 0.5rem;
-        color: yellow;
-      }
-  
+}
+
+.product__card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(1, 1, 1, 0.3);
+    z-index: 0;
+}
+
+
+.product__card--image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    object-fit: cover;
+    transition: all 1s ease-in;
+    z-index: -1;
+}
+
+.product__card--text {
+    position: absolute;
+    bottom: 0rem;
+    padding: 0.5rem;
+    color: white;
+    transition: all 1.5s ease;
+}
+
+.text__title {
+    font-size: 2.2rem;
+    text-align: right;
+    text-shadow: 1px 1px 1px var(--extra);
+}
+
+.text__company {
+    font-size: 1.8rem;
+}
+
+.text__details {
+    max-height: 0;
+    opacity: 0;
+    transition: all.5s linear;
+}
+
+.text__details p {
+    font-size: 1.4rem;
+    padding: 0.5rem;
+    line-height: 2rem;
+}
+
+.product__card:hover .text__title,
+.product__card:hover .text__company
+{
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.product__card:hover .text__details {
+    max-height: 20rem;
+    opacity: 1;
+}
+
+.product__card:hover .product__card--image {
+    transform: scale(1.2);
+}
 
 /*  */
 
@@ -938,18 +947,64 @@ body {
 
 /* Services Ends */
 
-/* About */
+/*--------------Contact-----------------*/
 
-/* Brach Details */
-
-.about_ph-info {
-    padding: 2rem;
+.about__pharmacy--main {
+    padding: 0 2rem;
     font-size: 2rem;
+}
+
+.about__pharmacy--header{
+    text-align: center;
+    padding-bottom: 3rem;
+}
+
+.about__pharmacy--h2{
+    font-size: 4rem;
+    position: relative;
+    padding: 2rem;
+}
+
+.about__pharmacy--h2 span{
+    color: var(--extra);
+}
+
+.about__pharmacy--h2::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 10%;
+    height: 0.5rem;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--extra);
+    transition: all 0.3s ease;
+}
+
+.about__pharmacy--h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 10%;
+    height: 0.5rem;
+    top: 0;
+    right: 50%;
+    background-color: var(--extra);
+    transition: all 0.3s ease;
+}
+
+.about__pharmacy--h2:hover::before {
+    left: 40%;
+}
+
+.about__pharmacy--h2:hover::after{
+    right: 40%;
 }
 
 .about_Branches h2 {
     text-align: center;
     padding-bottom: 2rem;
+    width: min-content;
 }
 
 .sw_cards {
@@ -963,8 +1018,9 @@ body {
 .sw_head_info {
     grid-area: heading;
     grid-column: span 12;
-    padding: 2rem;
+    padding: 2rem 0 5rem;
     text-align: center;
+    font-size: 2rem;
 }
 
 .sw_cards-left {
@@ -972,7 +1028,6 @@ body {
     display: grid;
     grid-template-areas: "pic1 pic2";
     grid-gap: 1rem;
-    /* margin-top: -5rem; */
 }
 
 
@@ -1067,193 +1122,253 @@ body {
     list-style: none
 }
 
-.about_pharmacy {
+
+/* -------------------Pharmacy----------------- */
+.about__pharmacy {
     text-align: center;
     padding: 3rem 0;
 }
 
-.about_pharmacy h2 {
-    padding: 3rem;
+.about__pharmacy h3{
+    padding: 4rem 0 2rem;
 }
 
-.ph__cards {
-    display: grid;
-    grid-gap: 2rem;
-    grid-template-areas: "a b c d e f";
-}
-
-.ph__card {
-    position: relative;
-    border: 1px solid var(--extra);
-    padding: 1rem;
-    display: grid;
-    grid-gap: 1rem;
-    transition: all 3s ease-in;
-    backface-visibility: hidden;
-}
-
-.abt-back {
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    /* background-color: var(--bg-color-p); */
-    transition: all 1s ease-in;
-    opacity: 0;
-}
-
-.ph__card:hover .abt-back {
-    transform: translateY(150px);
-    opacity: 1;
-}
-
-.ph__card:hover h3 {
-    transition: all 1s ease-in;
-}
+/* -----------Pharmacy Gallery Starts------------ */
 
 
-.ph__card:hover h3 {
-    font-size: 1.5rem;
-}
-
-/* Branch Details Ends */
-
-/* ----------------------- */
-
-
-#portfolio {
-    width: 100%;
-    min-height: 100vh;
-    background: #ffffff;
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(4, minmax(200px, 1fr));
-    grid-template-rows: 1fr 1fr;
-    grid-gap: 2px;
-}
-
-.project {
-    position: relative;
-    background: #F2DAD7;
+.about__pharmacy--container {
+    display: flex;
+    padding: 3rem 1rem;
+    /* justify-content: center;
+    align-items: center; */
     overflow: hidden;
-}
+    transform: skew(5deg);
+  }
 
-.project img {
-    position: absolute;
-    opacity: 0.9;
-}
-
-.project p {
-    position: absolute;
-    text-align: center;
-    width: 100%;
-    padding: 1em 0;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    z-index: 3;
-}
-
-.project .grid__title {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    white-space: nowrap;
-    bottom: 0;
-    font-weight: 100;
-    font-size: 0.8em;
-    z-index: 3;
-    text-transform: uppercase;
-    color: #474545;
-    letter-spacing: 2px;
-}
-
-.project:hover .grid__overlay {
-    transform: translateY(0%);
-}
-
-.grid__overlay {
-    background: rgba(229, 182, 177, 0.9);
-    height: 100%;
-    grid-column: 1 / -1;
-    grid-row: 1 / -1;
+  .pharmacy__card--imageContainer{
+    opacity: 0;
+  }
+  .pharmacy__card--imageContainer .image__text{
+      font-size: 1.2rem;
+  }
+ 
+  .pharmacy__card {
+    font-size: 1rem;
+    flex: 1;
+    transition: all 1s ease-in-out;
+    height: 30rem;
+    border: 1px solid var(--extra);
     position: relative;
+    background-image: url(../images/Products/c_img_1.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .pharmacy__card:hover .pharmacy__card--imageContainer{
     display: grid;
-    justify-items: center;
+    justify-content: center;
     align-items: center;
-    transform: translateY(101%);
-    transition: all 0.3s ease-in-out;
-}
+    opacity: 1;
+  }
 
-.grid__overlay button {
-    background: none;
-    outline: none;
-    font-weight: 100;
-    letter-spacing: 2px;
-    border: 1px solid #ffffff;
-    color: #ffffff;
-    text-transform: uppercase;
-    padding: 10px;
-}
-
-.grid__overlay button:hover {
-    transition: all 0.3s ease-in-out;
-    background: #ffffff;
-    color: #D1A39E;
-    transform: scale(1.05);
-}
-
-.overlay {
-    position: fixed;
-    background: rgba(71, 69, 69, 0.7);
-    top: 0;
-    right: 0;
+  .pharmacy__card .pharmacy__card--title {
+    color: white;
+    background: rgba(255, 30, 173, 0.75);
+    padding: 0.5em;
+    transform: rotate(-90deg);
+    transform-origin: 0% 0%;
+    transition: all 0.5s ease-in-out;
+    min-width: 100%;
+    text-align: center;
+    position: absolute;
     bottom: 0;
     left: 0;
-    display: none;
-    z-index: 3;
+    font-size: 2rem;
+    white-space: nowrap;
+  }
+
+  .pharmacy__card:hover {
+    flex-grow: 10;
+  }
+
+  .pharmacy__card:hover img {
+    filter: grayscale(0);
+  }
+
+   .pharmacy__card:hover .pharmacy__card--title {
+    text-align: center;
+    top: calc(100% - 2em);
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    font-size: 2em;
+    transform: rotate(0deg) skew(-5deg);
+  }
+
+   .pharmacy__card img {
+    width: 50%;
+    object-fit: cover;
+    transition: all 1s ease-in-out;
+    filter: grayscale(100%);
+  }
+
+   .pharmacy__card:not(:nth-child(6)) {
+    margin-right: 1rem;
+  }
+
+/* -----------Pharmacy Gallery Ends------------ */
+
+/* ---------------Pharmacy Ends----------------- */
+
+/* ---------------- Contact Starts ------------ */
+
+.contact__form--text{
+    font-size: 1.5rem;
+    text-align: center;
 }
 
-.overlay.open {
+.contact__form--container{
     display: grid;
-    align-items: center;
-    justify-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 4rem;
+    padding: 5rem 3rem ;
+    max-height: max-content;
 }
 
-.overlay__inner {
-    background: #ffffff;
-    width: 700px;
-    padding: 20px;
+.contact__form--input{
+    width: 100%;
+}
+
+.contact__form--input:nth-child(1){
+    grid-column: 1 / span 2;
+    width: 100%;
+}
+
+.contact__form--input:nth-child(2){
+    grid-column: 3 / span 2;
+    width: 100%;
+}
+
+.contact__form--input:nth-child(3){
+    grid-column: 1 / span 2;
+    width: 100%;
+}
+
+.contact__form--input:nth-child(4){
+    grid-column: 3 / span 2;
+    width: 100%;
+}
+
+.contact__form--input:nth-child(5){
+    grid-column: 2 / span 2;
+    width: 100%;
+}
+
+.contact__form--btn{
+    grid-column: 1 / span 4;
+    width: 100%;
+}
+
+.contact__form--input input:focus ~ label, 
+.contact__form--input textarea:focus ~ label, 
+.contact__form--input input:valid ~ label, 
+.contact__form--input textarea:valid ~ label {
+    font-size: 1rem;
+    color: #999;
+    top: -5px;
+    -webkit-transition: all 0.225s ease;
+    transition: all 0.225s ease;
+}
+
+.contact__form--input {
+    margin: 1rem 0;
     position: relative;
-    opacity: 1;
+    border-radius: 4px;
 }
 
-.close {
+.contact__form--input label {
+    color: white;
+    padding: 1rem 3rem;
     position: absolute;
-    top: 3px;
-    right: 10px;
-    background: none;
-    outline: 0;
-    color: #474545;
+    font-size: 1.5rem;
+    top: 1rem;
+    left: 0;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    pointer-events: none;
+}
+
+.contact__form--input input,
+.contact__form--input textarea {
+    padding: 2rem;
     border: 0;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    width: 100%;
+    font-size: 1rem;
+    background-color: #2d2d2d;
+    color: white;
+    border-radius: 4px;
 }
 
-.close:hover {
-    color: #D1A39E;
+.contact__form--input input:focus,
+.contact__form--input textarea:focus { outline: 0; }
+
+.contact__form--btn {
+    text-align: center;
+    position: relative;
 }
 
-.project__image {
-    margin-left: -50%;
+.contact__form--btn{
+    margin: 0;
+    padding: 0;
+    height: max-content;
 }
 
-/* ------------------------ */
+.btn-3 {
+    margin: 0 auto;
+    max-width: max-content;
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+    border: 5px solid var(--text-color-p);
+    border-radius: 5rem;
+    color: var(--text-color-s);
+    cursor: pointer;
+    outline: none;
+    background: var(--text-color-p);
+    transition: all 0.3s ease;
+}
 
-/* About Ends */
+.contact__form--btn:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: var(--extra);
+    transition: all 0.3s ease;
+}
 
+.contact__form--btn:after {
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0%;
+    height: 3px;
+    background-color: var(--extra);
+    transition: all 0.3s ease;
+}
 
+ .contact__form--btn:hover:after,
+ .contact__form--btn:hover:before {
+    width: 100%;
+    opacity: 0
+}
 
+.contact__form--btn:hover .btn-3 {
+    border: 5px solid var(--extra);
+}
 
-
+/* -----------------Contact Ends -------------- */
 
 /* ------------------Media Queries-------------------- */
 
