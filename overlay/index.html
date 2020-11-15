@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: teal;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .overlay-image{
+            width: 600px;
+            height: 600px;
+        }
+
+        .image,
+        .img-hover{
+            width: 600px;
+            height: 600px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .text{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            padding: 2rem;
+            transform: translate(-50%, -50%);
+            background-color: rgba(1,1,1,0.5);
+            color: white;
+            font-size: 2rem;
+        }
+
+        .hover-section{
+            opacity: 0;
+            transition: all 0.3s ease-in;
+        }
+        .overlay-image:hover .hover-section{
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay-image">
+        <img src="https://images.unsplash.com/photo-1605443791607-80a259dd3c3c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80" alt="" class="image">
+        <div class="text">Hello World</div>
+
+        <div class="hover-section">
+            <img src="https://images.unsplash.com/photo-1605425460776-d286d44bde84?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=356&q=80" alt="" class="img-hover">
+            <div class="text">You are now in hover mode</div>
+        </div>
+    </div>
+</body>
+</html>

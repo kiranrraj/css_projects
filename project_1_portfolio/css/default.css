@@ -1,0 +1,57 @@
+:root {
+    --primaryColor: black;
+    --secondaryColor: white;
+    --bgColor1: #eeeeee;
+    --bgColor2: #333;
+    --decorate: tomato;
+    --headColor: green;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--headColor);
+}
+
+.s1,
+.s3 {
+    background-color: var(--bgColor1);
+    overflow: auto;
+}
+
+.s2,
+.s4 {
+    background-color: var(--bgColor2);
+    overflow: auto;
+}
+
+.s1__content,
+.s2__content,
+.s3__content,
+.s4__content {
+    max-width: 120rem;
+    text-align: center;
+}
+
+@media screen and (max-width:120rem) {
+
+    .s1__content,
+    .s2__content,
+    .s3__content,
+    .s4__content {
+        width: 95%
+    }
+}
