@@ -15,6 +15,11 @@
 
 html {
     font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    font-size: 1.6rem;
 }
 
 h1,
@@ -26,6 +31,29 @@ h6 {
     color: var(--headColor);
 }
 
+h1{
+    font-size: 4rem;
+}
+
+h2{
+    font-size: 3.2rem;
+}
+
+h3{
+    font-size: 2.8rem;
+}
+
+h4{
+    font-size: 2.4rem;
+}
+
+h5{
+    font-size: 2rem;
+}
+
+h6{
+    font-size: 1.6rem;
+}
 .s1,
 .s3 {
     background-color: var(--bgColor1);
@@ -46,12 +74,46 @@ h6 {
     text-align: center;
 }
 
-@media screen and (max-width:120rem) {
+.s1__content--header{
+    min-height: 10rem;
+    border: 2px dashed var(--decorate);
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.s1__content--nav{
+    background-color: var(--bgColor2);
+    border: 1px solid var(--decorate);
+    color: var(--secondaryColor);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 4rem 20rem;
+    grid-template-areas: "main main" "left right";
+}
+
+.nav__main{
+    grid-area: main;
+    border: 3px dashed yellowgreen;
+}
+
+.nav__left{
+    grid-area: left;
+    border: 3px dashed purple;
+}
+
+.nav__right{
+    grid-area: right;
+    border: 3px dashed blue;
+}
+
+@media screen and (max-width:1200px) {
 
     .s1__content,
     .s2__content,
     .s3__content,
     .s4__content {
-        width: 95%
+        width: 95%;
+        margin: 0 auto;
     }
 }
