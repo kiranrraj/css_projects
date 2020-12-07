@@ -8,6 +8,34 @@ body{
     color: aliceblue;
 }
 
+.heading_site{
+    text-align: center;
+    letter-spacing: 0.2rem;
+    font-size: 3.2rem;
+    text-transform: uppercase;
+    color: turquoise;
+    width: max-content;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+.heading_site::before,
+.heading_site::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 3rem;
+    height: 0.2rem;
+    background:tomato;
+}
+
+.heading_site::before{
+    left: -15%;
+}
+.heading_site::after{
+    right: -15%;
+}
+
 main {
     display: grid;
     grid-template-columns: 1fr repeat(12, minmax(auto, 60px)) 1fr;
@@ -66,8 +94,8 @@ main {
 .card__title{
     margin-bottom: 1rem;
     text-align: center;
-    color: whitesmoke;
-    font-size: 1.1rem;
+    color: goldenrod;
+    font-size: 1.5rem;
     text-shadow: 3px 2px 2px black;
 }
 
@@ -75,6 +103,10 @@ main {
     display: flex;
     align-self: flex-end;
     align-items: center;
+}
+
+.box{
+    padding: 0.5rem;
 }
 
 .card__price{
@@ -85,6 +117,7 @@ main {
     color: yellowgreen;
     text-align: center;
 }
+
 
 .card__price:hover{
     color: #32323b;
@@ -98,9 +131,33 @@ main {
     }
 }
 
+@media only screen and (max-width: 650px){
+    h1.heading_site{
+        font-size: 2.5rem;
+    }
+
+    .heading_site::before{
+        left:-5% ;
+        width: 1rem;
+    }
+    .heading_site::after{
+        right: -5%;
+        width: 1rem;
+    }
+}
+
 @media only screen and (max-width: 500px){
     main{
         grid-template-columns: 10px repeat(6, 1fr) 10px;
+    }
+
+    h1.heading_site{
+        font-size: 1.5rem;
+    }
+
+    h1.heading_site:after,
+    h1.heading_site::before{
+        content: none;
     }
 
     .cards {
