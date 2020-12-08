@@ -69,13 +69,17 @@ a{
     position: absolute;
     top: 0%;
     right: 0;
-    background-color: var(--color-text-p);
+    background-color: var(--color-primary);
 }
+
 nav{
     font-size: 1.6rem;
     text-transform: uppercase;
-
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 }
+
+
 h1{
     padding: 0 1rem;
     color:var(--color-text-s);
@@ -85,7 +89,6 @@ ul{
     display: flex;
     list-style: none;
     justify-content: space-around;
-    
 }
 
 li{
@@ -95,14 +98,21 @@ li{
 
 li a {
     text-decoration: none;
-    color:var(--color-text-s);
     transition: all 0.3s linear;
     text-shadow: 2px 2px 2px var(--color-text-p);
 }
 
+.nav_left{
+    display: flex;
+}
+
+.nav_right{
+    grid-column: 4/4;
+}
+
 a:hover,
 a:focus{
-    color: var(--color-text-p);
+    color: royalblue;
 }
 
 h2,h3{
