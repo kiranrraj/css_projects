@@ -1,0 +1,105 @@
+
+body {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+.main {
+    font-size: 36px;
+    font-weight: 100;
+    color: tomato;
+  }
+  .main div {
+    overflow: hidden;
+    position: relative;
+    float: right;
+    height: 65px;
+    padding-top: 10px;
+    margin-top: -10px;
+  }
+  .main div li {
+    font-family: Serif;
+    color: #ccc;
+    font-weight: 700;
+    padding: 0 10px;
+    height: 45px;
+    margin-bottom: 45px;
+    display: block;
+  }
+
+  .words{
+    -webkit-animation: dropword 5s ease-in infinite;
+            animation: dropword 5s ease-in infinite;
+  }
+  
+
+  @-webkit-keyframes dropword{
+    0% {
+      margin-top: -360px;
+    }
+    5% {
+      margin-top: -270px;
+    }
+    25% {
+      margin-top: -270px;
+    }
+    30% {
+      margin-top: -180px;
+    }
+    50% {
+      margin-top: -180px;
+    }
+    55% {
+      margin-top: -90px;
+    }
+    75% {
+      margin-top: -90px;
+    }
+    80% {
+      margin-top: 0px;
+    }
+    99.99% {
+      margin-top: 0px;
+    }
+    100% {
+      margin-top: -270px;
+    }
+  }
+  @keyframes dropword{
+    0% {
+      margin-top: -360px;
+    }
+    5% {
+      margin-top: -270px;
+    }
+    25% {
+      margin-top: -270px;
+    }
+    30% {
+      margin-top: -180px;
+    }
+    50% {
+      margin-top: -180px;
+    }
+    55% {
+      margin-top: -90px;
+    }
+    75% {
+      margin-top: -90px;
+    }
+    80% {
+      margin-top: 0px;
+    }
+    99.99% {
+      margin-top: 0px;
+    }
+    100% {
+      margin-top: -270px;
+    }
+  }
+ 
+  
