@@ -1,0 +1,22 @@
+:root {
+    --dark_light:#3f704d;
+    --bright:#39ff14;
+}
+
+html{
+    font-size: 10px;
+}
+
+.top__contactNav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--dark_light);
+    height: 3.5rem;
+    font-size: 1.6rem;
+    color: white;
+}
+
+.top__contactNav span:hover {
+    color:var(--bright) ;
+}
