@@ -6,7 +6,7 @@
 
 body{
     max-height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .aboutUs{
@@ -17,9 +17,7 @@ body{
 }
 
 .aboutUs__content{
-    display: grid;
-    grid-template-columns: 40% 60%;
-    grid-gap: 1rem;
+    display: flex;
 }
 
 .aboutUs__head{
@@ -49,9 +47,7 @@ body{
 }
 
 .stack{
-    margin-left: 2rem;
     width:400px;
-    padding: 1rem;
     position: relative;
 }
 
@@ -60,6 +56,7 @@ body{
     position: absolute;
     top: 0;
     left: 0;
+    padding: 1rem;
     transition: all ease-in-out 1s;
 }
 
@@ -87,11 +84,41 @@ body{
 	transform-origin: 100% 100%;
 }
 
-.content__right{
-    grid-column: 2/3;
-}
-
 .content__right p{
     padding: 1rem 2rem 0 1rem;
     font-size: 1.2rem;
+}
+
+
+@media screen and (max-width:750px){
+    .content__right p {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width:650px){
+    .aboutUs__content{
+        flex-direction: column;
+    }
+
+    .content__left{
+        margin: 0 auto;
+    }
+
+    .content__right p {
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width:450px){
+
+    .content__left{
+        height: 280px;
+        width: 280px;
+    }
+    
+    .stack{
+        width:280px;
+        position: relative;
+    }
 }
