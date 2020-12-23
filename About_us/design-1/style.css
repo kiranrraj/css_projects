@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: gray;
+}
+
+.about-us{
+    height: 100vh;
+    background: url('./hero.jpg') no-repeat;
+    background-size: 55%;
+    background-color: honeydew;
+    overflow: hidden;
+    padding: 8rem 0;
+}
+
+.about-us__inner{
+    width: 55%;
+    float: right;
+    padding: 5rem;
+    background-color: lavender;
+}
+
+.inner__head{
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.inner__text{
+    margin-bottom: 2rem;
+    color: blueviolet;
+    text-align: justify;
+    line-height: 1.6rem;
+    font-size: 14px;
+}
+
+.inner__highlights{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+@media screen and (max-width:1200px){
+    .about-us{
+        padding: 6rem;
+    }
+}
+
+@media screen and (max-width:1000px){
+    .about-us{
+        background-size: 100%;
+        padding: 6rem 2rem;
+    }
+    .about-us__inner{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:700px){
+    .inner__text{
+        font-size: 13px;
+        line-height: 1.3rem;
+    }
+    .inner__highlights{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width:600px){
+
+    .about-us__inner{
+        padding: 1rem;
+    }
+
+    .inner__highlights{
+        font-size: 14px;
+    }
+
+    .inner__head{
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
