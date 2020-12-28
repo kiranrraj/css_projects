@@ -36,9 +36,41 @@ header {
     content: "";
     width: 2px;
     height: 100%;
-    background-color: tomato;
+    background-color: #ffa555;
     position: absolute;
     left: -1rem;
+}
+
+.logo{
+    height: 100px;
+    width: auto;
+    float: left;
+    margin-top: 0.5rem;
+}
+
+.nav__container{
+    float: right;
+    list-style: none;
+}
+
+.nav__container li {
+    display: inline-block;
+    margin-top: 2.5rem;
+    padding: 5px 1rem;
+}
+
+.nav__container li a:link,
+.nav__container li a:visited {
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.2s;
+}
+
+.nav__container li a:hover,
+.nav__container li a:active{
+    color: #ffa555;
+    text-shadow: 1px 1px 2px black ;
+    border-bottom: 2px solid #ffa555;
 }
 
 h1{
@@ -75,25 +107,25 @@ h2{
 
 .btn-full:link,
 .btn-full:visited{
-    background-color: transparent; 
-    border: 2px solid orange;
+    background-color: #ffa555;
+    border: 2px solid #fff;
     transition: all 0.2s ease-in;
 }
 
 .btn-ghost:link,
 .btn-ghost:visited{
-    border: 2px solid skyblue;
+    border: 2px solid #ffa555;
     box-sizing: border-box;
 }
 
 .btn-full:hover,
 .btn-full:active{
-    background-color: #ffa555;
-    border: 2px solid #fff;
+    background-color: transparent;
+    border: 2px solid #ffa555;
 }
 
 .btn-ghost:hover,
 .btn-ghost:active{
-    background-color: #18b6f5;
+    background-color: #ffa555;
     border: 2px solid #fff;
 }
