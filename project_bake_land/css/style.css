@@ -32,6 +32,68 @@ header {
     transform: translate(-50%, -50%);
 }
 
+.hero-text-box::before{
+    content: "";
+    width: 2px;
+    height: 100%;
+    background-color: tomato;
+    position: absolute;
+    left: -1rem;
+}
+
 h1{
     margin: 0;
+    color: #fff;
+    font-size: 2.4rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    word-spacing: 3px;
+    text-shadow: 1px 1px 1px black;
+}
+
+h2{
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 3px;
+    font-size: 1.8rem;
+    color: #fff;
+    margin-top: 0.3rem;
+}
+
+.btn:link,
+.btn:visited{
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    font-weight: 300;
+    text-decoration: none;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    color: #fff;
+}
+
+.btn-full:link,
+.btn-full:visited{
+    background-color: transparent; 
+    border: 2px solid orange;
+    transition: all 0.2s ease-in;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited{
+    border: 2px solid skyblue;
+    box-sizing: border-box;
+}
+
+.btn-full:hover,
+.btn-full:active{
+    background-color: #ffa555;
+    border: 2px solid #fff;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active{
+    background-color: #18b6f5;
+    border: 2px solid #fff;
 }
