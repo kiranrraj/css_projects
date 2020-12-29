@@ -131,7 +131,8 @@ header {
 }
 
 .section-features{
-    margin-top: 2rem;
+    margin: 2rem 1rem 0;
+    height: 85vh;
 }
 
 .features__head{
@@ -139,4 +140,118 @@ header {
     letter-spacing: 1px;
     word-spacing: 4px;
     font-weight: 300;
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.features__head::after{
+    content: " ";
+    display: block;
+    width: 5rem;
+    height: 2px;
+    background-color: #ffa555;
+    margin: 0.5rem auto 0;
+}
+
+.features__para{
+    margin-bottom: 2rem;
+}
+
+.features__content{
+    padding: 1rem;
+}
+
+.features__content i {
+    color: #ffa555;
+    text-align: center;
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.features__content h3 {
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.features__content h3::after{
+    content: " ";
+    display: block;
+    width: 5rem;
+    height: 2px;
+    background-color: #ffa555;
+    margin: 0.5rem auto 0;
+}
+
+.features__content p{
+    position: relative;
+    font-size: 0.8rem;
+    padding: 0 1rem;
+}
+
+.features__content p::before{
+    content: " ";
+    display: block;
+    position: absolute;
+    left: -1rem;
+    margin-right: 1rem;
+    width: 1px;
+    height: 100%;
+    background-color: #ffa555;
+    margin: 0.5rem auto 0;
+}
+
+.features__content .one::before{
+    content: none;
+}
+
+/*  */
+/* Pizza Section */
+/*  */
+
+.section-gallery{
+    margin: 2rem 1rem 0;
+    height: 85vh;
+}
+
+.gallery__head{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 4px;
+    font-weight: 300;
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.gallery__head::after{
+    content: " ";
+    display: block;
+    width: 5rem;
+    height: 2px;
+    background-color: #ffa555;
+    margin: 0.5rem auto 0;
+}
+
+.gallery__pizza{
+    list-style: none;
+    width: 100%;
+    overflow: hidden;
+}
+
+.gallery__pizza li {
+    display: block;
+    float: left;
+    width: 25%;
+    padding: 0.2rem 0.3rem;
+}
+
+.pizza__img img{
+    width: 100%;
+    filter: blur();
+    transition: all 0.5s ease;
+}
+
+.pizza__img:hover img {
+    transform: scale(1.1);
 }
