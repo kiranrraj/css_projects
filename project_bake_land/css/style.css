@@ -136,6 +136,7 @@ header {
 
 .section-features{
     max-height: 100vh;
+    margin: 2rem 1rem;
 }
 
 .features__head{
@@ -221,7 +222,7 @@ header {
         /*  */
 
 .section__gallery-cake{
-    margin: 2rem 0;
+    margin: 2rem 1rem;
     max-height: 100vh;
 }
 
@@ -359,13 +360,12 @@ header {
 }
 
 
-
 /*  */
 /* Pizza Section */
 /*  */
 
 .section__gallery-pizza{
-    margin: 2rem 1rem 0;
+    margin: 2rem 1rem;
     max-height: 100vh;
 }
 
@@ -429,3 +429,128 @@ header {
 /* Order */
 /*  */
 
+.section__order{
+    margin: 1rem 0;
+    height: 100vh;
+}
+
+.order__head{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 4px;
+    font-weight: 300;
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.order__head::after{
+    content: " ";
+    display: block;
+    width: 5rem;
+    height: 2px;
+    background-color: #ffa555;
+    margin: 0.5rem auto 0;
+}
+
+.order__sub-head{
+    margin: 2rem 0 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.order__sub-head h3 {
+    font-weight: 300;
+    font-size: 1.5rem;
+    text-align: center;
+    position: relative;
+    width: fit-content;
+}
+
+.order__sub-head h3::before,
+.order__sub-head h3::after{
+    content: " ";
+    display: block;
+    width: 0.1rem;
+    height: 100%;
+    background-color: #ffa555;
+    position: absolute;
+    top: 0;
+}
+
+.order__sub-head h3::before{
+    left: -1rem;
+}
+
+.order__sub-head h3::after{
+    right: -1rem;
+}
+
+.span-1-of-3{
+    float: left;
+}
+
+.span-1-of-3 h3{
+    margin: 0.5rem 0;
+}
+
+.full-width{
+    width: 100%;
+}
+
+.span-1-of-3 p span{
+    display: block;
+    margin-top: 0.5rem;
+    color: #ffa555;
+    background-color: #555;
+    width: fit-content;
+    padding: 0.2rem 0.5rem;
+}
+
+.span-1-of-3 a {
+    text-decoration: none;
+    color: #ffa555;
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-shadow: 1px 1px 1px black;
+    display: block;
+    margin-top: 0.5rem;
+    background-color: #555;
+    width: fit-content;
+    padding: 0.2rem 0.5rem;
+}
+
+.span-1-of-4{
+    float: left;
+}
+
+.place__head {
+    font-weight: 300;
+    font-size: 1.5rem;
+    width: max-content;
+    position: relative;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.order__place{
+    display: flex;
+}
+
+.place__head::before,
+.place__head::after{
+    content: " ";
+    display: block;
+    width: 0.1rem;
+    height: 100%;
+    background-color: #ffa555;
+    position: absolute;
+    top: 0;
+}
+
+.place__head::before{
+    left: -1rem;
+}
+
+.place__head::after{
+    right: -1rem;
+}
