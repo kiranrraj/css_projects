@@ -425,9 +425,8 @@ header {
     transform: translateY(0);
 }
 
-/*  */
-/* Order */
-/*  */
+
+/* --------------Order-------------- */
 
 .section__order{
     margin: 1rem 0;
@@ -449,11 +448,14 @@ header {
     width: 5rem;
     height: 2px;
     background-color: #ffa555;
-    margin: 0.5rem auto 0;
+    margin: 1rem auto 0;
+}
+
+.order__para{
+    margin-top: 0.5rem;
 }
 
 .order__sub-head{
-    margin: 2rem 0 1rem;
     display: flex;
     justify-content: center;
 }
@@ -464,13 +466,13 @@ header {
     text-align: center;
     position: relative;
     width: fit-content;
+    margin: 2.5rem 0;
 }
 
-.order__sub-head h3::before,
-.order__sub-head h3::after{
+.order__sub-head h3::before{
     content: " ";
     display: block;
-    width: 0.1rem;
+    width: 0.2rem;
     height: 100%;
     background-color: #ffa555;
     position: absolute;
@@ -481,16 +483,26 @@ header {
     left: -1rem;
 }
 
-.order__sub-head h3::after{
-    right: -1rem;
-}
-
 .span-1-of-3{
     float: left;
 }
 
 .span-1-of-3 h3{
-    margin: 0.5rem 0;
+    margin-bottom: 1rem;
+    position: relative;
+    text-align: center;
+    font-weight: 300;
+}
+
+.span-1-of-3 h3::after{
+    content: " ";
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    background-color: #ffa555;
+    position: absolute;
+    bottom: 0rem;
+    border-radius: 100%;
 }
 
 .full-width{
@@ -519,8 +531,12 @@ header {
     padding: 0.2rem 0.5rem;
 }
 
+
+/* ------------Places------------ */
+
 .span-1-of-4{
     float: left;
+    padding: 0.2rem 0.5rem;
 }
 
 .place__head {
@@ -528,19 +544,20 @@ header {
     font-size: 1.5rem;
     width: max-content;
     position: relative;
-    text-align: center;
-    margin: 2rem 0;
+    margin: 2.5rem 0;
 }
 
 .order__place{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.place__head::before,
-.place__head::after{
+.place__head::before{
     content: " ";
     display: block;
-    width: 0.1rem;
+    width: 0.2rem;
     height: 100%;
     background-color: #ffa555;
     position: absolute;
@@ -551,6 +568,95 @@ header {
     left: -1rem;
 }
 
-.place__head::after{
-    right: -1rem;
+.place{
+    position: relative;
+    padding-left: 0.1rem;
+    text-align: center;
+}
+
+.place i {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    color: #ffa555;
+}
+
+.place h3 {
+    margin-bottom: 0.5rem;
+}
+
+.place::after{
+    content: " ";
+    display: block;
+    width: 0.1rem;
+    height: 100%;
+    background-color: #ffa555;
+    position: absolute;
+    top:0;
+    left:0;
+}
+
+.place:nth-child(1)::after{
+    content: none;
+}
+
+/* Testimonials */
+
+.section__testimonials{
+    margin: 1rem 0;
+    height: 100vh;
+}
+
+.testimonials__head{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 4px;
+    font-weight: 300;
+    text-align: center;
+    width: 100%;
+    margin: 3rem 0;
+}
+
+.testimonials__head::after{
+    content: " ";
+    display: block;
+    width: 5rem;
+    height: 2px;
+    background-color: #ffa555;
+    margin: 1rem auto 0;
+}
+
+.testimonials{
+    position: relative;
+    padding: 0 2rem;
+    text-align: left;
+    margin-top: 2rem;
+}
+
+.testimonials::after{
+    content: " ";
+    display: block;
+    width: 0.1rem;
+    height: 100%;
+    background-color: #ffa555;
+    position: absolute;
+    top:0;
+    left:0;
+}
+
+.testimonials:nth-child(1)::after{
+    content: none;
+}
+
+cite {
+    display: block;
+    margin-top: 1rem;
+    text-decoration: underline;
+    text-decoration-color: #ffa555;
+    font-style: normal;
+    text-underline-offset: 4px;
+}
+
+cite i {
+    padding-right: 1rem;
+    color: #ffa555;
 }
