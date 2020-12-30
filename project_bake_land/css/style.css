@@ -137,7 +137,12 @@ header {
 /*  */
 
 .section-features{
-    margin: 2rem 1rem;
+    background: linear-gradient(to top, rgba(5,5,5,0.3), rgba(18, 235, 122, 0.7)), url('../img/features__hero.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+    padding-bottom: 3rem;
 }
 
 .features__head{
@@ -604,7 +609,7 @@ header {
 
 .section__testimonials{
     margin: 1rem 0;
-    background: linear-gradient(to top, rgba(5,5,5,0.3), rgba(18, 235, 122, 0.7)), url('../img/testimonials-hero.jpg');
+    background: linear-gradient(to top, rgba(5,5,5,0.3), rgba(255, 165, 85, 0.7)), url('../img/testimonials-hero.jpg');
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -626,7 +631,7 @@ header {
     display: block;
     width: 5rem;
     height: 2px;
-    background-color: #ffa555;
+    background-color: rgb(255, 165, 85);
     margin: 1rem auto 0;
 }
 
@@ -688,8 +693,12 @@ blockquote::before{
 
 
 /*  */
-/* ----------Plan Section--------- */
+/* ----------News letter Section--------- */
 /*  */
+
+.section__news-letter{
+    padding-bottom: 3rem;
+}
 
 .news-letter__head {
     font-weight: 300;
