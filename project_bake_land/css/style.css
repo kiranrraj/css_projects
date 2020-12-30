@@ -30,6 +30,8 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
 }
 
 .hero-text-box::before{
@@ -135,7 +137,6 @@ header {
 /*  */
 
 .section-features{
-    max-height: 100vh;
     margin: 2rem 1rem;
 }
 
@@ -223,7 +224,6 @@ header {
 
 .section__gallery-cake{
     margin: 2rem 1rem;
-    max-height: 100vh;
 }
 
 .cake__head{
@@ -366,7 +366,6 @@ header {
 
 .section__gallery-pizza{
     margin: 2rem 1rem;
-    max-height: 100vh;
 }
 
 .gallery__head{
@@ -430,7 +429,6 @@ header {
 
 .section__order{
     margin: 1rem 0;
-    height: 100vh;
 }
 
 .order__head{
@@ -483,18 +481,18 @@ header {
     left: -1rem;
 }
 
-.span-1-of-3{
+.order__area .span-1-of-3{
     float: left;
 }
 
-.span-1-of-3 h3{
+.order__area .span-1-of-3 h3{
     margin-bottom: 1rem;
     position: relative;
     text-align: center;
     font-weight: 300;
 }
 
-.span-1-of-3 h3::after{
+.order__area .span-1-of-3 h3::after{
     content: " ";
     display: block;
     width: 1rem;
@@ -534,7 +532,7 @@ header {
 
 /* ------------Places------------ */
 
-.span-1-of-4{
+.order__place .span-1-of-4{
     float: left;
     padding: 0.2rem 0.5rem;
 }
@@ -599,11 +597,18 @@ header {
     content: none;
 }
 
-/* Testimonials */
+
+                  /*  */
+/* ------------Testimonials----------------- */
+                  /*  */
 
 .section__testimonials{
     margin: 1rem 0;
-    height: 100vh;
+    background: linear-gradient(to top, rgba(5,5,5,0.3), rgba(18, 235, 122, 0.7)), url('../img/testimonials-hero.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    color: #fff;
 }
 
 .testimonials__head{
@@ -625,13 +630,6 @@ header {
     margin: 1rem auto 0;
 }
 
-.testimonials{
-    position: relative;
-    padding: 0 2rem;
-    text-align: left;
-    margin-top: 2rem;
-}
-
 .testimonials::after{
     content: " ";
     display: block;
@@ -647,6 +645,11 @@ header {
     content: none;
 }
 
+blockquote{
+    font-size: 0.9rem;
+    position: relative;
+}
+
 cite {
     display: block;
     margin-top: 1rem;
@@ -654,9 +657,113 @@ cite {
     text-decoration-color: #ffa555;
     font-style: normal;
     text-underline-offset: 4px;
+    font-size: 1.1rem;
 }
 
 cite i {
-    padding-right: 1rem;
     color: #ffa555;
+    background-color: rgba(18, 235, 122, 0.3);
+    padding: 0.5rem;
+    border-radius: 100%;
+    margin-right: 0.5rem;
+}
+
+
+.testimonials__content .span-1-of-3{
+    float: left;
+    position: relative;
+    padding: 0 1rem;
+    text-align: justify;
+    margin-top: 2rem;
+}
+
+blockquote::before{
+    content:"\201C";
+    font-size: 3rem;
+    display: block;
+    position: absolute;
+    top: -1.5rem;
+
+}
+
+
+                  /*  */
+/* -----------Media Queries-------------- */
+                  /*  */
+
+@media only screen and (max-width: 800px){
+
+    html {
+        font-size: 18px;
+    }
+
+    .pizza__show,
+    .cake__show{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .features__content{
+        font-size: 0.8rem;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .features__content p::before,
+    .hero-text-box::before,
+    .place::after{
+        content: none;
+    }
+
+    .span-1-of-4{
+        width: 50%;
+    }
+
+    .span-1-of-3{
+        width: 100%;
+    }
+
+    .text-box__h1{
+        font-size: 1.75rem;
+    }
+
+    .text-box__h2{
+        font-size: 1.3rem;
+    }
+
+    .nav__container li {
+        padding: 0.5rem;
+    }
+}
+
+@media only screen and (max-width: 500px){
+
+    html {
+        font-size: 16px;
+    }
+
+    .pizza__show,
+    .cake__show{
+        grid-template-columns: 1fr;
+    }
+
+    .features__content{
+        font-size: 0.8rem;
+        grid-template-columns: 1fr;
+    }
+
+    .span-1-of-3,
+    .span-1-of-4{
+        width: 100%;
+    }
+
+    .text-box__h1{
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+        word-spacing: 1.5px;
+    }
+
+    .text-box__h2{
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+    }
 }
