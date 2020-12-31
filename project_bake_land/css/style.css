@@ -1227,3 +1227,46 @@ blockquote::before{
         word-spacing: 1px;
     }
 }
+                /*  */
+/* --------------Footer-------------- */
+                /*  */
+
+footer{
+    background-color: #3e3e3e;
+    color: #ffa555;
+    padding: 0.5rem;
+}
+
+.footer__main{
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-nav {
+    list-style: none;
+    display: flex;
+    flex-direction: row-reverse;
+    
+}
+
+.footer-nav li a{
+    background: none;
+    text-decoration: none;
+    color: #ffa555;
+    padding: 0 1rem;
+}
+
+.social__ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.social__ul li {
+    padding: 0 1rem;
+    color: #ed1c6f;
+}
+
+.copy{
+    display: block;
+}
