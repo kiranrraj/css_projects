@@ -155,6 +155,10 @@ header {
     margin: 3rem 0;
 }
 
+.features__container{
+    padding: 0 1rem;
+}
+
 .features__head::after {
     content: " ";
     display: block;
