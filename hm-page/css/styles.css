@@ -135,17 +135,28 @@ svg{
 .right{
   height: 100vh;
   position: absolute;
-  width: 49.5vw;
+  width: 50vw;
+  max-width:50%
 }
 
 .left{
   background-color: rgba(23,123,23,0.5);
+  border-right: 1px solid white;
+  transition: all 0.5s ease;
 }
 
 .right{
   background-color: rgba(23,123,213,0.5);
   right: 0;
+  border-left: 1px solid white;
+  transition: all 0.5s ease;
 }
+
+.section__head:hover .right,
+.section__head:hover .left{
+  width: 0;
+}
+
 
 .head__text{
   position: absolute;
