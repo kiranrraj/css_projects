@@ -1,10 +1,10 @@
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-.section__head{
+.section__head {
   color: #ffffff;
   min-height: 100vh;
   background-image: url('../images/hero_logo.jpg');
@@ -14,7 +14,7 @@
   position: relative;
 }
 
-.nav__container{
+.nav__container {
   position: absolute;
   top: 5%;
   left: 50%;
@@ -22,46 +22,77 @@
   z-index: 100;
 }
 
-svg{
+.logo{
+  padding: 0.5rem 0;
+}
+
+.logo::before,
+.logo::after{
+  content: "";
+  position: absolute;
+  background-color: #00f77a;
+  height: 0.1rem;
+  width: 50%;
+  /* top: 30%; */
+}
+
+.logo::before{
+  left:25%;
+  top:-25%;
+  z-index: -1;
+}
+
+.logo::after{
+  right: 25%;
+  top: 25%;
+  z-index: -1;
+  /* top: 0%;; */
+}
+
+.svg__top {
   width: 100%;
   height: 100%;
   position: absolute;
-  top: -30%;
+  top: -25%;
+  padding-bottom: 1rem;
 }
 
 .text {
   fill: none;
-  stroke-width: 0.5;
-  stroke-linejoin: round;
-  stroke-dasharray: 70 330;
-  stroke-dashoffset: 0;
-  -webkit-animation: stroke 6s infinite linear;
-  animation: stroke 6s infinite linear;
+  stroke-width: 0.3;
+  stroke-dasharray: 100 320;
+  -webkit-animation: stroke 5s infinite linear;
+  animation: stroke 5s infinite linear;
 }
+
 .text:nth-child(5n+1) {
-  stroke: #F2385A;
-  -webkit-animation-delay: -1.2s;
-  animation-delay: -1.2s;
+  stroke: #ff0fff;
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
 }
+
 .text:nth-child(5n+2) {
   stroke: #F5A503;
-  -webkit-animation-delay: -2.4s;
-  animation-delay: -2.4s;
+  -webkit-animation-delay: -2s;
+  animation-delay: -2s;
 }
+
 .text:nth-child(5n+3) {
-  stroke: #E9F1DF;
-  -webkit-animation-delay: -3.6s;
-  animation-delay: -3.6s;
+  stroke: #ff0000;
+  -webkit-animation-delay: -3s;
+  animation-delay: -3s;
 }
+
 .text:nth-child(5n+4) {
-  stroke: #56D9CD;
-  -webkit-animation-delay: -4.8s;
-  animation-delay: -4.8s;
+  stroke: #ffff00;
+  -webkit-animation-delay: -4s;
+  animation-delay: -4s;
 }
+
 .text:nth-child(5n+5) {
-  stroke: #3AA1BF;
-  -webkit-animation-delay: -6s;
-  animation-delay: -6s;
+  stroke: #00f77a;
+  -webkit-animation-delay: -5s;
+  animation-delay: -5s;
 }
 
 @-webkit-keyframes stroke {
@@ -69,6 +100,7 @@ svg{
     stroke-dashoffset: -400;
   }
 }
+
 @keyframes stroke {
   100% {
     stroke-dashoffset: -400;
@@ -82,86 +114,109 @@ svg{
   padding: 1rem;
 }
 
-.item{
+.item {
   padding: 1rem 0.5rem;
 }
 
 .pro,
-.cont{
+.cont {
   position: relative;
   text-decoration: none;
-  color: #fff;
+  color: green;
   margin-right: 0.5rem;
   font-size: 18px;
   text-transform: uppercase;
   padding: 0 0 3px 0;
 }
 
-.cont{
+.cont {
   margin-right: 0rem;
 }
 
 .pro:before,
-.cont:after{
+.cont:after {
   content: "";
   display: block;
   position: absolute;
   bottom: 0;
-  background-color: #fff;
+  background-color: green;
   width: 0%;
   height: 0.2rem;
   transition: all 0.3s ease;
 }
 
-.pro{
+.pro {
   left: 0;
 }
 
-.cont:after{
+.cont:after {
   right: 0;
 }
 
 .pro:hover:before,
-.pro:visited:hover{
+.pro:visited:hover {
   width: 100%;
 }
 
 .cont:hover:after,
-.cont:visited:hover{
+.cont:visited:hover {
   width: 100%;
 }
 
 .left,
-.right{
+.right {
   height: 100vh;
   position: absolute;
   width: 50vw;
-  max-width:50%
+  max-width: 50%;
+  opacity: 0;
 }
 
-.left{
-  background-color: rgba(23,123,23,0.5);
-  border-right: 1px solid white;
+.left,
+.right {
   transition: all 0.5s ease;
+  overflow: hidden;
+  text-align: right;
+  right: 0%;
+  /* z-index: 1000; */
 }
 
-.right{
-  background-color: rgba(23,123,213,0.5);
-  right: 0;
-  border-left: 1px solid white;
-  transition: all 0.5s ease;
-}
+/* Svg Mask Starts */
 
-.section__head:hover .right,
-.section__head:hover .left{
-  width: 0;
-}
-
-
-.head__text{
+.head__text {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 15vh;
+  z-index: 10;
 }
+
+.text__svg {
+  width: 100%;
+  height: 100%;
+}
+
+.svg__mask {
+  fill: rgba(255,255,255,1);
+}
+.text__main {
+  text-anchor: middle;
+  font-size: 80px;
+  font-weight: 600;
+}
+.text__sub {
+  text-anchor: middle;
+  letter-spacing: 8px;
+  font-size: 20px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.text__svg #base {
+  fill: rgba(255, 255, 255, 1);
+  -webkit-mask: url(#mask);
+          mask: url(#mask);
+}
+
+/* Svg Mask Ends */

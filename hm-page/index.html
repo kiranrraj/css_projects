@@ -23,7 +23,7 @@
         <nav class="navbar">
             <div class="nav__container">
                 <div class="logo">
-                    <svg viewBox="0 0 30 30">
+                    <svg class="svg__top" viewBox="0 0 30 30">
                         <!-- Symbol-->
                         <symbol id="s-text">
                           <text text-anchor="middle" x="55%" y="50%">H  M</text>
@@ -42,19 +42,48 @@
                 </ul>
             </div>
         </nav>
-        <div class="left"></div>
-        <div class="right"></div>
         <div class="head__text">
-            <h1>Hemanth Mohan</h1>
-            <h2>Graphics Designer</h2>
+            <svg class="text__svg">
+                <mask id="mask" x="0" y="0" width="100%" height="100%">
+                    <rect class="svg__mask"" x="0" y="0" width="100%" height="100%"/>
+                    <text class="text__main" x="50%" y="0" dy="1em">Hemanth Mohan</text>
+                    <text class="text__sub"" x="50%" y="0" dy="5.5em">Graphics Designer</text>
+                </mask>
+                 <rect id="base" x="0" y="0" width="100%" height="100%"/>
+            </svg>
         </div>
 
     </header>
-    <!-- Portfolio Section-->
-    <section class="page-section portfolio" id="portfolio">
-    </section>
     <!-- About Section-->
-    <section class="page-section bg-primary text-white mb-0" id="about">
+    <section class="section__about" id="about">
+        <div class="about__head">
+            <h2>About Us</h2>
+        </div>
+        <div class="about__para">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident explicabo nostrum 
+            obcaecati quam in delectus labore repudiandae reprehenderit, accusamus similique error 
+            velit dolorum nisi dolore ipsam tempore ut distinctio impedit minima. Explicabo iusto et, 
+            voluptates quae quisquam ad amet provident quos eveniet soluta, suscipit veniam doloribus 
+            excepturi saepe unde a adipisci quo at sit quam delectus natus cumque. Perferendis, fuga!
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident explicabo nostrum 
+            obcaecati quam in delectus labore repudiandae reprehenderit, accusamus similique error 
+            velit dolorum nisi dolore ipsam tempore ut distinctio impedit minima. Explicabo iusto et, 
+            voluptates quae quisquam ad amet provident quos eveniet soluta, suscipit veniam doloribus 
+            excepturi saepe unde a adipisci quo at sit quam delectus natus cumque. Perferendis, fuga!
+            </p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident explicabo nostrum 
+            obcaecati quam in delectus labore repudiandae reprehenderit, accusamus similique error 
+            velit dolorum nisi dolore ipsam tempore ut distinctio impedit minima. Explicabo iusto et, 
+            voluptates quae quisquam ad amet provident quos eveniet soluta, suscipit veniam doloribus 
+            excepturi saepe unde a adipisci quo at sit quam delectus natus cumque. Perferendis, fuga!
+            </p>
+        </div>
+    </section>
+    <!-- My Work Section-->
+    <section class="section__mywork" id="mywork">
+        <div class="mywork__head">
+            <h2>My Works</h2>
+        </div>
     </section>
     <!-- Contact Section-->
     <section class="page-section" id="contact">
