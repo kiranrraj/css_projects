@@ -223,7 +223,95 @@
 .text__svg #base {
   fill: rgba(255, 255, 255, 1);
   -webkit-mask: url(#mask);
-          mask: url(#mask);
+  mask: url(#mask);
 }
 
 /* Svg Mask Ends */
+
+
+/*  */
+/* About Section */
+
+.about__head{
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  color: #0f11ff;
+  text-transform: uppercase;
+}
+
+.about__head:before{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  transform: translate(-50%,-50%);
+  content: "WHO AM I?";
+  color: rgba(20, 125, 55, 0.3);
+  font-size: 100px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.about__para{
+  padding:1rem;
+  font-size: 18px;
+  margin: 0 2rem 3rem 2rem;
+}
+
+/* About Section Ends */
+/*  */
+
+
+/*  */
+/* My Works Section */
+
+.mywork__head{
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  color: #ff7f00;
+  text-transform: uppercase;
+}
+
+.mywork__head:before{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  content: "WHAT I DID?";
+  color: rgba(20, 125, 55, 0.3);
+  width: 100%;
+  font-size: 100px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.mywork__para{
+  padding:1rem;
+  margin: 0 3rem;
+}
+
+.gallery{
+  padding: 1rem;
+  width: 100vw;
+  max-width: 100%;
+}
+
+.gallery__grid{
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.image__container{
+  max-width: 100%;
+}
+
+.image {
+  width: 100%;
+}
+
