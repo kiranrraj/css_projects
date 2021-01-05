@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page Kiranrajr</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="animation__container">
+            <div class="central">
+                <svg height="200" width="200" class="circle__svg">
+
+                    <circle class="circle svg__out one" cx="100" cy="100" r="95" stroke-width="10" fill="none" />
+
+                    <!--  -->
+                    <circle class="circle svg__fill two" cx="100" cy="100" r="75" stroke-width="10" fill="none" />
+
+                    <!--  -->
+                    <circle class="circle svg__fill three" cx="100" cy="100" r="55" stroke-width="10" fill="none" />
+
+                    <!--  -->
+                    <circle class="circle svg__fill four" cx="100" cy="100" r="35" stroke-width="10" fill="none" />
+
+                    <!--  -->
+                    <circle class="circle svg__fill five" cx="100" cy="100" r="15" stroke-width="10" fill="none" />
+                    
+                    
+                    <circle class="circle svg__reverse r_one" cx="100" cy="100" r="85" stroke-width="10" fill="none" />
+
+                    <!--  -->
+                    <circle class="circle svg__reverse r_two" cx="100" cy="100" r="65" stroke-width="10" fill="none" />
+
+                    <!--  -->
+                    <circle class="circle svg__reverse r_three" cx="100" cy="100" r="45" stroke-width="10" fill="none" />
+
+                    <!--  -->
+                    <circle class="circle svg__reverse r_four" cx="100" cy="100" r="25" stroke-width="10" fill="none" />
+
+                 
+                    <!-- <text x="50%" y="50%" 
+                    dominant-baseline="middle" 
+                    text-anchor="middle" 
+                    fill="#111">Loading...</text> -->
+
+                    </svg>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        const circles = document.querySelectorAll('.svg__fill');
+        const reverse_circles = document.querySelectorAll('.svg__reverse');
+        const out = document.querySelector('.svg__out')
+        const duration = 3;
+
+        circles.forEach(circle => {
+            const radius = circle.r.baseVal.value;
+            const circum = radius * Math.PI * 2;
+            const length = circle.getTotalLength();
+            circle.style.setProperty('--transitionDuration', `${duration}s`);
+            circle.style.setProperty('--initialStroke', circum);
+
+            setTimeout(() => {
+                circle.style.strokeDashoffset = (-length * 3)-3;
+                
+            });
+
+            setTimeout(()=>{
+                circle.style.opacity="0"
+                out.style.opacity="0";
+            },2900);
+        });
+
+        reverse_circles.forEach(r_circle => {
+            const radius = r_circle.r.baseVal.value;
+            const circum = radius * Math.PI * 2;
+            const length = r_circle.getTotalLength();
+            r_circle.style.setProperty('--transitionDuration', `${duration}s`);
+            r_circle.style.setProperty('--initialStroke', circum);
+
+            setTimeout(() => {
+                r_circle.style.strokeDashoffset = (length * 3)+3;
+            });
+
+            setTimeout(()=>{
+                r_circle.style.opacity="0"
+            },2900);
+        });
+
+    </script>
+</body>
+
+</html>

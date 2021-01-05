@@ -1,0 +1,90 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    max-height: 100%;
+    max-width: 100%;
+    background: #000000;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #000000);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.animation__container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.svg__fill {
+    /* stroke: red; */
+    --initialStroke: 0;
+    --transitionDuration: 0;
+    stroke-opacity: 1;
+    stroke-dasharray: var(--initialStroke);
+    stroke-dashoffset: var(--initialStroke);
+    transition: stroke-dashoffset var(--transitionDuration) ease;
+}
+
+.svg__reverse {
+    /* stroke: red; */
+    --initialStroke: 0;
+    --transitionDuration: 0;
+    stroke-opacity: 1;
+    stroke-dasharray: var(--initialStroke);
+    stroke-dashoffset: var(--initialStroke);
+    transition: stroke-dashoffset var(--transitionDuration) ease;
+}
+
+.circle__svg {
+    transform: rotate(-90deg);
+    stroke-linecap: round;
+}
+
+
+.one {
+    stroke: #F51720;
+}
+
+.r_one {
+    stroke: #6A0;
+}
+
+.two {
+    stroke: #F8D210;
+}
+
+.r_two {
+    stroke: #2FF3E0;
+}
+
+.three {
+    stroke: #FFB067;
+}
+
+.r_three {
+    stroke: #FFE9E4;
+}
+
+.four {
+    stroke: #FF7077;
+}
+
+.r_four {
+    stroke: #7A871E;
+}
+
+.five {
+    stroke: #F6A21E;
+}
