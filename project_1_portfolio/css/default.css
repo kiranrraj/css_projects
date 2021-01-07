@@ -78,6 +78,8 @@ h6{
 .s4__content {
     max-width: 120rem;
     text-align: center;
+    height: -webkit-max-content;
+    height: -moz-max-content;
     height: max-content;
 }
 

@@ -17,8 +17,7 @@ html {
     justify-content: center;
     align-items: center;
     position: relative;
-    background: #1488CC;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #2B32B2, #1488CC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: #1488CC;  /* fallback for old browsers */  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #2B32B2, #1488CC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
@@ -44,13 +43,16 @@ html {
 }
 
 .data__inlayer{
+    width: -webkit-max-content;
+    width: -moz-max-content;
     width: max-content;
     transition: all 0.5s linear;
     transform-style: preserve-3d;
 }
 
 .data__inlayer::after{
-    filter: blur(100px);
+    -webkit-filter: blur(100px);
+            filter: blur(100px);
     height: 100px;
     width: 100%;
     background-color: #555;
