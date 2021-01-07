@@ -22,22 +22,6 @@ html {
     background: linear-gradient(to right, #2B32B2, #1488CC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.nav{
-    position: absolute;
-    top: 0;
-}
-
-.navbar{
-    width: 100%;
-    list-style: none;
-    display: flex;
-    margin-top: 2rem;
-}
-
-.item{
-    padding: 1rem;
-    font-size: 20px;
-}
 
 .landing__data{
     width: 100%;
