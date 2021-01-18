@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        svg{
+            height: 300px;
+            width: 300px;
+        }
+        line{
+            transition: all 2s ease;
+        }
+        .one, .two{
+            animation: rotateLine 2s ease infinite;
+            transform-origin: 0%;
+        }
+
+        @keyframes rotateLine{
+            0%{
+                transform: rotate(0);
+            }
+            50%{
+                transform: rotate(360deg);
+            }
+            100%{
+                transform: rotate(0deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <svg>
+        <polyline points="10,10 40,10 40,40 70,40 70,70 100,70" fill="none" stroke="black" stroke-width="3">
+    </svg>
+    <svg>
+        <polygon points="60,10 140,10 190,70 190,130 140,190 70,190 10,130 10,70" fill="red" stroke="green" stroke-width="5" />
+    </svg>
+</body>
+</html>

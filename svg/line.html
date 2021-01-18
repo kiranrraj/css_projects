@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        line{
+            transition: all 2s ease;
+        }
+        .one, .two{
+            animation: rotateLine 2s ease infinite;
+            transform-origin: 0%;
+        }
+
+        @keyframes rotateLine{
+            0%{
+                transform: rotate(0);
+            }
+            50%{
+                transform: rotate(360deg);
+            }
+            100%{
+                transform: rotate(0deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <svg>
+        <line class="one" x1="40" y1="50" x2="125" y2="135" stroke="violet" stroke-width="3" />
+        <line class="two" x1="40" y1="135" x2="125" y2="50" stroke="red" stroke-width="3" />
+    </svg>
+</body>
+</html>
