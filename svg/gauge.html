@@ -49,7 +49,14 @@
         d="M16.652,65.29 C8.984,58.838,4.112,49.171,4.112,38.366c0-19.424,15.746-35.171,35.17-35.171c19.424,
         0,35.17,15.747,35.17,35.171c0,10.805-4.872,20.473-12.54,26.924"/>
 
-        <text class="text_b" transform="matrix(1 0 0 1 21.3916 51.7891)" fill="#000000">completion</text>
+        <!-- <text class="text_b" transform="matrix(1 0 0 1 21.3916 51.7891)" fill="#000000">completion</text> -->
     </svg>
+    <script>
+        var path = document.querySelector('.overlap');
+        var text_u = document.querySelector('.text_u');
+        var length = path.getTotalLength();
+        console.log(length);
+        console.log(text_u.innerHTML);
+    </script>
 </body>
 </html>
