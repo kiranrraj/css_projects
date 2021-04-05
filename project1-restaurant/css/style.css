@@ -1,0 +1,306 @@
+*, *::after, *::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration: none;
+    color:inherit;
+}
+
+body{
+    font-size: 1.6rem;
+}
+
+.scrollup{
+    position: absolute;
+    display: none;
+}
+
+/* Header */
+.section__header{
+    width: 100%;
+    margin-top: 2rem;
+    height: 60px;
+    position: relative;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.svg__wave{
+    position: absolute;
+    z-index: -1;
+    top: -2rem;
+}
+.nav__container{
+    padding: 2rem;
+    display: flex;
+}
+
+.nav__logo{
+    position: absolute;
+    left: 2rem;
+    color: #fff;
+}
+
+.nav__ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav__ul .item  {
+    padding: 0 2rem;
+}
+
+.nav .link:hover {
+    color: #fff;
+}
+
+.theme__toggle{
+    position: absolute;
+    right: 2rem;
+}
+
+.nav__toggle{
+    position: absolute;
+    right: 2rem;
+    font-size: 2rem;
+    display: none;
+}
+
+.section__home{
+    height: 90vh;
+    width: 100vw;
+}
+
+.home__container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.home__text, .home__img{
+    padding: 2rem;
+    position: relative;
+}
+
+.home__img img {
+    width: 600px;
+    margin-left: 5rem;
+    margin-top: 10rem;
+}
+
+.home__hero {
+    margin-left: -10rem;
+}
+
+.home__text{
+    margin-top: 20rem;
+    margin-left: 2rem;
+}
+
+.home__title{
+    font-size: 4.5rem;
+    color: #0099ff;
+}
+
+.home__sub {
+    margin-top: -2rem;
+    margin-left: 1rem;
+}
+
+.home__sub span {
+    font-size: 3rem;
+    color: red;
+}
+
+.home__btns{
+    display: flex;
+}
+
+.home__btn1, .home__btn2{
+    margin-top: 2rem;
+    display: block;
+    width: 150px;
+    text-align: center;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    background-color: #0099ff;
+    margin-left: 4rem;
+    border: 2px solid #0099ff;
+    transition: all 0.3s ease;
+}
+
+.home__btn2, .home__btn1:hover {
+    background-color: transparent;
+    color: #0099ff;
+    border: 2px solid #0099ff;
+    transition: all 0.3s ease;
+}
+
+.home__btn1:hover {
+    background-color: transparent;
+    color: #0099ff;
+    border: 2px solid #0099ff;
+}
+
+.home__btn2:hover{
+    background-color: #0099ff;
+    border: 2px solid #0099ff;
+    color: #fff;
+}
+
+/* About */
+
+.title{
+    text-align: center;
+    font-size: 4rem;
+}
+
+.sub {
+    display: block;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.section{
+    min-height: 650px;
+    height: 100vh;
+    width: 100%;
+}
+
+.about__container{
+    display: flex;
+}
+
+.about__text {
+    padding: 5rem;
+    margin-top: 2rem;
+}
+
+.hero__about{
+    width: 500px;
+}
+
+.about__desc{
+    padding-bottom: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.button{
+    margin-top: 2rem;
+    display: block;
+    width: 200px;
+    text-align: center;
+    border-radius: 25px;
+    color: black;
+    box-shadow: 0px 0px 10px 1px;
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    background-color: #0099ff;
+    border: 2px solid #0099ff;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0099ff;
+    border: 2px solid #0099ff;
+    color: #fff;
+    box-shadow:none;
+}
+/* Services */
+
+/* Card Starts */
+
+.services__cards{
+    display: flex;
+    width: 100%;
+    height: 75vh;
+    color: aliceblue;
+    margin: auto;
+    padding: 1rem;
+}
+
+.services__card{
+    width: 23%;
+    margin: auto;
+    height: 40rem;
+    position: relative;
+    background-color: #0099ff;
+    display: flex;
+}
+
+.card__image{
+  height:20rem;
+  width:100%;
+  background-size:cover;
+  background-position: center;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.c1{
+    background-image: url('../images/food1.jpg');
+}
+
+.c2{
+    background-image: url('../images/food2.jpg');
+}
+
+.c3{
+    background-image: url('../images/food3.jpg');
+}
+
+.c4{
+    background-image: url('../images/food4.jpg');
+}
+
+/* Bottom Card Section */
+
+.card__desc{
+  width: 100%;
+  height: 12rem;
+  position:absolute;
+  text-align:center;
+  bottom: 0;
+  padding-bottom: 2rem;
+}
+
+.card__desc h4{
+    margin-top: -5rem;
+}
+
+.card__desc p {
+    margin-top: 1.5rem;
+    padding: 0 2rem;
+}
+
+/* Social Icons */
+
+.card__icons {
+  background-color:black;
+}
+
+.services__card:hover .card__desc {
+  bottom: -20rem;
+}
+
+.services__card:hover .card__image
+{
+  height:40rem;
+}
+
+/* Card Ends */
