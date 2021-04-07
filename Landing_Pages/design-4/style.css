@@ -1,0 +1,127 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.6rem;
+    overflow-x: hidden;
+}
+
+.container{
+    max-width: 1920px;
+    margin: auto;
+    position: relative;
+    width: 100vw;
+    background: #000428;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.header{
+    display: flex;
+    height: 60px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5rem;
+    background-color: rgba(1,1,1,0.5);
+}
+
+.logo{
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #f05945;
+}
+
+.items{
+    display: flex;
+    list-style: none;
+    color: #fff;
+    font-size: 1.8rem;
+}
+
+.item {
+    padding: 0 2rem;
+}
+
+.btn1, .btn2{
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    border: 2px solid #f05945;
+    color: #111;
+    font-weight: 600;
+    letter-spacing: 2px;
+    outline: none;
+    background:#ddd;
+}
+
+.main{
+    width: 100%;
+    height: calc(100vh - 60px);
+    position: relative;
+}
+
+.main__text{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.main__text-head{
+    font-size: 7.2rem;
+}
+
+.main__text-sub{
+    font-size: 3.2rem;
+}
+
+.main__text-btnContainer, .social__ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social__ul{
+    border: 2px solid #f05945;
+    padding: 1rem;
+    border-radius: 30px;
+    margin-top: 1rem;
+}
+
+.social__ul-icon{
+    font-size: 2rem;
+    padding: 0 2rem;
+}
+
+.btn2{
+    margin-top: 1rem;
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+    background: transparent;
+    color: #f05945;
+    height: calc(5rem - 2px);
+}
+
+.main__bottom svg{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}

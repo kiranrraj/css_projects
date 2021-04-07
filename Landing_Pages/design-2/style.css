@@ -1,0 +1,143 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.6rem;
+    overflow-x: hidden;
+}
+
+.container{
+    max-width: 1920px;
+    margin: auto;
+    position: relative;
+    width: 100vw;
+    background: #000046;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1CB5E0, #000046);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #1CB5E0, #000046); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.header {
+    width: 100%;
+    height: 60px;
+    /* background-color: #1CB5E0; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4rem;
+}
+
+.logo h1 {
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.navBar .items{
+    display: flex;
+    list-style: none;
+}
+
+.item{
+    padding: 0 3rem;
+}
+
+.items a {
+    color: #fff;
+    font-size: 1.7rem;
+    letter-spacing: 1.5px;
+}
+
+.main {
+    color: #fff;
+    width: 100%;
+    height: calc(100vh - 60px);
+    display: flex;
+    position: relative;
+}
+
+.main__text, .main__hero{
+    width: 50%;
+}
+
+.main__text{
+    padding-left: 3rem;
+    margin: auto;
+}
+
+.main__text-head {
+    font-size: 5.5rem;
+    margin-bottom: -1rem;
+}
+
+.main__text-head span{
+    display: inline-block;
+    color: #1E3D58;
+    text-shadow: 0 0 1px;
+    font-size: 6rem;
+}
+
+.main__text-sub{
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+}
+
+.main__text-p {
+    line-height: 1.3;
+    letter-spacing: 1.6px;
+    width: 80%;
+}
+
+.main__text-btn{
+    margin-top: 3rem;
+    padding: 1rem 2.5rem;
+    border-radius: 3rem;
+    outline: none;
+    border: none;
+    font-size: 1.7rem;
+    color: #1E3D58;
+}
+
+.main__hero{
+    position: relative;
+    margin: auto 0;
+}
+
+.main__hero img{
+    width: 100%;
+}
+
+
+.main__social{
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.social__ul {
+    display: flex;
+    list-style: none;
+}
+
+.social__ul-icon{
+    padding: 0 2rem;
+}
+
+.social__ul-icon i {
+    font-size: 20px;
+}
