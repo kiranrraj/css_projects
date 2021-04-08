@@ -1,0 +1,154 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+ul{
+    list-style: none;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.6rem;
+    overflow-x: hidden;
+}
+
+.container{
+    max-width: 1920px;
+    margin: auto;
+    position: relative;
+    width: 100vw;
+    background-image: url('./main__hero.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.header {
+    width: 100%;
+    height: 60px;
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffc93c;
+    box-shadow: 0 2px 10px 2px;
+}
+
+.items{
+    display: flex;
+}
+
+.item {
+    padding: 0 2rem;
+}
+
+.main {
+    color: #edf2f4;
+    width: 100%;
+    height: calc(100vh - 90px);
+    display: flex;
+    position: relative;
+}
+
+.main__text{
+    z-index: 100;
+}
+
+.bg-upper,
+.bg-lower{
+    position: absolute;
+    height: 100%;
+    background-color: #ffc93c;
+    width: 100%;
+    z-index: 0;
+}
+
+.bg-upper{
+    top: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 25%);
+    background-color: #52b69a;
+}
+
+.bg-lower{
+    background-color: #184e77;
+    bottom: 0;
+    clip-path: polygon(0 25%, 100% 75%, 100% 100%, 0 100%);
+}
+
+.main__text{
+    padding-left: 3rem;
+    margin: auto;
+    z-index: 100;
+}
+
+.main__text-head {
+    font-size: 5.5rem;
+}
+
+.main__text-head span,
+.main__text-sub span{
+    color: #ffc300;
+    text-shadow: 1px 1px 1px;
+}
+
+.main__text-sub{
+    font-size: 4.5rem;
+    letter-spacing: 3px;
+}
+
+.main__text-p {
+    line-height: 1.3;
+    letter-spacing: 1.6px;
+    width: 80%;
+}
+
+.main__text-btn{
+    margin-top: 3rem;
+    padding: 1rem 2.5rem;
+    border-radius: 3rem;
+    border: 2px solid #52b69a;
+    background:#52b69a;
+    font-size: 1.7rem;
+    color: #111;
+    position: absolute;
+}
+
+.btn1{
+    right: 12rem;
+}
+
+.btn2{
+    left: 12rem;
+}
+
+.main__text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pacman {
+    width: 0px;
+    height: 0px;
+    border-right: 60px solid transparent;
+    border-top: 60px solid #ffc300;
+    border-left: 60px solid #ffc300;
+    border-bottom: 60px solid #ffc300;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+  }
+
+  .main__btn--container{
+      position: relative;
+  }
