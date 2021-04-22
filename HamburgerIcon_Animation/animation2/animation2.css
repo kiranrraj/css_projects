@@ -1,0 +1,141 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background: #485563;  
+    background: -webkit-linear-gradient(to right, #29323c, #485563);  
+    background: linear-gradient(to right, #29323c, #485563); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu_icon {
+    width: 55px;
+    height: 55px;
+    margin: auto;
+    z-index: 10;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.menu_icon span {
+    position: absolute;
+    display: block;
+    height: 5px;
+    width: 60px;
+    background-color: #fff;
+    transform: rotate(0);
+    transition: all 200ms ease;
+    transform-origin: left;
+}
+
+span.one {
+    top: 0px;
+    width: 40px;
+}
+
+span.two{
+    top:25px;
+    width: 30px;
+}
+
+span.three {
+    top: 50px;
+    width: 50px;
+}
+
+.menu_icon:hover .one{
+    animation: width 2s ease infinite;
+}
+
+.menu_icon:hover .two{
+    animation: width1 2s ease infinite;
+}
+
+.menu_icon:hover .three{
+    animation: width2 2s ease infinite;
+}
+
+@keyframes width{
+    0%{
+        width: 30px;
+    }
+    25%{
+        width: 60px;
+    }
+    50%{
+        width: 20px;
+    }
+    75%{
+        width: 60px;
+    }
+    100%{
+        width: 30px;
+    }
+}
+
+@keyframes width1{
+    0%{
+        width: 40px;
+    }
+    25%{
+        width: 20px;
+    }
+    50%{
+        width: 60px;
+    }
+    75%{
+        width: 20px;
+    }
+    100%{
+        width: 40px;
+    }
+}
+
+@keyframes width2{
+    0%{
+        width: 50px;
+    }
+    25%{
+        width: 10px;
+    }
+    50%{
+        width: 40px;
+    }
+    75%{
+        width: 60px;
+    }
+    100%{
+        width: 50px;
+    }
+}
+
+.clicked .one{
+    transform: rotate(45deg);
+    width: 70px; 
+}
+
+.clicked .two{
+    transform: translateX(-100px);
+    opacity: 0;
+}
+
+.clicked .three{
+    transform: rotate(-45deg);
+    width: 70px;
+} 
+
+.clicked.menu_icon:hover .one,
+.clicked.menu_icon:hover .three{
+    animation: normal;
+}

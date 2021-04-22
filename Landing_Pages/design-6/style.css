@@ -20,6 +20,7 @@ html{
 body{
     font-size: 1.6rem;
     overflow-x: hidden;
+    font-family: 'Merriweather', sans-serif;
 }
 
 .container{
@@ -40,7 +41,7 @@ body{
     justify-content: center;
     align-items: center;
     background-color: #ffc93c;
-    box-shadow: 0 2px 10px 2px;
+    box-shadow: 0 0 10px 5px ;
 }
 
 .items{
@@ -48,13 +49,36 @@ body{
 }
 
 .item {
-    padding: 0 2rem;
+    padding: 2px 2rem;
+    font-size: 16px;
+    color: #184e77;
+    letter-spacing: 2px;
+    text-shadow: 0 0 1px #111;
+}
+
+.item:hover{
+    color: #52b69a;
+}
+
+.logo{
+    border: 2px solid transparent;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transition: all 0.5s ease;
+}
+
+.logo:hover{
+    color: #fff;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top: 2px solid #184e77;
+    border-bottom: 2px solid #184e77;
 }
 
 .main {
     color: #edf2f4;
     width: 100%;
-    height: calc(100vh - 90px);
+    height: calc(100vh - 60px);
     display: flex;
     position: relative;
 }
@@ -74,14 +98,14 @@ body{
 
 .bg-upper{
     top: 0;
-    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 25%);
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 25%);
     background-color: #52b69a;
 }
 
 .bg-lower{
     background-color: #184e77;
     bottom: 0;
-    clip-path: polygon(0 25%, 100% 75%, 100% 100%, 0 100%);
+    clip-path: polygon(0 25%, 100% 95%, 100% 100%, 0 100%);
 }
 
 .main__text{
@@ -91,7 +115,7 @@ body{
 }
 
 .main__text-head {
-    font-size: 5.5rem;
+    font-size: 4.5rem;
 }
 
 .main__text-head span,
@@ -101,7 +125,7 @@ body{
 }
 
 .main__text-sub{
-    font-size: 4.5rem;
+    font-size: 3rem;
     letter-spacing: 3px;
 }
 
@@ -120,6 +144,13 @@ body{
     font-size: 1.7rem;
     color: #111;
     position: absolute;
+    box-shadow: 0 0 10px 0;
+}
+
+.main__text-btn:hover{
+    box-shadow: none;
+    background:#fff;
+    border: 2px solid #111;
 }
 
 .btn1{

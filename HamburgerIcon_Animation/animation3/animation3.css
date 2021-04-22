@@ -1,0 +1,66 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background: #485563;  
+    background: -webkit-linear-gradient(to right, #29323c, #485563);  
+    background: linear-gradient(to right, #29323c, #485563); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu_icon {
+    width: 55px;
+    height: 55px;
+    margin: auto;
+    z-index: 10;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.menu_icon span {
+    position: absolute;
+    display: block;
+    height: 5px;
+    width: 60px;
+    background-color: #fff;
+    transform: rotate(0);
+    transition: all 200ms ease;
+    transform-origin: left;
+}
+
+span.one {
+    top: 0px;
+}
+
+span.two{
+    top:25px;
+}
+
+span.three {
+    top: 50px;
+}
+
+.clicked .one{
+    transform: rotate(45deg);
+    width: 74px; 
+}
+
+.clicked .two{
+    opacity: 0;
+}
+
+.clicked .three{
+    transform: rotate(-45deg);
+    width: 74px;
+} 
