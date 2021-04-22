@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background: #333333;
+    background: linear-gradient(to right, #90d60e, #d60606bd);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dash1, .dash2, .dash3 {
+    position: relative;
+    height: 10px;
+    width: 60px;
+    background-color: #111;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dash3{
+    margin-bottom: none;
+}
+
+
+.clicked .dash1 {
+    transform: translateY(20px) rotate(135deg);
+}
+
+.clicked .dash2 {
+    transform: translate(100vw);
+}
+
+.clicked .dash3 {
+    transform: translateY(-20px) rotate(-135deg);
+}

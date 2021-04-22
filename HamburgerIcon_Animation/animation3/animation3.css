@@ -35,8 +35,7 @@
     width: 60px;
     background-color: #fff;
     transform: rotate(0);
-    transition: all 200ms ease;
-    transform-origin: left;
+    transition: all 300ms cubic-bezier(1, 0, 0, 1)
 }
 
 span.one {
@@ -52,15 +51,17 @@ span.three {
 }
 
 .clicked .one{
-    transform: rotate(45deg);
-    width: 74px; 
+    transform: translateY(25px) rotate(45deg);
+    width: 70px;
 }
 
 .clicked .two{
+    transform: translateY(-60vh);
     opacity: 0;
+    width: 70px;
 }
 
 .clicked .three{
-    transform: rotate(-45deg);
-    width: 74px;
+    transform:translateY(-25px) rotate(-45deg);
+    width: 70px;
 } 
