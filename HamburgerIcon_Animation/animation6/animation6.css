@@ -1,0 +1,120 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background: #333333;
+    background: linear-gradient(to right, #0b41d4, #d60606);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hamburger{
+    position: relative;
+    padding: 10px;
+    width: 80px;
+    height: 80px;
+    background-color: #111;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 5px solid #fff;
+    box-shadow: 0 0 15px 1px;
+}
+
+.dash{
+    height: 10px;
+    width: 50px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: absolute;
+    left: 10px;
+}
+
+.d1{
+    top: 10px;
+}
+
+.d2{
+    top:30px
+}
+
+.d3{
+    top:50px
+}
+
+.clicked .d1{
+    animation-name : anim1, anim3 ;
+    animation-duration: 300ms, 300ms;
+    animation-delay: 0ms, 300ms;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1),cubic-bezier(0.39, 0.575, 0.565, 1);
+    animation-fill-mode: none, forwards;
+}
+
+.clicked .d2{
+    animation : anim1 300ms ease forwards;
+}
+
+.clicked .d3{
+    animation-name : anim1, anim2 ;
+    animation-duration: 300ms, 300ms;
+    animation-delay: 0ms, 300ms;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1),cubic-bezier(0.39, 0.575, 0.565, 1);
+    animation-fill-mode: none, forwards;
+    
+}
+
+
+@keyframes anim1 {
+    0%{
+        width: 50px;
+    }
+
+    99%{
+        opacity: 1;
+    }
+
+    100%{
+        width: 0%;
+        opacity: 0;
+    }
+}
+
+@keyframes anim2 {
+    0%{
+        /* transform: translateY(20px) rotate(45deg); */
+        /* width: 0px; */
+        /* left: 0px; */
+    }
+
+    100%{
+        transform: translateY(-20px) rotate(-45deg);
+        width:70px;
+        left: 0px;
+    }
+}
+
+@keyframes anim3 {
+    0%{
+        /* transform: translateY(-20px) rotate(45deg); */
+        /* width: 0%; */
+        /* left: 0px; */
+    }
+
+    100%{
+        transform: translateY(20px) rotate(45deg);
+        width:70px;
+        left: 0px;
+    }
+}
+
