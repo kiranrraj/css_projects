@@ -1,0 +1,183 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    background: #4776E6;  
+    background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);  
+    background: linear-gradient(to right, #8E54E9, #4776E6); 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.header,
+.header2,
+.header3,
+.header4,
+.header5{
+    width: 100%;
+    height: 60px;
+    background: #4776E6;
+    box-shadow: 0 0 10px 1px;
+    margin-bottom: 40px;
+}
+
+.menu,
+.menu2,
+.menu3,
+.menu4,
+.menu5{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0 100px;
+}
+
+.menu li,
+.menu2 li,
+.menu3 li,
+.menu4 li,
+.menu5 li {
+    display: block;
+    height: 100%;
+    margin-right: 30px;
+    font-size: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px #8E54E9;
+    transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+/* Style 1: color change and scale by 120% */
+.menu li:hover {
+    color:#111;
+    transform: scale(1.2);
+    text-shadow: none;
+}
+
+/* Style 2: Just transform 10px up and 10px down */
+.menu2 li:hover{
+    animation: anim2 500ms cubic-bezier(0.175, 0.885, 0.32, 0.275) infinite;
+}
+
+@keyframes anim2 {
+    0%{
+        opacity: 1;
+        transform: translateY(px);
+    }
+    25%{
+        opacity:0;
+        transform: translateY(-10px)
+    }
+    50%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    75%{
+        opacity:0;
+        transform: translateY(10px)
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+/* Style 3: Just animate the :after element's width from 0 to 100% */
+
+.menu3 li:after{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    display: block;
+    transition: all 0.3s ease;
+    bottom: 25%;
+}
+.menu3 li:hover::after{
+    width: 100%;
+    height: 1px;
+    background-color: #FFF;
+}
+
+/* Style 4: :before and :after element's width increased from 0 to 100%*/
+
+.menu4 li:after,
+.menu4 li:before{
+    content: "";
+    position: absolute;
+    width: 0%;
+    display: block;
+    height: 1px;
+    transition: all 0.3s ease;
+    margin-top: 2px;
+}
+
+.menu4 li:after{
+    bottom: 25%;
+}
+
+.menu4 li:before{
+    top: 25%;
+}
+
+.menu4 li:hover::after{
+    width: 100%;
+    height: 1px;
+    bottom: 25%;
+    background-color: #FFF;
+}
+.menu4 li:hover::before{
+    width: 100%;
+    height: 1px;
+    top: 25%;
+    background-color: #FFF;
+}
+
+/* Style 5: :before and :after element's width increased from 0 to 100% */
+/* Before element from right side and agter element from left side */
+
+.menu5 li:after,
+.menu5 li:before{
+    content: "";
+    position: absolute;
+    width: 0%;
+    display: block;
+    height: 1px;
+    transition: all 0.3s ease;
+    margin-top: 2px;
+    transition: all 300ms ease-in;
+}
+
+.menu5 li:after{
+    bottom: 25%;
+    left: 0;
+}
+
+.menu5 li:before{
+    top: 25%;
+    right: 0;
+}
+
+.menu5 li:hover::after{
+    width: 100%;
+    height: 1px;
+    bottom: 25%;
+    background-color: #FFF;
+}
+.menu5 li:hover::before{
+    width: 100%;
+    height: 1px;
+    top: 25%;
+    background-color: #FFF;
+}
