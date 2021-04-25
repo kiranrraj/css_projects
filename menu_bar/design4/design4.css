@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    font-family: 'Playfair Display', serif;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background: #4776E6;
+    background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);
+    background: linear-gradient(to right, #8E54E9, #4776E6);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.menu,
+.menu1,
+.menu2{
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    padding: 0 100px;
+}
+
+.menu li,
+.menu1 li,
+.menu2 li {
+    display: block;
+    height: 100%;
+    font-size: 25px;
+    position: relative;
+    /* To hide the li, use color as transparent */
+    color: transparent;
+    text-transform: uppercase;
+    transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    text-align: center;
+    margin-right: 30px;
+    /* To hide any component outside the main frame */
+    overflow: hidden;
+    padding: 20px;
+}
+
+/* I used before and after element to create this effect,  'after' element is visible before hover*/
+/* On Hover: 'after' element is moved out of the visible area using left 100%. 'before' element is */
+/* moved to visible area by changing the 'top' value from -100% to 20% */
+
+.menu li:before,
+.menu li:after{
+    /* Attr() : To get the value from the attribute */
+    content: attr(data-val);
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 20%;
+}
+
+.menu li:after{
+    left: 0%;
+    color: tomato;
+    transition: all 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.menu li:before{
+    opacity: 0;
+    /* to hidden content */
+    top: -100%;
+    transition: all 0.4s cubic-bezier(0.455, 0.03, 0.515, 1.955);
+}
+
+.menu li:hover:before{
+    /* Bring the content into frame */
+    top: 20%;
+    opacity: 1;
+    color: #fff;
+}
+
+.menu li:hover:after{
+    /* Content hidden by pusing to left 100% */
+    left: 100%;
+    opacity: 0;
+}
+
+/* ----------------Style 2----------------------------- */
+
+/* I used before and after element to create this effect,  'after' element is removed from the */
+/* visible are by changing the left from 0 t0 -100% */
+
+.menu1 li:before,
+.menu1 li:after{
+    /* Attr() : To get the value from the attribute */
+    content: attr(data-val);
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 20%;
+    transition: all 0.4s cubic-bezier(0.455, 0.03, 0.515, 1.955);
+}
+
+.menu1 li:after{
+    left: 0%;
+    color: tomato;
+}
+
+.menu1 li:hover:after{
+    /* Content hidden by pusing to left 100% */
+    left: -100%;
+}
+
+.menu1 li:hover:before{
+    /* Bring the content into frame */
+    color: #fff;
+    left: 0;
+}
+
+
+
+/* I used before and after element to create this effect,  'after' element is visible before hover*/
+/* On Hover: 'after' element is moved out of the visible area using left 100%. 'before' element is */
+/* moved to visible area by changing the 'top' value from -100% to 20% */
+
+.menu2 li:before,
+.menu2 li:after{
+    /* Attr() : To get the value from the attribute */
+    content: attr(data-val);
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 20%;
+    left: 0;
+    box-shadow: 0 8px 6px -6px black;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+}
+
+.menu2 li:after{
+    color: tomato;
+    transition: all 0.4s 100ms ease;
+}
+
+.menu2 li:before{
+    opacity: 0;
+    top: -100%;
+    transition: all 0.4s ease;
+}
+
+.menu2 li:hover:before{
+    top: 20%;
+    opacity: 1;
+    color: #fff;
+}
+
+.menu2 li:hover:after{
+    transform: translateY(100%);
+    opacity: 0;
+}

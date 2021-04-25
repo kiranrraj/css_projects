@@ -1,323 +1,522 @@
-* {
+*{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-html {
-    font-size: 62.5%;
+html,
+body {
+    font-size: 62.6%;
+    font-family: 'Poppins', sans-serif;
 }
 
-.container {
-    background-image: linear-gradient(to bottom, #d16bd1, #fe6dac, #ff8188, #ffa06f, #fbc068, #e7d26f, #cfe181, #b7ef9b, #9ff4af, #88f7c5, #71fadb, #5ffbf1);
-    display: grid;
-    grid-template-areas: "c_form sales" "pharmacy contact";
-    grid-template-columns: repeat(2, 1fr);
-    padding: 2rem;
+a{
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+img{
+    width: 100%;
+}
+
+.section{
+    margin: 100px auto;
+    width: 100%;
+    max-height: 90vh;
+    min-height: 600px;
     font-size: 1.6rem;
-    grid-gap: 2rem;
 }
 
-.contact_form{
-    grid-area: c_form;
+.section__title{
+    text-align: center;
+    font-size: 4rem;
+    position: relative;
+    letter-spacing: 10px;
+    text-transform: uppercase;
 }
 
-.contact_address{
-    grid-area:contact ;
-}
-
-.sales_contact{
-    grid-area: sales;
-}
-
-.showroom_details{
-    grid-area: pharmacy;
-}
-
-.contact_form,
-.contact_address,
-.showroom_details,
-.sales_contact {
-    background-color: rgba(255, 255, 255, 0.3);
-    box-shadow: 6px 24px 32px -1px rgba(30, 30, 60, 0.31);
-    border-radius: 1rem;
-    display: flex;
-    flex-direction: column;
-    padding: 5rem;
-}
-
-.form_text,
-.address_text {
-    color: #fff;
-    text-shadow: 1px 1px 2px black;
-    padding: 1rem;
-}
-
-.form_text h3 {
-    font-size: 3rem;
-    padding-bottom: 1rem;
-}
-
-.form_text p {
-    font-size: 1.4rem;
-    padding-bottom: 2rem;
-}
-
-#contact__form {
-    padding: 0rem 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: stretch;
-    align-items: stretch;
-}
-
-.form_group {
-    padding: 1rem 0rem;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.fg-3 {
-    padding-bottom: 3rem;
-}
-
-.fg-4,
-.fg-3 {
-    grid-template-columns: 1fr;
-}
-
-.fg-5 {
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.s_btn {
-    grid-column: 2/span 1;
-}
-
-.s_btn {
-    padding: 1rem;
-    border-radius: 0.5rem;
-    outline: none;
-    box-shadow: 2px 2px 2px 1px black;
-    background-color: transparent;
-    color: purple;
-    font-size: 1.5rem;
-    border: 1px solid rebeccapurple;
-}
-
-.s_btn:hover,
-.s_btn:focus {
-    background-color: rebeccapurple;
-    border: 1px solid purple;
-    color: white;
-    box-shadow: none;
-}
-
-.form_group input:nth-child(odd) {
-    margin-right: 5rem;
-}
-
-input[type=text],
-input[type=email],
-select {
-    font-size: 1.7rem;
-    padding: 0.5rem;
-    outline: none;
-    border: none;
-    border-bottom: 2px solid rebeccapurple;
-    border-left: 2px solid rebeccapurple;
-    border-top-left-radius: 0.5rem;
-    background-color: transparent;
-}
-
-#umsg {
-    resize: none;
-    background-color: transparent;
-    border: 2px solid rebeccapurple;
-    border-radius: 0.5rem;
-    padding: 1rem;
-}
-
-.address_text h3 {
-    font-size: 3rem;
-    padding-bottom: 1rem;
-}
-
-.address_text p {
-    font-size: 1.4rem;
-    padding-bottom: 2rem;
-}
-
-.address {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    font-size: 2.2rem;
-    color: rebeccapurple;
-}
-
-.address_po,
-.address_phone {
-    display: flex;
-    flex-direction: column;
-    line-height: 3rem;
-}
-
-.address_po {
-    padding-bottom: 2rem;
-}
-
-.address_phone span {
+.section__title::before{
+    content: attr(data-msg);
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
     font-weight: 600;
+    font-size: 10rem;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.showroom_details-text {
-    padding: 1rem 0 3rem;
+.container{
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+}
+
+/* -------------------------- Navigation Bar ------------------------ */
+
+.nav{
+    max-width: 100vw;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    position: relative;
+}
+
+.navbar__icon{
+    font-size: 2rem;
+    margin: 0 50px 0 20px;
+}
+
+.navbar__main--ul{
+    list-style: none;
+    display: flex;
+}
+
+.item{
+    margin-right: 40px;
+    font-size: 1.6rem;
     color: #fff;
-    text-shadow: 1px 1px 2px black;
 }
 
-.showroom_details-text h3 {
+.navbar{
+    position: absolute;
+    right: 40px;
+}
+
+.navbar__hamburger{
+    position: relative;
+    height: 55px;
+    width: 70px;
+    padding: 10px;
+}
+
+.navbar__hamburger span{
+    height: 5px;
+    width: 50px;
+    background-color: #fff;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.navbar__hamburger span:last-child{
+    margin-bottom: 0px;
+}
+
+/* ---------------------- Home --------------------------- */
+
+#Home{
+    width: 100%;
+    max-height: 100vh;
+    height: 600px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content__text{
+    width: 100%;
+    height: 100%;
+}
+
+.text__head{
+    font-size: 6rem;
+}
+
+.text__sub{
     font-size: 3rem;
-    padding-bottom: 1rem;
 }
 
-.showroom_details-text p {
-    font-size: 1.4rem;
-    padding-bottom: 1rem;
+/* ------------------------ Cards -------------------------- */
+
+.cards{
+    height: 250px;
+    width: 100%;
+    background: linear-gradient(to left, #0575E6, #00F260);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px 40px;
 }
 
-table.address_table {
-    font-family: "Arial", Gadget, sans-serif;
-    background-color: #ddd;
+.card{
+    font-size: 1.8rem;
+    color:#fff;
+    height: 180px;
+    width: 22%;  
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    border: 3px solid #fff;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.card:hover{
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}
+
+/* ------------------------ About --------------------------- */
+
+#About{
+    position: relative;
+}
+
+.about__container{
+    height: 70vh;
+    width: 100%;
+    position: relative;
+    padding: 0 20px;
+}
+
+.left, .right{
+    height: 100%;
+    padding-top: 100px;
+    width: 40%;
+    position: absolute;
+}
+
+.right{
+    right: 0;
+    z-index: 100;
+}
+
+.img{
+    position: absolute;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+    z-index: 1;
+    transition: all 0.5s ease-in-out;
+}
+
+.img:nth-child(1){
+    right: -120px;
+    bottom: 60px;
+}
+
+.img:nth-child(2){
+    right: -60px;
+    bottom: 00px;
+}
+
+.img:nth-child(3){
+    right: 0px;
+    bottom: -60px;
+}
+
+.img:hover{
+    z-index: 10;
+}
+
+.name{
+    font-size: 6rem;
+    text-transform: uppercase;
+    transform: translateX(-50px);
+    z-index: 100;
+    color: #111;
+    margin-bottom: 30px;
+}
+
+.right__head{
+    width: 100%;
+    position: relative;
     text-align: center;
-    border-collapse: collapse;
-    border: 0.5rem solid white;
 }
 
-table.address_table td,
-table.address_table th {
-    padding: 0.5rem 1rem;
-    text-align: left;
-    border: 0.5rem solid white;
+.top{
+    position: absolute;
+    font-size: 2rem;
+    color: #111;
+    display: block;
+    left: 25px;
+    top: -15px;
 }
 
-table.address_table tbody td {
-    font-size: 1.5rem;
-    color: black;
+
+/* --------------Projects-------------------- */
+
+#Project{
+    width: 100%;
+    max-height: 250vh;
+    height: 100%;
+    font-size: 1.6rem;
+    margin-bottom: 150px;
 }
 
-table.address_table tr:nth-child(even) {
-    background: #111;
+.projects__container{
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
 }
 
-table.address_table tr:nth-child(even) td {
-    color: white;
+.project__cards{
+    display: flex;
+    justify-content: space-around;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    padding: 30px 40px;
+    margin-top: 100px;
+    width: 800px;
 }
 
-table.address_table thead th {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #000;
+.card__left,
+.card__right{
+    width: 45%;
+    position: relative;
+}
+
+.card__left{
+    height: 300px;
+    overflow: hidden;
+    margin: auto;
+}
+
+.right__sub{
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.right__sub span{
+    background-color: #0575E6;
+    padding: 5px 20px;
+    border-radius: 20px;
+}
+
+.right__h1{
+    font-size: 4rem;
+    margin-bottom: 5px;
+}
+
+/* Gallery */
+
+#Gallery{
+    width: 100%;
+    max-height: 300vh;
+    height: 100%;
+    font-size: 1.6rem;
+    margin: 150px 0;
+}
+
+.gallery__container{
+    margin-top: 100px;
+    max-width: 100vw;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+figure{
+    margin: 20px;
+    position: relative;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    transition: all 800ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+figure:hover{
+    transform: scale(1.05);
+}
+
+figure img {
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+}
+
+figcaption{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 40px;
+    width: 40px;
+    background-color: #ff1122;
+    color: #fff;
     text-align: center;
-    padding: 10px 5px;
+    padding: 10px;
 }
 
-table.address_table tfoot {
+.img__text{
+    position: absolute;
+    bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+.img__text--head{
+    font-size: 2rem;
+    color: #fff;
+    padding: 5px 20px 20px;
+    text-align: center;
+}
+
+/* Contact */
+
+#Contact{
+    height: 80vh;
+    width: 100%;
+    padding: 0 10%;
+}
+
+.contact__container{
+    height: 500px;
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    padding: 0 10%;
+    background: #1e3c72; 
+    background: -webkit-linear-gradient(to right, #2a5298, #1e3c72);  
+    background: linear-gradient(to right, #2a5298, #1e3c72); 
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    border-radius: 20px;
+}
+
+.contact__left,
+.contact__right{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: #fff;
+}
+
+.contact__right{
+    padding: 20px;
+}
+
+.right__tabs{
+    height: 100px;
+    background: #1e3c72; 
+    background: -webkit-linear-gradient(to left, #2a5298, #1e3c72);  
+    background: linear-gradient(to left, #2a5298, #1e3c72); 
+    display: flex;
+    border-radius: 20px;
+}
+
+.tabs__icon{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-right-width: 50%;
+    position: relative;
+}
+
+.tabs__icon::after{
+    content: "";
+    position: absolute;
+    display: block;
+    right: 0;
+    height: 60%;
+    width: 2px;
+    background-color: #fff;
+}
+
+.tabs__icon i{
+    font-size: 5rem;
+    color: #fff;
+}
+
+.tabs__text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding-left: 10px;
+}
+
+.contact__left{
+
+}
+
+.ctn{
+    display: flex;
+    justify-content: start;
+    height: 30px;
+}
+
+.ctn label {
+    margin-right: 50px;
+    width: 80px;
+    font-size: 2rem;
+}
+
+.ctn input,
+.ctn textarea {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 2px solid #0F2027;
+    transition: all 200ms ease;
+    width: 20rem;
+}
+
+.ctn textarea{
+    resize: none;
+    color: #fff;
+    font-size: 1.7rems;
+}
+
+.ctn input:focus{
+    border-bottom: 4px solid #ff1122;
+}
+
+.btn_ctn{
+    justify-content: center;
+}
+
+.btn{
+    width: 140px;
+    outline: none;
+    height: 40px;
+    font-size: 2rem;
+    background-color: transparent;
+    box-shadow:inset 0px 1px 0px 0px #fd7460;
+    background: linear-gradient(to right, #ff9068, #fd746c);
+	background-color:#fd746c;
+	border-radius:6px;
+	border:1px solid #ff9068;
+	display:inline-block;
+	cursor:pointer;
+	color:#111;
+	padding:6px 24px;
+	text-shadow:0px 1px 0px #fd7400;
+}
+
+
+.btn:hover {
+	background: linear-gradient(to right, #fd746c, #ff9068);
+	background-color:#ff9068;
+}
+.btn:active {
+	position:relative;
+	top:1px;
+}
+
+#Footer{
+    height: 25px;
+    width: 100%;
     font-size: 1.2rem;
-    font-weight: normal;
-    color: #000;
-}
-
-table.address_table td {
-    border: 0.5rem solid #fff;
-}
-
-table.sales_team {
-    background-color: #555555;
     text-align: center;
-    border-collapse: collapse;
-    font-family: "Arial", Gadget, sans-serif;
-}
-
-table.sales_team td,
-table.sales_team th {
-    border: 1px solid black;
-    padding: 1rem 1.5rem;
-}
-
-table.sales_team tbody td {
-    font-size: 1.5rem;
-    color: #FFFFFF;
-}
-
-table.sales_team td:nth-child(even) {
-    background: #398AA4;
-}
-
-table.sales_team thead {
-    background: #398AA4;
-}
-
-table.sales_team thead th {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #FFFFFF;
-    text-align: left;
-    border-left: 2px solid #398AA4;
-}
-
-table.sales_team thead th:first-child {
-    border-left: none;
-}
-
-table.sales_team tfoot td {
-    font-size: 13px;
-}
-
-table.sales_team tfoot .links {
-    text-align: right;
-}
-
-table.sales_team tfoot .links a {
-    display: inline-block;
-    background: #FFFFFF;
-    color: #398AA4;
-    padding: 2px 8px;
-    border-radius: 5px;
-}
-
-.sales_contact{
-    padding: 5rem 2rem 2rem;
-}
-
-.sales_text {
-    padding: 1rem 0 3rem;
+    background-color: #0F2027;
     color: #fff;
-    text-shadow: 1px 1px 2px black;
-}
-
-.sales_text h3 {
-    font-size: 3rem;
-    padding-bottom: 1rem;
-}
-
-.sales_text p {
-    font-size: 1.4rem;
-    padding-bottom: 1rem;
-}
-
-@media all and (max-width: 699px){
-    .container{
-        display: grid;
-        grid-template-areas: "c_form" "sales" "pharmacy" "contact";
-    }
-}
-
-@media all and (max-width: 500px){
-    .container{
-        display: grid;
-        grid-template-areas: "c_form" "sales" "pharmacy" "contact";
-    }
-
+    padding: 4px;
 }

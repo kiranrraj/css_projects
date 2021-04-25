@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a7e9f794eb.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Simple One Page Layout</title>
+</head>
+
+<body>
+    <nav class="nav">
+        <a class="navbar__icon" href="#home">Kiran Raj</a>
+        <div class="navbar">
+            <div class="navbar__hamburger">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </div>
+        </div>
+        <div class="navbar__main">
+            <ul class="navbar__main--ul">
+                <li>
+                    <a class="item" href="#Home">Home</a>
+                </li>
+                <li>
+                    <a class="item" href="#About">About</a>
+                </li>
+                <li>
+                    <a class="item" href="#Project">Projects</a>
+                </li>
+                <li>
+                    <a class="item" href="#Gallery">Gallery</a>
+                </li>
+                <li>
+                    <a class="item" href="#Contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <header id="Home">
+            <div class="home__content">
+                <div class="content__text">
+                    <h1 class="text__head">Kiran Raj R</h1>
+                    <div class="text__sub">
+                        <span>Developer</span>
+                        <span>|</span>
+                        <span>Designer</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="cards">
+            <div class="card">
+                <i class="fas fa-palette"></i>
+                <p>Web Designing</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-laptop-code"></i>
+                <p>Web Developing</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-swatchbook"></i>
+                <p>Branding</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-cogs"></i>
+                <p>SEO</p>
+            </div>
+        </section>
+
+        <section id="About" class="section">
+            <h2 class="section__title" data-msg="Who Am I">About</h2>
+            <div class="about__container">
+                <div class="left">
+                    <img src="https://source.unsplash.com/1600x900/?snow,water" alt="image" class="img">
+                    <img src="https://source.unsplash.com/1600x900/?leaf,ocean" alt="image" class="img">
+                    <img src="https://source.unsplash.com/1600x900/?mountain,lake" alt="image" class="img">
+
+                </div>
+                <div class="right">
+                    <div class="right__head">
+                        <div class="name">
+                            <span class="top">Hi, I Am</span>
+                            <span>Kiran</span>
+                            <span>Raj</span>
+                            <span>R</span>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium recusandae molestiae
+                            soluta, laboriosam dolores obcaecati ipsum voluptate, quibusdam quidem aliquam porro
+                            corrupti voluptas dolorum quod. Sed expedita placeat velit qui repellat, cupiditate debitis
+                            fuga? Ea aut eaque dignissimos nisi cupiditate?</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="Project" class="section-large">
+            <h2 class="section__title" data-msg="What I Did">Projects</h2>
+            <div class="projects__container">
+                <div class="project__cards">
+                    <div class="card__left">
+                        <img src="https://source.unsplash.com/800x600/?code,technology" alt="">
+                        <span></span>
+                    </div>
+                    <div class="card__right">
+                        <div class="right__sub">
+                            <span>CSS</span>
+                            <span>Javascript</span>
+                        </div>
+                        <div class="right__h1">The Time Logger</div>
+                        <div class="right__para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis
+                            obcaecati a, perferendis cumque tempora iure fugit provident ullam nihil maxime deleniti
+                            explicabo repudiandae at minus, esse eaque blanditiis. Reprehenderit, quo!</div>
+                    </div>
+                </div>
+                <div class="project__cards">
+                    <div class="card__left">
+                        <img src="https://source.unsplash.com/800x600/?technology,computer" alt="">
+                        <span></span>
+                    </div>
+                    <div class="card__right">
+                        <div class="right__sub">
+                            <span>CSS</span>
+                            <span>Javascript</span>
+                        </div>
+                        <div class="right__h1">The Time Logger</div>
+                        <div class="right__para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis
+                            obcaecati a, perferendis cumque tempora iure fugit provident ullam nihil maxime deleniti
+                            explicabo repudiandae at minus, esse eaque blanditiis. Reprehenderit, quo!</div>
+                    </div>
+                </div>
+                <div class="project__cards">
+                    <div class="card__left">
+                        <img src="https://source.unsplash.com/800x600/?computer,coding" alt="">
+                        <span></span>
+                    </div>
+                    <div class="card__right">
+                        <div class="right__sub">
+                            <span>CSS</span>
+                            <span>Javascript</span>
+                        </div>
+                        <div class="right__h1">The Time Logger</div>
+                        <div class="right__para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis
+                            obcaecati a, perferendis cumque tempora iure fugit provident ullam nihil maxime deleniti
+                            explicabo repudiandae at minus, esse eaque blanditiis. Reprehenderit, quo!</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="Gallery">
+            <div class="section__title" data-msg="My Showcase">Gallery</div>
+            <div class="gallery__container">
+                <figure>
+                    <img src="https://source.unsplash.com/300x300/?developer" alt=""></img>
+                    <figcaption>1</figcaption>
+                    <div class="img__text">
+                        <div class="img__text--head">Story 1</div>
+                    </div>
+                </figure>
+
+                <figure>
+                    <img src="https://source.unsplash.com/300x300/?programmer" alt=""></img>
+                    <figcaption>2</figcaption>
+                    <div class="img__text">
+                        <div class="img__text--head">Story 2</div>
+                    </div>
+                </figure>
+
+                <figure>
+                    <img src="https://source.unsplash.com/300x300/?webdesign" alt=""></img>
+                    <figcaption>3</figcaption>
+                    <div class="img__text">
+                        <div class="img__text--head">Story 3</div>
+                    </div>
+                </figure>
+
+                <figure>
+                    <img src="https://source.unsplash.com/300x300/?program" alt=""></img>
+                    <figcaption>4</figcaption>
+                    <div class="img__text">
+                        <div class="img__text--head">Story 4</div>
+                    </div>
+                </figure>
+
+                <figure>
+                    <img src="https://source.unsplash.com/300x300/?php" alt=""></img>
+                    <figcaption>5</figcaption>
+                    <div class="img__text">
+                        <div class="img__text--head">Story 5</div>
+                    </div>
+                </figure>
+
+                <figure>
+                    <img src="https://source.unsplash.com/300x300/?html" alt=""></img>
+                    <figcaption>6</figcaption>
+                    <div class="img__text">
+                        <div class="img__text--head">Story 6</div>
+                    </div>
+                </figure>
+
+                <figure>
+                    <img src="https://source.unsplash.com/300x300/?css" alt=""></img>
+                    <figcaption>7</figcaption>
+                    <div class="img__text">
+                        <div class="img__text--head">Story 7</div>
+                    </div>
+                </figure>
+
+                <figure>
+                    <img src="https://source.unsplash.com/300x300/?javascript" alt=""></img>
+                    <figcaption>8</figcaption>
+                    <div class="img__text">
+                        <div class="img__text--head">Story 8</div>
+                    </div>
+                </figure>
+
+                <figure>
+                    <img src="https://source.unsplash.com/300x300/?monitor" alt=""></img>
+                    <figcaption>9</figcaption>
+                    <div class="img__text">
+                        <div class="img__text--head">Story 9</div>
+                    </div>
+                </figure>
+
+                <figure>
+                    <img src="https://source.unsplash.com/300x300/?code" alt=""></img>
+                    <figcaption>10</figcaption>
+                    <div class="img__text">
+                        <div class="img__text--head">Story 10</div>
+                    </div>
+                </figure>
+                <figure>
+                    <img src="https://source.unsplash.com/300x300/?computer" alt=""></img>
+                    <figcaption>11</figcaption>
+                    <div class="img__text">
+                        <div class="img__text--head">Story 11</div>
+                    </div>
+                </figure>
+                <figure>
+                    <img src="https://source.unsplash.com/300x300/?hacker" alt=""></img>
+                    <figcaption>12</figcaption>
+                    <div class="img__text">
+                        <div class="img__text--head">Story 12</div>
+                    </div>
+                </figure>
+            </div>
+        </section>
+        <section id="Contact" class="section">
+            <div class="section__title" data-msg="Talk To Me">Contact</div>
+            <div class="contact__container">
+                <div class="contact__left">
+                    <div class="name_ctn ctn">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name">
+                    </div>
+                    <div class="email_ctn ctn">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email">
+                    </div>
+                    <div class="msg_ctn ctn">
+                        <label for="msg">Message</label>
+                        <textarea id="msg" rows= "5"></textarea>
+                    </div>
+                    <div class="btn_ctn ctn">
+                        <button class="btn submit">Submit</button>
+                    </div>
+                </div>
+                <div class="contact__right">
+                    <div class="right__tabs">
+                        <div class="tabs__icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="tabs__text">
+                            <div class="text1">Address</div>
+                            <div class="text2">Trivandrum, Kerala, India</div>
+                        </div>
+                    </div>
+                    <div class="right__tabs">
+                        <div class="tabs__icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="tabs__text">
+                            <div class="text1">Phone</div>
+                            <div class="text2">+91 9099000123</div>
+                        </div>
+                    </div>
+                    <div class="right__tabs">
+                        <div class="tabs__icon">
+                            <i class="fas fa-at"></i>
+                        </div>
+                        <div class="tabs__text">
+                            <div class="text1">Mail</div>
+                            <div class="text2">contact@admin.com</div>
+                        </div>
+                    </div>
+                    <div class="right__tabs">
+                        <div class="tabs__icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="tabs__text">
+                            <div class="text1">Whatsapp</div>
+                            <div class="text2">+91 9099000123</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer id="Footer">
+            <span>All Rights Reserved.</span>
+            <span>Copyright 2021 &copy; Kiranrajr</span>
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -71,6 +71,13 @@
     margin-right: 30px;
 }
 
+/* Style 1 */
+/* Before Hover: Width of before element is set to 100% and height to 0 and Width of before element is*/ 
+/* set to 0% and height to 100%  */
+/* On Hover:  Top and bottom borders' of after element and left and right borders of before element*/
+/* is animated here by increasing the height of before element from 0 to 80% and width of after */
+/* element from 0 to 120% */
+
 .menu li:after,
 .menu li:before {
     content: "";
@@ -106,7 +113,8 @@
 
 
 /* Style 2: */
-
+/* On Hover: Top and left border of after element and right, bottom borders of before element is */
+/* incresed from 0 to 10px */
 
 .menu1 li:after,
 .menu1 li:before {
@@ -147,6 +155,9 @@
 
 
 /* Style 3 */
+/* Before hover: After element's top and left borders are set, same as before elements's */
+/* right and bottom borders, width and height of both elements are set to 0% */
+/* On Hover: the before and after elements's height and width increased from 0 to 100%  */
 .menu2 li:after,
 .menu2 li:before {
     content: "";
@@ -186,6 +197,8 @@
 
 
 /*Style 4  */
+/* Before Hover: All border except the bottom border is transparent */
+/* On Hover: All border except bottom border is changed to white */
 
 .menu3 li {
     border: 2px solid transparent;
@@ -202,8 +215,10 @@
     border-bottom: 2px solid transparent;
 }
 
-/* Style 5 */
 
+
+/* Style 5 */
+/* On Hover the after element is moved from top 100% to 0%  */
 .menu4 li:after{
     content: "";
     position: absolute;
