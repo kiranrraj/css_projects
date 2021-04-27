@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flip Button</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(to right, #2F0743, #41295a); 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn1_container,
+        .btn2_container,
+        .btn3_container,
+        .btn4_container {
+            width: 150px;
+            height: 56px;
+            background-color: black;
+            display: flex;
+            position: relative;
+            border: 3px solid #111;
+            margin-right: 20px;
+            box-shadow: -1px 3px 22px 0px rgba(0,0,0,0.75);
+        }
+
+        /* Style 1 */
+        .btn1_container {
+            border-radius: 30px;
+        }
+
+        .one {
+            position: absolute;
+            height: 50px;
+            width: 50px;
+            background-color: grey;
+            display: block;
+            border-radius: 30px;
+            border: 2px solid red;
+            background-color: rgba(255, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .one {
+            left: 00px;
+        }
+
+        .inactive1 {
+            transform: translateX(calc(100px - 6px));
+            border: 2px solid #10d610;
+            background-color: rgba(0, 255, 0, 0.3);
+        }
+
+        /* Style 2 */
+        .two {
+            position: absolute;
+            height: 50px;
+            width: 75px;
+            background-color: grey;
+            display: block;
+            border: 2px solid red;
+            background-color: rgba(255, 0, 0, 0.5);
+            transition: all 0.3s ease;
+            clip-path: polygon(0 0, 50% 0, 100% 100%, 0% 100%);
+        }
+
+        .two {
+            left: 00px;
+        }
+
+        .inactive2 {
+            transform: translateX(calc(75px - 6px));
+            border: 2px solid #10d610;
+            background-color: rgba(0, 255, 0, 0.3);
+            clip-path: polygon(50% 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        /* Style 3 */
+
+        .btn3_container {
+            display: flex;
+            border: 3px solid #111;
+            overflow: hidden;
+            background-color: #fff;
+            border-radius: 10px;
+        }
+
+        .btn {
+            line-height: 50px;
+            font-size: 20px;
+            height: 100%;
+            padding: 0 20px;
+            width: 75px;
+            display: block;
+            transition: all 0.3s ease;
+            border-right: 0px;
+            text-shadow: 0 0 1px #111;
+            color: #fff;
+        }
+
+        .btn2{
+            right: -75px;
+        }
+
+        .main{
+            position: absolute;
+            background-color: #FF0099;
+            height: 100%;
+            width: 75px;
+            box-shadow: 0px 0px 17px -5px #000000;
+            border: 1px solid #111;
+            right: 0;
+            transition: all 500ms ease;
+        }
+
+        .active{
+            right: 75px;
+        }
+
+        .btn1{
+            background-color: #000000;
+        }
+
+        .btn2{
+            background-color: #000000;
+        }
+
+        /* Style 4 */
+
+        .btn4_container{
+            border: none;
+            background-color: #fff;
+            border-radius: 10px;
+            font-size: 30px;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border: 2px solid #fff;
+        }
+
+        .button3,
+        .button1,
+        .button2{
+            height: 100%;
+            display: block;
+            position: absolute;
+            transition: all 0.4s ease;
+            padding: 10px;
+            color:#FFf;
+            z-index: 1;
+        }
+
+        .button1{
+            left: 0%;
+            width: 100%;
+            background-color: green;
+        }
+
+        .button2{
+            background-color: #fff;
+            width: 60px;
+            height: 100%;
+            display: block;
+            height: 80%;
+            border-radius: 10px;
+            left: 55%;
+            top: 10%;
+            transition: all 0.7s ease;
+            z-index: 10;
+        }
+
+        .button3{
+            left: 100%;
+            width: 100%;
+            background-color: grey;
+            text-align: right;
+        }
+
+        .move{
+            transform: translateX(-75px);
+        }
+
+        .push{
+            left: 0;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="btn1_container">
+            <span class="one"></span>
+        </div>
+
+        <div class="btn2_container">
+            <span class="two"></span>
+        </div>
+
+        <div class="btn3_container">
+            <span class="btn btn1">ON</span>
+            <span class="btn main"></span>
+            <span class="btn btn2">OFF</span>
+        </div>
+
+        <div class="btn4_container">
+            <span class="button1">ON</span>
+            <span class="button2"></span>
+            <span class="button3">OFF</span>
+        </div>
+
+        <script>
+            const btn1_ctn = document.getElementsByClassName('btn1_container')[0];
+            const one = document.getElementsByClassName('one')[0];
+            btn1_ctn.addEventListener('click', () => {
+                one.classList.toggle('inactive1');
+            });
+
+            const btn2_ctn = document.getElementsByClassName('btn2_container')[0];
+            const two = document.getElementsByClassName('two')[0];
+            btn2_ctn.addEventListener('click', () => {
+                two.classList.toggle('inactive2');
+                
+            })
+
+            const btn3_ctn = document.querySelector('.btn3_container');
+            const main = document.querySelector('.main');
+            btn3_ctn.addEventListener('click', () => {
+               main.classList.toggle('active')
+            })
+
+            const btn4_ctn = document.querySelector('.btn4_container');
+            const button2= document.querySelector('.button2');
+            const button3 = document.querySelector('.button3');
+            btn4_ctn.addEventListener('click', () => {
+               button2.classList.toggle('move');
+               button3.classList.toggle('push')
+            })
+
+        </script>
+    </div>
+</body>
+
+</html>
