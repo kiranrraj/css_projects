@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flip Button</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(to right, #E9E4F0, #D3CCE3); 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn1_container{
+            width: 300px;
+            height: 300px;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            box-shadow: -1px 3px 22px 0px rgba(0,0,0,0.75);
+            background-image: linear-gradient(315deg, #bf3a30 0%, #864ba2 74%);
+        }
+
+        .flipBtn{
+            width: 150px;
+            height: 54px;
+            background-color: #fff;
+            border-radius: 50px;
+            position: relative;
+            border: 2px solid #111;
+            position: relative;
+            z-index: 10;
+        }
+
+        .btn{
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            background-color: #3bb78f;
+            position: absolute;
+            left: 0px;
+            transition: all 300ms ease;
+            z-index: 10;
+            overflow: hidden;
+            border: 2px solid #fff;
+        }
+
+        .move{
+            left: 97px;
+            background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+        }
+
+        .circle{
+            width: 20px;
+            height: 20px;
+            background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+            position: absolute;
+            z-index: 2;
+            transition: all 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .expand{
+            width: 100%;
+            height: 100%;
+        }
+
+ 
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="btn1_container">        
+            <div class="flipBtn">
+                <div class="btn"></div>
+            </div>
+            <span class="circle"></span>
+        </div>
+    </div>
+    <script>
+        const flipBtn = document.querySelector('.flipBtn');
+        const btn = document.querySelector('.btn');
+        const circle = document.querySelector('.circle');
+        flipBtn.addEventListener('click', () => {
+            btn.classList.toggle('move');
+            flipBtn.classList.toggle('changeBg');
+            circle.classList.toggle('expand');
+        });
+    </script>
+</body>
+
+</html>
