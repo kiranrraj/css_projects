@@ -1,0 +1,197 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(to right, #F15F79, #B24592);
+    display: flex;
+    justify-content: center;
+}
+
+.contact {
+    height: 90%;
+    min-height: 90%;
+    position: relative;
+    width: 800px;
+    min-width: 800px;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    border-radius: 40px;
+    overflow: hidden;
+    background: url('https://source.unsplash.com/WLUHO9A_xik/1600x900');
+    background-size: cover;
+    background-position: center;
+}
+
+.overlay {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(241, 95, 121, 0.3), rgba(178, 69, 146, 0.7));
+    border-radius: 40px;
+    z-index: 2;
+}
+
+.contact_title {
+    position: absolute;
+    z-index: 10;
+    font-size: 45px;
+    text-align: center;
+    padding-top: 30px;
+    z-index: 100;
+    margin-left: 50px;
+    color: #fff;
+}
+
+.contact_container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+}
+
+.left {
+    width: 50%;
+    height: 100%;
+}
+
+.right {
+    background-color: #fff;
+    height: 100%;
+    width: 50%;
+    padding-right: 20px;
+    padding-top: 30px;
+    position: relative;
+}
+
+.right__title {
+    font-size: 24px;
+    padding-bottom: 30px;
+    margin-left: 15px;
+}
+
+.name_cnt,
+.email_cnt,
+.uname_cnt,
+.password_cnt {
+    margin-bottom: 20px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 10px 0;
+}
+
+.btn_ctn{
+    display: flex;
+    justify-content: space-around;
+}
+
+input{
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #F15F79;
+    font-size: 20px;
+    transition: all 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    padding: 5px 10px 0px;
+    position: relative;
+    display: block;
+}
+
+
+label{
+    transform: translateY(0px);
+    transition: all 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    font-size: 20px;
+    letter-spacing: 2px;
+    height: 20px;
+}
+
+
+#name:focus ~ label,
+#name:valid ~ label, 
+#email:focus ~ label, 
+#email:valid ~ label,
+#uname:focus ~ label,
+#uname:valid ~ label,
+#password:focus ~ label,
+#password:valid ~ label{
+    transform: translateY(-45px);
+    color: #f15f79;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#name:focus,
+#name:valid, 
+#email:focus, 
+#email:valid,
+#uname:focus,
+#uname:valid,
+#password:focus,
+#password:valid{
+    border-bottom: 2px solid #B24592;
+}
+
+.right__text{
+    color: #d83526;
+    position: absolute;
+    width: 100%;
+    padding: 20px 25px;
+    bottom: 10px;
+    display: flex;
+}
+
+.right__text i {
+    font-size: 30px;
+    margin: 0px 30px;
+}
+
+.right__text i:last-child(4){
+    margin-right: 0px;
+}
+
+.right__text i:hover{
+    color: #457fca;
+}
+
+.btn {
+    margin-top: 20px;
+	box-shadow:inset 0px 1px 0px 0px #f7c5c0;
+	background:linear-gradient( center top, #fc8d83 5%, #e4685d 100% );
+	background-color:#fc8d83;
+	border-radius: 6px;
+	border:1px solid #d83526;
+	display:inline-block;
+	color:#ffffff;
+	font-size:15px;
+	font-weight:bold;
+    height:40px;
+	line-height:40px;
+    width:140px;
+	text-align:center;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.btn:hover {
+    background: linear-gradient(to right, #185a9d, #43cea2); 
+    border:1px solid #185a9d;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px;
+}
+
+.btn:active {
+	position:relative;
+	top:1px;
+}

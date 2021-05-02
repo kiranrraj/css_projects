@@ -1,0 +1,134 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100wv;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ff6a00;
+}
+
+.contact{
+    width: 600px;
+    height: 600px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
+    background: #e0e0e0;
+    text-shadow: 0 0 1px;
+    position: relative;
+}
+
+.sidebar{
+    position: absolute;
+    height: 100%;
+    width: 50px;
+    background-color: #ee0979;
+    top: 0px;
+    left: 0px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.contact__title{
+    margin-top: 50px;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.contact__main{
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px 50px;
+    position: relative;
+}
+
+.contact__main div{
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+
+#name, #email, #subject{
+    border: none;
+    outline: none;
+    width: 250px;
+    height: 35px;
+    color: #ee0979;
+    font-size: 20px;
+    padding-left: 20px;
+    transition: all 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 50px;
+    background: #e0e0e0;
+    box-shadow: inset 20px 20px 60px #bebebe,
+                inset -20px -20px 60px #ffffff;
+}
+
+textarea{
+    resize: none;
+    height: 100px;
+    width: 250px;
+    border-radius: 20px;
+    box-shadow: inset 20px 20px 60px #bebebe,
+    inset -20px -20px 60px #ffffff;
+    color: #ee0979;
+    border: none;
+    outline: none;
+    padding-left: 20px;
+    font-size: 20px;
+    padding-top: 15px;
+    margin-bottom: 30px;
+}
+
+input{
+    background-color: transparent;
+}
+
+.msg_ctn{
+    position: relative;
+    height: 100px;
+}
+
+.msg{
+    position: absolute;
+    right: 20px;
+}
+
+.msg_lbl{
+    position: absolute;
+    left: 20px;
+    top: 0px;
+}
+
+.btn {
+    align-self: center;
+    width: 160px;
+    height: 50px;
+    font-size: 16px;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 50px;
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    box-shadow:  20px 20px 40px #9d9d9d,
+                 -20px -20px 40px #ffffff;
+    border: none;
+    margin-bottom: 30px;
+ }
+ 
+ .btn:hover {
+    border-radius: 50px;
+    background: linear-gradient(145deg, #cacaca, #f0f0f0);
+    box-shadow:  20px 20px 60px #c7c7c7,
+                 -20px -20px 60px #f9f9f9;
+ }
