@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truncate the string</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            overflow-x: hidden;
+            background: linear-gradient(to right, #f05053, #e1eec3);
+            counter-reset: div_num;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            letter-spacing: 1.5px;
+        }
+
+        .card {
+            background-color: slateblue;
+            height: 200px;
+            width: 400px;
+            padding: 20px;
+            box-shadow:
+                0 2.8px 2.2px rgba(0, 0, 0, 0.062),
+                0 6.7px 5.3px rgba(0, 0, 0, 0.075),
+                0 12.5px 10px rgba(0, 0, 0, 0.082),
+                0 22.3px 17.9px rgba(0, 0, 0, 0.087),
+                0 41.8px 33.4px rgba(0, 0, 0, 0.094),
+                0 100px 80px rgba(0, 0, 0, 0.12);
+            border-radius: 20px;
+        }
+
+        p {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #e1eec3;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+
+        </div>
+    </div>
+</body>
+
+</html>

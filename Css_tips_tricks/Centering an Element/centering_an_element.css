@@ -1,0 +1,108 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    color: #fff;
+    font-size: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    padding:25px;
+    margin: auto;
+}
+
+/* =========================== Method 1 =========================== */
+
+.method1{
+    width: 600px;
+    height: 400px;
+    border: 2px solid black;
+    margin: 10px;
+    background-color: slategrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.m1_parent{
+    background-color: steelblue;
+    height: 50%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+}
+
+/* =========================== Method 2 =========================== */
+
+.method2{
+    width: 600px;
+    height: 400px;
+    border: 2px solid black;
+    margin: 10px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: slategrey;
+}
+
+.m2_parent{
+    background-color: steelblue;
+    height: 200px;
+    width: 300px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+}
+
+/* =========================== Method 3 =========================== */
+
+.method3{
+    width: 600px;
+    height: 400px;
+    border: 2px solid black;
+    margin: 10px;
+    position: relative;
+    background-color: slategrey;
+}
+
+.m3_parent{
+    background-color: steelblue;
+    height: 200px;
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 2px solid black;
+}
+
+.m3_child{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+/* =========================== Method 4 =========================== */
+
+.method4{
+    width: 600px;
+    height: 400px;
+    border: 2px solid black;
+    margin: 10px;
+    display: table;
+    background-color: slategrey;
+}
+
+.m4_parent{
+    background-color: steelblue;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    border: 2px solid black;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Counter</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            width: 100vw;
+            height: 100vh;
+            overflow-x: hidden;
+            background: linear-gradient(to right, #f05053, #e1eec3); 
+            counter-reset: div_num;
+        }
+
+        .box{
+            counter-increment: div_num 10;
+            position: relative;
+            height: 40px;
+            width: 40px;
+            background-color: steelblue;
+            margin: 5px;
+        }
+
+        .box:after{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            content: counter(div_num);
+            display: block;
+            color: #fff;
+            padding: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</body>
+</html>

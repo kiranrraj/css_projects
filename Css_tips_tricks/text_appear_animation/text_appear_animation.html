@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Appear Animation</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            overflow-x: hidden;
+            background: linear-gradient(to right, #f05053, #e1eec3);
+            counter-reset: div_num;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            flex-direction: column;
+        }
+
+        .landing {
+            height: 80px;
+            overflow-y: hidden;
+            display: block;
+            font-weight: 600;
+            font-size: 70px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            animation: appear 900ms ease;
+        }
+
+        @keyframes appear {
+            from {
+                transform: translateY(80px);
+            }
+
+            to {
+                transform: translateY(0px);
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="landing">
+            <p>Hello, I am</p>
+        </div>
+        <div class="landing">
+            <p>kiran raj r</p>
+        </div>
+        <div class="landing">
+            <p>web developer</p>
+        </div>
+        <div class="landing">
+            <p>web designer</p>
+        </div>
+
+    </div>
+    </div>
+</body>
+
+</html>
