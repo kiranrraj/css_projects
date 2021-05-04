@@ -1,0 +1,183 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    background: #56CCF2; 
+    background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2); 
+    background: linear-gradient(to right, #2F80ED, #56CCF2); 
+
+
+}
+
+.contact{
+    width: 900px;
+    min-width: 750px;
+    min-height: 500px;
+    height: 600px;
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.block{
+    height: 100%;
+    width: 150px;
+    background-color: #2f80ed;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.heading{
+    font-size: 40px;
+    margin-top: 20px;
+    color: #fff;
+}
+
+.para{
+    margin-bottom: 50px;
+    font-size: 18px;
+    position: relative;
+}
+
+.logo{
+    position: absolute;
+    right: 10%;
+    z-index: 100;
+    top: 20px;
+    font-size: 30px;
+    color: #fff;
+}
+
+.form{
+    width: 200px;
+    padding: 20px 0px 0px 30px;
+}
+
+.field{
+    position: relative;
+}
+
+input,textarea{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #fff;
+    resize: none;
+    padding: 2px;
+    margin-bottom: 40px;
+    width: 300px;
+    color: #fff;
+}
+
+.label{
+    color: #fff;
+    position: absolute;
+    top: -20px;
+    font-size: 14px;
+}
+
+.t_msg{
+    position: absolute;
+    color: #fff;
+    bottom: 130px;
+}
+
+.btn {
+	box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+	background-color:#79bbff;
+	border-radius:6px;
+	border:1px solid #84bbf3;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-shadow:0px 1px 0px #528ecc;
+}
+.btn:hover {
+	background:linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+	background-color:#378de5;
+}
+.btn:active {
+	position:relative;
+	top:1px;
+}
+
+.right{
+    height: 300px;
+    width: 300px;
+    background-color: #111;
+    position: absolute;
+    right: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, 
+    rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    border-radius: 15px;
+}
+
+.right_heading{
+    text-align: leftr;
+    margin-top: 20px;
+    font-size: 24px;
+    padding-left: 20px;
+}
+
+.email,.phone,.location{
+    padding: 10px 30px 5px;
+    font-size: 16px;
+    border-bottom: 2px solid #fff;
+    margin: 20px;
+}
+
+.email i,
+.phone i,
+.location i{
+    padding-right: 30px;
+    color: #2f80ed;
+}
+
+.circle{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #2F80ED, #56CCF2); 
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, 
+    rgba(17, 17, 26, 0.1) 0px 16px 56px, 
+    rgba(17, 17, 26, 0.1) 0px 24px 80px;
+    position: absolute;
+    right: 225px;
+    bottom: 170px;
+}
+
+.social{
+    font-size: 14px;
+    position: absolute;
+    right: 10px;
+    bottom: 50px;
+    display: flex;
+    color: #fff;
+}
+
+.social i {
+    padding: 15px;
+}
+
+.social i:hover{
+    color: #56CCF2;
+}
