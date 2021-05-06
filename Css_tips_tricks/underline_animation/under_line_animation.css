@@ -1,0 +1,677 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100vw;
+    height: auto;
+    overflow: hidden;
+    background: linear-gradient(to right, #f05053, #e1eec3); 
+    display: grid;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.anim{
+    margin: 20px 0;
+    font-size: 24px;
+}
+
+/* Animation one */
+/* Simple animation, on hover the 'before' element get a hight of 50%*/
+
+.one{
+    position: relative;
+}
+
+.one:before{
+    position: absolute;
+    background-color: rgba(10, 10, 10, 0.2);
+    content:"";
+    display: block;
+    width: 100%;
+    height: 0%;
+    left: 0;
+    bottom: 0;
+    transition: all 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.one:hover:before{
+    color:#fff;
+    height: 50%;
+}
+
+
+
+/* Animation Two */
+/* Simple animation, on hover the 'before' element get a width of 100% from 0%*/
+
+.two{
+    position: relative;
+}
+
+.two:before{
+    position: absolute;
+    background-color: #fff;
+    content:"";
+    display: block;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    transition: all 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.two:hover:before{
+    color:#fff;
+    width: 100%;
+}
+
+
+/* Animation three */
+/* Simple animation, on hover the 'before' element is scaled from 0 to 1*/
+
+.three{
+    position: relative;
+}
+
+.three:before{
+    position: absolute;
+    background-color: #fff;
+    content:"";
+    display: block;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    transition: all 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    transform: scale(0);
+}
+
+
+.three:hover:before{
+    color:#fff;
+    transform: scale(1);
+}
+
+
+/* Animation four */
+/* Here the before element is placed at left 0, bottom 0 and after element at right 0, bottom 0 */
+/* then on hover both get a width of 50% */
+
+.four{
+    position: relative;
+}
+
+.four:before,
+.four:after{
+    position: absolute;
+    background-color: #fff;
+    content:"";
+    display: block;
+    width: 0;
+    height: 2px;
+    transition: width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.four:before{
+    left:0;
+    bottom:0
+}
+
+.four:after{
+    right: 0;
+    bottom: 0;
+}
+
+.four:hover:before,
+.four:hover:after{
+    color:#fff;
+    width: 50%;
+}
+
+
+/* Animation five */
+/* Here on hover the 'after' element is scaled from 0 to 1 and transform origin is changed from right to left */
+
+
+.five{
+    position: relative;
+}
+
+.five:after{
+    position: absolute;
+    background-color: #fff;
+    content:"";
+    display: block;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    transition: transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    transform-origin: right;
+    transform: scaleX(0);
+}
+
+
+.five:hover:after{
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+
+/* Animation six */
+/* Here both before and after elements get a width of 100% from 0 on hover */
+
+.six{
+    position: relative;
+}
+
+.six:after,
+.six:before{
+    position: absolute;
+    background-color: #fff;
+    content:"";
+    display: block;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    transition: transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    transform: scaleX(0);
+}
+
+
+.six:before{
+    top:0;
+}
+
+.six:hover:after,
+.six:hover:before{
+    transform: scaleX(1);
+}
+
+
+/* Animation seven */
+/* Width is increased same as the above example, only difference is transform origin is changed to  */
+/* oppositee directions */
+
+.seven{
+    position: relative;
+}
+
+.seven:after,
+.seven:before{
+    position: absolute;
+    background-color: #fff;
+    content:"";
+    display: block;
+    width: 100%;
+    height: 2px;
+    transition: transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    transform: scaleX(0);
+}
+
+
+.seven:before{
+    left: 0;
+    top:0;
+    transform-origin: right;
+}
+
+.seven:after{
+    right: 0;
+    bottom:0;
+    transform-origin: left;
+}
+
+
+.seven:hover:before{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.seven:hover:after{
+    transform: scaleX(1);
+    transform-origin: right;
+}
+
+
+/* Animation eight */
+/* Before and after elements' width get increased from 0 to 50% on hover */
+
+.eight{
+    position: relative;
+}
+
+.eight:after,
+.eight:before{
+    position: absolute;
+    background-color: rgba(255, 255, 255,0.2);
+    content:"";
+    display: block;
+    width: 1px;
+    height: 100%;
+    transition: all 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+
+.eight:before{
+    left: 0;
+}
+
+.eight:after{
+    right: 0;
+    top:0
+}
+
+.eight:hover:before,
+.eight:hover:after{
+    width: 50%;
+}
+
+
+/* Animation nine */
+/* Before element's width get increased from 0 to 100% on hover */
+
+.nine{
+    position: relative;
+}
+
+.nine:before{
+    position: absolute;
+    background-color: rgba(255, 255, 255,0.2);
+    content:"";
+    display: block;
+    width: 1px;
+    height: 100%;
+    transition: all 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    left: 0;
+}
+
+.nine:hover:before{
+    width: 100%;
+}
+
+/* Animation ten */
+/* Before and after elements' height get increased from 0 to 50% on hover */
+
+.ten{
+    position: relative;
+}
+
+.ten:before,
+.ten:after{
+    position: absolute;
+    background-color: #fff;
+    content:"";
+    display: block;
+    width: calc(100% + 10px);
+    height: 0;
+    transition: all 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    bottom:0;
+}
+
+.ten:before{
+    left: -5px;
+    top: 0;
+}
+ 
+.ten:after{
+    right: -5px;
+}
+
+.ten:hover:before,
+.ten:hover:after{
+    height: 50%;
+}
+
+
+/* Animation eleven */
+/* Before element's bottom value is increased from 0 10 100% */
+
+.eleven{
+    position: relative;
+}
+
+.eleven:before,
+.eleven:after{
+    position: absolute;
+    background-color: #fff;
+    content:"";
+    display: block;
+    width: 100%;
+    height: 1px;
+    transition: all 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    right: 0;
+    bottom: 0;
+}
+
+.eleven:hover:before{
+    bottom: 100%;
+}
+
+/* Animation twelve */
+/* The height of after element is reduced from 100% to 0, after a short delay the height of  */
+/* before element is increased from 0 to 100% */
+
+.twelve{
+    position: relative;
+    z-index: 1;
+}
+
+p{
+    position: relative;
+    z-index: 10;
+    color: #111;
+}
+
+.twelve:before,
+.twelve:after{
+    position: absolute;
+    content:"";
+    display: block;
+    width: 100%;
+    height: 0;
+    transition: all 300ms 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    right: 0;
+    z-index: 1;
+    transform: scale(1);
+}
+
+.twelve:after{
+    height: 100%;
+    background-color: #e1eec3;
+    transition: all 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    bottom: 0;
+}
+
+.twelve:hover:before{
+    background-color: red;
+    height:100%;
+    top: 0;
+}
+
+.twelve:hover:after{
+    height: 0px;
+}
+
+
+/* Animation thirteen */
+/* The width of after element is reduced from 100% to 0, after a short delay the width of  */
+/* before element is increased from 0 to 100% */
+
+.thirteen{
+    position: relative;
+    z-index: 1;
+}
+
+p{
+    position: relative;
+    z-index: 10;
+    color: #111;
+}
+
+.thirteen:before,
+.thirteen:after{
+    position: absolute;
+    content:"";
+    display: block;
+    width: 0;
+    height: 100%;
+    transition: all 600ms 10ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    z-index: 1;
+    transform: scale(1);
+}
+
+.thirteen:after{
+    height: 100%;
+    background-color: #e1eec3;
+    transition: all 600ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    width: 100%;
+    right: 0;
+    top: 0;
+}
+
+.thirteen:before{
+    left: 0;
+}
+
+.thirteen:hover:before{
+    background-color: red;
+    width:100%;
+}
+
+.thirteen:hover:after{
+    width: 0px;
+}
+
+/* Animation Fourteen  */
+/* The width of after element and before element is increased from 0 to 100%, the height is set to 50%*/
+/* before element is placed at top 0 and after element is placed at bottom 0 */
+
+
+.fourteen{
+    position: relative;
+}
+
+.fourteen p{
+    color: #fff;
+}
+
+.fourteen:before,
+.fourteen:after{
+    position: absolute;
+    content:"";
+    display: block;
+    width: 0;
+    height: 50%;
+    bottom:0;
+}
+
+.fourteen:before{
+    left: 0;
+    top: 0;
+    background-color: #f05053;
+    transition: all 500ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+ 
+.fourteen:after{
+    left: 0;
+    bottom: 0;
+    background-color: #d61796;
+    transition: all 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.fourteen:hover:before,
+.fourteen:hover:after{
+    width: 100%;
+}
+
+/* Animation fifteen */
+/* The width of after element is reduced from 100% to 0, after a short delay the width of the */
+/* before element is increased from 0 to 100%, here the text is placed on the before and after */
+/* sudo elements and the opacity of paragraph is set to 0 always */
+
+.fifteen{
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    background-color: #e1eec3;
+}
+
+.fifteen p{
+    position: relative;
+    color: transparent;
+}
+
+.fifteen:before,
+.fifteen:after{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.fifteen:after{
+    background-color: #e1eec3;
+    content:"15. Hello World, Wish you a speedy recovery";
+    right: 0;
+    top: 0;
+    transition: width 800ms 10ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.fifteen:before{
+    content:"We will win aganist Covid 19";
+    opacity: 0;
+    text-align: center;
+    width: 0;
+    left: 0;
+    transition: all 800ms 10ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.fifteen:hover:before{
+    background-color: red;
+    opacity: 1;
+    width:100%;
+    z-index: 10;
+}
+
+.fifteen:hover:after{
+    width: 0px;
+}
+
+/* Animation sixteen */
+/* On hover after element's height is reduced from 20 t 2 and width is incresed from 20% to 100% */
+
+.sixteen{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sixteen:after{
+    position: absolute;
+    display: block;
+    width: 20%;
+    height: 20px;
+    overflow: hidden;
+    content:"";
+    background-color: #f05053;
+    transition: all 300ms ease;
+    bottom: 0;
+}
+
+.sixteen:hover:after{
+    height: 2px;
+    width: 100%;
+}
+
+
+/* Animation seventeen */
+/* Before hover the before and after elements are translate 100px in opposite directions  */
+/* on hover the translateX is decreased from 100 to 0*/
+.seventeen{
+    position: relative;
+}
+
+.seventeen:after,
+.seventeen:before{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    content:"";
+    background-color: #f05053;
+    bottom: 0;
+    transform: translateX(100px);
+    opacity: 0;
+    transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.seventeen:after{
+    background-color: #e1eec3;
+    top: 0;
+    transform: translateX(-100px);
+    transition: all 320ms 50ms cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.seventeen:hover:before,
+.seventeen:hover:after{
+    transform: translateX(0px);
+    opacity: 1;
+}
+
+/* Animation eighteen */
+/* The after element is scaled from 0 to 1 and transform origin is changed from top to bottom on hover */
+
+.eighteen{
+    position: relative;
+}
+
+.eighteen:after{
+    position: absolute;
+    background-color: #fff;
+    content:"";
+    display: block;
+    width: 100%;
+    bottom: 0;
+    height: 100%;
+    transition: transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    transform-origin: top ;
+    transform: scaleY(0);
+}
+
+
+.eighteen:hover:after{
+    transform-origin: bottom ;
+    transform: scaleY(1);
+}
+
+
+/* Animation nineteen */
+/* Before and after elements are translate in y direction  */
+
+.nineteen{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.nineteen:after,
+.nineteen:before{
+    position: absolute;
+    background-color: #111;
+    content:"";
+    display: block;
+    width: 80%;
+    bottom: 0;
+    height: 1px;
+    transform: translateY(20px);
+    transition: transform 300ms cubic-bezier(0.455, 0.03, 0.515, 1.955);
+    opacity: 0;
+
+}
+
+.nineteen:after{
+    width: 50%;
+}
+
+.nineteen:hover:after{
+    transform: translateY(-10px);
+    opacity: 1;
+}
+
+.nineteen:hover:before{
+    transform: translateY(-5px);
+    opacity: 1;
+}
+
