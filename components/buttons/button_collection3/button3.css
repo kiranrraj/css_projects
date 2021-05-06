@@ -1,0 +1,569 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h4 {
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #111;
+}
+
+.container {
+    min-height: 100vh;
+    height: auto;
+    width: 100vw;
+    overflow: hidden;
+    background: #000428;
+    background: linear-gradient(to right, #BDFFF3, #4AC29A);
+    position: relative;
+}
+
+.block {
+    height: 150px;
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 30px;
+}
+
+.btn {
+    height: 60px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.8s ease;
+    position: relative;
+    border: 2px solid #111;
+    margin: 0 40px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, 
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.btn::before,
+.btn::after {
+    position: absolute;
+    display: block;
+    content:"";
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* =============== Hover Effect 1 ======================== */
+/* Change border color, background color and text color on hover */
+
+.btn1{
+    transition: all 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
+    background-color: hsla(323, 87%, 50%, 0.664);
+    border: 2px solid #111;
+}
+
+.btn1 h4 {
+    color: #111;
+    font-weight: 600;
+}
+
+.btn1:hover{
+    border: 2px solid #111;
+    box-shadow: 0px 0px 26px 8px hsla(323, 87%, 50%, 0.664);
+    background-color: #000428;
+}
+
+.btn1:hover h4 {
+    color: hsla(323, 87%, 50%, 0.664);
+}
+
+
+/* =============== Hover Effect 2 ======================== */
+/* Before element's width and height increased from 0 to 100% on hover and after  */
+/* element's width and height decreased from 100% to zero */
+
+.btn2{
+    border: none;
+    z-index: 10;
+}
+
+.btn2 h4{
+    z-index: 10;
+    color: #111;
+}
+
+.btn2:after{
+    border: 2px solid #111;
+    transition: all 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn2:before{
+    width: 0;
+    height: 0;
+    transition: all 500ms ease;
+}
+
+.btn2:hover:after{
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.btn2:hover:before{
+    width: 100%;
+    height: 100%;
+    background-color:#111;
+}
+
+.btn2:hover h4{
+    color: #fff;
+}
+
+
+
+/* =============== Hover Effect 3 ======================== */
+/* Change the shadow value on hover */
+
+.btn3{
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    transition: all300ms ease;
+    border-radius: 20px;
+}
+
+.btn3:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, 
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+/* =============== Hover Effect 4 ======================== */
+/* On hover the after pseudo element move from left to right, the shape of pseudo element is made into a */
+/* rhombus using clip path property */
+
+.btn4{
+    overflow: hidden;
+}
+
+.btn4:after{
+    left: -100%;
+    clip-path: polygon(10% 0, 70% 0, 90% 100%, 30% 100%);
+    background-color: rgba(255, 255, 255,0.6);
+    transition: all 300ms ease;
+}
+
+.btn4:hover::after{
+    left: 100%;
+}
+
+/* =============== Hover Effect 5 ======================== */
+/* On hover after element moves from -300% in left to -100%, the lement is rotate 45 degree to be a  */
+/* sharp edge. To get the fill effect the element is made 300% in size, parent element's overflow is  */
+/* set to hidden */
+
+.btn5{
+    overflow: hidden;
+    transition: all 300ms ease;
+}
+
+.btn5 h4{
+    color: #111
+}
+
+.btn5:after{
+    width: 300%;
+    height: 300%;
+    left: -300%;
+    transform: rotate(45deg);
+    background-color: #f21170;
+    transition: all 300ms ease;
+}
+
+.btn5:hover h4{
+    color: #fff;
+    z-index: 10;
+    font-weight: 600;
+}
+
+.btn5:hover::after{
+    left: -100%;
+}
+
+.btn5:hover{
+    border: 2px solid #f21170;
+}
+
+/* =============== Hover Effect 6 ======================== */
+/* the after and before sudo element's width is incresed frpm 0 to 50% on hover */
+/* before is positioned at top and after at bottom */
+
+.btn6{
+    overflow: hidden;    
+    border: none;
+    box-shadow: 0px 0px 1px 1px;
+    z-index: 1;
+    transition: all 200ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.btn6 h4{
+    color: #111;
+    z-index: 100;
+}
+
+.btn6::after,
+.btn6::before{
+    content: "";
+    text-transform: uppercase;
+    text-align: center;
+    z-index: 1;
+    width: 100%;
+    height: 0%;
+    transition: all 200ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.btn6:after{
+    top: 0px;
+    z-index: 2;
+}
+
+
+.btn6:before{
+    bottom: 0px;
+    z-index: 2;
+}
+
+.btn6:hover:after{
+    background-color: #111;
+    height: calc(50% + 1px);
+}
+
+.btn6:hover:before{
+    height: calc(50% + 1px);
+    background-color: #72147e;
+}
+
+.btn6:hover h4{
+    color: #fff;
+}
+
+/* =============== Hover Effect 7 ======================== */
+/* before and after elements are rotated using animation on hover, rotation of before element  */
+/* starts at a 45 degree with the after pseudo element */
+
+.btn7{
+    border: none;
+}
+
+.btn7:before,
+.btn7:after{
+    border: 2px solid #111;
+    transition: all 100ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.btn7:hover:after{
+    width: 63px;
+    animation: anim7a 1.5s infinite linear;
+}
+
+
+.btn7:hover:before{
+    width: 63px;
+    animation: anim7b 1.5s infinite linear;
+}
+
+@keyframes anim7a {
+    from{
+        transform: rotate(0turn);
+    }
+    to{
+        transform:rotate(1turn);
+    }
+}
+
+@keyframes anim7b {
+    from{
+        transform: rotate(0.125turn);
+    }
+    to{
+        transform:rotate(1.125turn);
+    }
+}
+
+/* =============== Hover Effect 8 ======================== */
+/* 6 spans are used here, all have 0px height, on hover the height is increased to 50%, 3 spans  */
+/* are placed at top and three at bottom */
+.btn8{
+    position: relative;
+    width: 150px;
+    border: 3px solid #111;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+}
+
+.btn8 h4{
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+
+}
+
+.btn8 span{
+    background-color: #111;
+    height: 00px;
+    width: 25px;
+    z-index: 1;
+    display: block;
+    position: absolute;
+    transition: all 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn8 span:nth-child(2),
+.btn8 span:nth-child(4),
+.btn8 span:nth-child(6){
+    top:0;
+}
+
+.btn8 span:nth-child(2){
+    left: 25px;
+}
+
+.btn8 span:nth-child(4){
+    left: 75px;
+}
+
+.btn8 span:nth-child(6){
+    left: 125px;
+}
+
+.btn8 span:nth-child(1),
+.btn8 span:nth-child(3),
+.btn8 span:nth-child(5){
+    bottom: 0;
+}
+
+.btn8 span:nth-child(1){
+    left: 0px;
+}
+
+.btn8 span:nth-child(3){
+    left: 50px;
+}
+
+.btn8 span:nth-child(5){
+    left: 100px;
+}
+
+.btn8:hover span{
+    height: calc(60px - 2px);
+}
+
+/* =============== Hover Effect 9 ======================== */
+/* On hover the height of after element is increased to 150% which cause the left and right border to grow */
+/* similarly the before elements's width is increased to 120% cause the top and bottom border to grow*/
+
+.btn9{
+    border: none;
+    background-color: #fff;
+    transition: all 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.btn9:after,
+.btn9:before{
+    transition: all 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    width: 10%;
+    height: 10%;
+}
+
+.btn9:hover{
+    background-color: transparent;
+}
+
+.btn9:hover:before{
+    border-bottom: 2px solid #111;
+    border-top: 2px solid #111;
+    width: 120%;
+    height: 100%;
+}
+
+.btn9:hover:after{
+    border-left: 2px solid #111;
+    border-right: 2px solid #111;
+    height:150%;
+    width: 100%;
+}
+
+/* =============== Hover Effect 10 ======================== */
+/* On hover span height grow from 0 to 100%, each span is given differnet transition to create the pattern */
+
+.btn10{
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+}
+
+.btn10 h4{
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #111;
+
+}
+
+.btn10 span{
+    background-color: #111;
+    height: 00px;
+    width: 50px;
+    position: relative;
+    bottom: 0;
+    z-index: 1;
+}
+
+.btn10 span:nth-child(1) {
+    transition: all 1300ms ease;
+}
+.btn10 span:nth-child(2) {
+    transition: all 1100ms ease;
+}
+.btn10 span:nth-child(3) {
+    transition: all 900ms ease;
+}
+.btn10 span:nth-child(4) {
+    transition: all 700ms ease;
+}
+.btn10 span:nth-child(5) {
+    transition: all 500ms ease;
+}
+.btn10 span:nth-child(6) {
+    transition: all 300ms ease;
+}
+.btn10 span:nth-child(7) {
+    transition: all 500ms ease;
+}
+.btn10 span:nth-child(8) {
+    transition: all 700ms ease;
+}
+.btn10 span:nth-child(9) {
+    transition: all 900ms ease;
+}
+.btn10 span:nth-child(10) {
+    transition: all 1100ms ease;
+}
+.btn10 span:nth-child(11) {
+    transition: all 1300ms ease;
+}
+
+.btn10:hover span{
+    height: 100px;
+}
+
+.btn10:hover h4{
+    color: #fff;
+}
+
+/* =============== Hover Effect 11 ======================== */
+/* Before hover the before and after pseudo elements are translated 150px and -150px in x direction */
+/* the pseudo elements are given a triangle shape using clip path property */
+/* on hover the pseudo elements are translated to 0px in x direction  */
+.btn11{
+    overflow: hidden;
+}
+
+.btn11 h4{
+    z-index: 10;
+}
+
+
+.btn11:before,
+.btn11:after{
+    height: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f21170;
+    transition: all 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+
+.btn11:before{
+    clip-path: polygon(100% 0, 0% 100%, 0 0);
+    transform: translateX(-150px);
+}
+
+.btn11:after{
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    transform: translateX(150px);
+}
+
+.btn11:hover:before,
+.btn11:hover:after{
+    transform: translateX(0px);
+}
+
+/* =============== Hover Effect 12 ======================== */
+/* four spans are places at four corner, on hover they are brought to the center */
+
+.btn12{
+    overflow: hidden;
+}
+
+.btn12 h4{
+    z-index: 10;    
+    transition: all 300ms 100ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.btn12 span{
+    position: absolute;
+    width: 50%;
+    height: 0%;
+    background-color: #126e82;
+    transition: all 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.btn12 span:nth-child(1){
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+}
+
+.btn12 span:nth-child(2){
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+}
+
+.btn12 span:nth-child(3){
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+}
+
+.btn12 span:nth-child(4){
+    bottom: 0;
+    right: 0;
+    transform: translateX(100%);
+}
+
+.btn12:hover span{
+    transform: translateX(0px);
+    height: 50%;
+}
+
+.btn12:hover h4{
+    color: #fff;
+}
+
