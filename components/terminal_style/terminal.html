@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background-color: #111;
+            padding: 20px;
+        }
+        h2{
+            color: #14FC0f;
+            text-align: center;
+            padding: 20px 50px 50px;
+            font-size: 50px;
+            letter-spacing: 10px;
+        }
+
+        .form1 {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .t1 {
+            width: 100%;
+            resize: none;
+            border: none;
+            outline: none;
+            color: #14FC0f;
+            background-color: #111;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Sky Net</h2>
+        <form class="form1">
+            <textarea class="t1" rows="10" cols="80" wrap="soft"></textarea>
+        </form>
+    </div>
+
+    <script>
+
+        let msgArray = ["Welcome to Sky Net", "Please Wait", "Downloading your informations...", 
+        "Searching for Authorization...", "Authorization Found", "Authorization Level Confirmed", "Now you can access the system"];
+
+        let textVal, line, timeVal = 100, lineEndTime= 1000, index = 0, position = 0, length_str = msgArray[0].length;
+
+        function terminal() {
+
+            textVal = '';
+            line = 0;
+
+            while (line < index) {
+                // add new line after each line
+                textVal += msgArray[line++] + '\r\n';
+            }
+
+            // Set the value of text input
+            document.querySelector('.t1').value = `${textVal}${msgArray[index].substring(0, position)} _`;
+
+            if (position++ == length_str) {
+                // if the test position react final letter of a line
+                // text position is reset to zero and index is increased by one.
+                position = 0;
+                index++;
+
+                // as the text position reach last letter, if there is another line
+                // then set string length to next line length and wait for a 1s before starting 
+                // the next line.
+                if (index != msgArray.length) {
+                    length_str = msgArray[index].length;
+                    setTimeout(() => {
+                        terminal();
+                    }, lineEndTime);
+                }
+            }
+            else
+                // if the not the final letter call the type text function with timeout value of 60. 
+                setTimeout(() => {
+                    terminal();
+                }, timeVal);
+        }
+
+        terminal();
+    </script>
+</body>
+
+</html>
+

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shrinking NavBar</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        .container{
+            width: 100vw;
+            height: 200vh;
+            background-image: radial-gradient(circle at top right, rgb(36, 9, 119) 0%, rgb(36, 9, 119) 48%,rgb(72, 7, 149) 48%, rgb(72, 7, 149) 53%,rgb(109, 5, 178) 53%, rgb(109, 5, 178) 56%,rgb(145, 2, 208) 56%, rgb(145, 2, 208) 69%,rgb(181, 0, 237) 69%, rgb(181, 0, 237) 100%);
+        }
+
+        nav{
+            position: fixed;
+            display: flex;
+            align-items: center;
+            height: 80px;
+            width: 100%;
+            background-color: rgb(145, 2, 208);
+            transition: all 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .logo{
+            height: 100%;
+            width: 250px;
+            display: flex;
+            align-items: center;
+            padding: 0 30px;
+            font-size: 15px;
+            text-transform: uppercase;
+            color: #fff;
+        }
+
+        ul{
+            width: 100%;
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            font-size: 20px;
+        }
+
+        .item{
+            padding: 5px 10px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="logo">Kiran Raj r</div>
+            <ul>
+                <li class="item"><a href="#">Home</a></li>
+                <li class="item"><a href="#">About</a></li>
+                <li class="item"><a href="#">Product</a></li>
+                <li class="item"><a href="#">Features</a></li>
+                <li class="item"><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    <script>
+        window.addEventListener('scroll', ()=>{
+            if(document.body.scrollTop>80 || document.documentElement.scrollTop > 80){
+                document.querySelector('nav').style.height = '60px';
+                document.querySelector('nav').style.background = 'rgb(36, 9, 119)';
+                document.querySelector('ul').style.fontSize = '16px';
+            }else {
+                document.querySelector('nav').style.height = '80px';
+                document.querySelector('ul').style.fontSize = '16px';
+                document.querySelector('nav').style.background = 'rgb(145, 2, 208)';
+            }
+        })
+    </script>
+</body>
+</html>

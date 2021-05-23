@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caps Lock Status</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background-image: linear-gradient(135deg, rgb(252, 16, 76), rgb(244, 3, 176));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content {
+            width: 400px;
+            height: 150px;
+            background-color: rebeccapurple;
+            border-radius: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="btn">Press Any Key in keyboard</div>
+            <p class="msg"></p>
+        </div>
+    </div>
+    <script>
+        let para = document.querySelector('.msg');
+        let msg1 = "Caps Lock in On";
+        let msg2 = "Caps Lock in Off";
+        window.addEventListener('keyup', e => {
+            e.getModifierState('CapsLock') ? 
+            para.textContent = msg1 : para.textContent = msg2;
+            console.log('working');
+});
+    </script>
+</body>
+
+</html>
