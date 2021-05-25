@@ -19,6 +19,7 @@
             background-color: #111;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
             justify-items: center;
             align-items: center;
         }
@@ -60,7 +61,7 @@
             }
 
             50% {
-                transform: translateX(0%);
+                transform: translateX(-10%);
             }
 
             100% {
@@ -74,7 +75,7 @@
             }
 
             50% {
-                transform: translateX(calc(0%));
+                transform: translateX(10%);
             }
 
             100% {
@@ -83,25 +84,25 @@
         }
 
         @keyframes center {
-            0% {
+
+            0%,
+            100% {
                 transform: scale(0.5);
             }
 
             50% {
                 transform: scale(1);
             }
-
-            100% {
-                transform: scale(0.5);
-            }
         }
 
+        /* ----------------------------Two------------------------- */
 
         .two .dot:nth-child(1) {
             background-color: orange;
             animation: twoleft 1s ease-in alternate infinite;
             transform: translateX(100%);
         }
+
         .two .dot:nth-child(2) {
             animation: none;
         }
@@ -113,10 +114,12 @@
         }
 
         @keyframes twoleft {
-            0%{
+            0% {
                 transform: translateX(-100%);
             }
-            50%,100% {
+
+            50%,
+            100% {
                 transform: translateX(100%);
             }
         }
@@ -128,6 +131,360 @@
 
             100% {
                 transform: translateX(100%);
+            }
+        }
+
+        /* ----------------------------Three------------------------- */
+
+        .three.dots {
+            width: 150px;
+        }
+
+        .three .dot {
+            animation: fade ease 2s infinite;
+        }
+
+        .three .dot:nth-child(1) {
+            animation-delay: 0.4s;
+        }
+
+        .three .dot:nth-child(2) {
+            animation-delay: 0.8s;
+        }
+
+        .three .dot:nth-child(3) {
+            animation-delay: 1.2s;
+        }
+
+
+        @keyframes fade {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* ----------------------------Four------------------------- */
+
+        .four .dot {
+            transform: translateY(-100%);
+            animation: upDown 1s ease-in-out alternate infinite;
+        }
+
+        .four .dot:nth-of-type(1) {
+            animation-delay: 0.5s;
+        }
+
+        .four .dot:nth-of-type(2) {
+            animation-delay: 0.25s;
+        }
+
+        @keyframes upDown {
+            0% {
+                transform: translateY(-100%);
+            }
+
+            100% {
+                transform: translateY(100%);
+            }
+        }
+
+        /* ----------------------------Five------------------------- */
+
+        .five .dot {
+            transform: translateY(-100%);
+            background-color: #fff;
+
+            animation: centerDot 1s ease-in-out alternate infinite;
+        }
+
+        .five .dot:nth-child(2) {
+            z-index: 10;
+        }
+
+        .five .dot:nth-of-type(1) {
+            animation: leftDot 1s ease-in-out alternate infinite;
+        }
+
+        .five .dot:nth-of-type(3) {
+            animation: rightDot 1s ease-in-out alternate infinite;
+        }
+
+        @keyframes centerDot {
+            0% {
+                transform: scale(1.5);
+            }
+
+            45%,
+            55% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.5);
+            }
+        }
+
+        @keyframes leftDot {
+            0% {
+                transform: translateX(40px) scale(0.75);
+            }
+
+            45%,
+            55% {
+                transform: translateX(-20px) scale(1);
+            }
+
+            100% {
+                transform: translateX(40px) scale(0.75);
+            }
+        }
+
+        @keyframes rightDot {
+            0% {
+                transform: translateX(-40px) scale(0.75);
+            }
+
+            45%,
+            55% {
+                transform: translateX(20px) scale(1);
+            }
+
+            100% {
+                transform: translateX(-40px) scale(0.75);
+            }
+        }
+
+        /* ----------------------------six------------------------- */
+
+        .six.dots {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            animation: rotateMain 1s ease infinite forwards;
+        }
+
+        .six .dot {
+            position: absolute;
+            background-color: #fff;
+            animation: none;
+            transform: translate(0px);
+        }
+
+        .six .dot:nth-of-type(1) {
+            left: 0;
+            top: 0;
+        }
+
+        .six .dot:nth-of-type(2) {
+            left: 0;
+            bottom: 0;
+        }
+
+        .six .dot:nth-of-type(3) {
+            right: 0;
+            top: 0;
+        }
+
+        .six .dot:nth-of-type(4) {
+            right: 0;
+            bottom: 0;
+        }
+
+        @keyframes rotateMain {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* ----------------------------seven------------------------- */
+
+        .seven.dots {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            animation: rotateMain 1s ease infinite forwards;
+        }
+
+        .seven .dot {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            background-color: #fff;
+            animation: none;
+            transform: translate(0px);
+            animation: changePos 1s ease infinite forwards;
+        }
+
+        .seven .dot:nth-of-type(1) {
+            left: 0%;
+            top: 0;
+        }
+
+        .seven .dot:nth-of-type(2) {
+            left: 0;
+            top: 100%;
+        }
+
+        .seven .dot:nth-of-type(3) {
+            left: 100%;
+            top: 0;
+        }
+
+        .seven .dot:nth-of-type(4) {
+            left: 100%;
+            top: 100%;
+        }
+
+        @keyframes rotateMain {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes changePos {
+
+            50% {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%)scale(0.5);
+            }
+        }
+
+        /* ----------------------------Eight------------------------- */
+
+        .eight.dots {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            width: 150px;
+        }
+
+        .eight .dot {
+            animation: none;
+            position: relative;
+        }
+
+        .eight .dot:after {
+            content: "";
+            position: absolute;
+            background-color: inherit;
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            animation: beat 900ms ease-in-out forwards infinite;
+        }
+
+        .eight .dot:nth-child(2):after {
+            animation-delay: 200ms;
+        }
+
+        .eight .dot:nth-child(3):after {
+            animation-delay: 400ms;
+        }
+
+        @keyframes beat {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(3);
+            }
+        }
+
+        /* ----------------------------Nine------------------------- */
+
+        .nine.dots{
+            /* background-color: rebeccapurple; */
+            height: 100px;
+            width: 100px;
+            position: relative;
+            animation: smoothRotate 3s ease infinite forwards;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nine .dot{
+            width: 10px;
+            height: 10px;
+            animation:none;
+            position: absolute;
+            transform: translate(0px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nine .dot:nth-child(1):after,
+        .nine .dot:nth-child(3):after{
+            content: "";
+            width: 100%;
+            height: 100%;
+            display: block;
+            background-color: inherit;
+            border-radius: 50%;
+            transform: translateY(0px);
+        }
+
+        .nine .dot:nth-child(1):after{
+            animation: anim1 300ms ease infinite alternate forwards;
+        }
+
+        .nine .dot:nth-child(3):after{
+            animation: anim2 300ms ease infinite alternate forwards;
+        }
+
+        @keyframes anim1 {
+            0%,100%{
+                transform: translateY(0px);
+            }
+            50%{
+                transform: translateY(50px);
+            }
+        }
+
+        @keyframes anim2 {
+            0%,100%{
+                transform: translateY(0px);
+            }
+            50%{
+                transform: translateY(-50px);
+            }
+        }
+
+
+        .nine .dot:nth-child(1){
+            top: -5px;
+        }
+
+        .nine .dot:nth-child(2){
+            top: calc(50% - 5px)
+        }
+
+        .nine .dot:nth-child(3){
+            top: calc(100% - 5px);
+        }
+
+
+        @keyframes smoothRotate {
+            0% {
+                transform: rotateZ(0deg) translate3d(0, 0, 0);
+            }
+
+            100% {
+                transform: rotateZ(720deg) translate3d(0, 0, 0);
             }
         }
     </style>
@@ -147,6 +504,51 @@
             <div class="dot"></div>
             <div class="dot"></div>
         </div>
+
+        <div class="dots three">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
+        <div class="dots four">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
+        <div class="dots five">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
+        <div class="dots six">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
+        <div class="seven dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
+        <div class="dots eight">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
+        <div class="dots nine">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
     </div>
 </body>
 
