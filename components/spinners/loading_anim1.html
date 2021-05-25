@@ -17,21 +17,22 @@
             width: 100vw;
             height: 100vh;
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
             justify-items: center;
             align-items: center;
             background-color: #111;
         }
-
-        svg {
-            width: 3.75em;
+        /* ----------------------One----------------------- */
+        .one {
+            width: 100px;
             animation: 1.5s spin cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
         }
 
-        .circlepath {
+        .one .circlepath {
             fill: none;
             stroke: darkgoldenrod;
-            stroke-width: 2;
+            stroke-width: 3;
         }
 
         .atom {
@@ -44,19 +45,442 @@
                 transform: rotate(360deg);
             }
         }
+
+        /* ------------------Two----------------------- */
+
+        .two {
+            width: 100px;
+            animation: 1s spin ease-in-out infinite;
+        }
+
+        .two .circlepath {
+            fill: none;
+            stroke: darkgoldenrod;
+            stroke-width: 3;
+        }
+
+        .two .atom1 {
+            fill: gold;
+            stroke: none;
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* -------------------------Three--------------------- */
+
+        .three {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border-top: 2px solid gold;
+            border-right: 2px solid transparent;
+            animation: anim3 1s linear infinite;
+        }
+
+        @keyframes anim3 {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* -------------------------four--------------------- */
+
+        .four {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid #111;
+            border-top: 2px solid gold;
+            border-bottom: 2px solid gold;
+            animation: anim4 1s linear infinite;
+        }
+
+        @keyframes anim4 {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* -------------------------five--------------------- */
+
+        .five {
+            width: 75px;
+            height: 75px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .five .line {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid #111;
+        }
+
+        .five .line:nth-child(1) {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            border-top: 2px solid gold;
+            border-bottom: 2px solid gold;
+            animation: anim4 800ms linear infinite;
+        }
+
+        .five .line:nth-child(2) {
+            border-left: 2px solid gold;
+            border-right: 2px solid gold;
+            animation: anim4 1200ms linear infinite;
+        }
+
+        @keyframes anim4 {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* -------------------------Six--------------------- */
+
+        .six {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .six .line {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid #111;
+        }
+
+        .six .line:nth-child(1) {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            border-right: 2px solid gold;
+            border-bottom: 2px solid gold;
+            animation: anim4 600ms linear infinite;
+        }
+
+        .six .line:nth-child(2) {
+            border-left: 2px solid gold;
+            border-top: 2px solid gold;
+            animation: anim4 1200ms linear infinite;
+        }
+
+        .six .line:nth-child(3) {
+            position: absolute;
+            width: 75px;
+            height: 75px;
+            border-right: 2px solid gold;
+            border-top: 2px solid gold;
+            animation: anim4 900ms linear infinite;
+        }
+
+        @keyframes anim4 {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* -------------------------seven--------------------- */
+
+        .seven {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .seven .line {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid #111;
+            border-bottom: 2px solid gold;
+        }
+
+        .seven .line:nth-child(1) {
+            width: 25px;
+            height: 25px;
+            animation: anim4 600ms linear infinite;
+        }
+
+        .seven .line:nth-child(2) {
+            width: 50px;
+            height: 50px;
+            animation: anim4 800ms linear infinite;
+        }
+
+        .seven .line:nth-child(3) {
+            width: 75px;
+            height: 75px;
+            animation: anim4 1000ms linear infinite;
+        }
+
+        .seven .line:nth-child(4) {
+            width: 100px;
+            height: 100px;
+            animation: anim4 1200ms linear infinite;
+        }
+
+        @keyframes anim4 {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* ------------------ Eight ------------------ */
+
+        .eight {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid #111;
+            border-top: 2px solid gold;
+            border-bottom: 2px solid gold;
+            animation: anim8 1s linear infinite;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .eight .center{
+            width: 20px;
+            height: 20px;
+            background-color: rgba(255,215,0, 0.6);
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        @keyframes anim8 {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+         /* ------------------ Nine ------------------ */
+
+         .nine {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid #111;
+            border-top: 2px solid gold;
+            border-bottom: 2px solid gold;
+            animation: anim9 1s linear infinite;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nine .center{
+            width: 20px;
+            height: 20px;
+            background-color: rgba(255,215,0, 0.6);
+            position: absolute;
+            border-radius: 50%;
+            animation: scaleUp 1s linear infinite forwards;
+        }
+
+        @keyframes anim9 {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes scaleUp {
+            0%{
+                transform: scale(0.2);
+                opacity: 1;
+            }
+            100%{
+                transform: scale(1.2);
+                opacity:0;
+            }
+        }
+
+        /* ------------------ ten ------------------ */
+
+        .ten {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 5px solid #111;
+            border-top: 5px solid gold;
+            border-bottom: 5px solid gold;
+            animation: anim10 2s linear infinite;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ten .center{
+            width: 20px;
+            height: 20px;
+            background-color: rgba(255,215,0, 0.6);
+            position: absolute;
+            border-radius: 50%;
+            animation: scaleUp 2s linear infinite forwards;
+        }
+
+        @keyframes anim10 {
+            0% {
+                opacity: 1;
+            }
+            50%{
+                width: 50px;
+                height: 50px;
+                transform: rotate(360deg);
+            }
+            100%{
+                opacity: 0;
+            }
+        }
+
+        @keyframes scaleUp {
+            0%{
+                transform: scale(0.2);
+
+            }
+            100%{
+                transform: scale(1.2);
+            }
+        }
+
+        /* ------------------ eleven ------------------ */
+
+        .eleven {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border-top: 10px solid #4285F4;
+            border-left: 10px solid #DB4437;
+            border-bottom: 10px solid #F4B400;
+            border-right: 10px solid #0F9D58;
+            animation: anim11 2s linear infinite;
+        }
+
+        @keyframes anim11 {
+            to{
+                transform: rotate(360deg);
+            }
+        }
+
+
+        /* ------------------ twelve ------------------ */
+
+        .twelve{
+            width: 100px;
+            height: 100px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .twelve .circle1, .twelve .circle2{
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 2px solid orange;
+            animation: anim12 1.2s ease-in infinite;
+        }
+
+        .twelve .circle2{
+            width: 60px;
+            height: 60px;
+            animation: anim12-2 1.2s ease-out infinite;
+            border: 2px solid red;
+        }
+
+        @keyframes anim12 {
+            100%{
+                width: 60px;
+                height: 60px;
+                opacity: 0;
+            }
+        }
+
+        @keyframes anim12-2 {
+            0%{
+                opacity: 0;
+            }
+            100%{
+                width: 10px;
+                height: 10px;
+                opacity: 1;
+        }
+    }
+
     </style>
 </head>
 
 <body>
     <div class="container">
-        <svg class= "one" viewBox="0 0 100 100">
+        <svg class="one" viewBox="0 0 100 100">
+            <circle class="atom" cx="50" cy="50" r="4"></circle>
             <circle class="circlepath" cx="50" cy="50" r="40"></circle>
-            <circle class="atom" cx="25" cy="5" r="4"></circle>
+            <circle class="atom" cx="50" cy="35" r="4"></circle>
+            <circle class="circlepath" cx="50" cy="50" r="25"></circle>
+            <circle class="atom" cx="50" cy="20" r="4"></circle>
         </svg>
-        <svg class= "two" viewBox="0 0 100 100">
+        <svg class="two" viewBox="0 0 100 100">
             <circle class="circlepath" cx="50" cy="50" r="40"></circle>
-            <circle class="atom" cx="50" cy="10" r="8"></circle>
+            <circle class="atom1" cx="50" cy="10" r="8"></circle>
         </svg>
+        <div class="three"></div>
+        <div class="four"></div>
+        <div class="five">
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+        <div class="six">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="seven">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+        <div class="eight">
+            <div class="center"></div>
+        </div>
+
+        <div class="nine">
+            <div class="center"></div>
+        </div>
+
+        <div class="ten">
+            <div class="center"></div>
+        </div>
+
+        <div class="eleven"></div>
+
+        <div class="twelve">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+        </div>
     </div>
 </body>
 
