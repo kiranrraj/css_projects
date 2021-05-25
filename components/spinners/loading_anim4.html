@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Animation 4</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background-color: #111;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            justify-items: center;
+            align-items: center;
+        }
+
+        .dots {
+            width: 100px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: white;
+        }
+
+        .dot:nth-child(1) {
+            transform: translateX(100%);
+            background-color: orange;
+            animation: left 1s ease alternate infinite;
+        }
+
+        .dot:nth-child(2) {
+            animation: center 1s ease infinite;
+        }
+
+        .dot:nth-child(3) {
+            transform: translateX(-100%);
+            background-color: green;
+            animation: right 1s ease alternate infinite;
+        }
+
+        @keyframes left {
+            0% {
+                transform: translateX(100%);
+            }
+
+            50% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        @keyframes right {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            50% {
+                transform: translateX(calc(0%));
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        @keyframes center {
+            0% {
+                transform: scale(0.5);
+            }
+
+            50% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(0.5);
+            }
+        }
+
+
+        .two .dot:nth-child(1) {
+            background-color: orange;
+            animation: twoleft 1s ease-in alternate infinite;
+            transform: translateX(100%);
+        }
+        .two .dot:nth-child(2) {
+            animation: none;
+        }
+
+        .two .dot:nth-child(3) {
+            background-color: green;
+            transform: translateX(-100%);
+            animation: tworight 1s ease-out alternate infinite;
+        }
+
+        @keyframes twoleft {
+            0%{
+                transform: translateX(-100%);
+            }
+            50%,100% {
+                transform: translateX(100%);
+            }
+        }
+
+        @keyframes tworight {
+            50% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="dots one">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
+        <div class="dots two">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+</body>
+
+</html>

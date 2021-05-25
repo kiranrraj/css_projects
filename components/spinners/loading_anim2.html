@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Animation 2</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            justify-items: center;
+            align-items: center;
+            background-color: #111;
+        }
+
+        .circle {
+            border: 3px solid rgba(255, 0, 0, 0.3);
+            border-top-color: red;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            animation: rotate 1s linear infinite;
+        }
+
+        @keyframes rotate {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        .two {
+            width: 100px;
+            transform-origin: center;
+            animation: rotate 4s linear infinite;
+        }
+
+        .two circle {
+            fill: none;
+            stroke: red;
+            stroke-width: 10;
+            stroke-dasharray: 1, 20;
+        }
+
+        @keyframes rotate {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .three {
+            width: 50px;
+            transform-origin: center;
+            animation: rotate2 2s linear infinite;
+        }
+
+        .three circle {
+            fill: none;
+            stroke: red;
+            stroke-width: 4;
+            stroke-dasharray: 1, 200;
+            stroke-linecap: round;
+            animation: dash2 2s cubic-bezier(0.175, 0.885, 0.32, .275) infinite;
+        }
+
+        @keyframes rotate2 {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes dash2 {
+            0% {
+                stroke-dasharray: 1, 200;
+                stroke-dashoffset: 0;
+            }
+
+            50% {
+                stroke-dasharray: 90, 200;
+                stroke-dashoffset: -25px;
+            }
+
+            100% {
+                stroke-dashoffset: -155px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="circle one"></div>
+        <svg class="two" viewBox="25 25 50 50">
+            <circle cx="50" cy="50" r="20"></circle>
+        </svg>
+        <svg class="three" viewBox="25 25 50 50">
+            <circle cx="50" cy="50" r="20"></circle>
+        </svg>
+    </div>
+</body>
+
+</html>

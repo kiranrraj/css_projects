@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Animation 1</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            justify-items: center;
+            align-items: center;
+            background-color: #111;
+        }
+
+        svg {
+            width: 3.75em;
+            animation: 1.5s spin cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
+        }
+
+        .circlepath {
+            fill: none;
+            stroke: darkgoldenrod;
+            stroke-width: 2;
+        }
+
+        .atom {
+            fill: gold;
+            stroke: none;
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <svg class= "one" viewBox="0 0 100 100">
+            <circle class="circlepath" cx="50" cy="50" r="40"></circle>
+            <circle class="atom" cx="25" cy="5" r="4"></circle>
+        </svg>
+        <svg class= "two" viewBox="0 0 100 100">
+            <circle class="circlepath" cx="50" cy="50" r="40"></circle>
+            <circle class="atom" cx="50" cy="10" r="8"></circle>
+        </svg>
+    </div>
+</body>
+
+</html>

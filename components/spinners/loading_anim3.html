@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Animation 3</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            justify-items: center;
+            align-items: center;
+            background-color: #111;
+        }
+
+        .wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .out,
+        .mid,
+        .in {
+            border: 3px solid transparent;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+
+        .out {
+            width: 100px;
+            height: 100px;
+            animation: spin 2s linear infinite;
+            border-top-color: orange;
+            border-right-color: orange;
+        }
+
+        .mid {
+            width: 60px;
+            height: 60px;
+            animation: spin 1.5s linear reverse infinite;
+            border-top-color: white;
+            border-right-color: white;
+        }
+
+        .in {
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            border-top-color: green;
+            border-right-color: green;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .two {
+            width: 100px;
+            height: 100px;
+            border: 5px solid transparent;
+            border-top-color: orange;
+            border-bottom-color: green;
+            border-radius: 50%;
+            animation: rotate 1s linear infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .two:before {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 20px;
+            height: 20px;
+            border: 5px solid white;
+            border-radius: 50%;
+            animation: beat 1s alternate ease-in-out infinite;
+        }
+
+        @keyframes rotate {
+            from{
+                transform: rotate(0);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes beat {
+            from {
+                transform: scale(0.1);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="one wrapper">
+            <div class="out"></div>
+            <div class="mid"></div>
+            <div class="in"></div>
+        </div>
+        <div class="two"></div>
+    </div>
+</body>
+
+</html>
