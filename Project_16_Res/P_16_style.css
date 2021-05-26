@@ -1,0 +1,257 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Merriweather', serif;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+ul{
+    text-decoration: none;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.section{
+    min-height: 100vh;
+    height: 700px;
+    margin: 10rem auto;
+}
+
+.heading{
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+nav.navBar{
+    z-index: 10;
+    width: 100%;
+    height: 80px;
+    background-color: #077023;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.logo{
+    padding: 0 30px;
+}
+
+.logo a{
+    font-size: 2.6rem;
+    color: #fff;
+    font-family: 'Fondamento', cursive;
+    letter-spacing: 3px;
+}
+
+ul.navItems{
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.item{
+    font-size: 1.8 rem;
+    color: orange;
+}
+
+.landing{
+    position: relative;
+    min-height: 650px;
+    height: 100vh;
+    width: 100%;
+    background-image: url('./images/hero_img.jpg');
+    background-position: center;
+    background-size: cover;
+    /* https://images.pexels.com/photos/1414651/pexels-photo-1414651.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing__text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing--heading{
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+.landing--para{
+    font-size: 2rem;
+    padding: 0 20%;
+}
+
+.landing--btn {
+    margin-top: 2rem;
+    padding:1rem 3rem;
+	box-shadow:inset 0px 1px 10px 0px #3dc21b;
+	border-radius:6px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-weight:bold;
+	text-decoration:none;
+	text-shadow:0px 1px 10px #2f6627;
+    letter-spacing: 2px;
+    font-size: 1.6rem;
+    background-color:#077023;
+    background:linear-gradient(to bottom, #077023 5%, #60ed0e 100%);
+}
+.landing--btn:hover {
+	background:linear-gradient(to bottom, #60ed0e 5%, #077023 100%);
+	background-color:#60ed0e;
+}
+.landing--btn:active {
+	position:relative;
+	top:1px;
+}
+
+/* About */
+section.about{
+    position: relative;
+    padding: 0 50px;
+}
+
+.about--content{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.about--left,
+.about--right{
+    width: 80%;
+}
+
+.left--sub{
+    font-family: 'Fondamento', cursive;
+    font-size: 2.5rem;
+}
+
+.left--para{
+    font-size: 1.6rem;
+    margin: 2rem 0;
+    letter-spacing: 1.5px;
+    line-height: 150%;
+}
+
+.about--right{
+    position: relative;
+    /* https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260 */
+    background-image: url('./images/about_img.jpg');
+    background-position: center;
+    background-size: cover;
+    border: 10px solid orange;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+.right--overlay{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(224, 110, 17, 0.3);
+    transition: all 300ms ease-in-out;
+}
+
+.about--right:hover .right--overlay{
+    left: 50%;
+    top: 0;
+    position: absolute;
+}
+/* --------- About ------- */
+
+/* Menu */
+.menu{
+    position: relative;
+    min-height: 1000px;
+}
+
+.menu--content{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 50px;
+    padding: 0 50px;
+}
+
+.menuType{
+    border-left: 10px solid orange;
+    padding-left: 20px;
+}
+
+.menuType--name{
+    text-align: center;
+    padding: 10px;
+    font-size: 2rem;
+    position: relative;
+}
+
+.menuItem{
+    background-color: orange;
+    position: relative;
+    padding: 15px 10px;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    align-items: center;
+    margin-bottom: 10px;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    line-height: 150%;
+}
+
+.menuItem:before{
+    position: absolute;
+    content: "";
+    width: 0px;
+    height: 100%;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: all 300ms ease-in-out;
+    border-radius: 10px;
+}
+
+.menuItem:hover:before{
+    width: 100%;
+}
+
+.menuItem:hover{
+    color: #fff;
+}
+
+.menuItem--name,
+.menuItem--description{
+    z-index: 2;
+}
+
+
+/* --------- Menu ------- */
+
+/* Experts */
+
+/* --------- Experts ------- */
