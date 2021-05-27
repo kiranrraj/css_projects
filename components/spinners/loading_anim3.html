@@ -21,21 +21,366 @@
             grid-template-rows: repeat(3, 1fr);
             justify-items: center;
             align-items: center;
-            background-color: #fff;
+            background: #fff;
         }
 
-        .block{
+        .block {
             width: 100px;
             height: 100px;
-            background-color: #111;
+            position: relative;
+            overflow: hidden;
         }
 
+        .square {
+            width: 50px;
+            height: 50px;
+            background-color: orchid;
+        }
+
+        /* Style One */
+
+        .block1 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+        }
+
+        .block1 .square {
+            background-color: yellowgreen;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px,
+                rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        }
+
+        .block1 .square:nth-child(1) {
+            animation: transformTop 1.2s ease-in-out alternate infinite;
+        }
+
+        .block1 .square:nth-child(2) {
+            animation: transformRight 1.2s ease-in-out alternate infinite;
+        }
+
+        .block1 .square:nth-child(3) {
+            animation: transformTop2 1.2s ease-in-out alternate infinite;
+        }
+
+        .block1 .square:nth-child(4) {
+            animation: transformRight2 1.2s ease-in-out alternate infinite;
+        }
+
+        @keyframes transformTop {
+            0% {
+                transform: translateY(-100%);
+            }
+
+            100% {
+                transform: translateY(0%);
+            }
+        }
+
+        @keyframes transformTop2 {
+            0% {
+                transform: translateY(100%)translateX(100%);
+            }
+
+            100% {
+                transform: translateY(0%)translateX(100%);
+            }
+        }
+
+        @keyframes transformRight {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(0%);
+            }
+        }
+
+        @keyframes transformRight2 {
+            0% {
+                transform: translateX(-200%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+
+        /* Style Two */
+
+        .block2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            animation: 600ms mainFlip2 ease-in infinite alternate;
+        }
+
+        .block2 .square{
+            animation: 1.4s ease blink1 infinite;
+        }
+
+        .block2 .square:nth-child(1) {
+            background-color: orange;
+            animation-delay: 0s;
+        }
+
+        .block2 .square:nth-child(2) {
+            background-color: #fff;
+            animation-delay: 0.4s;
+        }
+
+        .block2 .square:nth-child(3) {
+            background-color: green;
+            animation-delay: 0.8s;
+        }
+
+        .block2 .square:nth-child(4) {
+            background-color: blue;
+            animation-delay: 1.2s;
+            
+        }
+
+        @keyframes blink1 {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+
+        /* style Three */
+
+        .block3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .block3 .square {
+            background-color: yellowgreen;
+            animation: 800ms rotate3 linear infinite;
+        }
+
+        @keyframes rotate3 {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        /* Style four */
+
+        .block4 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            overflow: visible;
+        }
+
+        .block4 .square {
+            width: 20px;
+            height: 20px;
+            background-color: rgb(205, 50, 153);
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px,
+                rgba(0, 0, 0, 0.24) 0px 1px 2px;
+                animation: cubic-bezier(0.47, 0, 0.745, 0.715) rotate4 infinite 1.2s;
+        }
+
+        @keyframes rotate4 {
+            0% {
+                transform: scale(0.1) rotate(45deg) translateY(0);
+            }
+
+            50% {
+                transform: scale(1.5) rotate(45deg)translateY(10px);
+            }
+
+            100% {
+                transform: scale(0.1) rotate(45deg)translateY(0);
+            }
+        }
+
+        .block4 .square:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .block4 .square:nth-child(2) {
+            animation-delay: 300ms;
+        }
+
+        .block4 .square:nth-child(3) {
+            animation-delay: 600ms;
+        }
+
+        .block4 .square:nth-child(4) {
+            animation-delay: 900ms;
+        }
+
+        /* Style 5 */
+
+        .block5{
+            position: relative;
+        }
+
+        .block5 .square{
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            animation: 2s ease-in-out toCenter infinite;
+        }
+
+        .block5 .square:nth-child(1) {
+            top: 0;
+            left: 0;
+        }
+
+        .block5 .square:nth-child(2) {
+            top: 0;
+            left: calc(100% - 20px);
+        }
+
+        .block5 .square:nth-child(3) {
+            top: calc(100% - 20px);
+            left: 0;
+        }
+
+        .block5 .square:nth-child(4) {
+            top: calc(100% - 20px);
+            left: calc(100% - 20px);
+        }
+
+        @keyframes toCenter {
+            0%,100%{
+                transform: translate(0px);
+            }
+            50%{
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%)rotate(180deg) scale(0.2);
+                background-color: tomato;
+            }
+        }
+
+
+        /* Style 5 */
+
+        .block6{
+            position: relative;
+        }
+
+        .block6 .square{
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: green;
+            z-index: 20;
+        }
+
+        .block6 .square:nth-child(1) {
+            top: 0;
+            left: 0;
+        }
+
+        .block6 .square:nth-child(2) {
+            top: 0;
+            left: calc(100% - 20px);
+        }
+
+        .block6 .square:nth-child(3) {
+            top: calc(100% - 20px);
+            left: 0;
+        }
+
+        .block6 .square:nth-child(4) {
+            top: calc(100% - 20px);
+            left: calc(100% - 20px);
+            z-index: 0;
+        }
+
+        .block6 .square:nth-child(1):before,
+        .block6 .square:nth-child(3):before{
+            content: "";
+            position: absolute;
+            background-color: orange;
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .block6 .square:nth-child(1):before{
+            animation: 500ms ease-in-out move61 infinite;
+        }
+
+        .block6 .square:nth-child(3):before{
+            animation: 500ms ease-in-out move62 infinite;
+        } 
+
+        @keyframes move61 {
+            0%,100%{
+                transform: translate(0px);
+            }
+            50%{
+                transform: translateX(80px)translateY(80px);
+            }
+        }
+
+        @keyframes move62 {
+            0%,100%{
+                transform: translate(0px);
+            }
+            50%{
+                transform: translateX(80px)translateY(-80px);
+            }
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
         <div class="block block1">
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+        </div>
+
+        <div class="block block2">
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+        </div>
+
+        <div class="block block3">
+            <div class="square"></div>
+        </div>
+
+        <div class="block block4">
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+        </div>
+
+        <div class="block block5">
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+        </div>
+
+        <div class="block block6">
             <div class="square"></div>
             <div class="square"></div>
             <div class="square"></div>
