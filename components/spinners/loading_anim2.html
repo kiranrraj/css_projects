@@ -17,35 +17,21 @@
             width: 100vw;
             height: 100vh;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
             justify-items: center;
             align-items: center;
             background-color: #111;
         }
 
-        .circle {
-            border: 3px solid rgba(255, 0, 0, 0.3);
-            border-top-color: red;
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-            animation: rotate 1s linear infinite;
-        }
-
-        @keyframes rotate {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-
-        .two {
+        /* Style One */
+        .one {
             width: 100px;
             transform-origin: center;
             animation: rotate 4s linear infinite;
         }
 
-        .two circle {
+        .one circle {
             fill: none;
             stroke: red;
             stroke-width: 10;
@@ -58,40 +44,375 @@
             }
         }
 
-        .three {
-            width: 50px;
-            transform-origin: center;
-            animation: rotate2 2s linear infinite;
+        
+
+        .lines{
+            width: 100px;
+            height: 100px;
+            position: relative;
         }
 
-        .three circle {
-            fill: none;
-            stroke: red;
-            stroke-width: 4;
-            stroke-dasharray: 1, 200;
-            stroke-linecap: round;
-            animation: dash2 2s cubic-bezier(0.175, 0.885, 0.32, .275) infinite;
+        /* Style Two */
+
+        .l2{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
         }
 
-        @keyframes rotate2 {
-            100% {
+        .l2 .line{
+            height: 20px;
+            width: 4px;
+            background-color: #fff;
+            animation: topBottom 800ms linear infinite;
+        }
+
+        .l2 .line:nth-child(1){
+            animation-delay: 0s;
+        }
+
+        .l2 .line:nth-child(2){
+            animation-delay: 0.2s;
+        }
+
+        .l2 .line:nth-child(3){
+            animation-delay: 0.4s;
+        }
+
+        .l2 .line:nth-child(4){
+            animation-delay: 0.6s;
+        }
+
+        @keyframes topBottom {
+            0%{
+                transform: translateY(0px);
+            }
+
+            25%{
+                transform: translateY(40px);
+            }
+
+            75%{
+                transform: translateY(-40px);
+            }
+
+            100%{
+                transform: translateY(0px);
+            }
+        }
+
+        /* Style Three*/
+
+        .l3{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .l3 .line{
+            height: 0px;
+            width: 4px;
+            left: 0px;
+            background-color: #fff;
+            animation: expand 900ms ease infinite;
+        }
+
+        .l3 .line:nth-child(1){
+            animation-delay: 0s;
+        }
+
+        .l3 .line:nth-child(2){
+            animation-delay: 0.2s;
+        }
+
+        .l3 .line:nth-child(3){
+            animation-delay: 0.4s;
+        }
+
+        .l3 .line:nth-child(4){
+            animation-delay: 0.6s;
+        }
+
+        @keyframes expand {
+            0%, 100%{
+                height: 0px;
+            }
+
+            50%{
+                height: 40px;
+            }
+
+        }
+
+        /* Style Four*/
+
+        .l4{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .l4 .line{
+            height: 2px;
+            width: 4px;
+            background-color: #fff;
+            transform-origin: bottom;
+            animation: expandTop 900ms ease infinite;
+        }
+
+        .l4 .line:nth-child(1){
+            animation-delay: 0s;
+        }
+
+        .l4 .line:nth-child(2){
+            animation-delay: 0.2s;
+        }
+
+        .l4 .line:nth-child(3){
+            animation-delay: 0.4s;
+        }
+
+        .l4 .line:nth-child(4){
+            animation-delay: 0.6s;
+        }
+
+        @keyframes  expandTop{
+            0%, 100%{
+                transform: scaleY(1);
+            }
+
+            50%{
+                transform: scaleY(20);
+            }
+        }
+
+        /* Style five*/
+
+        .l5{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .l5 .line{
+            height: 20px;
+            width: 4px;
+            background-color: orange;
+            animation: blink 1s ease infinite;
+        }
+
+        .l5 .line:nth-child(1),
+        .l5 .line:nth-child(10){
+            animation-delay: 0.8s;
+        }
+
+        .l5 .line:nth-child(2),
+        .l5 .line:nth-child(9){
+            animation-delay: 0.6s;
+        }
+
+        .l5 .line:nth-child(3),
+        .l5 .line:nth-child(8){
+            animation-delay: 0.4s;
+        }
+
+        .l5 .line:nth-child(4),
+        .l5 .line:nth-child(7){
+            animation-delay: 0.2s;
+        }
+
+        .l5 .line:nth-child(6),
+        .l5 .line:nth-child(5){
+            animation-delay: 0s;
+        }
+
+        @keyframes  blink{
+            0%, 100%{
+                opacity: 0;
+            }
+
+            50%{
+                opacity: 1;
+            }
+        }
+
+        /* Style Six*/
+
+        .l6{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            height: 20px;
+            background-color: blue;
+        }
+
+        .l6 .line:nth-child(1){
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 10px;
+            width: 100%;
+            background-color: #fff;   
+            animation: expandRight 2s ease infinite;
+        }
+
+        .l6 .line:nth-child(2){
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 10px;
+            width: 100%;
+            animation: expandLeft 2s ease infinite;
+            background-color: #fff;
+        }
+
+        @keyframes  expandRight{
+            0%{
+                transform-origin: left;
+                transform: translateX(0%);
+            }
+
+            50%{
+                transform: translateX(-100%);
+
+            }
+
+            100%{
+                transform: translateX(0%);
+            }
+        }
+
+        @keyframes  expandLeft{
+            0%{
+                transform-origin: right;
+                transform: translateX(100%);
+            }
+
+            50%{
+                transform: translateX(0%);
+                transform-origin: left;
+            }
+
+            100%{
+                transform: translateX(100%);
+            }
+        }
+
+        /* Style Seven */
+
+        .l7{
+            position: relative;
+            width: 80px;
+            height: 80px;
+            animation: 900ms linear rotateMain infinite ;
+        }
+
+        .l7 .line{
+            position: absolute;
+            background-color: #fff;
+        }
+
+        .l7 .line:nth-child(1){
+            left: 0;
+            top: 40px;
+            animation: 600ms ease-in growWidth infinite ;
+        }
+        .l7 .line:nth-child(2){
+            right: 0;
+            top: 40px;
+            animation: 600ms ease-in growWidth infinite ;
+        }
+        .l7 .line:nth-child(3){
+            left: 40px;
+            animation: 600ms ease-in growHeight infinite ;
+        }
+        .l7 .line:nth-child(4){
+            left: 40px;
+            bottom:0px;
+            animation: 600ms ease-in growHeight infinite ;
+        }
+
+        @keyframes growHeight {
+            0%,100%{
+                height: 0px;
+                width: 2px;
+            }
+            50%{
+                height: 40px;
+                width: 2px;
+            }
+        }
+
+        @keyframes growWidth {
+            0%,100%{
+                width: 0px;
+                height: 2px;
+            }
+            50%{
+                width: 40px;
+                height: 2px;
+            }
+        }
+
+        @keyframes rotateMain {
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
                 transform: rotate(360deg);
             }
         }
 
-        @keyframes dash2 {
-            0% {
-                stroke-dasharray: 1, 200;
-                stroke-dashoffset: 0;
+
+        /* Style Eight*/
+
+        .l8{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .l8 .line{
+            height: 20px;
+            width: 4px;
+            background-color: rgb(255, 0, 76);
+            animation: growLine 1s ease infinite;
+        }
+
+        .l8 .line:nth-child(1),
+        .l8 .line:nth-child(10){
+            animation-delay: 0.8s;
+        }
+
+        .l8 .line:nth-child(2),
+        .l8 .line:nth-child(9){
+            animation-delay: 0.6s;
+        }
+
+        .l8 .line:nth-child(3),
+        .l8 .line:nth-child(8){
+            animation-delay: 0.4s;
+        }
+
+        .l8 .line:nth-child(4),
+        .l8 .line:nth-child(7){
+            animation-delay: 0.2s;
+        }
+
+        .l8 .line:nth-child(6),
+        .l8 .line:nth-child(5){
+            animation-delay: 0s;
+        }
+
+        @keyframes  growLine{
+            0%, 100%{
+                transform: scale(0);
             }
 
-            50% {
-                stroke-dasharray: 90, 200;
-                stroke-dashoffset: -25px;
-            }
-
-            100% {
-                stroke-dashoffset: -155px;
+            50%{
+                transform: scale(1.5);
             }
         }
     </style>
@@ -99,13 +420,68 @@
 
 <body>
     <div class="container">
-        <div class="circle one"></div>
-        <svg class="two" viewBox="25 25 50 50">
+        <svg class="one" viewBox="25 25 50 50">
             <circle cx="50" cy="50" r="20"></circle>
         </svg>
-        <svg class="three" viewBox="25 25 50 50">
-            <circle cx="50" cy="50" r="20"></circle>
-        </svg>
+
+        <div class="lines l2">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+        <div class="lines l3">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+        <div class="lines l4">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+        <div class="lines l5">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+        <div class="lines l6">
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+        <div class="lines l7">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+        <div class="lines l8">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
     </div>
 </body>
 
