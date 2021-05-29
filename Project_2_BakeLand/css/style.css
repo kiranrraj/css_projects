@@ -317,18 +317,21 @@ a{
 .img__head {
     position: absolute;
     z-index: 100;
-    color: #ffa555;
+    color: #fff;
     top: 15%;
     margin: 0 auto;
     text-transform: uppercase;
+    letter-spacing: 5px;
     width: 100%;
     text-align: center;
     text-shadow: 1px 1px 1px red;
     background-color: rgba(0, 0, 0, 0.4);
-    padding: 0.3rem 0;
+    padding: 1rem 0;
     transform: translateY(-200px);
     transition: all 0.5s ease-out;
+    font-size: 2rem;
 }
+
 
 .img__head::before,
 .img__head::after {
@@ -351,7 +354,7 @@ a{
 
 .img__para {
     position: absolute;
-    font-size: 0.7rem;
+    font-size: 1.1rem;
     bottom: 10%;
     width: 100%;
     margin: 0 auto;
@@ -362,15 +365,17 @@ a{
     overflow: hidden;
     transform: translateY(200px);
     transition: all 0.5s ease;
-    text-align: left;
-    padding: 0 0.3rem;
+    text-align: center;
+    padding: 1rem 2rem;
+    line-height: 150%;
+    letter-spacing: 2px;
 }
 
 .img__para::before,
 .img__para::after {
     content: " ";
     display: block;
-    width: 0.2rem;
+    width: 0.6rem;
     height: 100px;
     background-color: #ffa555;
     position: absolute;
