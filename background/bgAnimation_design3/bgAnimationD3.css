@@ -26,34 +26,26 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: shrink 9s cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation: shrink 2s linear forwards;
     border: 5px solid #fff;
 }
 
 .item2{
-    border: 5px solid #111;
-    animation: shrink 9s cubic-bezier(0.075, 0.82, 0.165, 1);
     top: 0;
     left: 0;
 }
 
 .item3{
-    animation: shrink 9s cubic-bezier(0.075, 0.82, 0.165, 1);
-    border: 5px solid #fff;
     top: 0;
     left: 100%;
 }
 
 .item5{
-    animation: shrink 9s cubic-bezier(0.075, 0.82, 0.165, 1);
-    border: 5px solid #111;
     top: 100%;
     left: 0;
 }
 
 .item4{
-    animation: shrink 9s cubic-bezier(0.075, 0.82, 0.165, 1);
-    border: 5px solid #fff;
     top: 100%;
     left: 100%;
 }

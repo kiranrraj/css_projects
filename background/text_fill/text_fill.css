@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.overlay{
+    width: 100vw;
+    height: 100vh;
+    background-color: #111;
+    position: absolute;
+}
+
+h1{
+    z-index: 10;
+    font-size: 70px;
+    background: linear-gradient(120deg, #FFFFFF 0%, #FF006B 100%), 
+    linear-gradient(-235deg, #FFFFFF 0%, #FF006B 100%), 
+    linear-gradient(-235deg, #FFFFFF 0%, #000000 100%), 
+    linear-gradient(190deg, #FFE037 0%, #FFE037 40%, #1DCD9F 40%, 
+    #1DCD9F 50%, #088C6F 50%, #088C6F 70%, #23033C 70%, #23033C 100%);
+    background-blend-mode: overlay, overlay, overlay, normal;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: moveBg 1.5s linear infinite reverse;
+}
+
+
+@keyframes moveBg {
+    to {
+      background-position: 200% center;
+    }
+  }
