@@ -8,12 +8,10 @@
     overflow: hidden;
     width: 100vw;
     height: 100vh;
-    background: #4776E6;
-    background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);
-    background: linear-gradient(to right, #8E54E9, #4776E6);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    background-color: #111;
 }
 
 .navbar,
@@ -22,10 +20,9 @@
 .navbar3,
 .navbar4 {
     width: 100%;
-    height: 100px;
+    height: 80px;
     display: flex;
     align-items: center;
-    background-color: #8E54E9;
 }
 
 .header,
@@ -34,7 +31,7 @@
 .header4,
 .header1 {
     width: 100%;
-    height: 60px;
+    height: 80%;
 }
 
 .menu,
@@ -57,6 +54,7 @@
 .menu1 li {
     display: block;
     height: 100%;
+    width: 120px;
     font-size: 20px;
     position: relative;
     display: flex;
@@ -91,24 +89,24 @@
     height: 80%;
     border-top: 2px solid #fff;
     border-bottom: 2px solid #fff;
-    transition: all 0.3s ease;
+    transition: all 200ms ease;
 }
 
 .menu li:before {
-    width: 120%;
+    width: 80%;
     height: 0%;
     border-left: 2px solid #fff;
     border-right: 2px solid #fff;
-    transition: all 0.5s ease;
+    transition: all 300ms ease;
 }
 
 
 .menu li:hover::before {
-    height: 80%;
+    height: calc(80% + 2px);
 }
 
 .menu li:hover::after {
-    width: 120%;
+    width: calc(80% + 2px);
 }
 
 
@@ -128,8 +126,6 @@
 }
 
 .menu1 li:after {
-    width: 0%;
-    height: 0%;
     top: 0;
     left: 0;
     border-top: 2px solid transparent;
@@ -137,8 +133,6 @@
 }
 
 .menu1 li:before {
-    width: 0%;
-    height: 0%;
     right: 0;
     bottom: 0;
     border-bottom: 2px solid transparent;
@@ -158,6 +152,7 @@
 /* Before hover: After element's top and left borders are set, same as before elements's */
 /* right and bottom borders, width and height of both elements are set to 0% */
 /* On Hover: the before and after elements's height and width increased from 0 to 100%  */
+
 .menu2 li:after,
 .menu2 li:before {
     content: "";
@@ -170,8 +165,6 @@
 }
 
 .menu2 li:after {
-    width: 0%;
-    height: 0%;
     top: 0;
     left: 0;
     border-top: 2px solid transparent;
@@ -179,8 +172,6 @@
 }
 
 .menu2 li:before {
-    width: 0%;
-    height: 0%;
     right: 0;
     bottom: 0;
     border-bottom: 2px solid transparent;
@@ -190,8 +181,8 @@
 
 .menu2 li:hover::before,
 .menu2 li:hover::after {
-    width: 100%;
-    height: 100%;
+    width: 110%;
+    height: 110%;
     border-color: #fff;
 }
 
@@ -203,9 +194,11 @@
 .menu3 li {
     border: 2px solid transparent;
     border-bottom: 2px solid #fff;
-    margin-right: 0px;
-    padding-right: 30px;
-    transition: border 0.3s ease;
+    transition: all 0.3s ease-in-out;
+    margin: 0;
+    width: 150px;
+    padding: 0px 40px;
+
 }
 
 .menu3 li:hover {
@@ -219,11 +212,19 @@
 
 /* Style 5 */
 /* On Hover the after element is moved from top 100% to 0%  */
+
+.menu4 li{
+    transition: all 500ms ease;
+}
+
+.menu4 li:hover{
+    color: rebeccapurple;
+}
 .menu4 li:after{
     content: "";
     position: absolute;
     display: block;
-    border: 2px solid #fff;
+    border: 2px solid rebeccapurple;;
     width: 100%;
     height: 0%;
     transition: all 0.5s ease;
