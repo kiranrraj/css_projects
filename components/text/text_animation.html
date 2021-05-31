@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Effect</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 1em;
+            width: 100%;
+            background-color: #fff;
+        }
+
+        .text {
+            animation: textjump 1.5s ease-in-out infinite;
+            font-size: 60px;
+            text-align: center;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: rgba(1, 1, 1, 0.2);
+            text-shadow: 0px 0px 10px;
+        }
+
+        .text:hover {
+            animation-play-state: paused;
+        }
+
+
+        @keyframes textjump {
+            0% {
+                transform: translateY(0);
+                text-shadow:
+                    0 0 0 #ff449f,
+                    0 0 0 #fc92e3,
+                    0 0 0 #f6dfeb,
+                    0 0 0 #ffbbcc;
+            }
+
+            25% {
+                transform: translateY(-20px);
+                text-shadow:
+                    0 25px 0 #ff449f,
+                    0 20px 0 #fc92e3,
+                    0 15px 0 #f6dfeb,
+                    0 10px 0 #ffbbcc;
+            }
+
+            50% {
+                transform: translateY(20px);
+                text-shadow:
+                    0 -10px 0 #ff449f,
+                    0 -15px 0 #fc92e3,
+                    0 -20px 0 #f6dfeb,
+                    0 -25px 0 #ffbbcc;
+            }
+
+            75% {
+                transform: translateY(-20px);
+                text-shadow:
+                    0 -10px 0 #ff449f,
+                    0 -15px 0 #fc92e3,
+                    0 -20px 0 #f6dfeb,
+                    0 -25px 0 #ffbbcc;
+            }
+
+            100% {
+                transform: translateY(0px);
+                text-shadow:
+                    0 0 0 #ff449f,
+                    0 0 0 #fc92e3,
+                    0 0 0 #f6dfeb,
+                    0 0 0 #ffbbcc;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text">Kiran Raj R</h1>
+    </div>
+</body>
+
+</html>

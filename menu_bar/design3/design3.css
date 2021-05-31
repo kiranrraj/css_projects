@@ -4,51 +4,69 @@
     box-sizing: border-box;
 }
 
+
 .container {
     font-family: 'Playfair Display', serif;
     overflow: hidden;
     width: 100vw;
     height: 100vh;
     background: #4776E6;
-    background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);
-    background: linear-gradient(to right, #8E54E9, #4776E6);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    color: #fff;
 }
+
 
 .menu{
     height: 60px;
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    list-style: none;
+    justify-content: space-around;
     padding: 0 100px;
 }
+
 
 .menu li {
     display: block;
     height: 100%;
-    font-size: 25px;
+    font-size: 20px;
     position: relative;
-    /* To hide the li, use color as transparent */
-    color: transparent;
     text-transform: uppercase;
-    transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
     text-align: center;
-    margin-right: 30px;
-    /* To hide any component outside the main frame */
-    overflow: hidden;
-    padding: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+
+.menu li:before,
+.menu li:after{
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+
 
 /* I used before and after element to create this effect,  'after' element is visible before hover*/
 /* On Hover: 'after' element is moved out of the visible area using left 100%. 'before' element is */
 /* moved to visible area by changing the left value from -100% to 0% */
 
-.menu li:before,
-.menu li:after{
+    /* To hide the li, use color as transparent */
+.menu1 li {
+    color: transparent;
+    /* To hide any component outside the main frame */
+    overflow: hidden;
+}
+
+
+
+.menu1 li:before,
+.menu1 li:after{
     /* Attr() : To get the value from the attribute */
     content: attr(data-val);
     display: block;
@@ -58,30 +76,183 @@
     top: 20%;
 }
 
-.menu li:after{
+
+
+.menu1 li:after{
     left: 0%;
     color: tomato;
     transition: all 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
-.menu li:before{
+
+
+.menu1 li:before{
     opacity: 0;
     /* to hidden content */
     left: -100%;
     transition: all 0.4s cubic-bezier(0.455, 0.03, 0.515, 1.955);
 }
 
-.menu li:hover:before{
+
+.menu1 li:hover:before{
     /* Bring the content into frame */
     left: 0%;
     opacity: 1;
     color: #fff;
 }
 
-.menu li:hover:after{
+
+
+.menu1 li:hover:after{
     /* Content hidden by pusing to left 100% */
     left: 100%;
     opacity: 0;
 }
 
 
+/* Style 2 */
+
+.menu2 li:after,
+.menu2 li:before {
+    content: "";
+    position: absolute;
+    display: block;
+    border: 0px solid transparent;
+    width: 10px;
+    height: 10px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+.menu2 li:after {
+    top: 0;
+    left: 0;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+}
+
+
+.menu2 li:before {
+    right: 0;
+    bottom: 0;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+}
+
+
+.menu2 li:hover:before{
+    right:100%;
+    bottom: 0px;
+    border-bottom: 2px solid #fff;
+    border-left: 2px solid #fff;
+    border-right: none;
+}
+
+
+.menu2 li:hover:after{
+    left:100%;
+    top:0px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    border-left: none;
+}
+
+
+/* Style 3 */
+
+.menu3 li:after,
+.menu3 li:before {
+    content: "";
+    position: absolute;
+    display: block;
+    border: 0px solid transparent;
+    width: 10px;
+    height: 10px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+.menu3 li:after {
+    top: 0;
+    left: 0;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+}
+
+
+.menu3 li:before {
+    top: 0;
+    left: 0;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+}
+
+
+.menu3 li:hover:before{
+    left:calc(100% - 12px);
+    top: calc(100% - 12px);
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+}
+
+/* Style 4 */
+.menu4 {
+    background-color: #111;
+    height: 100px;
+}
+
+.menu4 li {
+    font-size: 35px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    z-index: 10;
+}
+
+
+.menu4 li:hover:before{
+    animation: 1500ms distorted ease-in-out infinite ;
+}
+
+.menu4 li:hover:after{
+    animation: 1500ms distorted ease-in-out infinite reverse;
+}
+
+.menu4 li:after,
+.menu4 li:before {
+    content: attr(data-val);
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu4 li:before{
+    color: rgba(0, 247, 255, 0.945);
+    z-index: -1;
+}
+
+.menu4 li:after{
+    color: #fff;
+    z-index: -2;
+}
+
+@keyframes distorted {
+	0%,100% {
+		transform: translate(0)
+	}
+	20% {
+		transform: translate(3px, -3px)
+	}
+	40% {
+		transform: translate(-3px, -3px)
+	}
+	60% {
+		transform: translate(3px, -3px)
+	}
+	80% {
+		transform: translate(3px, 3px)
+	}
+}
