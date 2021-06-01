@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Animations</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            background-color: #111;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+        }
+        /*  */
+        /* Style One */
+        /*  */
+        .style1{
+            background-color: #333;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .style1 .dot1{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: greenyellow;
+            position: relative;
+        }
+
+        .style1 .dot1:before,
+        .style1 .dot1:after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: orange;
+            display: block;
+        }
+
+        .style1 .dot1:before{
+            left: -42px;
+            animation: style1-1 1s linear infinite;
+        }
+
+        .style1 .dot1:after{
+            right: -42px;
+            animation: style1-2 1s linear infinite;
+        }
+
+        @keyframes style1-1{
+            0%{
+                transform: translateY(0px) translateX(0);
+            }
+            25%{
+                transform: translateY(40px);
+            }
+            50%{
+                transform: translateY(0px)translateX(22px);
+            }
+            75%{
+                transform: translateY(-40px);
+            }
+            100%{
+                transform: translateY(0px)translateX(0);
+            }
+        }
+
+        @keyframes style1-2{
+            0%{
+                transform: translateY(0px);
+            }
+            25%{
+                transform: translateY(-40px);
+            }
+            50%{
+                transform: translateY(0px)translateX(-22px);
+            }
+            75%{
+                transform: translateY(40px);
+            }
+            100%{
+                transform: translateY(0px);
+            }
+        }
+
+        /*  */
+        /* Style Two */
+        /*  */
+        .style2{
+            background-color: #333;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .style2 .dot2{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: greenyellow;
+            position: relative;
+        }
+
+        .style2 .dot2:before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            display: block;
+            animation: style2-1 2s linear infinite;
+            background-color: orange;
+        }
+
+        @keyframes style2-1{
+            0%{
+                transform: translateY(0px);
+                background-color: greenyellow;
+            }
+            0.1%{
+                background-color: orange;
+            }
+            12.5%{
+                transform: translateY(50px);
+                background-color: orange;
+            }
+            25%{
+                transform: translateY(0px);
+                background-color: greenyellow;
+            }
+            25.1%{
+                background-color: orange;
+            }
+            37.5%{
+                transform: translateX(50px);
+                background-color: orange;
+            }
+            50%{
+                transform: translateX(0px);
+                background-color: greenyellow;
+            }
+            50.1%{
+                background-color: orange;
+            }
+            62.5%{
+                transform: translateY(-50px);
+                background-color: orange;
+            }
+            75%{
+                transform: translateY(0px);
+                background-color: greenyellow;
+            }
+            75.1%{
+                background-color: orange;
+            }
+            87.5%{
+                transform: translateX(-50px);
+                background-color: orange;
+            }
+            100%{
+                transform: translateY(0px);
+                background-color: greenyellow;
+            }
+        }
+
+        /*  */
+        /* Style Three */
+        /*  */
+        
+        .style3{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .style3 .dot31,
+        .style3 .dot32{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #72147e;
+            position: relative;
+        }
+
+        .style3 .dot31:before,
+        .style3 .dot31:after,
+        .style3 .dot32:before,
+        .style3 .dot32:after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: #72147e;
+            display: block;
+        }
+
+        .style3 .dot31:before{
+            right: 100%;
+            top: 100%;
+            animation: style3-1 2s 100ms ease-in-out infinite;
+        }
+
+        .style3 .dot32:before{
+            right: 100%;
+            top: 100%;
+            animation: style3-1 2s 200ms ease-in-out infinite;
+        }
+
+        .style3 .dot31{
+            animation: style3-1 2s 300ms ease-in-out infinite;
+        }
+
+        .style3 .dot32 {
+            animation: style3-1 2s  400ms ease-in-out infinite;
+        }
+
+        .style3 .dot31:after{
+            left: 100%;
+            bottom: 100%;
+            animation: style3-1 2s 500ms ease-in-out infinite;
+        }
+
+        .style3 .dot32:after{
+            left: 100%;
+            bottom: 100%;
+            animation: style3-1 2s 600ms ease-in-out infinite;
+        }
+
+        @keyframes style3-1{
+            0%,100%{
+                background-color: #72147e;
+            }
+            25%{
+                background-color: #f21170;
+            }
+            50%{
+                background-color: #fa9905;
+            }
+            75%{
+                background-color: #ff5200;
+            }
+        }
+
+
+        /*  */
+        /* Style Four */
+        /*  */
+        
+        .style4{
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(6,20px);
+            grid-template-rows: repeat(2,60px);
+            justify-content: center;
+            align-content: center;
+        }
+
+        .style4 .dot41,
+        .style4 .dot42,
+        .style4 .dot43,
+        .style4 .dot44,
+        .style4 .dot45,
+        .style4 .dot46,
+        .style4 .dot47,
+        .style4 .dot48,
+        .style4 .dot49,
+        .style4 .dot50,
+        .style4 .dot51,
+        .style4 .dot52
+        {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #72147e;
+            position: relative;
+        }
+
+        .style4 .dot41:before,
+        .style4 .dot41:after,
+        .style4 .dot42:before,
+        .style4 .dot42:after,
+        .style4 .dot43:before,
+        .style4 .dot43:after,
+        .style4 .dot44:before,
+        .style4 .dot44:after,
+        .style4 .dot45:before,
+        .style4 .dot45:after,
+        .style4 .dot46:before,
+        .style4 .dot46:after,
+        .style4 .dot47:before,
+        .style4 .dot47:after,
+        .style4 .dot48:before,
+        .style4 .dot48:after,
+        .style4 .dot49:before,
+        .style4 .dot49:after,
+        .style4 .dot50:before,
+        .style4 .dot50:after,
+        .style4 .dot51:before,
+        .style4 .dot51:after,
+        .style4 .dot52:before,
+        .style4 .dot52:after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: #72147e;
+            display: block;
+        }
+
+        .style4 .dot41:before,
+        .style4 .dot42:before,
+        .style4 .dot43:before,
+        .style4 .dot44:before,
+        .style4 .dot45:before,
+        .style4 .dot46:before,
+        .style4 .dot47:before,
+        .style4 .dot48:before,
+        .style4 .dot49:before,
+        .style4 .dot50:before,
+        .style4 .dot51:before,
+        .style4 .dot52:before{
+            top: 100%;
+        }
+
+        .style4 .dot41:after,
+        .style4 .dot42:after,
+        .style4 .dot43:after,
+        .style4 .dot44:after,
+        .style4 .dot45:after,
+        .style4 .dot46:after,
+        .style4 .dot47:after,
+        .style4 .dot48:after,
+        .style4 .dot49:after,
+        .style4 .dot50:after,
+        .style4 .dot51:after,
+        .style4 .dot52:after{
+            bottom: 100%;
+        }
+
+
+        /* Layer One*/
+        .style4 .dot41:after{
+            animation: style4-1 4s  0ms ease-in-out infinite;
+        }
+        .style4 .dot42:after{
+            animation: style4-1 4s  100ms ease-in-out infinite;
+        }
+        .style4 .dot43:after{
+            animation: style4-1 4s  200ms ease-in-out infinite;
+        }
+        .style4 .dot44:after{
+            animation: style4-1 4s  300ms ease-in-out infinite;
+        }
+        .style4 .dot45:after{
+            animation: style4-1 4s  400ms ease-in-out infinite;
+        }
+        .style4 .dot46:after{
+            animation: style4-1 4s  500ms ease-in-out infinite;
+        }
+
+       
+        /* Layer Two */
+        .style4 .dot41{
+            animation: style4-1 4s  1100ms ease-in-out infinite;
+        }
+        .style4 .dot42{
+            animation: style4-1 4s  1000ms ease-in-out infinite;
+        }
+        .style4 .dot43{
+            animation: style4-1 4s  900ms ease-in-out infinite;
+        }
+        .style4 .dot44{
+            animation: style4-1 4s  800ms ease-in-out infinite;
+        }
+        .style4 .dot45{
+            animation: style4-1 4s  700ms ease-in-out infinite;
+        }
+        .style4 .dot46{
+            animation: style4-1 4s  600ms ease-in-out infinite;
+        }
+
+        /* Layer three */
+        .style4 .dot41:before{
+            animation: style4-1 4s  1200ms ease-in-out infinite;
+        }
+        .style4 .dot42:before{
+            animation: style4-1 4s  1300ms ease-in-out infinite;
+        }
+        .style4 .dot43:before{
+            animation: style4-1 4s  1400ms ease-in-out infinite;
+        }
+        .style4 .dot44:before{
+            animation: style4-1 4s  1500ms ease-in-out infinite;
+        }
+        .style4 .dot45:before{
+            animation: style4-1 4s  1600ms ease-in-out infinite;
+        }
+        .style4 .dot46:before{
+            animation: style4-1 4s  1700ms ease-in-out infinite;
+        }
+
+
+        /* Layer Four */
+        .style4 .dot47:after{
+            animation: style4-1 4s  2300ms ease-in-out infinite;
+        }
+        .style4 .dot48:after{
+            animation: style4-1 4s  2200ms ease-in-out infinite;
+        }
+        .style4 .dot49:after{
+            animation: style4-1 4s  2100ms ease-in-out infinite;
+        }
+        .style4 .dot50:after{
+            animation: style4-1 4s  2000ms ease-in-out infinite;
+        }
+        .style4 .dot51:after{
+            animation: style4-1 4s  1900ms ease-in-out infinite;
+        }
+        .style4 .dot52:after{
+            animation: style4-1 4s  1800ms ease-in-out infinite;
+        }
+
+        /* Layer Five */
+        .style4 .dot47{
+            animation: style4-1 4s  2400ms ease-in-out infinite;
+        }
+        .style4 .dot48{
+            animation: style4-1 4s  2500ms ease-in-out infinite;
+        }
+        .style4 .dot49{
+            animation: style4-1 4s  2600ms ease-in-out infinite;
+        }
+        .style4 .dot50{
+            animation: style4-1 4s  2700ms ease-in-out infinite;
+        }
+        .style4 .dot51{
+            animation: style4-1 4s  2800ms ease-in-out infinite;
+        }
+        .style4 .dot52{
+            animation: style4-1 4s  2900ms ease-in-out infinite;
+        }
+
+        /* Layer Six */
+        .style4 .dot47:before{
+            animation: style4-1 4s  3500ms ease-in-out infinite;
+        }
+        .style4 .dot48:before{
+            animation: style4-1 4s  3400ms ease-in-out infinite;
+        }
+        .style4 .dot49:before{
+            animation: style4-1 4s  3300ms ease-in-out infinite;
+        }
+        .style4 .dot50:before{
+            animation: style4-1 4s  3200ms ease-in-out infinite;
+        }
+        .style4 .dot51:before{
+            animation: style4-1 4s  3100ms ease-in-out infinite;
+        }
+        .style4 .dot52:before{
+            animation: style4-1 4s  3000ms ease-in-out infinite;
+        }
+
+        
+
+
+        @keyframes style4-1{
+            0%{
+                background-color: #72147e;
+            }
+            25%{
+                background-color: #f21170;
+            }
+            50%{
+                background-color: #fa9905;
+            }
+            75%{
+                background-color: #ff5200;
+            }
+            100%{
+                background-color: #000;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="style style1">
+            <div class="dot1"></div>
+        </div>
+        <div class="style style2">
+            <div class="dot2"></div>
+        </div>
+        <div class="style style3">
+            <div class="dot31"></div>
+            <div class="dot32"></div>
+        </div>
+        <div class="style style4">
+            <div class="dot41"></div>
+            <div class="dot42"></div>
+            <div class="dot43"></div>
+            <div class="dot44"></div>
+            <div class="dot45"></div>
+            <div class="dot46"></div>
+            <div class="dot47"></div>
+            <div class="dot48"></div>
+            <div class="dot49"></div>
+            <div class="dot50"></div>
+            <div class="dot51"></div>
+            <div class="dot52"></div>
+        </div>
+        <div class="style style5"></div>
+        <div class="style style6"></div>
+        <div class="style style7"></div>
+        <div class="style style8"></div>
+        <div class="style style9"></div>
+        <div class="style style10"></div>
+        <div class="style style11"></div>
+        <div class="style style12"></div>
+    </div>
+</body>
+</html>
