@@ -1,0 +1,264 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Playfair Display', serif;
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background: #F7971E; 
+    background: -webkit-linear-gradient(to right, #FFD200, #F7971E); 
+    background: linear-gradient(to right, #FFD200, #F7971E); 
+}
+
+.menu_overlay{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    overflow: hidden;
+    color: #fff; 
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 100ms cubic-bezier(0.455, 0.03, 0.515, 0.955) all;
+}
+
+.parts{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+}
+
+.part{
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    transition: all 300ms 100ms cubic-bezier(0.95, 0.05, 0.795, 0.035);
+}
+
+.p1{
+    background-color: #4b134f;
+    transition-delay: 50ms;
+}
+
+.p2{
+    background-color: #c94b4b;
+    transition-delay: 100ms;
+}
+
+.p3{
+    background-color: #F7971E;
+    transition-delay: 150ms;
+}
+
+.p4{
+    background-color: #01114b;
+    transition-delay: 200ms;
+}
+
+.p5{
+    background-color: #0fff;
+    transition-delay: 250ms;
+}
+
+
+.list{
+    height: 100%;
+    width: 40%;
+    position: relative;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.list li{
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    transition: all 200ms cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    opacity: 0;
+}
+
+.list li:nth-child(1){
+    transition-delay: 00ms;
+}
+
+.list li:nth-child(2){
+    transition-delay: 50ms;
+}
+
+.list li:nth-child(3){
+    transition-delay: 100ms;
+}
+
+.list li:nth-child(4){
+    transition-delay: 150ms;
+}
+
+
+.list a {
+    font-size: 4rem;
+    text-decoration: none;
+    color:#fff;
+    display: block;
+    transition: all 0.4s ease;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    z-index: 10;
+    letter-spacing: 5px;
+}
+
+.list a:hover{
+    color: #4b134f;
+}
+
+.list a:before,
+.list a:after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 50%;
+    top: 50%;
+    height: 5px;
+    background-color: #fff;
+    transform: scale(0) translateY(-50%);
+    z-index: 200;
+}
+
+.list a:before{
+    left: -150px;
+}
+
+.list a:after{
+    right: -150px;
+}
+
+.list a:hover:after,
+.list a:hover:before{
+    transform: scale(1);
+}
+
+.dot{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: all 200ms ease-out;
+}
+
+.menu_overlay .fas {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 2.5rem;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+.menu_overlay .fas:hover{
+    color: #4b134f;
+    transform: scale(1.1) rotate(180deg);
+}
+
+#menuBtn{
+    display: none;
+}
+
+.landing_page{
+    max-height: 100vh;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.menu{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.fas{
+    font-size: 2rem;
+    color: #222;
+}
+
+.fas:hover{
+    color: #4b134f;
+}
+
+.side_text{
+    height: 10vh;
+    width: 30%;
+    color: #c94b4b;
+    position: absolute;
+    left:0px;
+    bottom: 0px;
+    text-shadow: 0 0 1px #111;
+    padding: 10px;
+    font-size: 16px;
+    color: #4b134f;
+}
+
+.main_text{
+    color: #c94b4b;
+    position: absolute;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 0 0 1px #111;
+    display: flex;
+    flex-direction: column;
+}
+
+.h2-r,
+.h2-l{
+    font-size: 6rem;
+}
+
+.h2-r{
+    transform: rotate(270deg);
+    margin-left: -100px;
+    z-index: 10;
+}
+
+.h2-l{
+    margin-left: 100px;
+    background-color: #4b134f;
+    padding: 20px;
+    z-index: 0;
+}
+
+@media screen and (max-width: 650px){
+    .list a{
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .list {
+        display: flex;
+        flex-direction: column;
+    }
+}
