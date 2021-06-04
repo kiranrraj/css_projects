@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     <title>Full Page Menu Layout</title>
     <script src="https://kit.fontawesome.com/a7e9f794eb.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./style_d4.css">
+    <link rel="stylesheet" href="./style_d10.css">
 </head>
 
 <body>
@@ -20,19 +20,10 @@
                 <i class="fas fa-times"></i>
             </label>
             <ul class="list">
-                <li><a class="mainLink" href="#">Home</a></li>
-                <li><a class="mainLink" href="#">About</a></li>
-                <li><a class="mainLink" href="#">Projects</a></li>
-                <li><a class="mainLink" href="#">Blog</a></li>
-                <li><a class="mainLink" href="#">Contact</a></li>
-                <li>
-                    <ul class="social">
-                        <a href="#">FaceBook</a>
-                        <a href="#">Instagram</a>
-                        <a href="#">Youtube</a>
-                        <a href="#">GitHub</a>
-                    </ul>
-                </li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </div>
         <div class="landing_page">
@@ -42,12 +33,32 @@
                 </label>
             </div>
             <div class="side_text">
-                <div class="text_h4 h4-r">Web Developer</div>
-                <div class="text_h4 h4-l">Web Designer</div>
+                <div class="text_h4">Web Developer</div>
+                <div class="text_h4">Web Designer</div>
             </div>
         </div>
     </div>
-    <script src="./js_d4.js"></script>
+    <script>
+        const list = document.querySelectorAll('.menu_overlay li');
+        const icon = document.querySelector('.fa-bars');
+        const close = document.querySelector('.fa-times');
+        let delay = 300;
+        icon.addEventListener('click', ()=>{
+                list.forEach(elem=>{
+                    elem.classList.add('showElem');
+                    elem.style.animationDelay = `${delay}ms`;
+                    delay+=200;
+                    console.log(delay)
+                })
+        });
+
+        close.addEventListener('click', ()=>{
+            delay = 100;
+            list.forEach(elem=>{
+                    elem.classList.remove('showElem');
+                })
+        })
+    </script>
 </body>
 
 </html>

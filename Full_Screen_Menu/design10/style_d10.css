@@ -16,9 +16,10 @@ body{
     height: 100vh;
     min-height: 100%;
     position: relative;
-    background: #F7971E;  
-    background: -webkit-linear-gradient(to right, #FFD200, #F7971E); 
-    background: linear-gradient(to right, #FFD200, #F7971E); 
+    background: #F7971E;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFD200, #F7971E);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFD200, #F7971E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
 }
 
 .menu_overlay{
@@ -26,36 +27,13 @@ body{
     height: 100vh;
     position: absolute;
     overflow: hidden;
-    color: #fff; 
+    color: #fff;
+    background: #c94b4b;  
+    background: -webkit-linear-gradient(to right, #4b134f, #c94b4b);  
+    background: linear-gradient(to right, #4b134f, #c94b4b); 
     z-index: 100;
     transform: translateX(110%);
     transition: transform 0.5s ease;
-}
-
-.menu_overlay li{
-    position: relative;
-}
-
-.menu_overlay a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    padding: 0 20px;
-}
-
-.menu_overlay li:before{
-    content: "";
-    position: absolute;
-    bottom: 0;
-    width: 5px;
-    height: 0px;
-    transition: all 300ms ease-in-out;
-}
-
-.menu_overlay li:hover:before{
-    width: 5px;
-    height: 100%;
-    background-color: #fff;
 }
 
 .menu_overlay .fas {
@@ -64,34 +42,11 @@ body{
     top: 20px;
     font-size: 2.5rem;
     transition: all 0.3s ease;
-    z-index: 100;
+    z-index: 10;
 }
-
 .menu_overlay .fas:hover{
     color: #4b134f;
     transform: scale(1.1) rotate(180deg);
-}
-
-.side{
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    width: 50%;
-    z-index: 10;
-}
-
-.side1{
-    height: 100%;
-    right: 0;
-    background: #c94b4b;  
-    background: linear-gradient(to right, #4b134f, #c94b4b);
-}
-
-.side2{
-    background-color: #4b134f;
-    left: 0;
-    transform: translateX(-100%);
-    transition: transform 0.5s ease;
 }
 
 .menu_overlay ul {
@@ -99,44 +54,64 @@ body{
     width: 100%;
     list-style: none;
     padding: 20px;
+    margin-left: 50px;
     font-size: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    z-index: 100;
-    color: #111;
 }
 
-.item a{
-    display: block;
+.menu_overlay li{
+    position: relative;
+    transform: translateX(-200vw);
+}
+
+.showElem{
+    animation: showAnim 400ms ease-in-out forwards;
+}
+
+@keyframes showAnim {
+    0%{
+        transform: translateX(-200vw);
+    }
+    100%{
+        transform: translateX(0vw);
+    }
+}
+
+.menu_overlay li:before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    transition: all 300ms ease-in-out;
+}
+
+.menu_overlay li:hover:before{
     width: 100%;
-    color: #fff;
-    text-decoration: none;
-    text-align: center;
+    background-color: #fff;
 }
 
-.item:nth-child(1):hover a {
-    color: #c94b4b;
-    text-shadow: 0 3px 3px #fff;
+.menu_overlay a{
+    color: #111;
+    text-decoration: none;
+    text-shadow: 0 2px 2px #F7971E;
 }
-.item:nth-child(2):hover a {
-    color: #F7971E;
-    text-shadow: 0 3px 3px #Fff;
-}
-.item:nth-child(3):hover a {
+
+.menu_overlay a:hover {
     color: #4b134f;
-    text-shadow: 0 3px 3px #fff;
+    text-shadow: 0 2px 2px #fff;
 }
-.item:nth-child(4):hover a {
-    color: #FFD200;
-    text-shadow: 0 3px 3px #FFf;
-} 
 
 #menuBtn{
     display: none;
 }
 
+#menuBtn:checked ~ .menu_overlay{
+    transform: translateX(0);
+}
 
 .landing_page{
     max-height: 100vh;
@@ -183,7 +158,6 @@ body{
     display: flex;
     flex-direction: column;
 }
-
 
 @media screen and (max-width:650px) {
     .list a {

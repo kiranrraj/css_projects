@@ -40,6 +40,7 @@ body{
     transition: all 0.3s ease;
     z-index: 100;
 }
+
 .menu_overlay .fas:hover{
     color: #4b134f;
     transform: scale(1.1) rotate(180deg);
@@ -55,8 +56,6 @@ body{
 
 .side1{
     right: 0;
-    background: #c94b4b;  
-    background: -webkit-linear-gradient(to right, #4b134f, #c94b4b);  
     background: linear-gradient(to right, #4b134f, #c94b4b);
     transform: translateY(-100%);
 }
@@ -71,29 +70,70 @@ body{
     height: 100%;
     width: 100%;
     list-style: none;
-    padding: 20px;
     font-size: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
     z-index: 100;
     color: #111;
+    position: absolute;
+    left: -200%;
+    transition: all 300ms  cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
+
+.menu_overlay li{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.menu_overlay li:before{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: #Fff;
+    border-radius: 10px;
+    content: "";
+    display: block;
+    transform: translateX(-200vw);
+    z-index: 2;
+}
+
+.menu_overlay li:hover:before{
+    animation: anim1 200ms forwards;
+}
+
+@keyframes anim1 {
+    0% {
+        transform: translateZ(-800px) rotateX(90deg);
+        opacity: 0;
+      }
+      54% {
+        transform: translateZ(-160px) rotateX(87deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateZ(0) rotateX(0);
+      }
+  }
+
 
 .menu_overlay a{
     color: #fff;
     text-decoration: none;
+    z-index: 5;
 }
 
-.menu_overlay a:hover {
-    color: #c94b4b;
+.menu_overlay li:hover a{
+    color: #FFD200;
+    text-shadow: 0 3px 3px #111;
 }
 
 #menuBtn{
     display: none;
 }
-
 
 .landing_page{
     max-height: 100vh;
@@ -140,24 +180,6 @@ body{
     flex-direction: column;
 }
 
-
-.h2-r,
-.h2-l{
-    font-size: 6rem;
-}
-
-.h2-r{
-    transform: rotate(270deg);
-    margin-left: -100px;
-    z-index: 10;
-}
-
-.h2-l{
-    margin-left: 100px;
-    background-color: #4b134f;
-    padding: 20px;
-    z-index: 0;
-}
 
 @media screen and (max-width:650px) {
     .list a {
