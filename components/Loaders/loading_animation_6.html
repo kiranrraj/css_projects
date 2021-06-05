@@ -1,45 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loading Animations</title>
     <style>
-        *{
+        * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
         }
-        .container{
+
+        .container {
             width: 100vw;
             height: 100vh;
             background-color: #111;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             grid-template-rows: repeat(3, 1fr);
+            padding: 20px;
+            overflow: hidden;
         }
+
         /*  */
         /* Style One */
         /*  */
-        .style1{
-            background-color: #333;
+        .style1 {
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .style1 .dot1{
-            width: 20px;
-            height: 20px;
+        .style1 .dot1 {
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
             background-color: greenyellow;
             position: relative;
         }
 
         .style1 .dot1:before,
-        .style1 .dot1:after{
+        .style1 .dot1:after {
             content: "";
             position: absolute;
             width: 100%;
@@ -49,48 +53,56 @@
             display: block;
         }
 
-        .style1 .dot1:before{
-            left: -42px;
+        .style1 .dot1:before {
+            left: -20px;
             animation: style1-1 1s linear infinite;
         }
 
-        .style1 .dot1:after{
-            right: -42px;
+        .style1 .dot1:after {
+            right: -20px;
             animation: style1-2 1s linear infinite;
         }
 
-        @keyframes style1-1{
-            0%{
+        @keyframes style1-1 {
+            0% {
                 transform: translateY(0px) translateX(0);
             }
-            25%{
-                transform: translateY(40px);
+
+            25% {
+                transform: translateY(20px);
             }
-            50%{
-                transform: translateY(0px)translateX(22px);
+
+            50% {
+                transform: translateY(0px)translateX(10px);
             }
-            75%{
-                transform: translateY(-40px);
+
+            75% {
+                transform: translateY(-20px);
             }
-            100%{
+
+            100% {
                 transform: translateY(0px)translateX(0);
             }
         }
 
-        @keyframes style1-2{
-            0%{
+        @keyframes style1-2 {
+            0% {
                 transform: translateY(0px);
             }
-            25%{
-                transform: translateY(-40px);
+
+            25% {
+                transform: translateY(-20px);
             }
-            50%{
-                transform: translateY(0px)translateX(-22px);
+
+            50% {
+                transform: translateY(0px)translateX(-10px);
             }
-            75%{
-                transform: translateY(40px);
+
+            75% {
+                transform: translateY(20px);
             }
-            100%{
+
+            100% {
                 transform: translateY(0px);
             }
         }
@@ -98,23 +110,22 @@
         /*  */
         /* Style Two */
         /*  */
-        .style2{
-            background-color: #333;
+        .style2 {
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .style2 .dot2{
-            width: 20px;
-            height: 20px;
+        .style2 .dot2 {
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
             background-color: greenyellow;
             position: relative;
         }
 
-        .style2 .dot2:before{
+        .style2 .dot2:before {
             content: "";
             position: absolute;
             width: 100%;
@@ -125,52 +136,64 @@
             background-color: orange;
         }
 
-        @keyframes style2-1{
-            0%{
+        @keyframes style2-1 {
+            0% {
                 transform: translateY(0px);
                 background-color: greenyellow;
             }
-            0.1%{
+
+            0.1% {
                 background-color: orange;
             }
-            12.5%{
+
+            12.5% {
                 transform: translateY(50px);
                 background-color: orange;
             }
-            25%{
+
+            25% {
                 transform: translateY(0px);
                 background-color: greenyellow;
             }
-            25.1%{
+
+            25.1% {
                 background-color: orange;
             }
-            37.5%{
+
+            37.5% {
                 transform: translateX(50px);
                 background-color: orange;
             }
-            50%{
+
+            50% {
                 transform: translateX(0px);
                 background-color: greenyellow;
             }
-            50.1%{
+
+            50.1% {
                 background-color: orange;
             }
-            62.5%{
+
+            62.5% {
                 transform: translateY(-50px);
                 background-color: orange;
             }
-            75%{
+
+            75% {
                 transform: translateY(0px);
                 background-color: greenyellow;
             }
-            75.1%{
+
+            75.1% {
                 background-color: orange;
             }
-            87.5%{
+
+            87.5% {
                 transform: translateX(-50px);
                 background-color: orange;
             }
-            100%{
+
+            100% {
                 transform: translateY(0px);
                 background-color: greenyellow;
             }
@@ -179,8 +202,8 @@
         /*  */
         /* Style Three */
         /*  */
-        
-        .style3{
+
+        .style3 {
             position: relative;
             display: flex;
             justify-content: center;
@@ -188,9 +211,9 @@
         }
 
         .style3 .dot31,
-        .style3 .dot32{
-            width: 20px;
-            height: 20px;
+        .style3 .dot32 {
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
             background-color: #72147e;
             position: relative;
@@ -199,7 +222,7 @@
         .style3 .dot31:before,
         .style3 .dot31:after,
         .style3 .dot32:before,
-        .style3 .dot32:after{
+        .style3 .dot32:after {
             content: "";
             position: absolute;
             width: 100%;
@@ -209,49 +232,54 @@
             display: block;
         }
 
-        .style3 .dot31:before{
+        .style3 .dot31:before {
             right: 100%;
             top: 100%;
-            animation: style3-1 2s 100ms ease-in-out infinite;
+            animation: style3-1 2s 100ms ease-in-out infinite alternate;
         }
 
-        .style3 .dot32:before{
+        .style3 .dot32:before {
             right: 100%;
             top: 100%;
-            animation: style3-1 2s 200ms ease-in-out infinite;
+            animation: style3-1 2s 200ms ease-in-out infinite alternate;
         }
 
-        .style3 .dot31{
-            animation: style3-1 2s 300ms ease-in-out infinite;
+        .style3 .dot31 {
+            animation: style3-1 2s 300ms ease-in-out infinite alternate;
         }
 
         .style3 .dot32 {
-            animation: style3-1 2s  400ms ease-in-out infinite;
+            animation: style3-1 2s 200ms ease-in-out infinite alternate;
         }
 
-        .style3 .dot31:after{
+        .style3 .dot31:after {
             left: 100%;
             bottom: 100%;
-            animation: style3-1 2s 500ms ease-in-out infinite;
+            animation: style3-1 2s 500ms ease-in-out infinite alternate;
         }
 
-        .style3 .dot32:after{
+        .style3 .dot32:after {
             left: 100%;
             bottom: 100%;
-            animation: style3-1 2s 600ms ease-in-out infinite;
+            animation: style3-1 2s 400ms ease-in-out infinite alternate;
         }
 
-        @keyframes style3-1{
-            0%,100%{
+        @keyframes style3-1 {
+
+            0%,
+            100% {
                 background-color: #72147e;
             }
-            25%{
+
+            25% {
                 background-color: #f21170;
             }
-            50%{
+
+            50% {
                 background-color: #fa9905;
             }
-            75%{
+
+            75% {
                 background-color: #ff5200;
             }
         }
@@ -260,12 +288,12 @@
         /*  */
         /* Style Four */
         /*  */
-        
-        .style4{
+
+        .style4 {
             position: relative;
             display: grid;
-            grid-template-columns: repeat(6,20px);
-            grid-template-rows: repeat(2,60px);
+            grid-template-columns: repeat(6, 10px);
+            grid-template-rows: repeat(2, 30px);
             justify-content: center;
             align-content: center;
         }
@@ -281,10 +309,9 @@
         .style4 .dot49,
         .style4 .dot50,
         .style4 .dot51,
-        .style4 .dot52
-        {
-            width: 20px;
-            height: 20px;
+        .style4 .dot52 {
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
             background-color: #72147e;
             position: relative;
@@ -313,7 +340,7 @@
         .style4 .dot51:before,
         .style4 .dot51:after,
         .style4 .dot52:before,
-        .style4 .dot52:after{
+        .style4 .dot52:after {
             content: "";
             position: absolute;
             width: 100%;
@@ -334,7 +361,7 @@
         .style4 .dot49:before,
         .style4 .dot50:before,
         .style4 .dot51:before,
-        .style4 .dot52:before{
+        .style4 .dot52:before {
             top: 100%;
         }
 
@@ -349,157 +376,1773 @@
         .style4 .dot49:after,
         .style4 .dot50:after,
         .style4 .dot51:after,
-        .style4 .dot52:after{
+        .style4 .dot52:after {
             bottom: 100%;
         }
 
 
         /* Layer One*/
-        .style4 .dot41:after{
-            animation: style4-1 4s  0ms ease-in-out infinite;
-        }
-        .style4 .dot42:after{
-            animation: style4-1 4s  100ms ease-in-out infinite;
-        }
-        .style4 .dot43:after{
-            animation: style4-1 4s  200ms ease-in-out infinite;
-        }
-        .style4 .dot44:after{
-            animation: style4-1 4s  300ms ease-in-out infinite;
-        }
-        .style4 .dot45:after{
-            animation: style4-1 4s  400ms ease-in-out infinite;
-        }
-        .style4 .dot46:after{
-            animation: style4-1 4s  500ms ease-in-out infinite;
+        .style4 .dot41:after {
+            animation: style4-1 4s 0ms linear infinite alternate;
         }
 
-       
+        .style4 .dot42:after {
+            animation: style4-1 4s 100ms linear infinite alternate;
+        }
+
+        .style4 .dot43:after {
+            animation: style4-1 4s 200ms linear infinite alternate;
+        }
+
+        .style4 .dot44:after {
+            animation: style4-1 4s 300ms linear infinite alternate;
+        }
+
+        .style4 .dot45:after {
+            animation: style4-1 4s 400ms linear infinite alternate;
+        }
+
+        .style4 .dot46:after {
+            animation: style4-1 4s 500ms linear infinite alternate;
+        }
+
+
         /* Layer Two */
-        .style4 .dot41{
-            animation: style4-1 4s  1100ms ease-in-out infinite;
+        .style4 .dot41 {
+            animation: style4-1 4s 1100ms linear infinite alternate;
         }
-        .style4 .dot42{
-            animation: style4-1 4s  1000ms ease-in-out infinite;
+
+        .style4 .dot42 {
+            animation: style4-1 4s 1000ms linear infinite alternate;
         }
-        .style4 .dot43{
-            animation: style4-1 4s  900ms ease-in-out infinite;
+
+        .style4 .dot43 {
+            animation: style4-1 4s 900ms linear infinite alternate;
         }
-        .style4 .dot44{
-            animation: style4-1 4s  800ms ease-in-out infinite;
+
+        .style4 .dot44 {
+            animation: style4-1 4s 800ms linear infinite alternate;
         }
-        .style4 .dot45{
-            animation: style4-1 4s  700ms ease-in-out infinite;
+
+        .style4 .dot45 {
+            animation: style4-1 4s 700ms linear infinite alternate;
         }
-        .style4 .dot46{
-            animation: style4-1 4s  600ms ease-in-out infinite;
+
+        .style4 .dot46 {
+            animation: style4-1 4s 600ms linear infinite alternate;
         }
 
         /* Layer three */
-        .style4 .dot41:before{
-            animation: style4-1 4s  1200ms ease-in-out infinite;
+        .style4 .dot41:before {
+            animation: style4-1 4s 1200ms linear infinite alternate;
         }
-        .style4 .dot42:before{
-            animation: style4-1 4s  1300ms ease-in-out infinite;
+
+        .style4 .dot42:before {
+            animation: style4-1 4s 1300ms linear infinite alternate;
         }
-        .style4 .dot43:before{
-            animation: style4-1 4s  1400ms ease-in-out infinite;
+
+        .style4 .dot43:before {
+            animation: style4-1 4s 1400ms linear infinite alternate;
         }
-        .style4 .dot44:before{
-            animation: style4-1 4s  1500ms ease-in-out infinite;
+
+        .style4 .dot44:before {
+            animation: style4-1 4s 1500ms linear infinite alternate;
         }
-        .style4 .dot45:before{
-            animation: style4-1 4s  1600ms ease-in-out infinite;
+
+        .style4 .dot45:before {
+            animation: style4-1 4s 3s linear infinite alternate;
         }
-        .style4 .dot46:before{
-            animation: style4-1 4s  1700ms ease-in-out infinite;
+
+        .style4 .dot46:before {
+            animation: style4-1 4s 1700ms linear infinite alternate;
         }
 
 
         /* Layer Four */
-        .style4 .dot47:after{
-            animation: style4-1 4s  2300ms ease-in-out infinite;
+        .style4 .dot47:after {
+            animation: style4-1 4s 2300ms linear infinite alternate;
         }
-        .style4 .dot48:after{
-            animation: style4-1 4s  2200ms ease-in-out infinite;
+
+        .style4 .dot48:after {
+            animation: style4-1 4s 2200ms linear infinite alternate;
         }
-        .style4 .dot49:after{
-            animation: style4-1 4s  2100ms ease-in-out infinite;
+
+        .style4 .dot49:after {
+            animation: style4-1 4s 2100ms linear infinite alternate;
         }
-        .style4 .dot50:after{
-            animation: style4-1 4s  2000ms ease-in-out infinite;
+
+        .style4 .dot50:after {
+            animation: style4-1 4s 2000ms linear infinite alternate;
         }
-        .style4 .dot51:after{
-            animation: style4-1 4s  1900ms ease-in-out infinite;
+
+        .style4 .dot51:after {
+            animation: style4-1 4s 1900ms linear infinite alternate;
         }
-        .style4 .dot52:after{
-            animation: style4-1 4s  1800ms ease-in-out infinite;
+
+        .style4 .dot52:after {
+            animation: style4-1 4s 1800ms linear infinite alternate;
         }
 
         /* Layer Five */
-        .style4 .dot47{
-            animation: style4-1 4s  2400ms ease-in-out infinite;
+        .style4 .dot47 {
+            animation: style4-1 4s 2400ms linear infinite alternate;
         }
-        .style4 .dot48{
-            animation: style4-1 4s  2500ms ease-in-out infinite;
+
+        .style4 .dot48 {
+            animation: style4-1 4s 2500ms linear infinite alternate;
         }
-        .style4 .dot49{
-            animation: style4-1 4s  2600ms ease-in-out infinite;
+
+        .style4 .dot49 {
+            animation: style4-1 4s 2600ms linear infinite alternate;
         }
-        .style4 .dot50{
-            animation: style4-1 4s  2700ms ease-in-out infinite;
+
+        .style4 .dot50 {
+            animation: style4-1 4s 2700ms linear infinite alternate;
         }
-        .style4 .dot51{
-            animation: style4-1 4s  2800ms ease-in-out infinite;
+
+        .style4 .dot51 {
+            animation: style4-1 4s 2800ms linear infinite alternate;
         }
-        .style4 .dot52{
-            animation: style4-1 4s  2900ms ease-in-out infinite;
+
+        .style4 .dot52 {
+            animation: style4-1 4s 2900ms linear infinite alternate;
         }
 
         /* Layer Six */
-        .style4 .dot47:before{
-            animation: style4-1 4s  3500ms ease-in-out infinite;
-        }
-        .style4 .dot48:before{
-            animation: style4-1 4s  3400ms ease-in-out infinite;
-        }
-        .style4 .dot49:before{
-            animation: style4-1 4s  3300ms ease-in-out infinite;
-        }
-        .style4 .dot50:before{
-            animation: style4-1 4s  3200ms ease-in-out infinite;
-        }
-        .style4 .dot51:before{
-            animation: style4-1 4s  3100ms ease-in-out infinite;
-        }
-        .style4 .dot52:before{
-            animation: style4-1 4s  3000ms ease-in-out infinite;
+        .style4 .dot47:before {
+            animation: style4-1 4s 3500ms linear infinite alternate;
         }
 
-        
+        .style4 .dot48:before {
+            animation: style4-1 4s 3400ms linear infinite alternate;
+        }
 
+        .style4 .dot49:before {
+            animation: style4-1 4s 3300ms linear infinite alternate;
+        }
 
-        @keyframes style4-1{
-            0%{
+        .style4 .dot50:before {
+            animation: style4-1 4s 3200ms linear infinite alternate;
+        }
+
+        .style4 .dot51:before {
+            animation: style4-1 4s 3100ms linear infinite alternate;
+        }
+
+        .style4 .dot52:before {
+            animation: style4-1 4s 3000ms linear infinite alternate;
+        }
+
+        @keyframes style4-1 {
+            0% {
                 background-color: #72147e;
             }
-            25%{
+
+            25% {
                 background-color: #f21170;
             }
-            50%{
+
+            50% {
                 background-color: #fa9905;
             }
-            75%{
+
+            75% {
                 background-color: #ff5200;
             }
-            100%{
+
+            100% {
                 background-color: #000;
             }
         }
 
 
+        /*  */
+        /* Style Five */
+        /*  */
+
+        .style5 {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(6, 10px);
+            grid-template-rows: repeat(2, 30px);
+            justify-content: center;
+            align-content: center;
+        }
+
+        .style5 .dot-51,
+        .style5 .dot-52,
+        .style5 .dot-53,
+        .style5 .dot-54,
+        .style5 .dot-55,
+        .style5 .dot-56,
+        .style5 .dot-57,
+        .style5 .dot-58,
+        .style5 .dot-59,
+        .style5 .dot-60,
+        .style5 .dot-61,
+        .style5 .dot-62 {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #72147e;
+            position: relative;
+        }
+
+        .style5 .dot-51:before,
+        .style5 .dot-51:after,
+        .style5 .dot-52:before,
+        .style5 .dot-52:after,
+        .style5 .dot-53:before,
+        .style5 .dot-53:after,
+        .style5 .dot-54:before,
+        .style5 .dot-54:after,
+        .style5 .dot-55:before,
+        .style5 .dot-55:after,
+        .style5 .dot-56:before,
+        .style5 .dot-56:after,
+        .style5 .dot-57:before,
+        .style5 .dot-57:after,
+        .style5 .dot-58:before,
+        .style5 .dot-58:after,
+        .style5 .dot-59:before,
+        .style5 .dot-59:after,
+        .style5 .dot-60:before,
+        .style5 .dot-60:after,
+        .style5 .dot-61:before,
+        .style5 .dot-61:after,
+        .style5 .dot-62:before,
+        .style5 .dot-62:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: #72157e;
+            display: block;
+        }
+
+        .style5 .dot-51:before,
+        .style5 .dot-52:before,
+        .style5 .dot-53:before,
+        .style5 .dot-54:before,
+        .style5 .dot-55:before,
+        .style5 .dot-56:before,
+        .style5 .dot-57:before,
+        .style5 .dot-58:before,
+        .style5 .dot-59:before,
+        .style5 .dot-60:before,
+        .style5 .dot-61:before,
+        .style5 .dot-62:before {
+            top: 100%;
+        }
+
+        .style5 .dot-51:after,
+        .style5 .dot-52:after,
+        .style5 .dot-53:after,
+        .style5 .dot-54:after,
+        .style5 .dot-55:after,
+        .style5 .dot-56:after,
+        .style5 .dot-57:after,
+        .style5 .dot-58:after,
+        .style5 .dot-59:after,
+        .style5 .dot-60:after,
+        .style5 .dot-61:after,
+        .style5 .dot-62:after {
+            bottom: 100%;
+        }
+
+
+        /* Layer One*/
+        .style5 .dot-51:after {
+            animation: style5-1 2s 200ms linear infinite alternate;
+        }
+
+        .style5 .dot-52:after {
+            animation: style5-1 2s 200ms linear infinite alternate;
+        }
+
+        .style5 .dot-53:after {
+            animation: style5-1 2s 200ms linear infinite alternate;
+        }
+
+        .style5 .dot-54:after {
+            animation: style5-1 2s 200ms linear infinite alternate;
+        }
+
+        .style5 .dot-55:after {
+            animation: style5-1 2s 200ms linear infinite alternate;
+        }
+
+        .style5 .dot-56:after {
+            animation: style5-1 2s 200ms linear infinite alternate;
+        }
+
+
+        /* Layer Two */
+        .style5 .dot-51 {
+            animation: style5-1 2s 200ms linear infinite alternate;
+        }
+
+        .style5 .dot-52 {
+            animation: style5-1 2s 400ms linear infinite alternate;
+        }
+
+        .style5 .dot-53 {
+            animation: style5-1 2s 400ms linear infinite alternate;
+        }
+
+        .style5 .dot-54 {
+            animation: style5-1 2s 400ms linear infinite alternate;
+        }
+
+        .style5 .dot-55 {
+            animation: style5-1 2s 400ms linear infinite alternate;
+        }
+
+        .style5 .dot-56 {
+            animation: style5-1 2s 200ms linear infinite alternate;
+        }
+
+        /* Layer three */
+        .style5 .dot-51:before {
+            animation: style5-1 2s 200ms linear infinite alternate;
+        }
+
+        .style5 .dot-52:before {
+            animation: style5-1 2s 400ms linear infinite alternate;
+        }
+
+        .style5 .dot-53:before {
+            animation: style5-1 2s 600ms linear infinite alternate;
+        }
+
+        .style5 .dot-54:before {
+            animation: style5-1 2s 600ms linear infinite alternate;
+        }
+
+        .style5 .dot-55:before {
+            animation: style5-1 2s 400ms linear infinite alternate;
+        }
+
+        .style5 .dot-56:before {
+            animation: style5-1 2s 200ms linear infinite alternate;
+        }
+
+
+        /* Layer Four */
+        .style5 .dot-57:after {
+            animation: style5-1 2s 200ms linear infinite alternate;
+        }
+
+        .style5 .dot-58:after {
+            animation: style5-1 2s 400ms linear infinite alternate;
+        }
+
+        .style5 .dot-59:after {
+            animation: style5-1 2s 600ms linear infinite alternate;
+        }
+
+        .style5 .dot-60:after {
+            animation: style5-1 2s 600ms linear infinite alternate;
+        }
+
+        .style5 .dot-61:after {
+            animation: style5-1 2s 400ms linear infinite alternate;
+        }
+
+        .style5 .dot-62:after {
+            animation: style5-1 2s 200ms linear infinite alternate;
+        }
+
+        /* Layer Five */
+        .style5 .dot-57 {
+            animation: style5-1 2s 200ms linear infinite alternate;
+        }
+
+        .style5 .dot-58 {
+            animation: style5-1 2s 400ms linear infinite alternate;
+        }
+
+        .style5 .dot-59 {
+            animation: style5-1 2s 400ms linear infinite alternate;
+        }
+
+        .style5 .dot-60 {
+            animation: style5-1 2s 400ms linear infinite alternate;
+        }
+
+        .style5 .dot-61 {
+            animation: style5-1 2s 400ms linear infinite alternate;
+        }
+
+        .style5 .dot-62 {
+            animation: style5-1 2s 200ms linear infinite alternate;
+        }
+
+        /* Layer Six */
+        .style5 .dot-57:before {
+            animation: style5-1 2s 200ms linear infinite alternate;
+        }
+
+        .style5 .dot-58:before {
+            animation: style5-1 2s 200ms linear infinite alternate;
+        }
+
+        .style5 .dot-59:before {
+            animation: style5-1 2s 200ms linear infinite alternate;
+        }
+
+        .style5 .dot-60:before {
+            animation: style5-1 2s 200ms linear infinite alternate;
+        }
+
+        .style5 .dot-61:before {
+            animation: style5-1 2s 200ms linear infinite alternate;
+        }
+
+        .style5 .dot-62:before {
+            animation: style5-1 2s 200ms linear infinite alternate;
+        }
+
+        @keyframes style5-1 {
+            0% {
+                background-color: #000;
+            }
+
+            25% {
+                background-color: #f21170;
+            }
+
+            50% {
+                background-color: #fff;
+            }
+
+            75% {
+                background-color: #ff5200;
+            }
+
+            100% {
+                background-color: #000;
+            }
+        }
+
+
+        /*  */
+        /* Style Six */
+        /*  */
+
+        .style6 {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(6, 10px);
+            grid-template-rows: repeat(2, 30px);
+            justify-content: center;
+            align-content: center;
+        }
+
+        .style6 .dot--51,
+        .style6 .dot--52,
+        .style6 .dot--53,
+        .style6 .dot--54,
+        .style6 .dot--55,
+        .style6 .dot--56,
+        .style6 .dot--57,
+        .style6 .dot--58,
+        .style6 .dot--59,
+        .style6 .dot--60,
+        .style6 .dot--61,
+        .style6 .dot--62 {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #72147e;
+            position: relative;
+        }
+
+        .style6 .dot--51:before,
+        .style6 .dot--51:after,
+        .style6 .dot--52:before,
+        .style6 .dot--52:after,
+        .style6 .dot--53:before,
+        .style6 .dot--53:after,
+        .style6 .dot--54:before,
+        .style6 .dot--54:after,
+        .style6 .dot--55:before,
+        .style6 .dot--55:after,
+        .style6 .dot--56:before,
+        .style6 .dot--56:after,
+        .style6 .dot--57:before,
+        .style6 .dot--57:after,
+        .style6 .dot--58:before,
+        .style6 .dot--58:after,
+        .style6 .dot--59:before,
+        .style6 .dot--59:after,
+        .style6 .dot--60:before,
+        .style6 .dot--60:after,
+        .style6 .dot--61:before,
+        .style6 .dot--61:after,
+        .style6 .dot--62:before,
+        .style6 .dot--62:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: #72157e;
+            display: block;
+        }
+
+        .style6 .dot--51:before,
+        .style6 .dot--52:before,
+        .style6 .dot--53:before,
+        .style6 .dot--54:before,
+        .style6 .dot--55:before,
+        .style6 .dot--56:before,
+        .style6 .dot--57:before,
+        .style6 .dot--58:before,
+        .style6 .dot--59:before,
+        .style6 .dot--60:before,
+        .style6 .dot--61:before,
+        .style6 .dot--62:before {
+            top: 100%;
+        }
+
+        .style6 .dot--51:after,
+        .style6 .dot--52:after,
+        .style6 .dot--53:after,
+        .style6 .dot--54:after,
+        .style6 .dot--55:after,
+        .style6 .dot--56:after,
+        .style6 .dot--57:after,
+        .style6 .dot--58:after,
+        .style6 .dot--59:after,
+        .style6 .dot--60:after,
+        .style6 .dot--61:after,
+        .style6 .dot--62:after {
+            bottom: 100%;
+        }
+
+
+        /* Layer One*/
+        .style6 .dot--51:after {
+            animation: style5-1 2s 200ms linear infinite;
+        }
+
+        .style6 .dot--52:after {
+            animation: style5-1 2s 210ms linear infinite;
+        }
+
+        .style6 .dot--53:after {
+            animation: style5-1 2s 220ms linear infinite;
+        }
+
+        .style6 .dot--54:after {
+            animation: style5-1 2s 230ms linear infinite;
+        }
+
+        .style6 .dot--55:after {
+            animation: style5-1 2s 240ms linear infinite;
+        }
+
+        .style6 .dot--56:after {
+            animation: style5-1 2s 250ms linear infinite;
+        }
+
+
+        /* Layer Two */
+        .style6 .dot--51 {
+            animation: style5-1 2s 530ms linear infinite;
+        }
+
+        .style6 .dot--52 {
+            animation: style5-1 2s 600ms linear infinite;
+        }
+
+        .style6 .dot--53 {
+            animation: style5-1 2s 610ms linear infinite;
+        }
+
+        .style6 .dot--54 {
+            animation: style5-1 2s 620ms linear infinite;
+        }
+
+        .style6 .dot--55 {
+            animation: style5-1 2s 630ms linear infinite;
+        }
+
+        .style6 .dot--56 {
+            animation: style5-1 2s 300ms linear infinite;
+        }
+
+        /* Layer three */
+        .style6 .dot--51:before {
+            animation: style5-1 2s 520ms linear infinite;
+        }
+
+        .style6 .dot--52:before {
+            animation: style5-1 2s 900ms linear infinite;
+        }
+
+        .style6 .dot--53:before {
+            animation: style5-1 2s 1000ms linear infinite;
+        }
+
+        .style6 .dot--54:before {
+            animation: style5-1 2s 1000ms linear infinite;
+        }
+
+        .style6 .dot--55:before {
+            animation: style5-1 2s 700ms linear infinite;
+        }
+
+        .style6 .dot--56:before {
+            animation: style5-1 2s 310ms linear infinite;
+        }
+
+
+        /* Layer Four */
+        .style6 .dot--57:after {
+            animation: style5-1 2s 510ms linear infinite;
+        }
+
+        .style6 .dot--58:after {
+            animation: style5-1 2s 900ms linear infinite;
+        }
+
+        .style6 .dot--59:after {
+            animation: style5-1 2s 1200ms linear infinite;
+        }
+
+        .style6 .dot--60:after {
+            animation: style5-1 2s 1100ms linear infinite;
+        }
+
+        .style6 .dot--61:after {
+            animation: style5-1 2s 710ms linear infinite;
+        }
+
+        .style6 .dot--62:after {
+            animation: style5-1 2s 320ms linear infinite;
+        }
+
+        /* Layer Five */
+        .style6 .dot--57 {
+            animation: style5-1 2s 500ms linear infinite;
+        }
+
+        .style6 .dot--58 {
+            animation: style5-1 2s 820ms linear infinite;
+        }
+
+        .style6 .dot--59 {
+            animation: style5-1 2s 810ms linear infinite;
+        }
+
+        .style6 .dot--60 {
+            animation: style5-1 2s 800ms linear infinite;
+        }
+
+        .style6 .dot--61 {
+            animation: style5-1 2s 720ms linear infinite;
+        }
+
+        .style6 .dot--62 {
+            animation: style5-1 2s 330ms linear infinite;
+        }
+
+        /* Layer Six */
+        .style6 .dot--57:before {
+            animation: style5-1 2s 440ms linear infinite;
+        }
+
+        .style6 .dot--58:before {
+            animation: style5-1 2s 430ms linear infinite;
+        }
+
+        .style6 .dot--59:before {
+            animation: style5-1 2s 420ms linear infinite;
+        }
+
+        .style6 .dot--60:before {
+            animation: style5-1 2s 410ms linear infinite;
+        }
+
+        .style6 .dot--61:before {
+            animation: style5-1 2s 400ms linear infinite;
+        }
+
+        .style6 .dot--62:before {
+            animation: style5-1 2s 340ms linear infinite;
+        }
+
+        @keyframes style5-1 {
+            0% {
+                background-color: #000;
+            }
+
+            25% {
+                background-color: #f21170;
+            }
+
+            50% {
+                background-color: gold;
+            }
+
+            75% {
+                background-color: #ff5200;
+            }
+
+            100% {
+                background-color: #fff;
+            }
+        }
+
+
+
+        /*  */
+        /* Style Seven */
+        /*  */
+
+        .style7 {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(6, 10px);
+            grid-template-rows: repeat(2, 30px);
+            justify-content: center;
+            align-content: center;
+        }
+
+        .style7 .dot--51,
+        .style7 .dot--52,
+        .style7 .dot--53,
+        .style7 .dot--54,
+        .style7 .dot--55,
+        .style7 .dot--56,
+        .style7 .dot--57,
+        .style7 .dot--58,
+        .style7 .dot--59,
+        .style7 .dot--60,
+        .style7 .dot--61,
+        .style7 .dot--62 {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #72147e;
+            position: relative;
+        }
+
+        .style7 .dot--51:before,
+        .style7 .dot--51:after,
+        .style7 .dot--52:before,
+        .style7 .dot--52:after,
+        .style7 .dot--53:before,
+        .style7 .dot--53:after,
+        .style7 .dot--54:before,
+        .style7 .dot--54:after,
+        .style7 .dot--55:before,
+        .style7 .dot--55:after,
+        .style7 .dot--56:before,
+        .style7 .dot--56:after,
+        .style7 .dot--57:before,
+        .style7 .dot--57:after,
+        .style7 .dot--58:before,
+        .style7 .dot--58:after,
+        .style7 .dot--59:before,
+        .style7 .dot--59:after,
+        .style7 .dot--60:before,
+        .style7 .dot--60:after,
+        .style7 .dot--61:before,
+        .style7 .dot--61:after,
+        .style7 .dot--62:before,
+        .style7 .dot--62:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: #72157e;
+            display: block;
+        }
+
+        .style7 .dot--51:before,
+        .style7 .dot--52:before,
+        .style7 .dot--53:before,
+        .style7 .dot--54:before,
+        .style7 .dot--55:before,
+        .style7 .dot--56:before,
+        .style7 .dot--57:before,
+        .style7 .dot--58:before,
+        .style7 .dot--59:before,
+        .style7 .dot--60:before,
+        .style7 .dot--61:before,
+        .style7 .dot--62:before {
+            top: 100%;
+        }
+
+        .style7 .dot--51:after,
+        .style7 .dot--52:after,
+        .style7 .dot--53:after,
+        .style7 .dot--54:after,
+        .style7 .dot--55:after,
+        .style7 .dot--56:after,
+        .style7 .dot--57:after,
+        .style7 .dot--58:after,
+        .style7 .dot--59:after,
+        .style7 .dot--60:after,
+        .style7 .dot--61:after,
+        .style7 .dot--62:after {
+            bottom: 100%;
+        }
+
+
+        /* Layer One*/
+        .style7 .dot--51:after {
+            animation: Style7-diagonal 2s 200ms linear infinite;
+        }
+
+        .style7 .dot--52:after,
+        .style7 .dot--53:after,
+        .style7 .dot--54:after,
+        .style7 .dot--55:after {
+            animation: Style7-cornerTop 2s 300ms linear infinite;
+        }
+
+        .style7 .dot--56:after {
+            animation: Style7-diagonal 2s 200ms linear infinite;
+        }
+
+
+        /* Layer Two */
+        .style7 .dot--51 {
+            animation: style7-cornerSide 2s 400ms linear infinite;
+        }
+
+        .style7 .dot--52 {
+            animation: Style7-diagonal 2s 200ms linear infinite;
+        }
+
+        .style7 .dot--53,
+        .style7 .dot--54 {
+            animation: Style7-cornerTop 2s 300ms linear infinite;
+        }
+
+        .style7 .dot--55 {
+            animation: Style7-diagonal 2s 200ms linear infinite;
+        }
+
+        .style7 .dot--56 {
+            animation: style7-cornerSide 2s 400ms linear infinite;
+        }
+
+        /* Layer three */
+        .style7 .dot--51:before,
+        .style7 .dot--52:before {
+            animation: style7-cornerSide 2s 400ms linear infinite;
+        }
+
+        .style7 .dot--53:before {
+            animation: Style7-diagonal 2s 200ms linear infinite;
+        }
+
+        .style7 .dot--54:before {
+            animation: Style7-diagonal 2s 200ms linear infinite;
+        }
+
+        .style7 .dot--55:before,
+        .style7 .dot--56:before {
+            animation: style7-cornerSide 2s 400ms linear infinite;
+        }
+
+
+        /* Layer Four */
+        .style7 .dot--57:after,
+        .style7 .dot--58:after {
+            animation: style7-cornerSide 2s 400ms linear infinite;
+        }
+
+        .style7 .dot--59:after {
+            animation: Style7-diagonal 2s 200ms linear infinite;
+        }
+
+        .style7 .dot--60:after {
+            animation: Style7-diagonal 2s 200ms linear infinite;
+        }
+
+        .style7 .dot--61:after,
+        .style7 .dot--62:after {
+            animation: style7-cornerSide 2s 400ms linear infinite;
+        }
+
+        /* Layer Five */
+        .style7 .dot--57 {
+            animation: style7-cornerSide 2s 400ms linear infinite;
+        }
+
+        .style7 .dot--58 {
+            animation: Style7-diagonal 2s 200ms linear infinite;
+        }
+
+        .style7 .dot--59,
+        .style7 .dot--60 {
+            animation: Style7-cornerTop 2s 300ms linear infinite;
+        }
+
+        .style7 .dot--61 {
+            animation: Style7-diagonal 2s 200ms linear infinite;
+        }
+
+        .style7 .dot--62 {
+            animation: style7-cornerSide 2s 400ms linear infinite;
+        }
+
+        /* Layer Six */
+        .style7 .dot--57:before {
+            animation: Style7-diagonal 2s 200ms linear infinite;
+        }
+
+        .style7 .dot--58:before,
+        .style7 .dot--59:before,
+        .style7 .dot--60:before,
+        .style7 .dot--61:before {
+            animation: Style7-cornerTop 2s 300ms linear infinite;
+        }
+
+        .style7 .dot--62:before {
+            animation: Style7-diagonal 2s 200ms linear infinite;
+        }
+
+
+        @keyframes Style7-diagonal {
+            0% {
+                background-color: #f21170;
+            }
+
+            50% {
+                background-color: #ff5200;
+            }
+
+            100% {
+                background-color: #f21170;
+            }
+        }
+
+        @keyframes Style7-cornerTop {
+            0% {
+                background-color: #f21170;
+            }
+
+            50% {
+                background-color: #000;
+            }
+
+            100% {
+                background-color: #f21170;
+            }
+        }
+
+        @keyframes style7-cornerSide {
+            0% {
+                background-color: #000;
+            }
+
+            50% {
+                background-color: #ff5200;
+            }
+
+            100% {
+                background-color: #000;
+            }
+        }
+
+
+        /*  */
+        /* Style Eight */
+        /*  */
+
+        .style8 {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(6, 10px);
+            grid-template-rows: repeat(2, 30px);
+            justify-content: center;
+            align-content: center;
+        }
+
+        .style8 .dot--51,
+        .style8 .dot--52,
+        .style8 .dot--53,
+        .style8 .dot--54,
+        .style8 .dot--55,
+        .style8 .dot--56,
+        .style8 .dot--57,
+        .style8 .dot--58,
+        .style8 .dot--59,
+        .style8 .dot--60,
+        .style8 .dot--61,
+        .style8 .dot--62 {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #72147e;
+            position: relative;
+        }
+
+        .style8 .dot--51:before,
+        .style8 .dot--51:after,
+        .style8 .dot--52:before,
+        .style8 .dot--52:after,
+        .style8 .dot--53:before,
+        .style8 .dot--53:after,
+        .style8 .dot--54:before,
+        .style8 .dot--54:after,
+        .style8 .dot--55:before,
+        .style8 .dot--55:after,
+        .style8 .dot--56:before,
+        .style8 .dot--56:after,
+        .style8 .dot--57:before,
+        .style8 .dot--57:after,
+        .style8 .dot--58:before,
+        .style8 .dot--58:after,
+        .style8 .dot--59:before,
+        .style8 .dot--59:after,
+        .style8 .dot--60:before,
+        .style8 .dot--60:after,
+        .style8 .dot--61:before,
+        .style8 .dot--61:after,
+        .style8 .dot--62:before,
+        .style8 .dot--62:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: #72157e;
+            display: block;
+        }
+
+        .style8 .dot--51:before,
+        .style8 .dot--52:before,
+        .style8 .dot--53:before,
+        .style8 .dot--54:before,
+        .style8 .dot--55:before,
+        .style8 .dot--56:before,
+        .style8 .dot--57:before,
+        .style8 .dot--58:before,
+        .style8 .dot--59:before,
+        .style8 .dot--60:before,
+        .style8 .dot--61:before,
+        .style8 .dot--62:before {
+            top: 100%;
+        }
+
+        .style8 .dot--51:after,
+        .style8 .dot--52:after,
+        .style8 .dot--53:after,
+        .style8 .dot--54:after,
+        .style8 .dot--55:after,
+        .style8 .dot--56:after,
+        .style8 .dot--57:after,
+        .style8 .dot--58:after,
+        .style8 .dot--59:after,
+        .style8 .dot--60:after,
+        .style8 .dot--61:after,
+        .style8 .dot--62:after {
+            bottom: 100%;
+        }
+
+
+        /* Layer One*/
+        .style8 .dot--51:after {
+            animation: style8-diagonal 1400ms 400ms linear infinite;
+        }
+
+        .style8 .dot--52:after,
+        .style8 .dot--53:after,
+        .style8 .dot--54:after,
+        .style8 .dot--55:after {
+            animation: style8-cornerTop 3s linear infinite;
+        }
+
+        .style8 .dot--56:after {
+            animation: style8-diagonal 1400ms 400ms linear infinite;
+        }
+
+
+        /* Layer Two */
+        .style8 .dot--51 {
+            animation: style8-cornerLeft 3s 1500ms linear infinite;
+        }
+
+        .style8 .dot--52 {
+            animation: style8-diagonal 1400ms 400ms linear infinite;
+        }
+
+        .style8 .dot--53,
+        .style8 .dot--54 {
+            animation: style8-cornerTop 3s linear infinite;
+        }
+
+        .style8 .dot--55 {
+            animation: style8-diagonal 1400ms 400ms linear infinite;
+        }
+
+        .style8 .dot--56 {
+            animation: style8-cornerRight 3s 500ms linear infinite;
+        }
+
+        /* Layer three */
+        .style8 .dot--51:before,
+        .style8 .dot--52:before {
+            animation: style8-cornerLeft 3s 1500ms linear infinite;
+        }
+
+        .style8 .dot--53:before {
+            animation: style8-diagonal 1400ms 400ms linear infinite;
+        }
+
+        .style8 .dot--54:before {
+            animation: style8-diagonal 1400ms 400ms linear infinite;
+        }
+
+        .style8 .dot--55:before,
+        .style8 .dot--56:before {
+            animation: style8-cornerRight 3s 500ms linear infinite;
+        }
+
+
+        /* Layer Four */
+        .style8 .dot--57:after,
+        .style8 .dot--58:after {
+            animation: style8-cornerLeft 3s 1500ms linear infinite;
+        }
+
+        .style8 .dot--59:after {
+            animation: style8-diagonal 1400ms 400ms linear infinite;
+        }
+
+        .style8 .dot--60:after {
+            animation: style8-diagonal 1400ms 400ms linear infinite;
+        }
+
+        .style8 .dot--61:after,
+        .style8 .dot--62:after {
+            animation: style8-cornerRight 3s 500ms linear infinite;
+        }
+
+        /* Layer Five */
+        .style8 .dot--57 {
+            animation: style8-cornerLeft 3s 1500ms linear infinite;
+        }
+
+        .style8 .dot--58 {
+            animation: style8-diagonal 1400ms 400ms linear infinite;
+        }
+
+        .style8 .dot--59,
+        .style8 .dot--60 {
+            animation: style8-cornerBottom 3s 1000ms linear infinite;
+        }
+
+        .style8 .dot--61 {
+            animation: style8-diagonal 1400ms 400ms linear infinite;
+        }
+
+        .style8 .dot--62 {
+            animation: style8-cornerRight 3s 500ms linear infinite;
+        }
+
+        /* Layer Six */
+        .style8 .dot--57:before {
+            animation: style8-diagonal 1400ms 400ms linear infinite;
+        }
+
+        .style8 .dot--58:before,
+        .style8 .dot--59:before,
+        .style8 .dot--60:before,
+        .style8 .dot--61:before {
+            animation: style8-cornerBottom 3s 1000ms linear infinite;
+        }
+
+        .style8 .dot--62:before {
+            animation: style8-diagonal 1400ms 400ms linear infinite;
+        }
+
+
+        @keyframes style8-diagonal {
+
+            0%,
+            100% {
+                background-color: #000;
+            }
+
+            50% {
+                background-color: #fff;
+            }
+        }
+
+        @keyframes style8-cornerTop {
+            0% {
+                background-color: #f21170;
+            }
+
+            50% {
+                background-color: #000;
+            }
+
+            100% {
+                background-color: #f21170;
+            }
+        }
+
+        @keyframes style8-cornerBottom {
+            0% {
+                background-color: #f21170;
+            }
+
+            50% {
+                background-color: #000;
+            }
+
+            100% {
+                background-color: #f21170;
+            }
+        }
+
+        @keyframes style8-cornerLeft {
+            0% {
+                background-color: #f21170;
+            }
+
+            50% {
+                background-color: #000;
+            }
+
+            100% {
+                background-color: #f21170;
+            }
+        }
+
+        @keyframes style8-cornerRight {
+            0% {
+                background-color: #f21170;
+            }
+
+            50% {
+                background-color: #000;
+            }
+
+            100% {
+                background-color: #f21170;
+            }
+        }
+
+
+        /*  */
+        /* Style Nine */
+        /*  */
+        .style9 {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(2, 30px);
+            grid-template-rows: repeat(2, 30px);
+            justify-content: center;
+            align-content: center;
+        }
+
+        .style9 .dot91,
+        .style9 .dot92,
+        .style9 .dot93,
+        .style9 .dot94,
+        .style9 .dot95 {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #111;
+            position: relative;
+        }
+
+        .style9 .dot95 {
+            position: absolute;
+            top: calc(50% - 15px);
+            left: calc(50% - 15px);
+            animation: expand 1s ease-in-out alternate infinite;
+        }
+
+        @keyframes expand {
+            0% {
+                background-color: #000;
+                transform: scale(0.5);
+                opacity: 1;
+            }
+
+            100% {
+                background-color: gold;
+                transform: scale(2.5);
+                opacity: 0;
+            }
+        }
+
+        .style9 .dot91 {
+            animation: leftAnim-1 1s ease alternate infinite;
+        }
+
+        .style9 .dot92 {
+            animation: rightAnim-1 1s ease alternate infinite;
+        }
+
+        .style9 .dot93 {
+            animation: leftAnim-2 1s ease alternate infinite;
+        }
+
+        .style9 .dot94 {
+            animation: rightAnim-2 1s ease alternate infinite;
+        }
+
+        @keyframes leftAnim-1 {
+            0% {
+                transform: rotate3d(-1, 1, 0, 0deg);
+                transform-origin: 0% 0%;
+            }
+
+            100% {
+                transform: rotate3d(-1, 1, 0, -180deg);
+                transform-origin: 0% 0%;
+                background-color: crimson;
+            }
+        }
+
+        @keyframes rightAnim-1 {
+            0% {
+                transform: rotate3d(1, 1, 0, 0deg);
+                transform-origin: 100% 0%;
+            }
+
+            100% {
+                transform: rotate3d(1, 1, 0, -180deg);
+                transform-origin: 100% 0%;
+                background-color: crimson;
+            }
+        }
+
+        @keyframes leftAnim-2 {
+            0% {
+                transform: rotate3d(1, 1, 0, 0deg);
+                transform-origin: 0% 100%;
+            }
+
+            100% {
+                transform: rotate3d(1, 1, 0, -180deg);
+                transform-origin: 0% 100%;
+                background-color: crimson;
+            }
+        }
+
+        @keyframes rightAnim-2 {
+            0% {
+                transform: rotate3d(-1, 1, 0, 0deg);
+                transform-origin: 100% 100%;
+            }
+
+            100% {
+                transform: rotate3d(-1, 1, 0, -180deg);
+                transform-origin: 100% 100%;
+                background-color: crimson;
+            }
+        }
+
+
+        /*  */
+        /* Style Ten */
+        /*  */
+
+        .style10 {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .style10 .dot101,
+        .style10 .dot102 {
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .style10 .dot101:before,
+        .style10 .dot102:before,
+        .style10 .dot101:after,
+        .style10 .dot102:after {
+            position: absolute;
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #fff;
+        }
+
+        .style10 {
+            animation: anim10 1500ms ease infinite;
+        }
+
+        .style10 .dot101:before {
+            animation: anim10-1 1500ms ease infinite;
+        }
+
+        .style10 .dot102:before {
+            animation: anim10-2 1500ms ease infinite;
+        }
+
+        .style10 .dot101:after {
+            animation: anim10-3 1500ms ease infinite;
+        }
+
+        .style10 .dot102:after {
+            animation: anim10-4 1500ms ease infinite;
+        }
+
+        @keyframes anim10 {
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            50% {
+                transform: rotate(180deg);
+            }
+        }
+
+        @keyframes anim10-1 {
+
+            0%,
+            100% {
+                top: 0px;
+                right: 0px;
+                opacity: 0;
+            }
+
+            50% {
+                top: 80px;
+                right: -80px;
+                background-color: #72147e;
+                opacity: 01
+            }
+        }
+
+        @keyframes anim10-2 {
+
+            0%,
+            100% {
+                top: 0px;
+                left: 0px;
+                opacity: 0;
+            }
+
+            50% {
+                top: 80px;
+                left: -80px;
+                background-color: #72147e;
+                opacity: 1;
+            }
+        }
+
+        @keyframes anim10-3 {
+
+            0%,
+            100% {
+                top: 00px;
+                left: 0px;
+                opacity: 0;
+            }
+
+            50% {
+                top: -80px;
+                left: 80px;
+                background-color: #f21170;
+                opacity: 1;
+            }
+        }
+
+        @keyframes anim10-4 {
+
+            0%,
+            100% {
+                top: 0px;
+                left: 0px;
+                opacity: 0;
+            }
+
+            50% {
+                top: -80px;
+                left: -80px;
+                background-color: #f21170;
+                opacity: 1;
+            }
+        }
+
+
+        /*  */
+        /* Style Eleven */
+        /*  */
+
+        .style11 {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .style11 .dot111,
+        .style11 .dot112,
+        .style11 .dot113,
+        .style11 .dot114 {
+            width: 20px;
+            height: 20px;
+            background-color: transparent;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .style11 .dot111:before,
+        .style11 .dot112:before,
+        .style11 .dot113:before,
+        .style11 .dot114:before,
+        .style11 .dot111:after,
+        .style11 .dot112:after,
+        .style11 .dot113:after,
+        .style11 .dot114:after {
+            position: absolute;
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #fff;
+        }
+
+        .style11 .dot111:before {
+            animation: anim11-1 500ms ease infinite;
+        }
+
+        .style11 .dot112:before {
+            animation: anim11-2 500ms ease infinite;
+        }
+
+        .style11 .dot111:after {
+            animation: anim11-3 500ms ease infinite;
+        }
+
+        .style11 .dot112:after {
+            animation: anim11-4 500ms ease infinite;
+        }
+
+        .style11 .dot113:before {
+            animation: anim11-11 1000ms infinite cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .style11 .dot114:before {
+            animation: anim11-12 1000ms infinite cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .style11 .dot113:after {
+            animation: anim11-13 1000ms infinite cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .style11 .dot114:after {
+            animation: anim11-14 1000ms infinite cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes anim11-1 {
+
+            0%,
+            100% {
+                top: 0px;
+                right: 0px;
+            }
+
+            50% {
+                top: 80px;
+                right: -80px;
+                background-color: #72147e;
+            }
+        }
+
+        @keyframes anim11-2 {
+
+            0%,
+            100% {
+                top: 0px;
+                left: 0px;
+            }
+
+            50% {
+                top: 80px;
+                left: -80px;
+                background-color: #72147e;
+            }
+        }
+
+        @keyframes anim11-3 {
+
+            0%,
+            100% {
+                top: 00px;
+                left: 0px;
+            }
+
+            50% {
+                top: -80px;
+                left: 80px;
+                background-color: #f21170;
+            }
+        }
+
+        @keyframes anim11-4 {
+
+            0%,
+            100% {
+                top: 0px;
+                left: 0px;
+            }
+
+            50% {
+                top: -80px;
+                left: -80px;
+                background-color: #f21170;
+            }
+        }
+
+
+        @keyframes anim11-11 {
+
+            0%,
+            100% {
+                bottom: 0px;
+                opacity: 0;
+            }
+
+            50% {
+                bottom: 80px;
+                background-color: #72147e;
+                opacity: 01;
+            }
+        }
+
+        @keyframes anim11-12 {
+
+            0%,
+            100% {
+                top: 0px;
+                opacity: 0;
+            }
+
+            50% {
+                top: 80px;
+                background-color: #72147e;
+                opacity: 1;
+            }
+        }
+
+        @keyframes anim11-13 {
+
+            0%,
+            100% {
+                left: 0;
+                opacity: 0;
+            }
+
+            50% {
+                left: 80px;
+                background-color: #f21170;
+                opacity: 1;
+            }
+        }
+
+        @keyframes anim11-14 {
+
+            0%,
+            100% {
+                right: 0px;
+                opacity: 0;
+            }
+
+            50% {
+                right: 80px;
+                background-color: #f21170;
+                opacity: 1;
+            }
+        }
+
+
+        /*  */
+        /* Style Twelve */
+        /*  */
+        .style12 {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .style12 .dot121 {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .style12 .dot121:after,
+        .style12 .dot121:before{
+            position: absolute;
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        .style12 .dot121:after {
+            animation: leftAnim-12 500ms ease alternate infinite;
+            background-color: #000;
+        }
+
+        .style12 .dot121:before {
+            animation: rightAnim-12 500ms ease alternate infinite;
+            background-color: 000;
+        }
+
+        @keyframes leftAnim-12 {
+            0% {
+                transform: rotate3d(-1, 1, 0, 0deg);
+                transform-origin: 0% 0%;
+            }
+
+            100% {
+                transform: translateX(-15px)translateY(-15px)scale(0.5);
+                transform-origin: 0% 0%;
+                background-color: greenyellow;
+            }
+        }
+
+        @keyframes rightAnim-12 {
+            0% {
+                transform: rotate3d(1, 1, 0, 0deg);
+                transform-origin: 0% 0%;
+            }
+
+            100% {
+                transform: translateX(15px)translateY(15px)scale(0.5);
+                transform-origin: 100% 100%;
+                background-color: rebeccapurple;
+            }
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="style style1">
@@ -526,14 +2169,83 @@
             <div class="dot51"></div>
             <div class="dot52"></div>
         </div>
-        <div class="style style5"></div>
-        <div class="style style6"></div>
-        <div class="style style7"></div>
-        <div class="style style8"></div>
-        <div class="style style9"></div>
-        <div class="style style10"></div>
-        <div class="style style11"></div>
-        <div class="style style12"></div>
+        <div class="style style5">
+            <div class="dot-51"></div>
+            <div class="dot-52"></div>
+            <div class="dot-53"></div>
+            <div class="dot-54"></div>
+            <div class="dot-55"></div>
+            <div class="dot-56"></div>
+            <div class="dot-57"></div>
+            <div class="dot-58"></div>
+            <div class="dot-59"></div>
+            <div class="dot-60"></div>
+            <div class="dot-61"></div>
+            <div class="dot-62"></div>
+        </div>
+        <div class="style style6">
+            <div class="dot--51"></div>
+            <div class="dot--52"></div>
+            <div class="dot--53"></div>
+            <div class="dot--54"></div>
+            <div class="dot--55"></div>
+            <div class="dot--56"></div>
+            <div class="dot--57"></div>
+            <div class="dot--58"></div>
+            <div class="dot--59"></div>
+            <div class="dot--60"></div>
+            <div class="dot--61"></div>
+            <div class="dot--62"></div>
+        </div>
+        <div class="style style7">
+            <div class="dot--51"></div>
+            <div class="dot--52"></div>
+            <div class="dot--53"></div>
+            <div class="dot--54"></div>
+            <div class="dot--55"></div>
+            <div class="dot--56"></div>
+            <div class="dot--57"></div>
+            <div class="dot--58"></div>
+            <div class="dot--59"></div>
+            <div class="dot--60"></div>
+            <div class="dot--61"></div>
+            <div class="dot--62"></div>
+        </div>
+        <div class="style style8">
+            <div class="dot dot--51"></div>
+            <div class="dot dot--52"></div>
+            <div class="dot dot--53"></div>
+            <div class="dot dot--54"></div>
+            <div class="dot dot--55"></div>
+            <div class="dot dot--56"></div>
+            <div class="dot dot--57"></div>
+            <div class="dot dot--58"></div>
+            <div class="dot dot--59"></div>
+            <div class="dot dot--60"></div>
+            <div class="dot dot--61"></div>
+            <div class="dot dot--62"></div>
+        </div>
+        <div class="style style9">
+            <div class="dot91"></div>
+            <div class="dot92"></div>
+            <div class="dot93"></div>
+            <div class="dot94"></div>
+            <div class="dot95"></div>
+        </div>
+        <div class="style style10">
+            <div class="dot101"></div>
+            <div class="dot102"></div>
+        </div>
+        <div class="style style11">
+            <div class="dot111"></div>
+            <div class="dot112"></div>
+            <div class="dot113"></div>
+            <div class="dot114"></div>
+        </div>
+        <div class="style style12">
+            <div class="dot121"></div>
+        </div>
     </div>
 </body>
+
 </html>

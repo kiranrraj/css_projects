@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Animation</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+        }
+
+        .style1 {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            justify-items: center;
+            align-items: center;
+        }
+
+        .style1 .dot {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: springgreen;
+            top: 100%;
+            animation: blink 1500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+        }
+
+        .style1 .dot-1 {
+            animation-delay: 500ms;
+        }
+
+        .style1 .dot-2 {
+            animation-delay: 800ms;
+        }
+
+        .style1 .dot-3 {
+            animation-delay: 1200ms;
+        }
+
+        .style1 .dot-4 {
+            animation-delay: 600ms;
+        }
+
+        .style1 .dot-5 {
+            animation-delay: 1000ms;
+        }
+
+        .style1 .dot-6 {
+            animation-delay: 400ms;
+        }
+
+        .style1 .dot-7 {
+            animation-delay: 700ms;
+        }
+
+        .style1 .dot-8 {
+            animation-delay: 900ms;
+        }
+
+        .style1 .dot-9 {
+            animation-delay: 1100ms;
+        }
+
+        @keyframes blink {
+
+            0% {
+                background-color: #80ed99;
+            }
+
+            50% {
+                background-color: #3a86ff;
+            }
+
+            100% {
+                opacity: 1;
+                background-color: #ff5c8a;
+            }
+
+            25%,
+            75% {
+                opacity: 0;
+            }
+        }
+
+        /* Style2 */
+        .style2 {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            justify-items: center;
+            align-items: center;
+        }
+
+        .style2 .dot {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: springgreen;
+            top: 100%;
+            animation: blink2 2500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+        }
+
+        .style2 .dot-1 {
+            animation-delay: 2000ms;
+        }
+
+        .style2 .dot-2 {
+            animation-delay: 1800ms;
+        }
+
+        .style2 .dot-3 {
+            animation-delay: 2200ms;
+        }
+
+        .style2 .dot-4 {
+            animation-delay: 1600ms;
+        }
+
+        .style2 .dot-5 {
+            animation-delay: 800ms;
+        }
+
+        .style2 .dot-6 {
+            animation-delay: 1400ms;
+        }
+
+        .style2 .dot-7 {
+            animation-delay: 600ms;
+        }
+
+        .style2 .dot-8 {
+            animation-delay: 1000ms;
+        }
+
+        .style2 .dot-9 {
+            animation-delay: 1200ms;
+        }
+
+        @keyframes blink2 {
+
+            0%,
+            100% {
+                opacity: 1;
+                background-color: khaki;
+            }
+
+            41% {
+                opacity: 1;
+                background-color: gold;
+            }
+
+            42%,
+            43% {
+                opacity: 0;
+            }
+ 
+            45% {
+                opacity: 1;
+                background-color: yellow;
+            }
+
+            46%,
+            47% {
+                opacity: 0;
+            }
+
+            48%,
+            51% {
+                opacity: 1;
+                background-color:khaki;
+            }
+
+            52%,
+            53% {
+                opacity: 0;
+            }
+
+            60% {
+                opacity: 1;
+                background-color:gold;
+            }
+
+            68%,
+            71% {
+                opacity: 1;
+                background-color:khaki;
+            }
+
+            82%,
+            83% {
+                opacity: 0;
+            }
+
+            90% {
+                opacity: 1;
+                background-color:gold;
+            }
+        }
+
+
+        /* Style3 */
+        .style3 {
+            width: 250px;
+            height: 250px;
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            justify-items: center;
+            align-items: center;
+            background-color: #3a86ff;
+        }
+
+        .style3 .dot {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: springgreen;
+            top: 100%;
+            /* animation: blink2 2500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite; */
+        }
+
+        .style3 .dot-1 {
+            animation:dot1Move 2s ease ;
+            background-color: #ff5c8a;
+        }
+
+        .style3 .dot-2 {
+            animation-delay: 1800ms;
+        }
+
+        .style3 .dot-3 {
+            animation-delay: 2200ms;
+        }
+
+        .style3 .dot-4 {
+            animation-delay: 1600ms;
+        }
+
+        .style3 .dot-5 {
+            animation-delay: 800ms;
+        }
+
+        .style3 .dot-6 {
+            animation-delay: 1400ms;
+        }
+
+        .style3 .dot-7 {
+            animation-delay: 600ms;
+        }
+
+        .style3 .dot-8 {
+            animation-delay: 1000ms;
+        }
+
+        .style3 .dot-9 {
+            animation-delay: 1200ms;
+        }
+
+        @keyframes dot1Move{
+            12.5%{
+                transform: translateX(200px);
+            }
+            25%{
+
+            }
+            37.5%{
+
+            }
+            50%{
+
+            }
+            62.5%{
+
+            }
+            75%{
+
+            }
+            87.5%{
+
+            }
+            100%{
+
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="style1">
+            <div class="dot-1 dot"></div>
+            <div class="dot-2 dot"></div>
+            <div class="dot-3 dot"></div>
+            <div class="dot-4 dot"></div>
+            <div class="dot-5 dot"></div>
+            <div class="dot-6 dot"></div>
+            <div class="dot-7 dot"></div>
+            <div class="dot-8 dot"></div>
+            <div class="dot-9 dot"></div>
+        </div>
+
+        <div class="style2">
+            <div class="dot-1 dot"></div>
+            <div class="dot-2 dot"></div>
+            <div class="dot-3 dot"></div>
+            <div class="dot-4 dot"></div>
+            <div class="dot-5 dot"></div>
+            <div class="dot-6 dot"></div>
+            <div class="dot-7 dot"></div>
+            <div class="dot-8 dot"></div>
+            <div class="dot-9 dot"></div>
+        </div>
+
+        <div class="style3">
+            <div class="dot-1 dot"></div>
+            <div class="dot-2 dot"></div>
+            <div class="dot-3 dot"></div>
+            <div class="dot-4 dot"></div>
+            <div class="dot-5 dot"></div>
+            <div class="dot-6 dot"></div>
+            <div class="dot-7 dot"></div>
+            <div class="dot-8 dot"></div>
+            <div class="dot-9 dot"></div>
+        </div>
+    </div>
+</body>
+
+</html>
