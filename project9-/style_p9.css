@@ -23,11 +23,12 @@ body{
 
 .container{
   max-width: 130rem;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .section{
-  min-width: 130rem;
-  width: 100vw;
+  min-width: 120rem;
   height: 100vh;
   min-height: 65rem;
   margin: 10rem auto;
@@ -85,18 +86,19 @@ body{
 .link a{
   font-size: 1.8rem;
   padding: 0.8rem 2rem;
-  letter-spacing: 5px;
+  letter-spacing: 0.5rem;
   color: #fff;
 }
 
 .landing{
   position: relative;
-  width: 100vw;
+  max-width: 100vw;
   height: 100vh;
   background: url('./image/hero__img.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .landing--text{
@@ -110,13 +112,13 @@ body{
 .text--h1{
   font-size: 5rem;
   text-align: center;
-  letter-spacing: 10px;
+  letter-spacing: 1rem;
 }
 
 .text--para{
   font-size: 2rem;
   text-align: center;
-  letter-spacing: 5px;
+  letter-spacing: 0.5rem;
 }
 
 .text--btn{
@@ -128,7 +130,7 @@ body{
   border: none;
   color: #fff;
   width: 12rem;
-  letter-spacing: 2px;
+  letter-spacing: 0.2rem;
   background-color: steelblue;
   padding: 1rem 2rem;
   border-radius: 1rem;
@@ -144,18 +146,18 @@ body{
   text-align: center;
   margin-bottom: 5rem;
   font-size: 5rem;
-  letter-spacing: 5px;
+  letter-spacing: 0.5rem;
 }
 
 .heading span{
   color: springgreen;
-  margin-right: 5px;
+  margin-right: 0.4rem;
 }
 
 .about--content{
   position: relative;
   display: grid;
-  grid-template-columns: repeat(2, 50%);
+  grid-template-columns: 60% 40%;
 }
 
 .about--image{
@@ -164,12 +166,13 @@ body{
   background-size: cover;
   background-repeat: no-repeat;
   margin-right: 5rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .about--para{
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   padding: 0 10rem;
-  letter-spacing: 3px;
+  letter-spacing: 0.2rem;
   line-height: 150%;
 }
 
@@ -189,14 +192,15 @@ body{
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .menu--para{
   margin-top: 5rem;
-  font-size: 1.6rem;
-  padding: 0 10rem;
-  letter-spacing: 3px;
-  line-height: 150%;
+  font-size: 1.8rem;
+  padding: 5rem 15rem;
+  letter-spacing: 0.2rem;
+  line-height: 160%;
 }
 
 .menu--items{
@@ -207,7 +211,7 @@ body{
 .menu--sub{
   font-size: 2.5rem;
   text-align: center;
-  margin-bottom: 5rem;
+  margin: 5rem;
 }
 
 .items{
@@ -222,6 +226,7 @@ body{
   height: 300px;
   position: relative;
   overflow: hidden;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .item--head{
@@ -295,39 +300,44 @@ body{
 
 .block{
   height: auto;
-  padding: 2rem 1rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .food{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: repeat(1, 1fr);
+  align-items: center;
   margin-bottom: 1rem;
-  padding: 1rem 2rem;
-  height: 12rem;
+  padding: 0.5rem 2rem;
+  height: 10rem;
   border-radius: 1rem;
   border: 0.1rem solid slateblue;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
 .food--head{
-  font-size: 2rem;
+  font-size: 1.9rem;
   margin-bottom: 1rem;
   color: steelblue;
 }
 
 .food--description{
-  font-size: 1.3rem;
-  line-height: 150%;
+  font-size: 1.5rem;
+  line-height: 120%;
 }
 
+
+/* Testimonials */
 .testimonials{
-  background-color: steelblue;
-  padding: 10rem 2rem;
+  height: 40rem;
+}
+
+.testimonial .heading{
+  padding: 15rem 0 10rem;
 }
 
 .testimonials--content{
@@ -340,47 +350,187 @@ body{
 .fa-chevron-right{
   font-size: 4rem;
   margin: 0 5rem;
+  transition: all 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .fa-chevron-left:hover,
 .fa-chevron-right:hover{
-  color: white;
+  color: slateblue;
+  transform: scale(1.5);
 }
 
 .testimonials--cards{
   padding: 5rem 10rem;
   width: 70rem;
-  height: 20rem;
+  height: 25rem;
   border-radius: 1rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
   overflow: hidden;
   position: relative;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .testimonials--card{
   width: 100%;
   height: 100%;
-  background-color: #fff;
+  background-color: steelblue;
   padding: 2rem 4rem;
   margin: 2rem;
   position: absolute;
   transform: scale(0);
   transition: all 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  color: #fff;
 }
 
 .show{
   transform: scale(1);
 }
 
+.card--image{
+  font-size: 5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
 .card--quotes{
   font-size: 1.8rem;
-  line-height: 150%;
+  line-height: 130%;
+  letter-spacing: 0.2rem;
 }
 
 .card--name{
   font-size: 2rem;
   text-align: right;
   padding: 1rem 1rem 0 0;
+}
+
+
+/* Contact */
+
+form{
+  padding: 5rem 10rem;
+  position: relative;
+}
+
+.contact--para{
+  font-size: 2rem;
+  text-align: center;
+  margin-top: -5rem;
+  letter-spacing: 0.2rem;
+  margin-bottom: 5rem;
+}
+
+.form--content{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 5rem;
+  position: relative;
+}
+
+.formblock{
+  background-color: steelblue;
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, 
+  rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  border-radius: 0.5rem;
+}
+
+.formblock label{
+  font-size: 2rem;
+  color: #fff;
+  height: 100%;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0rem 1rem;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+input{
+  width: 70%;
+  height: 100%;
+  outline: none;
+  border: none;
+  background-color: steelblue;
+  font-size: 1.6rem;
+  color: #fff;
+  letter-spacing: 0.2rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.message--ctn{
+  grid-column: span 2;
+  flex-direction: column;
+  height: 15rem;
+}
+
+textarea{
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  background-color: steelblue;
+  font-size: 1.6rem;
+  color: #fff;
+  letter-spacing: 0.2rem;
+  resize: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+textarea::placeholder{
+  color: #fff;
+  font-family: 'Mate SC', serif;
+  font-size: 2rem;
+}
+
+.contactBtn{
+  position: absolute;
+  bottom: -6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15rem;
+  padding: 1rem;
+  background: steelblue;
+  background-image: linear-gradient(to bottom, steelblue, #2980b9);
+  border-radius: 3rem;
+  color: #000;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  outline: none;
+  border: none;
+}
+
+.contactBtn:hover {
+  background: #3cb0fd;
+  background-image: linear-gradient(to bottom, #3cb0fd, steelblue);
+  color: #fff;
+}
+
+/* Footer */
+footer{
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  background-color: #3cb0fd;
+}
+
+footer p {
+  font-size: 1.5rem;
+  letter-spacing: 0.2rem;
+  color: #fff;
+}
+
+footer a{
+  color: #111;
 }
