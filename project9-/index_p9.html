@@ -234,20 +234,79 @@
                 </div>
             </div>
         </section>
-        <section class="section" id="testimonials">
+        <section class="section testimonials" id="testimonials">
+            <h2 class="heading menu--heading"><span>M</span>otivations</h2>
             <div class="testimonials--content">
                 <i class="fas fa-chevron-left"></i>
-                <i class="fas fa-chevron-right"></i>
                 <div class="testimonials--cards">
-                    <div class="testimonial-card">
+                    <div class="testimonials--card">
                         <div class="card--image"></div>
-                        <div class="card--quotes"></div>
-                        <div class="card--name"></div>
+                        <div class="card--quotes">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ab repellendus unde vero sint quibusdam numquam molestias cumque beatae dolore. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa nam saepe fuga qui odit quod voluptate eveniet veniam laudantium sequi.</div>
+                        <div class="card--name">Customer 1</div>
+                    </div>
+                    <div class="testimonials--card">
+                        <div class="card--image"></div>
+                        <div class="card--quotes">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ab repellendus unde vero sint quibusdam numquam molestias cumque beatae dolore. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa nam saepe fuga qui odit quod voluptate eveniet veniam laudantium sequi.</div>
+                        <div class="card--name">Customer 2</div>
+                    </div>
+                    <div class="testimonials--card">
+                        <div class="card--image"></div>
+                        <div class="card--quotes">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ab repellendus unde vero sint quibusdam numquam molestias cumque beatae dolore. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa nam saepe fuga qui odit quod voluptate eveniet veniam laudantium sequi.</div>
+                        <div class="card--name">Customer 3</div>
                     </div>
                 </div>
+                <i class="fas fa-chevron-right"></i>
             </div>
         </section>
     </div>
+    <script>
+        let num = 0;
+        let cards = document.querySelectorAll('.testimonials--card');
+        cards[0].classList.add('show');
+
+        function cardHide(){
+            for(let i=0; i<3; i++){
+                cards[i].classList.remove('show');
+            }
+        }
+
+        function cardDisplay(num){
+            console.log(num);
+            cards[num].classList.add('show');
+        }
+
+        function checkNum(num){
+            if(num > 2){
+                num = 0;
+            }
+            if(num < 0){
+                num = 2;
+            }
+            return num;
+        }
+
+        function increaseCount(){
+            num = checkNum(num);
+            cardHide()
+            cardDisplay(num);
+            num++;
+        }
+
+        function decreaseCount(){
+            num = checkNum(num);
+            cardHide()
+            cardDisplay(num);
+            num--;
+        }
+
+        console.log(num);
+
+        const leftBtn = document.querySelector('.fa-chevron-left');
+        const rightBtn = document.querySelector('.fa-chevron-right');
+        rightBtn.addEventListener('click', increaseCount);
+        leftBtn.addEventListener('click', decreaseCount);
+
+    </script>
 </body>
 
 </html>
