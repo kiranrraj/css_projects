@@ -1,0 +1,269 @@
+/* font-family: 'Bangers', cursive;
+font-family: 'Merriweather', serif; */
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+  font-family: 'Merriweather', serif;
+  overflow-x: hidden;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+ul{
+  list-style: none;
+}
+
+img{
+  width: 100%;
+}
+
+.section{
+  min-height: 65rem;
+  width: 100vw;
+  margin-bottom: 5rem;
+}
+
+.landing{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.navBar{
+  width: 100%;
+  height: 6.5rem;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 10;
+}
+
+.lists{
+  display: flex;
+  height: 100%;
+  align-items: center;
+  list-style: none;
+  padding: 0 2rem;
+}
+
+.list a{
+  font-size: 1.6rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #111;
+  text-shadow: 0 -1px 0 #fff, 
+    0 -2px 0 #fff, 
+    0 -3px 0 #111;
+  padding: 1rem 2rem;
+  margin: 0 0.5rem;
+  border-radius: 1rem;
+  letter-spacing: 0.5rem;
+}
+
+.list a:hover{
+  color: #fff;
+  text-shadow: 0 1px 0 orange, 0 2px 0 orange, 0 3px 0 orangered;
+}
+
+.navBar{
+  position: absolute;
+}
+
+.landing--content{
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/hero_logo.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.content--text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.text--head{
+  font-family: 'Bangers', cursive;
+  font-size: 6rem;
+  letter-spacing: 1rem;
+  color: rgb(84, 3, 233);
+  text-shadow: 0 1px 0 #fff, 0 2px 0 #fff, 0 3px 0 #fff;
+}
+
+.text--sub{
+  color: rgb(243, 239, 239);
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.7rem;
+  text-shadow: 0 1px 0 rgb(233, 3, 214),
+  0 3px 0 rgb(84, 3, 233),
+  0 5px 0 rgb(84, 3, 233);
+}
+
+.section__about{
+  position: relative;
+}
+
+.heading{
+  text-align: center;
+  font-size: 3.5rem;
+  margin:5rem 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heading:after{
+  background-color: red;
+  position: absolute;
+  width: 40%;
+  bottom: 0;
+  height: 0.3rem;
+  content: "";
+}
+
+.about__para{
+  padding: 0 10rem;
+}
+
+.about__para{
+  font-size: 1.6rem;
+  line-height: 150%;
+  letter-spacing: 0.2rem;
+}
+
+.about__para p{
+  margin-bottom: 2rem;
+}
+
+.gallery{
+  padding: 5rem;
+}
+
+.gallery__grid{
+  display: flex;
+  flex-direction: column;
+}
+
+.grid__item{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.img__para{
+  font-size: 1.6rem;
+  line-height: 150%;
+  letter-spacing: 1.5px;
+}
+
+.image__text{
+  background-color: slateblue;
+  padding: 2rem;
+}
+
+.img__head{
+  margin-bottom: 2rem;
+}
+
+.grid__item:nth-child(1) .image__text,
+.grid__item:nth-child(3) .image__text,
+.grid__item:nth-child(5) .image__text,
+.grid__item:nth-child(7) .image__text,
+.grid__item:nth-child(9) .image__text,
+.grid__item:nth-child(11) .image__text{ 
+  grid-column: 1/2;
+  grid-row: 1/1;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.grid__item:nth-child(1) .image__container,
+.grid__item:nth-child(3) .image__container,
+.grid__item:nth-child(5) .image__container,
+.grid__item:nth-child(7) .image__container,
+.grid__item:nth-child(9) .image__container,
+.grid__item:nth-child(11) .image__container{ 
+  grid-column: 2/3;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.head__m{
+  font-size: 2rem;
+  color: orange;
+}
+
+.head__s{
+  font-size: 3rem;
+  padding: 0 1rem;
+  color: #fff;
+}
+
+
+.section__projectGallery {
+  position: relative;
+}
+
+.projectGallery--content{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.modal{
+  display: none;
+  position: fixed; 
+  z-index: 10; 
+  left: 0;
+  top: 0;
+  width: 100vw; 
+  height: 100vh; 
+  background-color: #fff;
+}
+
+.modal-content{
+  width: 100%;
+  max-width: 70rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.close{
+  position: absolute;
+  color: #111;
+  right: 2rem;
+  top: 2rem;
+  font-size: 5rem;
+  padding: 0rem 1rem;
+  cursor: pointer;
+  background-color: #fff;
+  z-index: 100;
+}
+
+
+/* .hexagon {
+  position: absolute;
+  left: 50%;
+  width: 100px; 
+  height: 100px;
+  background-color: #111;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+} */
+
+
+
