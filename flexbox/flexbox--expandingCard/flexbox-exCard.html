@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expanding Cards</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            width: 100vw;
+            height: 100vh;
+            background-color: slateblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 20px;
+        }
+
+        .cards{
+            width: 100%;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top: 5px solid #fff;
+            border-bottom: 5px solid #fff;
+            border-right: 5px solid #fff;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+        }
+
+        .card{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            flex: 0.5;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: all 300ms ease-in-out;
+            border-left: 5px solid #fff;
+        }
+
+        .c1{
+            background-image: url('./img1.jpg');
+        }
+
+        .c2{
+            background-image: url('./img2.jpg');
+        }
+
+        .c3{
+            background-image: url('./img3.jpg');
+        }
+
+        .c4{
+            background-image: url('./img4.jpg');
+        }
+
+        .c5{
+            background-image: url('./img5.jpg');
+        }
+
+        .c6{
+            background-image: url('./img6.jpg');
+        }
+
+        .c7{
+            background-image: url('./img7.jpg');
+        }
+
+        .title{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #111;
+            background-color: rgba(255, 255, 255, 0.5);
+            height: 30px;
+            width: 100%;
+            text-align: center;
+            transition: all 300ms ease;
+            text-transform: uppercase;
+        }
+
+        .card:hover{
+            flex: 4;
+        }
+
+        .card:hover .title{
+            font-size: 20px;
+            padding: 20px;
+            margin-top: 20px;
+            color: orange;
+            text-shadow: 0 1px 0 orange,
+            0 5px 0 #111;
+            letter-spacing: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="cards">
+            <div class="card c1">
+                <div class="title">Island</div>
+            </div>
+            <div class="card c2">
+                <div class="title">Mountain</div>
+            </div>
+            <div class="card c3">
+                <div class="title">Tree</div>
+            </div>
+            <div class="card c4">
+                <div class="title">Cave</div>
+            </div>
+            <div class="card c5">
+                <div class="title">Leaf</div>
+            </div>
+            <div class="card c6">
+                <div class="title">Snow</div>
+            </div>
+            <div class="card c7">
+                <div class="title">Forest</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
