@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Card</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        ul{
+            list-style: none;
+        }
+
+        .container{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cards{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card{
+            position: relative;
+            margin:20px;
+            padding: 20px;
+            border-radius: 20px;
+            height: 550px;
+            width: 250px;
+            background-color: rgb(36, 19, 151);
+            display: flex;
+            flex-direction: column;
+            border: 2px solid orange;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        }
+
+        .card--head{
+            height: 55px;
+            font-size: 22px;
+            text-align: center;
+            letter-spacing: 3px;
+            line-height: 110%;
+            text-transform: uppercase;
+            color: #fff;
+        }
+
+        .card--sub{
+            height: 40px;
+            color: rgba(255, 255, 255, 0.562);
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 10px;
+            line-height: 120%;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .card--offers{
+            padding: 5px;
+            text-align: center;
+            background-color: rgba(255, 166, 0, 0.74);
+            font-weight: 600;
+            align-self: center;
+            color: #fff;
+            width: 50%;
+            border-radius: 25px;
+        }
+
+        .card--price{
+            font-size: 25px;
+            padding: 10px 20px 20px;
+            text-align: center;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        
+        .card--features{
+            color: #fff;
+        }
+
+        .list{
+            padding: 5px;
+            font-size: 14px;
+            letter-spacing: 1.5px;
+            border-bottom: 1px dashed rgb(255, 0, 221);
+        }
+
+        .list:last-child{
+            border-bottom: 1px solid transparent;
+        }
+
+        .card--cart{
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            width: 80%;
+            color: #fff;
+            transform: translateX(-50%);
+            text-align: center;
+            padding: 10px 20px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            background-color: orange;
+            border-radius: 20px;
+            border: 2px solid #fff;
+            
+        }
+
+        .card--cart:hover{
+            background-color: #fff;
+            color: orange;
+            box-shadow: 0px 0px 2px 2px #fff, 0px 0px 4px 4px orange;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="cards">
+            <div class=" c1 card">
+                <h2 class="card--head">Single Web Hosting</h2>
+                <div class="card--sub">Ideal Solutions For Beginners</div>
+                <div class="card--offers">Save 20%</div>
+                <div class="card--price">100/<sub>month</sub></div>
+                <ul class="card--features">
+                    <li class="list">1 Website</li>
+                    <li class="list">30 GB SSD Storage</li>
+                    <li class="list">~10000 Visits Monthly</li>
+                    <li class="list">1 Email Account</li>
+                    <li class="list">100 GB Bandwidth</li>
+                </ul>
+                <div class="card--cart">Add to cart</div>
+            </div>
+            <div class=" c2 card">
+                <h2 class="card--head">Premium Web Hosting</h2>
+                <div class="card--sub">Perfect package for personal websites</div>
+                <div class="card--offers">Save 35%</div>
+                <div class="card--price">179/<sub>month</sub></div>
+                <ul class="card--features">
+                    <li class="list">100 Website</li>
+                    <li class="list">100 GB SSD Storage</li>
+                    <li class="list">~50000 Visits Monthly</li>
+                    <li class="list">Free Email </li>
+                    <li class="list">Unlimited Bandwidth</li>
+                    <li class="list">Free Domain </li>
+                </ul>
+                <div class="card--cart">Add to cart</div>
+            </div>
+            <div class=" c3 card">
+                <h2 class="card--head">Business Web Hosting</h2>
+                <div class="card--sub">Optimized for small and medium businesses</div>
+                <div class="card--offers">Save 50%</div>
+                <div class="card--price">279/<sub>month</sub></div>
+                <ul class="card--features">
+                    <li class="list">100 Website</li>
+                    <li class="list">200 GB SSD Storage</li>
+                    <li class="list">~100000 Visits Monthly</li>
+                    <li class="list">Free Email </li>
+                    <li class="list">Unlimited Bandwidth</li>
+                    <li class="list">Free Domain </li>
+                    <li class="list">Free SSL </li>
+                    <li class="list">Unlimited Databases</li>
+                </ul>
+                <div class="card--cart">Add to cart</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
