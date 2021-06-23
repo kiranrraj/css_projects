@@ -1,99 +1,86 @@
+/* font-family: 'Parisienne', cursive;
+font-family: 'Raleway', sans-serif; */
+
+:root{
+    
+}
+
 *{
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
 }
 
+ul{
+    list-style: none;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Raleway', sans-serif;
+}
+
 body{
-    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.landing{
+    width: 100vw;
+    height: 100vh;
+    background-image: url('./images/hero1.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.navBar{
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: gray;
+    justify-content: space-around;
+    height: 6rem;
+    width: 100%;
+    background-color: rgba(31, 31, 31, 0.4);
 }
 
-.about-us{
-    height: 100vh;
-    background: url('./hero.jpg') no-repeat;
-    background-size: 55%;
-    background-color: honeydew;
-    overflow: hidden;
-    padding: 8rem 0;
-}
-
-.about-us__inner{
-    width: 55%;
-    float: right;
-    padding: 5rem;
-    background-color: lavender;
-}
-
-.inner__head{
-    margin-bottom: 2rem;
+.logo{
     font-size: 2rem;
-}
-
-.inner__text{
-    margin-bottom: 2rem;
-    color: blueviolet;
-    text-align: justify;
-    line-height: 1.6rem;
-    font-size: 14px;
-}
-
-.inner__highlights{
+    letter-spacing: 0.4rem;
+    text-transform: uppercase;
+    color: #Fff;
     display: flex;
-    justify-content: space-between;
-    font-weight: 500;
-    font-size: 20px;
+    font-family: 'Merienda One', cursive;
 }
 
-@media screen and (max-width:1200px){
-    .about-us{
-        padding: 6rem;
-    }
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-@media screen and (max-width:1000px){
-    .about-us{
-        background-size: 100%;
-        padding: 6rem 2rem;
-    }
-    .about-us__inner{
-        width: 100%;
-    }
+.item{
+    padding: 1rem 2rem;
 }
 
-@media screen and (max-width:700px){
-    .inner__text{
-        font-size: 13px;
-        line-height: 1.3rem;
-    }
-    .inner__highlights{
-        font-size: 1rem;
-    }
+.item a{
+    font-size: 1.5rem;
+    color: #FFA970;
+    text-decoration: none;
+    letter-spacing: 2px;
 }
 
-@media screen and (max-width:600px){
-
-    .about-us__inner{
-        padding: 1rem;
-    }
-
-    .inner__highlights{
-        font-size: 14px;
-    }
-
-    .inner__head{
-        margin-bottom: 1.5rem;
-        font-size: 1.5rem;
-    }
+.item a:hover{
+    color: #fff;
 }
 
+.icon i{
+    display: none;
+    color: #fff;
+    font-size: 3rem;
+    transition: all 300ms ease;
+}
 
-
-
+.icon i:hover{
+    color: #FFA970;
+}
 
 
 
