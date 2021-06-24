@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tours And Travel</title>
+    <script src="https://kit.fontawesome.com/a7e9f794eb.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda+One&family=Raleway:wght@300;400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style_p15.css">
+</head>
+
+<body>
+    <div class="landing" id="landing">
+        <nav class="navBar">
+            <div class="navBar--1">
+                <div class="logo">CLUB T</div>
+                <ul class="menu">
+                    <li class="item"><a href="#landing">Home</a></li>
+                    <li class="item"><a href="#about">About</a></li>
+                    <li class="item"><a href="#booking">Booking</a></li>
+                    <li class="item"><a href="#gallery">Gallery</a></li>
+                    <li class="item"><a href="#testimonials">Testimonials</a></li>
+                    <li class="item"><a href="#contact">Contact</a></li>
+                </ul>
+
+                <div class="navBar--2">
+                    <i class="fas fa-search searchIcon"></i>
+                    <i class="fas fa-user-circle loginIcon"></i>
+                </div>
+
+                <div class="icon">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+        <form action="#" class="login">
+            <h3>Login</h3>
+            <input type="email" name="uname" id="uname" 
+            class="uname" placeholder="User Name">
+            <input type="password" name="password" id="password" 
+            class="password" placeholder="Password">
+            <div class="block">
+                <input type="submit" value="Submit" class="login--btn">
+                <input type="reset" value="Reset" class="reset--btn">
+            </div>
+        </form>
+        
+        <form action="#" class="search">
+            <h3>Search</h3>
+            <input type="text" name="search" id="search" class="search--box" 
+            placeholder="Search Item">
+            <input type="submit" value="Search" class="search--btn">
+        </form>
+    </div>
+    <div class="about" id="about"></div>
+    <div class="booking" id="booking"></div>
+    <div class="gallery" id="gallery"></div>
+    <div class="testimonials" id="testimonials"></div>
+    <div class="contact" id="contact"></div>
+    <script>
+        const searchBtn = document.getElementsByClassName('searchIcon')[0];
+        const loginBtn = document.getElementsByClassName('loginIcon')[0];
+        const search = document.getElementsByClassName('search')[0];
+        const login = document.getElementsByClassName('login')[0];
+        searchBtn.addEventListener('click',(e)=>{
+            search.classList.toggle('showScreen');
+        })
+        console.log(searchBtn, loginBtn);
+    </script>
+</body>
+
+</html>
