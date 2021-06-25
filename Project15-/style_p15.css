@@ -17,6 +17,11 @@ ul{
     list-style: none;
 }
 
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
 html{
     font-size: 62.5%;
     font-family: 'Raleway', sans-serif;
@@ -96,28 +101,289 @@ html{
     transition: all 300ms ease;
 }
 
-.login, .search{
-    display: none;
-}
-
-.showScreen{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: block;
-}
-
+/* Search */
 .search{
-    background-color: #F21170;
-    width: 20rem;
-    height: 10rem;
-    padding: 2rem;
+    display: none;
+    background-color: var(--color1);
+    width: 100%;
+    height: 5rem;
+    justify-content: space-around;
+    align-items: center;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 0.5rem;
 }
 
+.search h3{
+    font-size: 2rem;
+}
+
+.showScreen{
+    display: flex;
+}
+
+/* Search Ends */
 
 
 
+/* Login Starts */
+.login{
+    width: 45rem;
+    height: 40rem;
+    background-color: var(--color2);
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 2rem;
+}
 
+.login--container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.login--top{
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color1);
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+}
+
+.login--main{
+    font-size: 2.5rem;
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 1rem;
+}
+
+.login--options{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.option--left,
+.option--right{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.option--left{
+    background-color: #fff;
+}
+
+.option--head{
+    font-size: 1.6rem;
+    letter-spacing: 1.5px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.left--container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 2rem 1rem;
+}
+
+.left--block{
+    width: 100%;
+    height: 4rem;
+    background-color: #185ADB;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    padding: 0rem 1rem;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.left--block:nth-child(1){
+    background-color: #4267B2;
+}
+
+.left--block:nth-child(2){
+    background-color: #1DA1F2;
+}
+
+.left--block:nth-child(3){
+    background-color: #000;
+}
+
+.left--block:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+.left--block i {
+    padding-right: 1rem;
+}
+
+.left--block:nth-child(1):hover i {
+    color: #4267B2;
+    transform: scale(1.5);
+}
+
+.left--block:nth-child(2):hover i {
+    color: #1DA1F2;
+    transform: scale(1.5);
+}
+
+.left--block:nth-child(3):hover i {
+    color: #000;
+    transform: scale(1.5);
+}
+
+.login--bottom{
+    width: 100%;
+    height: 10rem;
+    background-color: var(--color1);
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
+
+.bottom--block{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bottom--btn{
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+
+/* Login Ends */
+
+
+/* Register Form Starts */
+.register{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45rem;
+    height: 45rem;
+    background-color: var(--color3);
+    padding: 1rem 3rem;
+    border-radius: 1rem;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    border: 0.2rem solid var(--color2);
+}
+
+.registerShow{
+    display: block;
+}
+
+.register--head,
+.register--sub{
+    text-align: center;
+    color: #fff;
+}
+
+.register--head{
+    font-size: 2.5rem;
+    padding: 0.5rem;
+    letter-spacing: 0.3rem;
+}
+
+.register--sub{
+    font-size: 1.2rem;
+    letter-spacing: 0.15rem;
+    padding-bottom: 1rem;
+}
+
+.register--fields{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.register--fields input{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    height: 4rem;
+    width: 60%;
+}
+
+.register--fields .register--block{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    padding: 0 1rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+    border-radius: 0.5rem;
+}
+
+.register--fields .register--block input::placeholder{
+    color: #F21170;
+    font-size: 1.6rem;
+}
+
+.register--input{
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    background-color: var(--color2);
+}
+
+.terms{
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    color: #fff;
+}
+
+.register--btnBlk{
+    position: absolute;
+    bottom: 2rem;
+    width: 25rem;
+}
+
+.register--btn {
+	box-shadow: 0px 1px 0px 0px #fff6af;
+	background:linear-gradient(to bottom, #ffec64 5%, var(--color2) 100%);
+	background-color:#ffec64;
+	border-radius:0.3rem;
+	border:1px solid #ffaa22;
+	display:inline-block;
+	cursor:pointer;
+	padding:0.5rem 2rem;
+	text-shadow:0px 1px 0px #ffee66;
+}
+.register--btn:hover {
+	background:linear-gradient(to bottom, var(--color2) 5%, #ffec64 100%);
+	background-color:var(--color2);
+    color: var(--color1);
+}
+.register--btn:active {
+	position:relative;
+	top:1px;
+}
+
+/* Register Form Ends */

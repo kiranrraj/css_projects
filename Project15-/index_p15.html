@@ -36,39 +36,144 @@
                 </div>
             </div>
         </nav>
-        <form action="#" class="login">
-            <h3>Login</h3>
-            <input type="email" name="uname" id="uname" 
-            class="uname" placeholder="User Name">
-            <input type="password" name="password" id="password" 
-            class="password" placeholder="Password">
-            <div class="block">
-                <input type="submit" value="Submit" class="login--btn">
-                <input type="reset" value="Reset" class="reset--btn">
-            </div>
-        </form>
-        
+
         <form action="#" class="search">
-            <h3>Search</h3>
-            <input type="text" name="search" id="search" class="search--box" 
-            placeholder="Search Item">
+            <input type="text" name="search" id="search" class="search--box" placeholder="Search Item">
             <input type="submit" value="Search" class="search--btn">
         </form>
+
+        <!-- Login Form Starts -->
+        <form action="#" class="login" id="login">
+            <div class="login--container">
+                <div class="login--top">
+                    <h2 class="login--main">Login</h2>
+                </div>
+
+                <div class="login--options">
+                    <div class="option--left">
+                        <p class="option--head">Using Social Media</p>
+                        <div class="left--container">
+                            <div class="left--block">
+                                <a href="#" class="fb btn">
+                                    <i class="fab fa-facebook"></i> Login with Facebook
+                                </a>
+                            </div>
+                            <div class="left--block">
+                                <a href="#" class="twitter btn">
+                                    <i class="fab fa-twitter"></i> Login with Twitter
+                                </a>
+                            </div>
+                            <div class="left--block">
+                                <a href="#" class="google btn">
+                                    <i class="fab fa-github"></i> Login with GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="option--right">
+                        <p class="option--head">Using Password</p>
+                        <div class="right--container">
+                            <div class="right--block">
+                                <label for="email">Email</label>
+                                <input type="text" placeholder="Email ID" name="email" required>
+                            </div>
+
+                            <div class="right--block">
+                                <label for="psw">Password</label>
+                                <input type="password" placeholder="Password" name="psw" required>
+                            </div>
+
+                            <div class="right--block">
+                                <button type="button" class="right--cancel">Cancel</button>
+                                <button type="submit" class="right--sign">Sign Up</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="login--bottom">
+                    <div class="bottom--block">
+                        <a href="#" class="bottom--btn">Sign up</a>
+                        <a href="#" class="bottom--btn">Forgot password?</a>
+                    </div>
+                </div>
+
+                </div>
+        </form>
+        <!-- Login Form Ends -->
+
+        <!-- Register Form Starts -->
+        <form action="#" class="register" id="register">
+            <div class="register--container">
+                <div class="register--block">
+                    <h2 class="register--head">Sign Up</h2>
+                    <p class="register--sub">Please fill in this form to create an account.</p>
+                </div>
+
+                <div class="register--fields">
+                    <div class="register--block register--input">
+                        <label for="fname">First Name</label>
+                        <input type="text" id="fname" name="firstname" placeholder="First Name">
+                    </div>
+
+                    <div class="register--block register--input">
+                        <label for="lname">Last Name</label>
+                        <input type="text" id="lname" name="lastname" placeholder="Last Name">
+                    </div>
+
+                    <div class="register--block register--input">
+                        <label for="email">Email</label>
+                        <input type="text" placeholder="Email ID" name="email" required>
+                    </div>
+
+                    <div class="register--block register--input">
+                        <label for="psw">Password</label>
+                        <input type="password" placeholder="Password" name="psw" required>
+                    </div>
+
+                    <div class="register--block register--input">
+                        <label for="prepeat">Repeat Password</label>
+                        <input type="password" placeholder="Repeat Password" name="prepeat" required>
+                    </div>
+
+                    <div class="register--block register--term">
+                        <div class="terms">By creating an account you agree to our <a href="#">Terms & Conditions</a>.
+                        </div>
+                    </div>
+
+                    <div class="register--block register--btnBlk">
+                        <button type="button" class="register--cancel register--btn">Cancel</button>
+                        <button type="submit" class="register--sign register--btn">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- Register Form Ends -->
     </div>
+
     <div class="about" id="about"></div>
     <div class="booking" id="booking"></div>
     <div class="gallery" id="gallery"></div>
     <div class="testimonials" id="testimonials"></div>
     <div class="contact" id="contact"></div>
     <script>
-        const searchBtn = document.getElementsByClassName('searchIcon')[0];
-        const loginBtn = document.getElementsByClassName('loginIcon')[0];
-        const search = document.getElementsByClassName('search')[0];
-        const login = document.getElementsByClassName('login')[0];
-        searchBtn.addEventListener('click',(e)=>{
+        const searchBtn = document.querySelector('.searchIcon');
+        const loginBtn = document.querySelector('.loginIcon');
+        const search = document.querySelector('.search');
+        const login = document.querySelector('.login');
+
+        const registerForm = document.querySelector('#register');
+
+        searchBtn.addEventListener('click', (e) => {
             search.classList.toggle('showScreen');
-        })
-        console.log(searchBtn, loginBtn);
+        });
+
+        loginBtn.addEventListener('click', (e) => {
+            registerForm.classList.toggle('registerShow');
+        });
+
+        console.log(searchBtn, loginBtn, registerForm);
     </script>
 </body>
 
