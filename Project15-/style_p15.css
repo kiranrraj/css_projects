@@ -127,14 +127,15 @@ html{
 
 /* Login Starts */
 .login{
-    width: 45rem;
-    height: 40rem;
+    width: 50rem;
+    height: 35rem;
     background-color: var(--color2);
     position:absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 2rem;
+    display: none;
 }
 
 .login--container{
@@ -148,7 +149,7 @@ html{
 
 .login--top{
     width: 100%;
-    height: 10rem;
+    height: 8rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -158,7 +159,7 @@ html{
 }
 
 .login--main{
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     text-align: center;
     width: 100%;
     text-transform: uppercase;
@@ -170,14 +171,12 @@ html{
     width: 100%;
     height: 100%;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
 .option--left,
 .option--right{
     height: 100%;
-    width: 100%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -195,7 +194,8 @@ html{
     text-align: center;
 }
 
-.left--container{
+.left--container,
+.right--container{
     height: 100%;
     width: 100%;
     display: flex;
@@ -252,15 +252,58 @@ html{
     transform: scale(1.5);
 }
 
-.login--bottom{
+.right--block{
     width: 100%;
-    height: 10rem;
-    background-color: var(--color1);
-    border-bottom-left-radius: 2rem;
-    border-bottom-right-radius: 2rem;
+    height: 4rem;
+    background-color: #185ADB;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
 }
 
-.bottom--block{
+.right--block input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-bottom: var(--color1) 2px solid;
+    background-color: var(--color2);
+}
+
+.btnBlock{
+    padding: 2rem 2rem 0;
+    background-color: transparent;
+}
+
+.right--btn {
+	box-shadow:inset 0px 1px 0px 0px #97c4fe;
+	background:linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
+	background-color:#3d94f6;
+	border-radius:6px;
+	border:1px solid #337fed;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	padding:0.5rem 2rem;
+	text-shadow:0px 1px 0px #1570cd;
+}
+.right--btn:hover {
+	background:linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
+	background-color:#1e62d0;
+}
+.right--btn:active {
+	position:relative;
+	top:1px;
+}
+
+.login--bottom{
+    width: 100%;
+    height: 8rem;
+}
+
+.bottom--content{
     width: 100%;
     height: 100%;
     display: flex;
@@ -268,12 +311,43 @@ html{
     align-items: center;
 }
 
+.bottom--block{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom--block a {
+    color: var(--color1);
+    text-align: center;
+}
+
+.bottom--left{
+    border-bottom-left-radius: 2rem; 
+    background-color: #fff;
+}
+
+.bottom--right{
+    border-bottom-right-radius: 2rem;
+    background-color: var(--color2);
+}
+
+.bottom--left:hover,
+.bottom--right:hover{
+    background-color: var(--color3);
+}
+
+.bottom--left:hover a,
+.bottom--right:hover a {
+    color: #fff;
+}
+
 .bottom--btn{
     font-size: 1.8rem;
     color: #fff;
 }
-
-
 /* Login Ends */
 
 
@@ -385,5 +459,4 @@ html{
 	position:relative;
 	top:1px;
 }
-
 /* Register Form Ends */

@@ -75,27 +75,29 @@
                         <p class="option--head">Using Password</p>
                         <div class="right--container">
                             <div class="right--block">
-                                <label for="email">Email</label>
-                                <input type="text" placeholder="Email ID" name="email" required>
+                                <input type="text" placeholder="Username" name="username" required>
                             </div>
 
                             <div class="right--block">
-                                <label for="psw">Password</label>
                                 <input type="password" placeholder="Password" name="psw" required>
                             </div>
 
-                            <div class="right--block">
-                                <button type="button" class="right--cancel">Cancel</button>
-                                <button type="submit" class="right--sign">Sign Up</button>
+                            <div class="right--block btnBlock">
+                                <button type="button" class="right--cancel right--btn">Cancel</button>
+                                <button type="submit" class="right--sign right--btn">Sign Up</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="login--bottom">
-                    <div class="bottom--block">
-                        <a href="#" class="bottom--btn">Sign up</a>
-                        <a href="#" class="bottom--btn">Forgot password?</a>
+                    <div class="bottom--content">
+                        <div class="bottom--left bottom--block">
+                            <a href="#" class="bottom--btn">Sign up</a>
+                        </div>
+                        <div class="bottom--right bottom--block">
+                            <a href="#" class="bottom--btn">Forgot password?</a>
+                        </div>
                     </div>
                 </div>
 
@@ -170,7 +172,7 @@
         });
 
         loginBtn.addEventListener('click', (e) => {
-            registerForm.classList.toggle('registerShow');
+            login.classList.toggle('registerShow');
         });
 
         console.log(searchBtn, loginBtn, registerForm);
