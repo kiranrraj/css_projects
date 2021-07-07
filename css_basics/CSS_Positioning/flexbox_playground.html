@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Playground</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background-color: firebrick;
+            display: grid;
+            grid-template-columns: repeat(2, 50%);
+        }
+
+        .left {
+            background-color: sandybrown;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .parent {
+            width: 400px;
+            height: 400px;
+            background-color: firebrick;
+            border: 2px solid #fff;
+            display: flex;
+        }
+
+        .child {
+            min-width: 50px;
+            min-height: 50px;
+            background-color: indigo;
+            border: 2px solid #111;
+        }
+
+        .right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+        }
+
+        .block {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            color: #fff;
+            width: 400px;
+            border: 2px solid #fff;
+            margin: 15px 5px;
+        }
+
+        .blockBtn {
+            border: none;
+        }
+
+        .btn {
+            box-shadow: inset 0px 1px 0px 0px #f5978e;
+            background: linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
+            background-color: #f24537;
+            border-radius: 6px;
+            border: 1px solid #d02718;
+            display: inline-block;
+            cursor: pointer;
+            color: #ffffff;
+            padding: 6px 24px;
+            text-shadow: 0px 1px 0px #810e05;
+        }
+
+        .btn:hover {
+            background: linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
+            background-color: #c62d1f;
+        }
+
+        .btn:active {
+            position: relative;
+            top: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="parent">
+                <div class="child child10"></div>
+                <div class="child child11"></div>
+                <div class="child child12"></div>
+                <div class="child child13"></div>
+                <div class="child child14"></div>
+                <div class="child child15"></div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="form">
+                <div class="block">
+                    <label for="justify">Justify Content Property Value</label>
+                    <select name="justifyContent" id="justify" class="justify">
+                        <option value="flex-start">flex-start</option>
+                        <option value="flex-end">flex-end</option>
+                        <option value="center">center</option>
+                        <option value="space-around">space-around</option>
+                        <option value="space-between">space-between</option>
+                        <option value="space-evenly">space-evenly</option>
+                        <option value="stretch">stretch</option>
+                    </select>
+                </div>
+
+                <div class="block">
+                    <label for="align">Align Item Property Value</label>
+                    <select name="alignItems" id="align" class="align">
+                        <option value="flex-start">flex-start</option>
+                        <option value="flex-end">flex-end</option>
+                        <option value="center">center</option>
+                        <option value="baseline">baseline</option>
+                        <option value="stretch">stretch</option>
+                    </select>
+                </div>
+                <div class="block">
+                    
+                </div>
+                <div class="block blockBtn">
+                    <button class="btn">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const btn = document.getElementsByClassName('btn')[0];
+        const parent = document.getElementsByClassName('parent')[0];
+        btn.addEventListener('click', ()=>{
+            const justifyBtn = document.getElementById('justify').value;
+            const alignBtn = document.getElementById('align').value;
+            parent.style.justifyContent = justifyBtn;
+            parent.style.alignItems = alignBtn;
+            console.log(justifyBtn, alignBtn);
+
+        })
+    </script>
+</body>
+
+</html>

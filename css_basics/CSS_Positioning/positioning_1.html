@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positioning - 1</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            width: 100vw;
+            height: 100vh;
+            background-color: springgreen;
+            position: relative;
+        }
+
+        .parent, .parent1{
+            width: 300px;
+            height: 300px;
+            background-color: steelblue;
+            padding: 10px;
+            border: 10px solid #222;
+            position: relative;
+        }
+
+        .child{
+            width: 50px;
+            height: 50px;
+            background-color: tomato;
+        }
+
+        .child:last-child{
+            position:absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .block{
+            position: absolute;
+            width: 50%;
+            height: 50%;
+        }
+
+        .child1{
+            left: 0;
+            top: 0;
+            background-color: blueviolet;
+        }
+
+        .child2{
+            right: 0;
+            top: 0;
+            background-color:darkmagenta;
+        }
+
+        .child3{
+            right: 0;
+            bottom: 0;
+            background-color:crimson;
+        }
+
+        .child4{
+            left: 0;
+            bottom: 0;
+            background-color:coral;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="parent">
+            <div class="child"></div>
+            <div class="child"></div>
+        </div>
+
+        <div class="parent1">
+            <div class="block child1"></div>
+            <div class="block child2"></div>
+            <div class="block child3"></div>
+            <div class="block child4"></div>
+        </div>
+    </div>
+</body>
+</html>
