@@ -15,7 +15,8 @@
 
         .container {
             width: 100vw;
-            height: 100vh;
+            min-width: 1200px;
+            height: auto;
             background-color: firebrick;
             display: grid;
             grid-template-columns: repeat(2, 50%);
@@ -37,10 +38,14 @@
         }
 
         .child {
-            min-width: 50px;
-            min-height: 50px;
+            padding: 10px;
             background-color: indigo;
             border: 2px solid #111;
+            color: #fff;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .right {
@@ -53,11 +58,21 @@
         .block {
             display: flex;
             justify-content: space-between;
-            padding: 10px;
             color: #fff;
             width: 400px;
             border: 2px solid #fff;
             margin: 15px 5px;
+            position: relative;
+            padding: 20px;
+        }
+
+        .name{
+            position: absolute;
+            top: 10px;
+            left: -80px;
+            font-size: 16px;
+            text-transform: uppercase;
+            color: springgreen;
         }
 
         .blockBtn {
@@ -86,6 +101,10 @@
             position: relative;
             top: 1px;
         }
+
+        input[type="number"]{
+            width: 50px;
+        }
     </style>
 </head>
 
@@ -93,18 +112,36 @@
     <div class="container">
         <div class="left">
             <div class="parent">
-                <div class="child child10"></div>
-                <div class="child child11"></div>
-                <div class="child child12"></div>
-                <div class="child child13"></div>
-                <div class="child child14"></div>
-                <div class="child child15"></div>
+                <div class="child" id="child1">1</div>
+                <div class="child" id="child2">2</div>
+                <div class="child" id="child3">3</div>
+                <div class="child child4">4</div>
+                <div class="child child5">5</div>
             </div>
         </div>
         <div class="right">
             <div class="form">
                 <div class="block">
-                    <label for="justify">Justify Content Property Value</label>
+                    <label for="flex">Flex Direction</label>
+                    <select name="flexContent" id="flex" class="flex">
+                        <option value="row">row</option>
+                        <option value="row-reverse">row-reverse</option>
+                        <option value="column">column</option>
+                        <option value="column-reverse">column-reverse</option>
+                    </select>
+                </div>
+
+                <div class="block">
+                    <label for="flex">Flex Wrap</label>
+                    <select name="wrap" id="wrap" class="wrap">
+                    <option value="nowrap">nowrap</option>
+                        <option value="wrap">wrap</option>
+                        <option value="wrap-reverse">wrap-reverse</option>
+                    </select>
+                </div>
+
+                <div class="block">
+                    <label for="justify">Justify Content</label>
                     <select name="justifyContent" id="justify" class="justify">
                         <option value="flex-start">flex-start</option>
                         <option value="flex-end">flex-end</option>
@@ -117,7 +154,7 @@
                 </div>
 
                 <div class="block">
-                    <label for="align">Align Item Property Value</label>
+                    <label for="align">Align Items</label>
                     <select name="alignItems" id="align" class="align">
                         <option value="flex-start">flex-start</option>
                         <option value="flex-end">flex-end</option>
@@ -127,7 +164,52 @@
                     </select>
                 </div>
                 <div class="block">
-                    
+                    <div class="name">Child 1</div>
+                    <div class="subBlock">
+                        <span>Grow</span>
+                        <input type="number" class="grow" id="grow1">
+                    </div>
+                    <div class="subBlock">
+                        <span>Shrink</span>
+                        <input type="number" class="shrink" id="shrink1">
+                    </div>
+                    <div class="subBlock">
+                        <span>Basis</span>
+                        <input type="number" class="basis" id="basis1">
+                        <span>px</span>
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="name">Child 2</div>
+                    <div class="subBlock">
+                        <span>Grow</span>
+                        <input type="number" class="grow" id="grow2">
+                    </div>
+                    <div class="subBlock">
+                        <span>Shrink</span>
+                        <input type="number" class="shrink" id="shrink2">
+                    </div>
+                    <div class="subBlock">
+                        <span>Basis</span>
+                        <input type="number" class="basis" id="basis2">
+                        <span>px</span>
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="name">Child 3</div>
+                    <div class="subBlock">
+                        <span>Grow</span>
+                        <input type="number" class="grow" id="grow3">
+                    </div>
+                    <div class="subBlock">
+                        <span>Shrink</span>
+                        <input type="number" class="shrink" id="shrink3">
+                    </div>
+                    <div class="subBlock">
+                        <span>Basis</span>
+                        <input type="number" class="basis" id="basis3">
+                        <span>px</span>
+                    </div>
                 </div>
                 <div class="block blockBtn">
                     <button class="btn">Submit</button>
@@ -138,12 +220,42 @@
     <script>
         const btn = document.getElementsByClassName('btn')[0];
         const parent = document.getElementsByClassName('parent')[0];
+        const child1 = document.getElementById('child1');
+        const child2 = document.getElementById('child2');
+        const child3 = document.getElementById('child3');
+
         btn.addEventListener('click', ()=>{
+            const flexBtn = document.getElementById('flex').value;
+            const wrapBtn = document.getElementById('wrap').value;
             const justifyBtn = document.getElementById('justify').value;
             const alignBtn = document.getElementById('align').value;
+
+            const grow1 = document.getElementById('grow1').value || 0;
+            const shrink1 = document.getElementById('shrink1').value || 0;
+            const basis1 = document.getElementById('basis1').value || 0;
+
+            const grow2 = document.getElementById('grow2').value || 0;
+            const shrink2 = document.getElementById('shrink2').value || 0;
+            const basis2 = document.getElementById('basis2').value || 0;
+
+            const grow3 = document.getElementById('grow3').value || 0;
+            const shrink3 = document.getElementById('shrink3').value || 0;
+            const basis3 = document.getElementById('basis3').value || 0;
+
+            parent.style.flexDirection = flexBtn;
+            parent.style.flexWrap = wrapBtn;
             parent.style.justifyContent = justifyBtn;
             parent.style.alignItems = alignBtn;
-            console.log(justifyBtn, alignBtn);
+
+            child1.style.flex= `${grow1} ${shrink1} ${basis1}px`;
+            child2.style.flex= `${grow2} ${shrink2} ${basis2}px`;
+            child3.style.flex= `${grow3} ${shrink3} ${basis3}px`;
+
+            console.log(grow1, grow2, grow3);
+            console.log(shrink1, shrink2, shrink3);
+            console.log(basis1, basis2, basis3);
+
+            console.log(justifyBtn, alignBtn, flexBtn);
 
         })
     </script>
