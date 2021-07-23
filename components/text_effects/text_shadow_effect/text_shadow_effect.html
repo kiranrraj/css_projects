@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+            font-size: 50px;
+            letter-spacing: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text">Kiran raj r</div>
+    </div>
+    <script>
+        const text = document.querySelector('.text');
+        
+        function createShadow(x,y,z, color){
+            let shadow="", i;
+
+            for(i=0; i<15; i++){
+                shadow +=(shadow ? "," : "") + `${i*x}px ${i*y}px ${i*z}px ${color}`;
+            }
+            return shadow
+        }
+
+        let shadowVal = createShadow(1,1,0,'#808080')
+        text.style.textShadow = shadowVal;
+    </script>
+</body>
+</html>
