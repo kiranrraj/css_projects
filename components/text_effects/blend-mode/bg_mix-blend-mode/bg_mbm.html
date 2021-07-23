@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Text</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('./hero_img.jpg');
+        }
+
+        .overlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+            letter-spacing: 15px;
+            font-size: 80px;
+            font-weight: 600;
+            position: relative;
+            color: #fff;
+            z-index: 10;
+            mix-blend-mode: difference;
+        }
+
+        .input--box {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            color: #fff;
+            padding: 10px;
+            background-color: tomato;
+            z-index: 100;
+        }
+        .box{
+            margin: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        label{
+            padding-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="text">Nature</div>
+        <div class="overlay"></div>
+        <div class="input--box">
+            <div class="box">
+                <label for="mix">Select Mix Blende Modes</label>
+                <select name="mix-modes" id="mix">
+                    <option value="normal">Normal</option>
+                    <option value="multiply">Multiply</option>
+                    <option value="overlay">Overlay</option>
+                    <option value="darken">Darken</option>
+                    <option value="lighten">Lighten</option>
+                    <option value="color-dodge">Color-dodge</option>
+                    <option value="color-burn">Color-burn</option>
+                    <option value="hard-light">Hard-light</option>
+                    <option value="soft-light">Soft-light</option>
+                    <option value="difference">Difference</option>
+                    <option value="exclusion">Exclusion</option>
+                    <option value="hue">Hue</option>
+                    <option value="saturation">Saturation</option>
+                    <option value="color">Color</option>
+                    <option value="luminosity">Luminosity</option>
+                </select>
+            </div>
+            <div class="box">
+                <label for="favcolor">Select A Color For Text:</label>
+                <input type="color" id="mycolor" name="mycolor" value="#ffffff">
+            </div>
+        </div>
+    </div>
+    <script>
+        const mixBlendModeValues = ['normal', 'multiply', 'overlay', 'darken', 'lighten', 'color-dodge', 'color-burn', 'hard-light', 'soft-light', 'difference', 'exclusion', 'hue', 'saturation', 'color', 'luminosity']
+
+        mixBlendModeValues.map((value) => {
+            const val = `mix-blend-mode:${value}`
+            if (CSS.supports(val)) {
+                console.log(`Your Browser Supports CSS property, ${val}`)
+            } else {
+                alert(`Your Browser Does Not Supports CSS property, ${val}`)
+            }
+        });
+
+        const textElem = document.querySelector('.text');
+        const overlay = document.querySelector('.overlay');
+        const blendInput = document.querySelector('#mix');
+        const mycolor = document.querySelector('#mycolor');
+        let blendVal, mycolorVal;
+
+        blendInput.addEventListener('change', () => {
+            blendVal = blendInput.value;
+            overlay.style.mixBlendMode = blendVal;
+        });
+
+        mycolor.addEventListener('input', () => {
+            blendVal = mycolor.value;
+            overlay.style.backgroundColor = blendVal;
+        });
+
+
+
+    </script>
+</body>
+
+</html>

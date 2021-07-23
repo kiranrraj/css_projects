@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Text</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .text1, 
+        .text2{
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 50px;  
+            font-weight: 600;
+            position: relative;
+            color: #111;
+            background-color: #fff;
+            padding: 1rem;
+        }
+
+        .text1 span,
+        .text2 span {
+            padding-left: 1rem;
+        }
+
+
+        /* Effect 1 */
+
+        .text1:after,
+        .text1:before{
+            content: "";
+            width: 50%;
+            height: 2px;
+            background-color: #fff;
+            display: block;
+            position: absolute;
+            transition: all 500ms ease-in;
+            mix-blend-mode: difference;
+        }
+
+        .text1:after{
+            bottom: 0;
+            right: 0;
+        }
+
+        .text1:before{
+            top: 0;
+            left: 0;
+        }
+
+        .text1:hover:after,
+        .text1:hover:before{
+            height: 100%;
+        }
+
+
+        /* Effect 2 */
+
+        .text2:after,
+        .text2:before{
+            content: "";
+            width: 0%;
+            height: 100%;
+            background-color: #fff;
+            display: block;
+            position: absolute;
+            transition: all 500ms ease-in;
+            mix-blend-mode: difference;
+        }
+
+        .text2:after{
+            right: 0;
+        }
+
+        .text2:before{
+            left: 0;
+        }
+
+        .text2:hover:after,
+        .text2:hover:before{
+            width: 50%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text1">Hello <span>World</span></div>
+        <div class="text2">Hello <span>World</span></div>
+    </div>
+</body>
+</html>
