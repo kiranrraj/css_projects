@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change The Text</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text{
+            width: 400px;
+            height: 200px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text span {
+            text-transform: uppercase;
+            padding: 0 0.5rem;
+            font-size: 50px;
+            animation: zoomup 1s ease infinite;
+            display: inline-block;
+            transform:translate3d(0,0,0);
+        }
+
+        .text span:nth-child(1){
+            animation-delay: 0.10s;
+        }
+        .text span:nth-child(2){
+            animation-delay: 0.20s;
+        }
+        .text span:nth-child(3){
+            animation-delay: 0.30s;
+        }
+        .text span:nth-child(4){
+            animation-delay: 0.40s;
+        }
+        .text span:nth-child(5){
+            animation-delay: 0.50s;
+        }
+        .text span:nth-child(6){
+            animation-delay: 0.60s;
+        }
+        .text span:nth-child(7){
+            animation-delay: 0.70s;
+        }
+        .text span:nth-child(8){
+            animation-delay: 0.8s;
+        }
+        .text span:nth-child(9){
+            animation-delay: 0.9s;
+        }
+        .text span:nth-child(10){
+            animation-delay: 1s;
+        }
+
+        @keyframes zoomup {
+            0%, 100%{
+                transform: scale(1);
+            }
+
+            50%{
+                transform: scale(0.5) translateY(50px);
+                opacity: 0;
+            }
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text">
+            <span>k</span>
+            <span>i</span>
+            <span>r</span>
+            <span>a</span>
+            <span>n</span>
+            <span>r</span>
+            <span>a</span>
+            <span>j</span>
+            <span>r</span>
+        </div>
+    </div>
+</body>
+</html>

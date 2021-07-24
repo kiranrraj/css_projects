@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change The Text</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text{
+            width: 400px;
+            height: 200px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text::after{
+            position: absolute;
+            content: "";
+            font-size: 40px;
+            color: #fff;
+            opacity: 0;
+            letter-spacing: 0;
+            text-transform: uppercase;
+            animation: change-text 10s linear infinite;
+        }
+
+        @keyframes change-text {
+
+            10%{
+                opacity: 1;
+                content: 'Kiran raj r';
+                color: springgreen;
+                letter-spacing: 10px;
+            }
+
+            35%{
+                content: "Kerala";
+                color: springgreen;
+                opacity: 1;
+                letter-spacing: 10px;
+            }
+
+            60%{
+                content: "Rajeesh";
+                color: springgreen;
+                opacity: 1;
+                letter-spacing: 10px;
+            }
+
+            85%{
+                content: "India";
+                color: springgreen;
+                opacity: 1;
+                letter-spacing: 10px;
+            }
+
+            0%, 25%, 50%, 75%, 100%{
+                opacity: 0;
+                letter-spacing: 0;
+                color: #fff;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text"></div>
+    </div>
+</body>
+</html>
