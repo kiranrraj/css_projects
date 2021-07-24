@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Fill Effect</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text{
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            color: #28cf75;
+            font-size: 60px;
+        }
+
+        .text::after{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            color: #28f0ff;
+            content: attr(data-val);
+            width:00%;
+            height: 100%;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: all 1s ease;
+            animation: textFill 2s ease-in-out infinite;
+        }
+
+        @keyframes textFill {
+            0%, 100%{
+                width: 0%;
+            }
+
+            50%{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text" data-val="kiran&nbsp;raj&nbsp;r">kiran raj r</div>
+    </div>
+</body>
+</html>

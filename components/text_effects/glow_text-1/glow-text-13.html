@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow Text</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #111;
+        }
+
+        .text span{
+            font-size: 60px;
+            padding: 0 10px;
+            text-transform: uppercase;
+            color: #fff;
+            animation: zoomup 2s linear infinite;
+            animation-delay: calc(200ms * var(--i));
+            
+        }
+
+        @keyframes zoomup {
+            0%, 100%{
+                color: #00c2ba;
+                filter: blur(1px);
+                text-shadow: 0 0 10px #00c2ba,0 0 20px #00c2ba, 0 0 30px #00c2ba,0 0 40px #00c2ba, 0 0 60px #00c2ba, 0 0 80px #00c2ba, 0 0 100px #00c2ba, 0 0 120px #00c2ba;
+            }
+
+            5%, 95%{
+                filter: blur(0);
+                color: #fff;
+                text-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text">
+            <span style="--i:1">k</span>
+            <span style="--i:2">i</span>
+            <span style="--i:3">r</span>
+            <span style="--i:4">a</span>
+            <span style="--i:5">n</span>
+            <span style="--i:6">r</span>
+            <span style="--i:7">a</span>
+            <span style="--i:8">j</span>
+            <span style="--i:9">r</span>
+        </div>
+    </div>
+</body>
+</html>
