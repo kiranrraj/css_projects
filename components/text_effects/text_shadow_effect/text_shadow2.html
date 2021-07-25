@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Shadow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap" rel="stylesheet">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            font-family: 'Holtwood One SC', serif;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background-color: burlywood;
+        }
+
+        .text{
+            font-size: 60px;
+            letter-spacing: 15px;
+            color: #111;
+            transform: skewX(60deg) translateY(20px);
+            position: relative;
+            transform-origin: bottom;
+        }
+
+        .text:after{
+            position: absolute;
+            color: rgb(142, 43, 199);
+            width: 100%;
+            height: 100%;
+            left: 0;
+            right: 0;
+            content: attr(data-msg);
+            transform: skewX(-60deg) translateX(-40px) translateY(26px) scaleY(2);
+            transform-origin: bottom;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text" data-msg="kiran raj r">Kiran raj r</div>
+    </div>
+</body>
+</html>

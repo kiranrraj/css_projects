@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow Text</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #111;
+        }
+
+        .text span{
+            font-size: 60px;
+            padding: 0 10px;
+            text-transform: uppercase;
+            color: #111;
+            animation: zoomup 1s ease infinite;
+            animation-delay: calc(100ms * var(--i));
+            
+        }
+
+        @keyframes zoomup {
+
+           10%{
+               color: #fff;
+               text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+           }
+
+           11%{
+               color: #fff;
+               text-shadow: none;
+           }
+
+           12%{
+               color: #fff;
+               text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+           }
+
+           13%{
+               color: #fff;
+               text-shadow: none;
+           }
+
+           55%{
+               color: #fff;
+               text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+           }
+
+           56%{
+               color: #fff;
+               text-shadow: none;
+           }
+
+           57%{
+               color: #fff;
+               text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+           }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text">
+            <span style="--i:7">k</span>
+            <span style="--i:3">i</span>
+            <span style="--i:5">r</span>
+            <span style="--i:2">a</span>
+            <span style="--i:9">n</span>
+            <span style="--i:4">r</span>
+            <span style="--i:1">a</span>
+            <span style="--i:6">j</span>
+            <span style="--i:8">r</span>
+        </div>
+    </div>
+</body>
+</html>

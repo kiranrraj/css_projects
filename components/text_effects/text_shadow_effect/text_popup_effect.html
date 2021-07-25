@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow Text</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap" rel="stylesheet">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            font-family: 'Holtwood One SC', serif;
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #F2CA19;
+        }
+
+        .text h2{
+            text-align: center;
+            display: inline-block;
+            font-size: 60px;
+            text-transform: uppercase;
+            letter-spacing: 20px;
+            color: #0057E9;
+            position: relative; 
+            z-index: 2;
+        }
+
+        .text h2:before,
+        .text h2:after{
+            content: attr(data-msg);
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-origin: left center;
+        }
+
+        .text h2::after{
+            color: #FF00BD;
+            transform: rotateY(60deg)scaleX(1.5);
+        }
+
+        .text h2:hover:after{
+            transform: rotateY(0deg)scaleX(1);
+        }
+
+        .text h2:before{
+            color: rgba(0, 0, 0, 0.1);
+            transform: rotateY(10deg) scaleX(1.15);
+        }
+
+        .text h2:hover:before{
+            transform: scaleX(1.05);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text">
+            <h2 data-msg="k">k</h2>
+            <h2 data-msg="i">i</h2>
+            <h2 data-msg="r">r</h2>
+            <h2 data-msg="a">a</h2>
+            <h2 data-msg="n">n</h2>
+            <h2 data-msg="r">r</h2>
+            <h2 data-msg="a">a</h2>
+            <h2 data-msg="j">j</h2>
+            <h2 data-msg="r">r</h2>
+        </div>
+    </div>
+</body>
+</html>
