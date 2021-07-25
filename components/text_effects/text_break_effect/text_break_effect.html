@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Change Color</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text{
+            font-weight: 600;
+            font-size: 70px;
+            text-transform: uppercase;
+            position: relative;
+            color: transparent;
+        }
+
+        .text::before,
+        .text::after{
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: black;
+            text-transform: uppercase;
+            text-shadow: 0 0 1px #111;
+            transition: all 300ms ease;
+        }
+
+        .text::before{
+            clip-path: polygon(0 0, 61% 0, 41% 100%, 0% 100%);
+        }
+
+        .text::after{
+            clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);
+        }
+
+        .text:hover:after{
+            transform: rotate(5deg);
+        }
+
+        .text:hover:before{
+            transform: rotate(-55deg);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text" data-text="kiran raj">Kiran raj r</div>
+    </div>
+</body>
+</html>

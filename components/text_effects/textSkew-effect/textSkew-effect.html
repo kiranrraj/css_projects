@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Fill Effect</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text{
+            position: relative;
+            text-transform: uppercase;
+            color: #fff;
+            font-size: 60px;
+            display: flex;
+            justify-content:center;
+            align-items: center;
+        }
+
+        .text span{
+            text-align: center;
+            background-color: #28cf75;
+            width: 60px;
+            margin-right: 2px;
+            box-shadow: 2px 1px 10px 1px #222;
+        }
+
+        .text:hover span:nth-child(odd){
+            transform: skewY(15deg);
+        }
+
+        .text:hover span:nth-child(even){
+            transform: skewY(-15deg);
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text">
+            <span>k</span>
+            <span>i</span>
+            <span>r</span>
+            <span>a</span>
+            <span>n</span>
+            <span>r</span>
+            <span>a</span>
+            <span>j</span>
+            <span>r</span>
+        </div>
+    </div>
+</body>
+</html>
