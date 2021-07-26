@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Shadow</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(15, 222, 230)
+        }
+
+        .text span {
+            font-size: 60px;
+            display: inline-block;
+            text-align: center;
+            width: 60px;
+            text-transform: uppercase;
+            animation: moveUp 3s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+            animation-delay: calc(400ms * var(--i));
+            color: #000;
+        }
+
+        @keyframes moveUp {
+            0%, 50%{
+                transform: translate3d(0, 0, 0);
+            }
+
+            70% {
+                transform: translate3d(-15px, -15px, 0);
+                text-shadow: 15px 15px 10px brown;
+                color: #fff;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="text">
+            <span style="--i:-4">k</span>
+            <span style="--i:-3">i</span>
+            <span style="--i:-2">r</span>
+            <span style="--i:-1">a</span>
+            <span style="--i:0">n</span>
+            <span style="--i:1">r</span>
+            <span style="--i:2">a</span>
+            <span style="--i:3">j</span>
+            <span style="--i:4">r</span>
+        </div>
+    </div>
+</body>
+
+</html>
