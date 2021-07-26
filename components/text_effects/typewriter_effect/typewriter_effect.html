@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Writer Effect</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text{
+            font-size: 50px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-weight: 600;
+            text-shadow: 0 10px 10px blueviolet;
+            color: darkviolet;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text"></div>
+    </div>
+    <script>
+        const text = document.querySelector('.text');
+        const textArray = ["Rajendran Nair", "Anitha", "Amitha", "Vishnu", "Kiran raj r"];
+        let typingDelay= 100, 
+            removeDelay= 150, 
+            newWordDelay= 1000, 
+            wordIndex=0, 
+            charIndex= 0; 
+
+            function typing(){
+                if(charIndex < textArray[wordIndex].length){
+                   text.textContent += textArray[wordIndex].charAt(charIndex);
+                   charIndex++;
+                   setTimeout(typing, typingDelay); 
+                }
+                else{
+                   setTimeout(removeCharacter, newWordDelay)
+                }
+            }
+
+            function removeCharacter(){
+                if(charIndex > 0){
+                    text.textContent = textArray[wordIndex].substring(0, charIndex-1);
+                    charIndex--;
+                    setTimeout(removeCharacter, removeDelay);
+                }
+                else{
+                    wordIndex++;
+                    if(wordIndex >= textArray.length){
+                        wordIndex = 0;
+                    }
+                    setTimeout(typing, typingDelay); 
+                }
+            }
+
+            typing();
+    </script>
+</body>
+</html>

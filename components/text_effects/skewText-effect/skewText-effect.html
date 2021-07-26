@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sqew Text Effect</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: deeppink;
+        }
+
+        .text{
+            text-transform: uppercase;
+            color:#fff;
+            font-size: 45px;
+            font-weight: 600;
+            letter-spacing: 10px;
+        }
+
+        .line{
+            height: 40px;
+            overflow: hidden;
+            margin: 0;
+            position: relative;
+        }
+
+        .line p{
+            height: 40px;
+            line-height:40px;
+            transition: all 300ms ease;
+            text-shadow: 0 0 1px #111;
+        }
+
+        .line:nth-child(odd){
+            transform: skew(50deg, -25deg)scaleY(0.85);
+        }
+
+        .line:nth-child(even){
+            transform: skew(0deg, -25deg)scaleY(1.8);
+        }
+
+        .line:nth-child(1){
+            left: 0px;
+        }
+        .line:nth-child(2){
+            left: 25px;
+        }
+        .line:nth-child(3){
+            left: 50px;
+        }
+        .line:nth-child(4){
+            left: 75px;
+        }
+        .line:nth-child(5){
+            left: 100px;
+        }
+        .line:nth-child(6){
+            left: 125px;
+        }
+
+        .text:hover p{
+            transform: translate(0, -40px);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text">
+            <div class="line">
+                <p></p>
+                <p>kiran raj r</p>
+            </div>
+            <div class="line">
+                <p>kiran raj r</p>
+                <p>vishnu</p>
+            </div>
+            <div class="line">
+                <p>vishnu</p>
+                <p>amitha</p>
+            </div>
+            <div class="line">
+                <p>amitha</p>
+                <p>anitha</p>
+            </div>
+            <div class="line">
+                <p>anitha</p>
+                <p>rajendran nair</p>
+            </div>
+            <div class="line">
+                <p>rajendran nair</p>
+                <p></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
