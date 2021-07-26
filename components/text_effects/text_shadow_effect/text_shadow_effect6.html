@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Shadow Effect</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #2a47da;
+        }
+
+        .text {
+            color: white;
+            font-size: 100px;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            text-shadow: 2px 2px 0 #2a47da;
+            z-index: 2;
+            position: relative;
+        }
+
+        .text:after {
+            content: attr(data-msg);
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 100%;
+            height: 100%;
+            color: springgreen;
+            z-index: -1;
+            text-shadow: none;
+            background-size: 10px 10px;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(60deg,transparent 10%,#fff, 50%,#fff 60%,transparent 0);
+            animation: animateShadow 10s ease-in-out infinite;
+        }
+
+        @keyframes animateShadow {
+            0% {
+                background-position: 0px 0px;
+            }
+
+            100% {
+                background-position: -100% 100%
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="text" data-msg="kiran raj r">Kiran Raj r</div>
+    </div>
+</body>
+
+</html>

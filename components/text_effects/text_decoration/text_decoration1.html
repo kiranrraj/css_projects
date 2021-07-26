@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Decoration</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text {
+            font-size: 60px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .text1 {
+            color: #000;
+            text-shadow: 2px 2px 0px gold;
+        }
+
+        .text2 {
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: rgb(221, 22, 22);
+            text-shadow: 5px 5px rgb(82, 223, 69), 12px 12px rgba(6, 10, 224, 0.555);
+        }
+
+        .text3 {
+            background: linear-gradient(to right, rgb(255, 0, 212), rgba(0, 225, 255, 0.808));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="text1 text">Kiran raj r</div>
+        <div class="text2 text">Kiran raj r</div>
+        <div class="text3 text">Kiran raj r</div>
+    </div>
+</body>
+
+</html>
