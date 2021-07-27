@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow Text</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #111;
+        }
+
+        .text span {
+            font-size: 60px;
+            padding: 0 10px;
+            text-transform: uppercase;
+            text-shadow: 0 0 20px goldenrod;
+            animation: blink 1s ease infinite;
+            animation-delay: calc(20ms * var(--i));
+
+        }
+
+        @keyframes blink {
+            0%, 10% {
+                color: red;
+                filter: saturate(150%) hue-rotate(15deg);
+            }
+
+            30%, 40% {
+                color: rgb(0, 255, 98);
+                filter: saturate(150%) hue-rotate(15deg);
+            }
+
+            50% {
+                color: rgb(20, 209, 223);
+                filter: saturate(150%) hue-rotate(15deg);
+            }
+
+
+            60%, 70% {
+                color: gold;
+                filter: saturate(150%) hue-rotate(15deg);
+            }
+
+            80% {
+                color: rgb(240, 12, 209);
+                filter: saturate(150%) hue-rotate(15deg);
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="text">
+            <span style="--i:7">k</span>
+            <span style="--i:3">i</span>
+            <span style="--i:5">r</span>
+            <span style="--i:2">a</span>
+            <span style="--i:9">n</span>
+            <span style="--i:4">r</span>
+            <span style="--i:10">a</span>
+            <span style="--i:6">j</span>
+            <span style="--i:8">r</span>
+        </div>
+    </div>
+</body>
+
+</html>

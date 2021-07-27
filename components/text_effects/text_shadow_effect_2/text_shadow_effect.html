@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Shadow Effect</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .text {
+            text-transform: uppercase;
+            position: absolute;
+            font-size: 10vw;
+            animation: moveUp 3s ease-in-out infinite;
+            animation-delay: calc(50ms* var(--i));
+        }
+
+        .text:nth-child(1){
+            color: rgb(0, 153, 255);
+        }
+        .text:nth-child(2){
+            color: rgb(255, 72, 0);
+        }
+        .text:nth-child(3){
+            color: rgb(255, 196, 0);
+        }
+        .text:nth-child(4){
+            color: rgb(105, 15, 223);
+        }
+
+        @keyframes moveUp {
+
+            0%,100% {
+                transform: translateY(0px) scale(0.6);
+            }
+
+            50%{
+                transform: translateY(10%) scale(1.1) rotateX(30deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class='text' style="--i:1;">kiran raj r</div>
+        <div class='text' style="--i:2;">kiran raj r</div>
+        <div class='text' style="--i:3;">kiran raj r</div>
+        <div class='text' style="--i:4;">kiran raj r</div>
+    </div>
+</body>
+
+</html>
