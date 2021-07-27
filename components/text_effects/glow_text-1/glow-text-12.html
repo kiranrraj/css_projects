@@ -19,29 +19,39 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #111;
+            background-color: #001E6C;
         }
 
         .text span{
             font-size: 60px;
             padding: 0 10px;
             text-transform: uppercase;
+            font-weight: 600;
             color: #fff;
-            animation: zoomup 2s ease infinite;
+            animation: zoomup 3s ease infinite;
             animation-delay: calc(100ms * var(--i));
             
         }
 
+        .dot{
+            display: block;
+        }
+
         @keyframes zoomup {
             0%, 100%{
-                color: #fff;
-                filter: blur(1px);
-                text-shadow: 0 0 10px #FFF,0 0 20px #FFF, 0 0 30px #FFF,0 0 40px #FFF, 0 0 60px #FFF, 0 0 80px #FFF, 0 0 100px #FFF, 0 0 120px #FFF;
+                color: #9818D6;
+                filter: blur(0.5px);
+                text-shadow: 0 0 10px #9818D6,
+                0 0 20px #9818D6, 
+                0 0 30px #9818D6,
+                0 0 40px #9818D6, 
+                0 0 50px #9818D6, 
+                0 0 60px #9818D6;
             }
 
             50%{
                 filter: blur(0);
-                color: #ce96fb;
+                color: #fff;
                 text-shadow: none;
             }
         }
@@ -50,15 +60,25 @@
 <body>
     <div class="container">
         <div class="text">
-            <span style="--i:1">k</span>
-            <span style="--i:2">i</span>
-            <span style="--i:3">r</span>
-            <span style="--i:4">a</span>
-            <span style="--i:5">n</span>
-            <span style="--i:6">r</span>
-            <span style="--i:7">a</span>
-            <span style="--i:8">j</span>
+            <span style="--i:1">h</span>
+            <span style="--i:2">a</span>
+            <span style="--i:3">p</span>
+            <span style="--i:4">p</span>
+            <span style="--i:5">y</span>
+            <span style="--i:6" class="dot">.</span>
+            <span style="--i:7">b</span>
+            <span style="--i:8">i</span>
             <span style="--i:9">r</span>
+            <span style="--i:10">t</span>
+            <span style="--i:12">h</span>
+            <span style="--i:12">d</span>
+            <span style="--i:13">a</span>
+            <span style="--i:14">y</span>
+            <span style="--i:15" class="dot">.</span>
+            <span style="--i:16">d</span>
+            <span style="--i:17">i</span>
+            <span style="--i:18">y</span>
+            <span style="--i:19">a</span>
         </div>
     </div>
 </body>

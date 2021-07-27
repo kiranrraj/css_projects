@@ -18,10 +18,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            background-color: #22231D;
         }
 
         .text{
-            width: 400px;
+            width: 100%;
             height: 200px;
             position: relative;
             display: flex;
@@ -32,8 +33,8 @@
         .text::after{
             position: absolute;
             content: "";
-            font-size: 40px;
-            color: #fff;
+            font-size: 50px;
+            color: rgb(109, 92, 92);
             opacity: 0;
             letter-spacing: 0;
             text-transform: uppercase;
@@ -44,28 +45,28 @@
 
             10%{
                 opacity: 1;
-                content: 'Kiran raj r';
-                color: springgreen;
+                content: 'Die Another Day';
+                color: #9A4295;
                 letter-spacing: 10px;
             }
 
             35%{
-                content: "Kerala";
-                color: springgreen;
+                content: "GoldenEye";
+                color: #2A44B9;
                 opacity: 1;
                 letter-spacing: 10px;
             }
 
             60%{
-                content: "Rajeesh";
-                color: springgreen;
+                content: "Tomorrow Never Dies";
+                color: #C1B39F;
                 opacity: 1;
                 letter-spacing: 10px;
             }
 
             85%{
-                content: "India";
-                color: springgreen;
+                content: "The World Is Not Enough";
+                color: #460BCF;
                 opacity: 1;
                 letter-spacing: 10px;
             }
@@ -74,6 +75,7 @@
                 opacity: 0;
                 letter-spacing: 0;
                 color: #fff;
+                content: "";
             }
         }
 
