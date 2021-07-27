@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Text Reveal Effect</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #111;
+        }
+
+        .text_wrapper{
+            min-width: 500px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+        }
+
+        .block{
+            animation: reduceSize 500ms linear forwards;
+            overflow: hidden;
+        }
+
+        .textTop{
+            height: 100px;
+        }
+
+        .textTop .text{
+            transform: translateY(100px);
+        }
+
+        .textBottom .text{
+            transform: translateY(-50px);
+        }
+
+        .textBottom{
+            height: 50px;
+            bottom: 0px;
+            border-top: 2px solid #fff;
+        }
+
+        .textTop .text,
+        .textBottom .text{
+            font-size: 30px;
+            height: 50px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+            text-transform: uppercase;
+            color: #fff;
+            letter-spacing: 1.5px;
+            animation: slideIn 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            animation-delay: calc(var(--delay)*10ms);
+            opacity: 0;
+        }
+
+        .textBottom .text{
+            animation: slideOut 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+            animation-delay: calc(var(--delay)*10ms);
+        }
+
+        .text.rainbow{
+            animation: slideIn 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, colorText 5s linear infinite;
+            animation-delay: calc(var(--delay)*10ms);
+        }
+        
+
+        @keyframes slideIn {
+            0%{
+                transform: translateY(100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0px);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideOut {
+            0%{
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0px);
+                opacity: 1;
+            }
+        }
+
+        @keyframes reduceSize {
+            0%{
+                width: 0;
+            }
+
+            100%{
+                width: 100%;
+            }
+        }
+
+        @keyframes colorText {
+            0%, 100%{
+                color: #fff;
+                transform: translateX(0%);
+            }
+
+            10%{
+                color: #FDB827;
+            }
+
+            40%{
+                color: #FD3A69;
+            }
+
+            50%{
+                transform: translateX(50%);
+            }
+
+            60%{
+                color: #2C2fff;
+            }
+
+            80%{
+                color: #19D3DA;
+            }
+            
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text_wrapper">
+            <div class="textTop block">
+                <div class="text" style="--delay: 100">Try to be a</div>
+                <div class="text rainbow" style="--delay: 150">Rainbow</div>
+            </div>
+            <div class="textBottom block">
+                <div class="text" style="--delay: 200">in someone else's cloud.</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

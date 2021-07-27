@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Text Reveal Effect</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #111;
+        }
+
+        .text_wrapper{
+            min-width: 500px;
+            height: 150px;
+            /* overflow: hidden; */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            /* background-color: #fff; */
+        }
+
+        .text{
+            font-size: 30px;
+            height: 50px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+            text-transform: uppercase;
+            color: rgb(255, 102, 0);
+            letter-spacing: 1.5px;
+            opacity: 0;
+            animation: slidein 1s ease forwards, textVisibility 500ms ease forwards;
+        }
+
+        .text:nth-child(1){
+            transform: translateY(calc(100px - 25px)) scaleY(0.01);
+        }
+
+        .text:nth-child(2){
+            transform: translateY(calc(50px - 25px)) scaleY(0.01);
+        }
+
+        .line ~ .text{
+            transform: translateY(-25px) scaleY(0.01);
+        }
+
+        .line{
+            width: 100%;
+            height: 2px;
+            background-color: springgreen;
+        }
+
+
+        @keyframes slidein {
+            to {
+                transform: translateY(0px) scaleY(1);
+            }
+        }
+
+        @keyframes textVisibility {
+            0%{
+                opacity: 0;
+            }
+
+            100%{
+                opacity: 1;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text_wrapper">
+            <div class="text">Try to be a</div>
+            <div class="text">Rainbow</div>
+            <div class="line"></div>
+            <div class="text">in someone else's cloud.</div>
+        </div>
+    </div>
+</body>
+</html>
