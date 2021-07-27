@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Effects Using CSS: Letter Effects</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: aquamarine;
+        }
+
+        .text {
+            width: 400px;
+            height: 200px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text span {
+            text-transform: uppercase;
+            padding: 0 0.5rem;
+            font-size: 50px;
+            display: inline-block;
+            color: #de38c8;
+            animation: animate 2s ease-in-out infinite;
+            animation-delay: calc(var(--x) * 80ms);
+        }
+
+        @keyframes animate {
+            0%, 80%, 100%{
+                transform: rotateY(0deg);
+                color: #de38c8;
+            }
+
+            80%,90%{
+                transform: rotateY(180deg);
+                color: orangered;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="text">
+            <span style="--x:1; --y:1">k</span>
+            <span style="--x:2; --y:2">i</span>
+            <span style="--x:3; --y:3">r</span>
+            <span style="--x:4; --y:4">a</span>
+            <span style="--x:5; --y:5">n</span>
+            <span style="--x:6; --y:6">r</span>
+            <span style="--x:7; --y:7">a</span>
+            <span style="--x:8; --y:8">j</span>
+            <span style="--x:9; --y:9">r</span>
+        </div>
+    </div>
+</body>
+
+</html>

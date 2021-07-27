@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Effects Using CSS: Letter Effects</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: aquamarine;
+        }
+
+        .text {
+            width: 400px;
+            height: 200px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text span {
+            text-transform: uppercase;
+            padding: 0 0.5rem;
+            font-size: 50px;
+            display: inline-block; 
+            color: #de38c8;
+        }
+
+        .text span:nth-child(odd){
+            animation: move1 2s ease infinite;
+            animation-delay: calc(200ms * var(--i));
+        }
+
+        .text span:nth-child(even){
+            animation: move2 2s ease infinite;
+            animation-delay: calc(200ms * var(--i));
+        }
+
+        @keyframes move1 {
+
+            0%, 30%,
+            100% {
+                transform: translateX(0) translateY(0);
+            }
+
+            50% {
+                transform: translateX(-100%) translateY(-100%);
+            }
+
+            70% {
+                transform: translateX(0) translateY(-100%);
+            }
+        }
+
+        @keyframes move2 {
+            0%,30%,100% {
+                transform: translateX(0) translateY(0);
+            }
+
+            50% {
+                transform: translateX(100%) translateY(100%);
+            }
+
+            70% {
+                transform: translateX(0) translateY(100%);
+            }  
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="text">
+            <span style="--i:1">k</span>
+            <span style="--i:2">i</span>
+            <span style="--i:3">r</span>
+            <span style="--i:4">a</span>
+            <span style="--i:5">n</span>
+            <span style="--i:6">r</span>
+            <span style="--i:7">a</span>
+            <span style="--i:8">j</span>
+            <span style="--i:9">r</span>
+        </div>
+    </div>
+</body>
+
+</html>
