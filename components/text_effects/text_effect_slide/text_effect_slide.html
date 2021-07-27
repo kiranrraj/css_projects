@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Slide Effect</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            font-family: 'Black Ops One', cursive;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(245, 104, 10);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container--content{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .line {
+            width: 100vw;
+            display: flex;
+        }
+
+        .block {
+            width: 50vw;
+            overflow: hidden;
+        }
+
+        .left {
+            transform: skewY(-15deg);
+            color: chartreuse;
+        }
+
+        .right {
+            transform: skewY(15deg);
+            color: aliceblue;
+        }
+
+        .block--content{
+            width: 100vw;
+            text-align: center;
+        }
+
+        .right .block--content{
+            transform: translate(-50vw);
+        }
+
+        .block--content span {
+            display: block;
+            transition: all 0.5s linear;
+            text-transform: uppercase;
+            font-size: 60px;
+            letter-spacing: 10px;
+            padding: 20px 0;
+        } 
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container--content">
+            <div class="line">
+                <div class="left block">
+                    <div class="block--content">
+                        <span class="left--text">Designing</span>
+                    </div>
+                </div>
+                <div class="right block">
+                    <div class="block--content">
+                        <span class="right--text">Designing</span>
+                    </div>
+                </div>
+            </div>
+            <div class="line">
+                <div class="left block">
+                    <div class="block--content">
+                        <span class="left--text">Development</span>
+                    </div>
+                </div>
+                <div class="right block">
+                    <div class="block--content">
+                        <span class="right--text">Development</span>
+                    </div>
+                </div>
+            </div>
+            <div class="line">
+                <div class="left block">
+                    <div class="block--content">
+                        <span class="left--text">Coding</span>
+                    </div>
+                </div>
+                <div class="right block">
+                    <div class="block--content">
+                        <span class="right--text">Coding</span>
+                    </div>
+                </div>
+            </div>
+            <div class="line">
+                <div class="left block">
+                    <div class="block--content">
+                        <span class="left--text">Coffee</span>
+                    </div>
+                </div>
+                <div class="right block">
+                    <div class="block--content">
+                        <span class="right--text">Coffee</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let width = window.innerWidth;
+        const textLeft = document.querySelectorAll('.left--text');
+        const textRight = document.querySelectorAll('.right--text');
+        window.addEventListener('mousemove', moveText);
+        window.addEventListener('resize', changeWidth);
+        // console.log(textLeft, textRight)
+        
+        function moveText(e) {
+            let pos = (e.pageX / (width / 2)) - 1;
+            let move = 300 * pos;
+
+            for(let i=0; i<textLeft.length; i++){
+                textLeft[i].style.transform = `translate(${move}px)`;
+                textRight[i].style.transform = `translate(${move}px)`;
+            }
+        }
+        function changeWidth() {
+            width = window.innerWidth;
+        }
+    </script>
+</body>
+
+</html>
