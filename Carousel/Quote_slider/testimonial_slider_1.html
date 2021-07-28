@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charm:wght@700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonial Slider</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        html {
+            font-size: 100%;
+            font-family: 'Charm', cursive;
+        }
+
+        .slides {
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide--btns {
+            position: absolute;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 200px;
+            top: 90%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+        }
+
+        .slide--btn {
+            width: 20px;
+            height: 20px;
+        }
+
+        .slide--btn:hover{
+            animation: scaleUp 200ms ease-in-out forwards;
+        }
+
+        .slide--btn:checked{
+            animation: selectedBtn 200ms ease-in-out forwards;
+        }
+
+        @keyframes scaleUp {
+            0% {
+                transform: scale(1);
+            }
+
+            100%{
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes selectedBtn {
+            0% {
+                transform: scale(1);
+            }
+
+            100%{
+                transform: scale(1.4);
+            }
+        }
+
+
+        .slides--data {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: navy;
+        }
+
+        .slide--content {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .content--name {
+            font-size: 40px;
+            color: #fff;
+            letter-spacing: 10px;
+            text-shadow: 0 0 1px #bcffb9, 0 0 2px #bcffb9, 0 0 4px #bcffb9, 0 0 8px #bcffb9, 0 0 16px;
+        }
+
+        .content--msg {
+            font-size: 30px;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slides">
+        <div class="slide--btns">
+            <input type="radio" name="indicator" class="slide--btn" checked="checked" />
+            <input type="radio" name="indicator" class="slide--btn"/>
+            <input type="radio" name="indicator" class="slide--btn"/>
+            <input type="radio" name="indicator" class="slide--btn"/>
+            <input type="radio" name="indicator" class="slide--btn"/>
+            <div class="selectedBg"></div>
+        </div>
+
+        <div class="slides--data">
+            <div class="slide--content">
+                <h2 class="content--name">Dalai Lama</h2>
+                <p class="content--msg">“The purpose of our lives is to be happy.”</p>
+            </div>
+            <div class="slide--content">
+                <h2 class="content--name">Stephen King</h2>
+                <p class="content--msg">“Get busy living or get busy dying.”</p>
+            </div>
+            <div class="slide--content">
+                <h2 class="content--name">Oprah Winfrey</h2>
+                <p class="content--msg">“Turn your wounds into wisdom.”</p>
+            </div>
+            <div class="slide--content">
+                <h2 class="content--name">Stephen Hawking</h2>
+                <p class="content--msg">“Life would be tragic if it weren’t funny.”</p>
+            </div>
+            <div class="slide--content">
+                <h2 class="content--name">Malcolm Forbes</h2>
+                <p class="content--msg">“When you cease to dream you cease to live.”</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let x = 0;
+        const btns = document.querySelectorAll('.slide--btn');
+        const slides = document.querySelectorAll('.slide--content');
+
+        // When the page loads up the first slide will be displayed
+        visibleSlide(0);
+
+
+        btns.forEach((btn, index) => {
+            btn.addEventListener('click', () => {
+                visibleSlide(index);
+            })
+        })
+
+        // Only make a single slide visible 
+        function visibleSlide(n) {
+            removeVisibility();
+            slides[n].style.display = "block";
+        }
+
+        // Keep every slide's display property to "none"
+        function removeVisibility() {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+        }
+
+        // To auto change the slides
+        setInterval(()=>{
+            
+            visibleSlide(x);
+
+            // To select the appropriate radio button when the slide change
+            btns[x].checked = true;
+            if(x>=4){
+                x=0;
+            }else{
+                x++;
+            }
+        }, 2000);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charm:wght@700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonial Slider</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        html {
+            font-size: 100%;
+            font-family: 'Charm', cursive;
+        }
+
+        .slides {
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            overflow: hidden;
+        }
+
+        .slide--btns {
+            position: absolute;
+            background-color: #111;
+            padding: 10px;
+            border-radius: 5px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 100;
+        }
+
+        .slide--btn {
+            width: 20px;
+            height: 20px;
+        }
+
+        .slide--btn:hover{
+            animation: scaleUp 200ms ease-in-out forwards;
+        }
+
+        .slide--btn:checked{
+            animation: selectedBtn 200ms ease-in-out forwards;
+        }
+
+        @keyframes scaleUp {
+            0% {
+                transform: scale(1);
+            }
+
+            100%{
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes selectedBtn {
+            0% {
+                transform: scale(1);
+            }
+
+            100%{
+                transform: scale(1.4);
+            }
+        }
+
+        .slide--imageContainer{
+            width: 100%;
+            height: 100vh;
+            transform: translateY(-400%);
+            transition: all 300ms ease-out;
+        }
+
+        .slide--image{
+            width: 100%;
+            height: 100vh;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .imageContainer1{
+            background-image: url('https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1234&q=80');
+        }
+
+        .imageContainer2{
+            background-image: url('https://images.unsplash.com/photo-1439853949127-fa647821eba0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1234&q=80');
+        }
+
+        .imageContainer3{
+            background-image: url('https://images.unsplash.com/photo-1546514355-7fdc90ccbd03?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80');
+        }
+
+        .imageContainer4{
+            background-image: url('https://images.unsplash.com/photo-1518495973542-4542c06a5843?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1234&q=80');
+        }
+
+        .imageContainer5{
+            background-image: url('https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1234&q=80');
+        }
+
+        .slide--data{
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            transition: all 300ms ease-in;
+        }
+
+        .slide--content{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="slides">
+        <div class="slide--btns">
+            <input type="radio" name="indicator" class="slide--btn" checked="checked" />
+            <input type="radio" name="indicator" class="slide--btn"/>
+            <input type="radio" name="indicator" class="slide--btn"/>
+            <input type="radio" name="indicator" class="slide--btn"/>
+            <input type="radio" name="indicator" class="slide--btn"/>
+            <div class="selectedBg"></div>
+        </div>
+
+        <div class="slide--imageContainer">
+            <div class="imageContainer1 slide--image"></div>
+            <div class="imageContainer2 slide--image"></div>
+            <div class="imageContainer3 slide--image"></div>
+            <div class="imageContainer4 slide--image"></div>
+            <div class="imageContainer5 slide--image"></div>
+        </div>
+
+        <div class="slide--data">
+            <div class="slide--content">
+                <h2 class="content--name">Dalai Lama</h2>
+                <p class="content--msg">“The purpose of our lives is to be happy.”</p>
+            </div>
+            <div class="slide--content">
+                <h2 class="content--name">Stephen King</h2>
+                <p class="content--msg">“Get busy living or get busy dying.”</p>
+            </div>
+            <div class="slide--content">
+                <h2 class="content--name">Oprah Winfrey</h2>
+                <p class="content--msg">“Turn your wounds into wisdom.”</p>
+            </div>
+            <div class="slide--content">
+                <h2 class="content--name">Stephen Hawking</h2>
+                <p class="content--msg">“Life would be tragic if it weren’t funny.”</p>
+            </div>
+            <div class="slide--content">
+                <h2 class="content--name">Malcolm Forbes</h2>
+                <p class="content--msg">“When you cease to dream you cease to live.”</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let x = 0;
+        const btns = document.querySelectorAll('.slide--btn');
+        const slideContainer = document.querySelector('.slide--data');
+        const slides = document.querySelectorAll('.slide--content');
+        const imagesContainer = document.querySelector('.slide--imageContainer')
+
+        function imageMove(x){
+            let textPosition = x* -100;
+            let imagePosition = x*100 - 400;
+            
+            slideContainer.style.transform = `translateY(${textPosition}%)`;
+            imagesContainer.style.transform = `translateY(${imagePosition}%)`;
+        }
+
+        btns.forEach((btn, index) => {
+            btn.addEventListener('click', () => {
+                imageMove(index);
+            })
+        })
+
+
+        // To auto change the slides
+        // setInterval(()=>{
+        //     imageMove(x)
+        //     btns[x].checked = true;
+        //     if(x>=4){
+        //         x=0;
+        //     }else{
+        //         x++;
+        //     }
+        // }, 2000);
+    </script>
+</body>
+
+</html>
