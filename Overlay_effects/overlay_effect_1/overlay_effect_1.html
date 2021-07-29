@@ -16,13 +16,14 @@
             height: 100vh;
             background-color: #125D98;
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
         }
 
         .block{
-            width: 200px;
-            height: 200px;
+            width: 300px;
+            height: 300px;
             margin: 20px;
             border: 2px solid #111;
             position: relative;
@@ -42,22 +43,22 @@
         .overlay1{
             background-color:rgb(255, 213, 35);
             transform-origin:50% 100%;
-            transform: translateX(120px) rotate(45deg) translateY(-15px);
+            transform: translateX(200px) rotate(45deg) translateY(-15px);
             border: 2px solid #FFD523;
         }
 
         .overlay2{
             background-color: #FF7600;
             border: 2px solid #FF7600;
-            transform: translateY(-200px) translateX(-30px) rotate(45deg);
+            transform: translateY(-300px) translateX(-30px) rotate(45deg);
         }
 
         .block:hover .overlay1{
-            transform: translate(00px)rotate(45deg) translateY(-15px);
+            transform: translate(50px)rotate(45deg) translateY(-15px);
         }
 
         .block:hover .overlay2{
-            transform: translateY(-150px) translateX(-30px) rotate(45deg);
+            transform: translateY(-190px) translateX(-30px) rotate(45deg);
         }
 
         .overlay3{
@@ -68,7 +69,7 @@
             letter-spacing: 2px;
             z-index: 100;
             border: none;
-            transform: translateX(170px);
+            transform: translateX(250px);
         }
 
         .text{
@@ -76,15 +77,18 @@
         }
 
         .block:hover .overlay3{
-            transform: translateX(40px);
+            transform: translateX(60px) translateY(30px);
         }
 
         .text--head{
-            font-size: 20px;
+            font-size: 30px;
             text-transform: uppercase;
         }
 
-
+        .text--sub{
+            font-size: 20px;
+            letter-spacing: 2px;
+        }
 
 
     </style>

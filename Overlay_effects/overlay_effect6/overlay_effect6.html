@@ -31,49 +31,36 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 10px;
             background-image: url('https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80');
             background-position: center;
             background-size: cover;
+            border: 0px solid #fff;
+            transition: all 500ms linear;
+        }
+
+        .block:hover{
+            border: 15px solid #fff;
         }
 
         .head{
             position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 100;
-            padding: 40px 0 20px;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
+            top: 15%;
             text-align: center;
-            width: 100%;
-            height: 80px;
-            mix-blend-mode: multiply;
+            letter-spacing: 2px;
         }
 
-        .text{
-            position: absolute;
-            right: -100%;
-            bottom: -100%;
-            color: #fff;
-            width: 100%;
-            height: 100%;
-            mix-blend-mode: lighten;
-            z-index: 10;
-            clip-path: circle(50% at 50% 50%);
-            transition: all 300ms ease-in;
-            background-color: rgba(255, 255, 255, 0.4);
+        h3{
+            font-size: 18px;
+            font-weight: 400;
+            transform: translateY(-20px);
+            opacity: 0;
+            transition: all 300ms ease;
+            padding-top: 5px;
         }
 
-        .sub{
-            width: 120px;
-            text-align: center;
-            transform: translateX(50px) translateY(50px);
-        }
-
-        .block:hover .text{
-            right: -40%;
-            bottom: -40%;
+        .block:hover h3{
+            transform: translateY(0);
+            opacity: 1;
         }
 
     </style>
@@ -83,26 +70,23 @@
         <div class="block">
             <div class="head">
                 <h2><span>Stay</span> Happy</h2>
+                <h3>Stay Healthy</h3>
             </div>
-            <div class="text">
-                <div class="sub">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, adipisci.</div>
-            </div>
+            <div class="overlay"></div>
         </div>
         <div class="block">
             <div class="head">
                 <h2><span>Stay</span> Happy</h2>
+                <h3>Stay Healthy</h3>
             </div>
-            <div class="text">
-                <div class="sub">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, adipisci.</div>
-            </div>
+            <div class="overlay"></div>
         </div>
         <div class="block">
             <div class="head">
                 <h2><span>Stay</span> Happy</h2>
+                <h3>Stay Healthy</h3>
             </div>
-            <div class="text">
-                <div class="sub">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, adipisci.</div>
-            </div>
+            <div class="overlay"></div>
         </div>
     </div>
 </body>
