@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overlay Effect</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .block{
+            width: 300px;
+            height: 300px;
+            margin: 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 2px 2px 15px 2px #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 0px solid #fff;
+            transition: all 500ms linear;
+        }
+
+        .overlay{
+            width: 100%;
+            height: 100px;
+            background-color: rgba(237, 238, 247, 0.6);
+            transform: scale(2) rotate(35deg) translateY(-150px);
+            transition: all 800ms ease;
+            z-index: 100;
+        }
+
+        .bg{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80');
+            background-position: center;
+            background-size: cover;
+            transition: all 400ms ease;
+        }
+
+        .block:hover .overlay{
+            transform: scale(2) rotate(45deg) translateY(200px);
+        }
+
+        .block:hover .bg{
+            transform: scale(1.2);
+        }
+
+        .head{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            letter-spacing: 2px;
+            z-index: 20;
+        }
+
+        h2{
+            padding-top: 50px;
+            text-shadow: 0 0 1px #111;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .box{
+            bottom: 20px;
+            position: absolute;
+            bottom: 20px;
+            right: 0;
+            color: #fff;
+            padding: 0 20px;
+            font-weight: 400;
+            transform: translate(150px);
+            transition: all 400ms ease;
+        }
+
+        .box p {
+            letter-spacing: 3px;
+            line-height: 150%;
+        }
+
+        .block:hover .box {
+            transform: translate(0px);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="block">
+            <div class="head">
+                <h2><span>Enjoy</span> The Life</h2>
+                <div class="box">
+                    <p>Stay Healthy</p>
+                    <p>Stay Happy</p>
+                </div>
+            </div>
+            <div class="overlay"></div>
+            <div class="bg"></div>
+        </div>
+        <div class="block">
+            <div class="head">
+                <h2><span>Enjoy</span> The Life</h2>
+                <div class="box">
+                    <p>Stay Healthy</p>
+                    <p>Stay Happy</p>
+                </div>
+            </div>
+            <div class="overlay"></div>
+            <div class="bg"></div>
+        </div>
+        <div class="block">
+            <div class="head">
+                <h2><span>Enjoy</span> The Life</h2>
+                <div class="box">
+                    <p>Stay Healthy</p>
+                    <p>Stay Happy</p>
+                </div>
+            </div>
+            <div class="overlay"></div>
+            <div class="bg"></div>
+        </div>
+    </div>
+</body>
+</html>
