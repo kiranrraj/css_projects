@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overlay Effect</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            background-color: #125D98;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .block{
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+            border: 2px solid #111;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 2px 2px 15px 2px #111;
+            perspective: 1000px;
+            background-color: #185ADB;
+        }
+
+        .overlay{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transition: all 500ms ease;
+        }
+
+        .overlay1{
+            background-color:rgb(255, 213, 35);
+            transform-origin:50% 100%;
+            transform: translateX(120px) rotate(45deg) translateY(-15px);
+            border: 2px solid #FFD523;
+        }
+
+        .overlay2{
+            background-color: #FF7600;
+            border: 2px solid #FF7600;
+            transform: translateY(-200px) translateX(-30px) rotate(45deg);
+        }
+
+        .block:hover .overlay1{
+            transform: translate(00px)rotate(45deg) translateY(-15px);
+        }
+
+        .block:hover .overlay2{
+            transform: translateY(-150px) translateX(-30px) rotate(45deg);
+        }
+
+        .overlay3{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            letter-spacing: 2px;
+            z-index: 100;
+            border: none;
+            transform: translateX(170px);
+        }
+
+        .text{
+            color: #111;
+        }
+
+        .block:hover .overlay3{
+            transform: translateX(40px);
+        }
+
+        .text--head{
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="block">
+            <div class="overlay1 overlay"></div>
+            <div class="overlay2 overlay"></div>
+            <div class="overlay3 overlay">
+                <div class="text text--head">Heading</div>
+                <div class="text text--sub">Sub Text</div>
+            </div>
+        </div>
+        <div class="block">
+            <div class="overlay1 overlay"></div>
+            <div class="overlay2 overlay"></div>
+            <div class="overlay3 overlay">
+                <div class="text text--head">Heading</div>
+                <div class="text text--sub">Sub Text</div>
+            </div>
+        </div>
+        <div class="block">
+            <div class="overlay1 overlay"></div>
+            <div class="overlay2 overlay"></div>
+            <div class="overlay3 overlay">
+                <div class="text text--head">Heading</div>
+                <div class="text text--sub">Sub Text</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
