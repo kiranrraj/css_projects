@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Cube 1</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .img--wrapper{
+            width: 600px;
+            height: 600px;
+            position: relative;
+            perspective: 2000px;
+        }
+
+        .img--item{
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 1px solid #fff;
+            top: 0%;
+            left: 0%;
+            transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 2px 2px 20px #111;
+        }
+
+        /* Layer One*/
+        .img--item:nth-child(1){
+            clip-path: polygon(0 0, 20% 0, 20% 20%, 0 20%);
+        }
+
+        .img--item:nth-child(2){
+            clip-path: polygon(20% 0, 40% 0, 40% 20%, 20% 20%);
+        }
+
+        .img--item:nth-child(3){
+            clip-path: polygon(40% 0, 60% 0, 60% 20%, 40% 20%);
+        }
+
+        .img--item:nth-child(4){
+            clip-path: polygon(60% 0, 80% 0, 80% 20%, 60% 20%);
+        }
+
+        .img--item:nth-child(5){
+            clip-path: polygon(80% 0, 100% 0, 100% 20%, 80% 20%);
+        }
+        /* Layer One*/
+
+
+        /* Layer Two */
+        .img--item:nth-child(6){
+            clip-path: polygon(0 20%, 20% 20%, 20% 40%, 0 40%);
+        }
+
+        .img--item:nth-child(7){
+            clip-path: polygon(20% 20%, 40% 20%, 40% 40%, 20% 40%);
+        }
+
+        .img--item:nth-child(8){
+            clip-path: polygon(40% 20%, 60% 20%, 60% 40%, 40% 40%);
+        }
+
+        .img--item:nth-child(9){
+            clip-path: polygon(60% 20%, 80% 20%, 80% 40%, 60% 40%);
+        }
+
+        .img--item:nth-child(10){
+            clip-path: polygon(80% 20%, 100% 20%, 100% 40%, 80% 40%);
+        }
+        /* Layer Two */
+
+
+        /* Layer Three */
+        .img--item:nth-child(11){
+            clip-path: polygon(0 40%, 20% 40%, 20% 60%, 0 60%);
+        }
+
+        .img--item:nth-child(12){
+            clip-path: polygon(20% 40%, 40% 40%, 40% 60%, 20% 60%);
+        }
+
+        .img--item:nth-child(13){
+            clip-path: polygon(40% 40%, 60% 40%, 60% 60%, 40% 60%);
+        }
+
+        .img--item:nth-child(14){
+            clip-path: polygon(60% 40%, 80% 40%, 80% 60%, 60% 60%);
+        }
+
+        .img--item:nth-child(15){
+            clip-path: polygon(80% 40%, 100% 40%, 100% 60%, 80% 60%);
+        }
+        /* Layer Three */
+
+
+        /* Layer four */
+        .img--item:nth-child(16){
+            clip-path: polygon(0 60%, 20% 60%, 20% 80%, 0 80%);
+        }
+
+        .img--item:nth-child(17){
+            clip-path: polygon(20% 60%, 40% 60%, 40% 80%, 20% 80%);
+        }
+
+        .img--item:nth-child(18){
+            clip-path: polygon(40% 60%, 60% 60%, 60% 80%, 40% 80%);
+        }
+
+        .img--item:nth-child(19){
+            clip-path: polygon(60% 60%, 80% 60%, 80% 80%, 60% 80%);
+        }
+
+        .img--item:nth-child(20){
+            clip-path: polygon(80% 60%, 100% 60%, 100% 80%, 80% 80%);
+        }
+        /* Layer four */
+
+
+        /* Layer five */
+        .img--item:nth-child(21){
+            clip-path: polygon(0 80%, 20% 80%, 20% 100%, 0 100%);
+        }
+
+        .img--item:nth-child(22){
+            clip-path: polygon(20% 80%, 40% 80%, 40% 100%, 20% 100%);
+        }
+
+        .img--item:nth-child(23){
+            clip-path: polygon(40% 80%, 60% 80%, 60% 100%, 40% 100%);
+        }
+
+        .img--item:nth-child(24){
+            clip-path: polygon(60% 80%, 80% 80%, 80% 100%, 60% 100%);
+        }
+
+        .img--item:nth-child(25){
+            clip-path: polygon(80% 80%, 100% 80%, 100% 100%, 80% 100%);
+        }
+        /* Layer five */
+
+        .img--wrapper:hover .img--item{
+            transform: translate(0px, 0px);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="img--wrapper">
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80" class="img--item"></img>
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80" class="img--item"></img>
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80" class="img--item"></img>
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80" class="img--item"></img>
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80" class="img--item"></img>
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80" class="img--item"></img>
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80" class="img--item"></img>
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80" class="img--item"></img>
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80" class="img--item"></img>
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80" class="img--item"></img>
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80" class="img--item"></img>
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80" class="img--item"></img>
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80" class="img--item"></img>
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80" class="img--item"></img>
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80" class="img--item"></img>
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80" class="img--item"></img>
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80" class="img--item"></img>
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80" class="img--item"></img>
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80" class="img--item"></img>
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80" class="img--item"></img>
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80" class="img--item"></img>
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80" class="img--item"></img>
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80" class="img--item"></img>
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80" class="img--item"></img>
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80" class="img--item">
+        </div>
+    </div>
+
+    <script>
+        const imageSlides = document.querySelectorAll('.img--item');
+        const imageContainer = document.querySelector('.img--wrapper');
+
+        function translateFragment(elem){
+            let x = Math.floor(Math.random()* (100 + 20) - 100);
+            let y = Math.floor(Math.random()* (100 + 20) - 100);
+            let degree = Math.floor(Math.random() * (10 - 2) + 2);
+            elem.style.transform=`translate(${x}px, ${y}px) skew(${degree}deg)`;
+        }
+
+        function imageSlidePosition(event1){
+            document.addEventListener(event1, ()=>{
+                imageSlides.forEach(elem =>{
+                    translateFragment(elem);
+                });
+            });
+        }
+
+        imageSlidePosition('DOMContentLoaded');
+        imageSlidePosition('mouseleave');
+
+        imageContainer.addEventListener('mouseenter', ()=>{
+            imageSlides.forEach(elem =>{
+                elem.style.transform="translate(0px, 0px)";
+            });
+        });
+
+    </script>
+</body>
+</html>
