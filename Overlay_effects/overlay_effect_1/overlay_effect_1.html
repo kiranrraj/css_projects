@@ -1,67 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Overlay Effect</title>
     <style>
-        *{
+        * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
         }
-        .container{
+
+        .container {
             width: 100vw;
             height: 100vh;
-            background-color: #125D98;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
+            background-color: rgba(255, 102, 0, 0.87);
         }
 
-        .block{
+        .block {
             width: 300px;
             height: 300px;
             margin: 20px;
             border: 2px solid #111;
             position: relative;
             overflow: hidden;
-            box-shadow: 2px 2px 15px 2px #111;
-            perspective: 1000px;
-            background-color: #185ADB;
+            background: rgba(144, 19, 254, 0.30);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(7.5px);
+            -webkit-backdrop-filter: blur(7.5px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
         }
 
-        .overlay{
+        .overlay {
             position: absolute;
             width: 100%;
             height: 100%;
-            transition: all 500ms ease;
+            transition: all 500ms linear;
+            border-radius: 10px;
         }
 
-        .overlay1{
-            background-color:rgb(255, 213, 35);
-            transform-origin:50% 100%;
-            transform: translateX(200px) rotate(45deg) translateY(-15px);
-            border: 2px solid #FFD523;
+        .overlay1 {
+            transform-origin: 50% 100%;
+            transform: translateX(200px) rotate(45deg) translateY(-25px);
+            background: rgba(255, 213, 35, 0.80);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
         }
 
-        .overlay2{
-            background-color: #FF7600;
-            border: 2px solid #FF7600;
-            transform: translateY(-300px) translateX(-30px) rotate(45deg);
+        .overlay2 {
+            background: rgba(245, 166, 35, 0.85);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            transform: translateY(-320px) translateX(-30px) rotate(45deg);
         }
 
-        .block:hover .overlay1{
+        .block:hover .overlay1 {
             transform: translate(50px)rotate(45deg) translateY(-15px);
         }
 
-        .block:hover .overlay2{
-            transform: translateY(-190px) translateX(-30px) rotate(45deg);
+        .block:hover .overlay2 {
+            transform: translateY(-200px) translateX(-30px) rotate(45deg);
         }
 
-        .overlay3{
+        .overlay3 {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -72,27 +80,27 @@
             transform: translateX(250px);
         }
 
-        .text{
-            color: #111;
+        .text {
+            color: #fff;
         }
 
-        .block:hover .overlay3{
-            transform: translateX(60px) translateY(30px);
+        .block:hover .overlay3 {
+            transform: translateX(0px) translateY(0px);
         }
 
-        .text--head{
+        .text--head {
+            top: 20px;
             font-size: 30px;
             text-transform: uppercase;
         }
 
-        .text--sub{
+        .text--sub {
             font-size: 20px;
             letter-spacing: 2px;
         }
-
-
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="block">
@@ -121,4 +129,5 @@
         </div>
     </div>
 </body>
+
 </html>
