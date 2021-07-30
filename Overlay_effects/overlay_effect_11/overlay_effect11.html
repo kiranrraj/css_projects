@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overlay Effect</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .block{
+            width: 300px;
+            height: 300px;
+            margin: 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 2px 2px 15px 2px #111;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            perspective: 2000px;
+            background-color: #666;
+        }
+
+        .block--img{
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+            transform: rotateX(0deg);
+            transform-origin: top center;
+            transition: all 300ms ease-out;
+        }
+
+        .block1{
+            background-image: url('https://images.unsplash.com/photo-1596717979870-b2dcfe42e89d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80');
+        }
+
+        .block2{
+            background-image: url('https://images.unsplash.com/photo-1536602012356-86c345795580?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80');
+        }
+
+        .block3{
+            background-image: url('https://images.unsplash.com/photo-1547469447-4afec158715b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80');
+        }
+
+        .block--text{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            background-color: #111;
+            color: antiquewhite;
+            transform: rotateX(120deg);
+            transform-origin: bottom center;
+            transition: all 300ms ease-in;
+        }
+
+        .block:hover .block--text{
+            transform: rotateX(0deg);
+        }
+
+        .block:hover .block--img{
+            transform: rotateX(-120deg);
+        }
+
+        .text--head{
+            text-align: center;
+            font-size: 30px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            text-transform: uppercase;
+            color: #FDCA40;
+        }
+
+        .text--quote{
+            padding: 20px 10px 0px;
+            font-size: 18px;
+        }
+
+        .text--person{
+            position: relative;
+            bottom: -40px;
+            text-align: end;
+            font-weight: 600;
+            color: #FDCA40;
+        }
+
+
+    </style>
+    <script src="https://kit.fontawesome.com/a7e9f794eb.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="block">
+            <div class="block--img block1"></div>
+            <div class="block--text">
+                <div class="text--head">Dreams</div>
+                <div class="text--quote">“All our dreams can come true, if we have the courage to pursue them.”</div>
+                <div class="text--person">Walt Disney</div>
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="block--img block2"></div>
+            <div class="block--text">
+                <div class="text--head">Never Give Up</div>
+                <div class="text--quote">“It’s hard to beat a person who never gives up.”</div>
+                <div class="text--person">Babe Ruth</div>
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="block--img block3"></div>
+            <div class="block--text">
+                <div class="text--head">Do it</div>
+                <div class="text--quote">“Do one thing every day that scares you.”</div>
+                <div class="text--person">Eleanor Roosevelt</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
