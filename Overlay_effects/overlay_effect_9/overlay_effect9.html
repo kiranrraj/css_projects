@@ -33,9 +33,9 @@
             justify-content: center;
             align-items: center;
             border: 0px solid #fff;
-            transition: all 500ms linear;
+            transition: all 100ms linear;
         }
-
+        
         .bg{
             position: absolute;
             width: 100%;
@@ -54,21 +54,22 @@
         /* Heading Text */
         .head{
             position: absolute;
-            width: 100%;
-            height: 100%;
+            width: 90%;
+            height: 10%;
+            top: 10%;
             text-align: center;
             letter-spacing: 2px;
-            z-index: 20;
+            z-index: 1000;
         }
 
         h2{
-            padding-top: 50px;
             text-shadow: 0 0 1px #111;
             letter-spacing: 3px;
             text-transform: uppercase;
             transform-origin: left center;
             transform: none;
             transition: all 300ms ease-out;
+            z-index: 100;
         }
 
         h2 span {
@@ -78,7 +79,12 @@
 
         .block:hover h2{
             color: #fff;
-            transform: rotate(90deg) translateY(-60px) translateX(-35px);
+            transform: translateY(230px);
+        }
+
+        .block:hover h2 span {
+            font-weight: 300;
+            color: rgb(20, 255, 126);
         }
         /* Heading Text */
 
@@ -89,15 +95,17 @@
             right: 0;
             top: 0;
             height: 100%;
-            width: 20%;
-            background-color: #fff;
+            width: 100%;
             z-index: 1000;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
-            align-items: center;
-            transform: translateX(60px);
+            align-items: flex-end;
+            padding: 0 20px;
+            transform: translateX(400px);
             transition: all 300ms ease;
+            border-bottom: 50px solid #111;
+            z-index: 100;
         }
 
         .block:hover .iconBox{
@@ -105,43 +113,19 @@
         }
 
         .iconBox .icon i {
-            color: #111;
+            color: rgb(71, 20, 255);
             font-size: 20px;
             transition: all 300ms ease;
+            z-index: 100;
         }
 
         .iconBox .icon i:hover{
-            color: rgb(76, 0, 255);
+            color: rgb(20, 255, 126);
             transform: scale(1.2);
         }
+
+
         /* Icon Box */
-
-
-        /* Text Box */
-        .box{
-            bottom: 20px;
-            position: absolute;
-            bottom: 20px;
-            right: 0;
-            color: #fff;
-            padding: 0 20px;
-            font-weight: 400;
-            transform: translate(200px);
-            transition: all 400ms ease;
-        }
-
-        .box p {
-            letter-spacing: 3px;
-            line-height: 150%;
-        }
-
-        .block:hover .box {
-            transform: translateY(-90px) translateX(-80px);
-            color: #111;
-            background-color: rgb(255, 255, 255);
-            padding: 10px;
-        }
-        /* Text Box */
 
     </style>
     <script src="https://kit.fontawesome.com/a7e9f794eb.js" crossorigin="anonymous"></script>
@@ -154,10 +138,6 @@
         <div class="block">
             <div class="head">
                 <h2><span>Enjoy</span> The Life</h2>
-                <div class="box">
-                    <p>Stay Healthy</p>
-                    <p>Stay Happy</p>
-                </div>
             </div>
             <div class="bg"></div>
             <div class="iconBox">
@@ -178,10 +158,6 @@
         <div class="block">
             <div class="head">
                 <h2><span>Enjoy</span> The Life</h2>
-                <div class="box">
-                    <p>Stay Healthy</p>
-                    <p>Stay Happy</p>
-                </div>
             </div>
             <div class="bg"></div>
             <div class="iconBox">
@@ -202,10 +178,6 @@
         <div class="block">
             <div class="head">
                 <h2><span>Enjoy</span> The Life</h2>
-                <div class="box">
-                    <p>Stay Healthy</p>
-                    <p>Stay Happy</p>
-                </div>
             </div>
             <div class="bg"></div>
             <div class="iconBox">
