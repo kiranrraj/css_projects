@@ -8,57 +8,63 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a7e9f794eb.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/style.css">
+    <!-- <link rel="stylesheet" href="./css/style--mediaQuery.css"> -->
     <title>Hemant Mohan</title>
 </head>
 
 <body>
+    <!-- Header Starts -->
+    <header class="header">
+        <a href="#home" class="navlogo">HM</a>
+        <ul class="navBar">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#works">Works</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button type="button" class="navBar--top">Contact</button>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    <!-- Header Ends -->
     <div class="container">
-        <header class="header">
-            <nav class="navBar">
-                <a href="#home" class="navlogo">
-                    <h2>logo</h2>
-                </a>
-                <div class="header__links">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#projects">Projectss</a>
-                    <a href="#contact">Contact</a>
-                </div>
-                <button type="button" class="btn btn-ctn">Contact</button>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
-        </header>
-        <div class="main_container">
+        <div class="container--inner">
             <div class="landing" id="home">
                 <div class="landing__block">
                     <div class="block__text">
-                        <h3>I am</h3>
                         <h1>Hemanth Mohan</h1>
                         <h3>Graphics Designer</h3>
                     </div>
                 </div>
                 <div class="landing__cards">
-                    <div class="card"></div>
-                    <div class="card"></div>
-                    <div class="card"> </div>
-                    <div class="card"></div>
+                    <div class="card">
+                        <p>Web Designs</p>
+                    </div>
+                    <div class="card">
+                        <p>Illustrations</p>
+                    </div>
+                    <div class="card">
+                        <p>Branding</p>
+                    </div>
+                    <div class="card">
+                        <p>Advertising</p>
+                    </div>
                 </div>
             </div>
-            <div class="section about">
-                <h2 class="section__title">creative Designer</h2>
+            <div class="section about" id="about">
+                <h2 class="section__title">What i Do</h2>
                 <div class="about__container">
                     <div class="left">
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam rem eveniet suscipit est
                             ex provident sit tempore obcaecati. Sunt repellendus voluptatem facere molestias dolores
                             recusandae reprehenderit dolorum vitae placeat temporibus.</p>
-                        <button class="btn btn-work">Projects</button>
+                        <button class="btn btn--work">Projects</button>
                     </div>
                     <div class="right">
-                        <div class="circle"></div>
                         <div class="img_container c1">
                             <img src="https://source.unsplash.com/800x800/?ocean" alt="landing image"
                                 class="landing__img">
@@ -76,91 +82,38 @@
                 <div class="section__newsletter">
                     <div class="newsletter">
                         <p>Subscribe for newsletter</p>
-                    <input type="email" name="" id="">
+                        <input type="email" placeholder="Email Address">
                     </div>
                 </div>
             </div>
-            <div class="section gallery">
+
+            <div class="section projects" id="projects">
                 <h2 class="section__title">My Projects</h2>
-                <div class="circle_top"></div>
-                <div class="gallery__main">
-                    <div class="gallery__right">
-                        <div class="main__head">Kerala Goverment</div>
-                        <div class="main__sub">
-                            <span>Photoshop</span>
-                            <span>Illustrator</span>
-                        </div>
-                    </div>
-                    <div class="gallery__left">
-                        <div class="circle__md"></div>
-                        <img src="https://source.unsplash.com/1600x900/?tree" alt="">
-                        <div class="circle__sm"></div>
-                    </div>
-                </div>
-                <div class="works">
-                    <figure>
-                        <img src="https://source.unsplash.com/300x300/?water" alt=""></img>
-                        <figcaption>1</figcaption>
-                    </figure>
-                    
-                    <figure>
-                        <img src="https://source.unsplash.com/600x300/?cloud" alt=""></img>
-                        <figcaption>2</figcaption>
-                    </figure>
-            
-                    <figure>
-                        <img src="https://source.unsplash.com/400x400/?sky" alt=""></img>
-                        <figcaption>3</figcaption>
-                    </figure>
-            
-                    <figure>
-                        <img src="https://source.unsplash.com/600x600/?snow" alt=""></img>
-                        <figcaption>4</figcaption>
-                    </figure>
-            
-                    <figure>
-                        <img src="https://source.unsplash.com/200x200/?mountain" alt=""></img>
-                        <figcaption>5</figcaption>
-                    </figure>
-            
-                    <figure>
-                        <img src="https://source.unsplash.com/300x300/?color" alt=""></img>
-                        <figcaption>6</figcaption>
-                    </figure>
-            
-                    <figure>
-                        <img src="https://source.unsplash.com/300x400/?flower" alt=""></img>
-                        <figcaption>7</figcaption>
-                    </figure>
-            
-                    <figure>
-                        <img src="https://source.unsplash.com/400x500/?bird" alt=""></img>
-                        <figcaption>8</figcaption>
-                    </figure>
-            
-                    <figure>
-                        <img src="https://source.unsplash.com/400x600/?sun" alt=""></img>
-                        <figcaption>9</figcaption>
-                    </figure>
-            
-                    <figure>
-                        <img src="https://source.unsplash.com/300x600/?rock" alt=""></img>
-                        <figcaption>10</figcaption>
-                    </figure>
-                </div>
+              
             </div>
-            <div class="section contact">
+
+            <div class="section works" id="works">
+                <h2 class="section__title">Works</h2>
+              
+            </div>
+
+
+
+
+
+
+            <div class="section contact" id="contact">
                 <h2 class="section__title">Contact Me</h2>
                 <p>Like to discuss a project with me.</p>
-                <div class="contact_container">
+                <div class="contact__container">
                     <div class="contact__block">
                         <input type="text" class="name" placeholder="Name" />
-                        <input type="text" class="email" placeholder="Email"/>
+                        <input type="text" class="email" placeholder="Email" />
                         <textarea class="message" placeholder="Message" rows=6></textarea>
                         <button class="submit btn">Submit</button>
                     </div>
                     <div class="contact__tabs">
-                        <div class="one">
+                        <div class="one tab">
                             <div class="tabs__icon">
                                 <i class="fas fa-phone-alt"></i>
                             </div>
@@ -169,7 +122,7 @@
                                 <div class="tabs__text2">+91 9888999900</div>
                             </div>
                         </div>
-                        <div class="two">
+                        <div class="two tab">
                             <div class="tabs__icon">
                                 <i class="fas fa-at"></i>
                             </div>
@@ -178,7 +131,7 @@
                                 <div class="tabs__text2">contact@hmohan.com</div>
                             </div>
                         </div>
-                        <div class="three">
+                        <div class="three tab">
                             <div class="tabs__icon">
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
@@ -187,7 +140,7 @@
                                 <div class="tabs__text2">Trivandrum, kerala, India</div>
                             </div>
                         </div>
-                        <div class="four">
+                        <div class="four tab">
                             <div class="tabs__icon">
                                 <i class="fab fa-whatsapp"></i>
                             </div>
@@ -201,10 +154,10 @@
             </div>
         </div>
         <div class="footer">
-            <span>All Right Reserved</span>
             <span>Hemanth Mohan &copy; 2021</span>
         </div>
     </div>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
