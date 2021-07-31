@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Shadow Effect</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text {
+            width: 100%;
+            height: 200px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text span {
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-weight: 600;
+            padding: 0 0.5rem;
+            font-size: 50px;
+            color: #c0de38;
+            margin: 20px;
+        }
+
+        .text span:nth-child(1):hover{
+            animation: shadowEffect 1s ease ;
+        }
+
+
+        .text span:nth-child(2):hover{
+            animation: shadowEffect2 1s ease ;
+        }
+
+        @keyframes shadowEffect {
+            0% {
+                text-shadow: 0 0 #125D98, 0 0 #125D98, 0 0 #125D98, 0 0 #125D98, 0 0 #125D98, 0 0 #125D98, 0 0 #125D98, 0 0 #125D98, 0 0 #125D98;
+                transform: translateX(0);
+            }
+
+            100% {
+                text-shadow: -1px 0 #125D98, -2px 0 #125D98, -3px 0 #125D98, -4px 0 #125D98, -5px 0 #125D98, -6px 0 #125D98, -7px 0 #125D98, -8px 0 #125D98, -9px 0 #125D98;
+                transform: translateX(10px);
+            }
+        }
+
+        @keyframes shadowEffect2 {
+            0% {
+                text-shadow: 0 0 #125D98, 0 0 #125D98, 0 0 #125D98, 0 0 #125D98, 0 0 #125D98, 0 0 #125D98, 0 0 #125D98, 0 0 #125D98;
+                transform: translateY(0);
+            }
+
+            100% {
+                text-shadow: 0 1px #125D98, 0 2px #125D98, 0 3px #125D98, 0 4px #125D98, 0 5px #125D98, 0 6px #125D98, 0 7px #125D98, 0 8px #125D98;
+                transform: translateY(-8px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="text">
+            <span>God Bless You</span>
+            <span>Stay Happy</span>
+        </div>
+    </div>
+</body>
+
+</html>
