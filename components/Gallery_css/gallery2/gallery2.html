@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Gallery</title>
     <style>
+        :root {
+            --opacity:0;
+        }
         *,
         *:before,
         *:after {
@@ -15,7 +18,7 @@
             margin: 0;
         }
 
-        img{
+        img {
             max-width: 100%;
         }
 
@@ -25,81 +28,80 @@
             font-size: 62.5%;
         }
 
-        .container{
+        .container {
             width: 100%;
             height: auto;
             position: relative;
             overflow-x: hidden;
         }
 
-        .gallery{
+        .gallery {
+            margin: 0 auto;
             display: grid;
-            grid-gap: 1rem;
+            grid-gap: 2px;
             grid-template-columns: repeat(3, 1fr);
-            padding: 20px;
+            padding: 2rem;
             position: relative;
         }
 
-        .item--expand{
-            position: absolute;
-            padding: 20px;
-            width: 100%;
-            height: 100%;
-            z-index: 10;
-            transform: scale(0);
-            transform-origin: top left;
-            transition: all 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .item--expand img{
+        .item{
             position: relative;
+            overflow: hidden;
+        }
+
+        .item .img{
+            transition: all 200ms ease-in-out;
+        }
+
+        .item:hover .img{
+            transform: scale(1.4);
+        }
+
+        .item:after{
             width: 100%;
             height: 100%;
-            background-position: center;
-            background-size: cover;
-        }
-
-        .expand--close{
+            content: "";
             position: absolute;
-            right: 40px;
-            top: 20px;
-            width: 50px;
-            height: 55px;
-            z-index: 100;
-            background-color: #111;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, var(--opacity));
+            transition: all 100ms ease-in;
         }
 
-        .expand--close:hover span{
-            background-color: red;
+
+        @media screen and (min-width:1201px) {
+            .gallery {
+                display: grid;
+                grid-template-columns: repeat(4, minmax(280px, 1fr));
+            }
         }
 
-        .expand--close span{
-            width: 5rem;
-            height: 2px;
-            background-color: #fff;
-            display: block;
-            transform-origin: top left;
-            transform: rotate(45deg) translateX(1.3rem);
+        @media screen and (min-width:769px) and (max-width:1200px) {
+            .gallery {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(240px, 1fr));
+            }
         }
 
-        .expand--close span:nth-child(2){
-            transform: rotate(-45deg) translateX(-1rem);
-            transform-origin: top right;
+        @media screen and (min-width: 481px) and (max-width:768px) {
+            .gallery {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(220px, 1fr));
+            }
         }
 
+        @media screen and (min-width: 320px) and (max-width:480px) {
+            .gallery {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
         <div class="gallery">
-            <div class="item--expand">
-                <img src="" alt="" class="expand--img">
-                <div class="expand--close">
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
             <div class="item">
                 <img src="https://images.unsplash.com/photo-1552083375-1447ce886485?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
                     alt="image1" class="img">
@@ -133,37 +135,54 @@
                     alt="image1" class="img">
             </div>
             <div class="item">
+                <img src="https://images.unsplash.com/photo-1626067896344-06d51ffaf3f7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+                    alt="image1" class="img">
+            </div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1489367753387-4a80734cbc3e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+                    alt="image1" class="img">
+            </div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
+                    alt="image1" class="img">
+            </div>
+            <div class="item">
                 <img src="https://images.unsplash.com/photo-1453684002390-29a73e320a2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80"
                     alt="image1" class="img">
             </div>
         </div>
     </div>
     <script>
+        const gallery = document.querySelector('.gallery');
         const items = document.querySelectorAll('.item');
-        const expanded= document.querySelector('.item--expand');
-        const close = document.querySelector('.expand--close');
-        const imageElem = document.querySelector('.item--expand img');
+        let rootElem = document.querySelector(':root');
+    
+        function overlay(opacity){
+            rootElem.style.setProperty("--opacity", opacity);
+        }
 
-        closeAll();
-
-        items.forEach((elem)=>{
-            elem.addEventListener('click', (e)=>{
-                expandImage(e.target)
+        function reset(opacity){
+            items.forEach(elem =>{
+                elem.style.setProperty("--opacity", opacity)
             })
-        });
-
-        close.addEventListener('click', (e) =>{
-            closeAll(e.target);
-        });
-
-        function closeAll(){
-            expanded.style.transform = 'scale(0)'
         }
 
-        function expandImage(elem){
-            imageElem.src = elem.src;
-            expanded.style.transform = 'scale(1)'
-        }
+        gallery.addEventListener('mouseenter', ()=>{
+            reset(0.4)
+        })
+
+        items.forEach(elem => {
+            elem.addEventListener('mouseenter', (e)=>{
+                elem.style.setProperty("--opacity", 0)
+            });
+            elem.addEventListener('mouseleave', (e)=>{
+                elem.style.setProperty("--opacity", 0.4)
+            });
+        })
+
+        gallery.addEventListener('mouseleave', ()=>{
+            reset(0);
+        })
     </script>
 </body>
 
