@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+            padding: 0;
+            margin: 0;
+        }
+
+        img{
+            max-width: 100%;
+        }
+
+        html {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-size: 62.5%;
+        }
+
+        .container{
+            width: 100%;
+            height: auto;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .gallery{
+            display: grid;
+            grid-gap: 1rem;
+            grid-template-columns: repeat(3, 1fr);
+            padding: 20px;
+            position: relative;
+        }
+
+        .item--expand{
+            position: absolute;
+            padding: 20px;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            transform: scale(0);
+            transform-origin: top left;
+            transition: all 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .item--expand img{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .expand--close{
+            position: absolute;
+            right: 40px;
+            top: 20px;
+            width: 50px;
+            height: 55px;
+            z-index: 100;
+            background-color: #111;
+        }
+
+        .expand--close:hover span{
+            background-color: red;
+        }
+
+        .expand--close span{
+            width: 5rem;
+            height: 2px;
+            background-color: #fff;
+            display: block;
+            transform-origin: top left;
+            transform: rotate(45deg) translateX(1.3rem);
+        }
+
+        .expand--close span:nth-child(2){
+            transform: rotate(-45deg) translateX(-1rem);
+            transform-origin: top right;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="gallery">
+            <div class="item--expand">
+                <img src="" alt="" class="expand--img">
+                <div class="expand--close">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1552083375-1447ce886485?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                    alt="image1" class="img">
+            </div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                    alt="image2" class="img">
+            </div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1572099606223-6e29045d7de3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                    alt="image3" class="img">
+            </div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1489619243109-4e0ea59cfe10?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                    alt="image1" class="img">
+            </div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1471513671800-b09c87e1497c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                    alt="image1" class="img">
+            </div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1552082919-e60010758c47?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                    alt="image1" class="img">
+            </div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1565118531796-763e5082d113?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                    alt="image1" class="img">
+            </div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1547754980-3df97fed72a8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                    alt="image1" class="img">
+            </div>
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1453684002390-29a73e320a2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80"
+                    alt="image1" class="img">
+            </div>
+        </div>
+    </div>
+    <script>
+        const items = document.querySelectorAll('.item');
+        const expanded= document.querySelector('.item--expand');
+        const close = document.querySelector('.expand--close');
+        const imageElem = document.querySelector('.item--expand img');
+
+        closeAll();
+
+        items.forEach((elem)=>{
+            elem.addEventListener('click', (e)=>{
+                expandImage(e.target)
+            })
+        });
+
+        close.addEventListener('click', (e) =>{
+            closeAll(e.target);
+        });
+
+        function closeAll(){
+            expanded.style.transform = 'scale(0)'
+        }
+
+        function expandImage(elem){
+            imageElem.src = elem.src;
+            expanded.style.transform = 'scale(1)'
+        }
+    </script>
+</body>
+
+</html>
