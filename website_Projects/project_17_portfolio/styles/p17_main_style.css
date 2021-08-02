@@ -1,0 +1,191 @@
+:root{
+
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+img{
+    max-width: 100%;
+}
+
+
+/* ----------------------- */
+html{
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+body{
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    margin-bottom: 5rem;
+}
+
+.section{
+    padding: 3rem 0 6rem;
+}
+
+.section--title{
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.section--subtitle{
+    font-size: 1.4rem;
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+.container{
+    max-width: 1920px;
+    margin: auto 5rem;
+}
+
+/* ------------------- */
+
+
+
+/* Header Section */
+
+.header{
+    width: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    background-color: #eee;
+}
+
+.header--container{
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.nav--list{
+    display: flex;
+    padding: 1rem ;
+}
+
+.header--logo{
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+}
+
+.header--logo a{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.header--logo:hover a,
+.btn--toggle:hover i{
+    color: crimson;
+}
+
+.header--nav{
+    margin: 2rem;
+}
+
+.nav--item{
+    padding: 2rem;
+}
+
+.nav--item a{
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    display: inline-block;
+}
+
+.nav--item i{
+    display: inline-block;
+}
+
+.nav--item a:hover{
+    color: rgb(236, 75, 12);
+}
+
+.nav--item i {
+    margin-right: 1rem;
+    
+}
+
+.nav--item:hover i{
+    color: gold;
+}
+
+.header--close,
+.header--btn{
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    font-size: 2rem;
+}
+
+.header--btn{
+   right: 6rem;
+
+}
+
+/* Header Section Ends */
+
+@media screen and (max-width: 640px) and (min-width:320px){
+    .header{
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        padding: 2rem;
+        margin-top: 5rem;
+        box-shadow: 0 2px 2px rgb(0, 0, 0, 0.5);
+        background-color: antiquewhite;
+    }
+
+    .nav--list{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 2rem;
+        padding: 0 2rem;
+    }
+
+    .nav--item{
+        position: relative;
+    }
+
+    .nav--item a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+    }
+
+    .nav--item i {
+        font-size: 1.6rem;
+        padding-bottom: 1rem;
+    }
+
+    .header--logo{
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+    }
+
+}
