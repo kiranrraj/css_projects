@@ -71,7 +71,6 @@ body{
 
 .header--container{
     max-width: 100%;
-    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -125,20 +124,33 @@ body{
     color: gold;
 }
 
+.nav--btn{
+    padding: 1rem;
+}
+
+.header--btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+}
+
 .header--btn{
     font-size: 2rem;
-    width: 2rem;
 }
 
 .header--close{
     display: none;
 }
 
-.header--btn{
-   right: 6rem;
-}
 
 /* Header Section Ends */
+
+/* Landing Page */
+
+
+
+/* Landing Page Ends */
 
 @media screen and (min-width: 601px) and (max-width:960px){
     .header{
@@ -148,10 +160,6 @@ body{
         left: 0%;
         box-shadow: 0 2px 2px rgb(0, 0, 0, 0.5);
         background-color: antiquewhite;
-    }
-
-    .header--container{
-        position: relative;
     }
 
     .header--btn{
@@ -198,14 +206,28 @@ body{
         left: 0%;
         box-shadow: 0 2px 2px rgb(0, 0, 0, 0.5);
         background-color: antiquewhite;
+        height: 4rem;
+        display: flex;
+        align-items: center;
     }
 
     .header--container{
-        position: relative;
         width: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
+    }
+
+    .header--nav{
+        position: absolute;
+        width: 100%;
+        top: 5rem;
+        left: 0;
+        background-color: antiquewhite;
+    }
+
+    .toggle{
+        top: -20rem;
     }
 
     .nav--list{
@@ -218,29 +240,18 @@ body{
         text-align: left;
     }
 
-    .header--logo{
-        position: absolute;
-        background-color: slateblue;
-        color: #fff;
-        padding: 1rem;
-        left: -3rem;
-        top: 50%;
-        transform: translateY(-50%) rotate(-90deg);
-    }
-
     .header--btn{
+        font-size: 1.5rem;
+    }
+
+    .header--close{
+        display: flex;
         position: absolute;
-        top: 1rem;
-        left: 1rem;
+        right: 2rem;
+        top: 2rem;
     }
 
-    .nav--item .nav--links {
-        font-size: 1.2rem;
+    .header--close i {
+        font-size: 2rem;
     }
-
-    .nav--item i{
-        font-size: 3rem;
-        margin: 0;
-    }
-
 }
