@@ -39,19 +39,28 @@ body{
 }
 
 .section--title{
-    font-size: 2.5rem;
+    font-size: calc(25px + (45 - 25) * ((100vw - 300px) / (1920 - 300)));
     text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
 }
 
 .section--subtitle{
-    font-size: 1.4rem;
+    font-size: calc(15px + (35 - 15) * ((100vw - 300px) / (1920 - 300)));
     margin-bottom: 5rem;
     text-align: center;
+}
+
+.section--para{
+    font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1920 - 300)));
+    line-height: 150%;
+    letter-spacing: 1.2px;
 }
 
 .container{
     max-width: 1920px;
     margin: auto 5rem;
+    letter-spacing: 0.2rem;
 }
 
 /* ------------------- */
@@ -146,11 +155,6 @@ body{
 
 /* Header Section Ends */
 
-/* Landing Page */
-
-
-
-/* Landing Page Ends */
 
 @media screen and (min-width: 601px) and (max-width:960px){
     .header{
@@ -158,43 +162,39 @@ body{
         position: fixed;
         bottom: 0%;
         left: 0%;
-        box-shadow: 0 2px 2px rgb(0, 0, 0, 0.5);
+        height: 4rem;
+        display: flex;
+        align-items: center;
         background-color: antiquewhite;
     }
 
-    .header--btn{
-        position: absolute;
-        height: 100%;
+    .header--container{
+        width: 100%;
         display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        padding: 1rem;
-        left: 1rem;
-    }
-
-    .header--logo{
-        color: white;
-        left: 0;
-        color: #111;
-    }
-
-    .header--logo a{
-        font-size: 1.3rem; 
-    }
-
-    .nav--item{
-        display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
     }
 
-    .nav--item .nav--links{
-        font-size: 1.1rem;
+    .header--nav{
+        position: absolute;
+        width: 100%;
+        top: 5rem;
+        left: 0;
+        background-color: antiquewhite;
     }
 
-    .nav--item i{
+    .nav--list{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .active{
+        top: -8rem;
+    }
+
+    .nav--links i{
         font-size: 3rem;
-        margin: 0;
     }
 }
 
@@ -204,7 +204,6 @@ body{
         position: fixed;
         bottom: 0%;
         left: 0%;
-        box-shadow: 0 2px 2px rgb(0, 0, 0, 0.5);
         background-color: antiquewhite;
         height: 4rem;
         display: flex;
@@ -255,3 +254,193 @@ body{
         font-size: 2rem;
     }
 }
+
+/* Landing Page */
+
+.home{
+    min-height: 100vh;
+    height: 100vh;
+}
+
+.home--content{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1353&q=80');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.home--social{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.social--icon{
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+.social--icon:hover i{
+    color: springgreen;
+}
+
+.home--svg{
+    filter: drop-shadow(0 1rem 1rem rgba(0, 0, 0, 0.6));
+    max-width: 100%;
+}
+
+.home--homeText{
+    position: relative;
+    text-align: center;
+}
+
+/* font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width]))); */
+
+.homeText--title{
+    text-transform: uppercase;
+    font-size: calc(30px + (60 - 30) * ((100vw - 300px) / (1920 - 300)));
+    letter-spacing: 0.2em;
+    color: tan;
+}
+
+.homeText--subtitle{
+    font-size: calc(16px + (30 - 16) * ((100vw - 300px) / (1920 - 300)));
+    letter-spacing: 0.1em;
+    color: #f5f5dc;
+    text-transform: uppercase;
+}
+
+.homeText--btn {
+    display: inline-block;
+    margin-top: 2rem;
+    background: transparent;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: calc(16px + (18 - 16) * ((100vw - 300px) / (1920 - 300)));
+    position: relative;
+    z-index: 1;
+    padding: 1rem;
+  }
+  
+ .homeText--btn::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0px;
+    right: 0px;
+    background-color: #fc2f70;
+    transform-origin: bottom center;
+    transform: scaleY(0.1);
+    transition: all 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+ .homeText--btn:hover::before {
+    transform: scaleY(1);
+    background-color: hsla(341, 97%, 59%, 0.75);
+  }
+/* Landing Page Ends */
+
+/* About Page */
+
+.about{
+    width: 100%;
+    min-height: 100vh;
+}
+
+.about--para{
+    padding: 0 0 2rem 0;
+}
+
+.about--cards{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+    flex-wrap: wrap;
+}
+
+.about--card{
+    height: 15rem;
+    min-width: 20rem;
+    max-width: 100%;
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 1rem 0.1rem rgba(252, 47, 112, 0.5);
+    border: 1px solid rgba(252, 47, 112, 0.5);
+}
+
+.about--card:hover{
+    box-shadow: 0 0 3rem 0.1rem rgba(252, 47, 112, 0.5);
+}
+
+.about--card i{
+    font-size: calc(30px + (30 - 16) * ((100vw - 300px) / (1920 - 300)));
+    margin-bottom: 1rem;
+    color: rgba(252, 47, 112, 0.5);
+}
+
+.about--card .card--text{
+    font-size: 2rem;
+    color: rgba(252, 47, 112, 0.5);
+}
+
+@media screen and (min-width:1200px) and (max-width:1920px) {
+    .about--content{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .section--para:nth-child(1){
+        margin-bottom: 2rem;
+    }
+
+    .about--img{
+        padding-right: 3rem;
+    }
+}
+
+@media screen and (min-width:640px) and (max-width:1201px){
+    .about--img{
+        padding: 3rem 0;
+    }
+
+    .section--para:nth-child(1){
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (min-width:320px) and (max-width:641px){
+    .about--img{
+        padding: 3rem 0;
+    }
+
+    .section--para:nth-child(1){
+        margin-bottom: 2rem;
+    }
+
+    .about--card{
+        
+    }
+}
+
+/* About Page */

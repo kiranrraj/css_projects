@@ -9,3 +9,7 @@ closeBtn.addEventListener('click', ()=>{
 toggleBtn.addEventListener('click', ()=>{
     nav.classList.toggle('toggle');
 });
+
+toggleBtn.addEventListener('click', ()=>{
+    nav.classList.toggle('active');
+});
