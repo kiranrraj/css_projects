@@ -15,7 +15,7 @@
         <nav class="header--navBar">
             <ul class="navBar--list">
                 <li class="navBar--item"><a href="#home">Home</a></li>
-                <li class="navBar--item"><a href="#feature">Features</a></li>
+                <li class="navBar--item"><a href="#destination">Destinations</a></li>
                 <li class="navBar--item"><a href="#about">About</a></li>
                 <li class="navBar--item"><a href="#gallery">Gallery</a></li>
                 <li class="navBar--item"><a href="#testimonials">Testimonials</a></li>
@@ -26,8 +26,120 @@
             <i class="fas fa-bars"></i>
         </div>
     </div>
+
+    <section class="section home" id="home">
+        <div class="home--videoContainer">
+            <video src="./video/hero_video.mp4" muted loop autoplay></video>
+        </div>
+        <div class="home--content">
+            <div class="home--hText">
+                <h1 class="hText--head">Explore The Unknown</h1>
+                <h3 class="hText--subhead">Your one stop destination for <span>travel</span></h3>
+                <p class="hText--para">We are here to fullfill your dream of exploring the beauties of our world. We help you to make it <span>easily</span>, <span>safely</span> and <span>happily</span>. </p>
+            </div>
+            <div class="home--hForm">
+                <form action="#" class="hForm">
+                    <div class="hForm--text">
+                        <h3 class="hForm--head">Plan Your Dream Journey</h3>
+                        <span class="hForm--subHead">Destinations</span>
+                    </div>
+                    <div class="hForm--inputs">
+                        <div class="input">
+                            <label for="input1">Destination Country</label>
+                            <input type="text" placeholder="DestinationCountry" id="input1">
+                        </div>
+                        <div class="input">
+                            <label for="input2">Destination City</label>
+                            <input type="text" placeholder="DestinationCity"  id="input2">
+                        </div>
+                        <div class="input">
+                            <label for="input3">Number Of Guests</label>
+                            <select name="cars" id="cars">
+                                <option value="1">1 Guest</option>
+                                <option value="2">2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                                <option value="5">5 Guests</option>
+                                <option value="6">6 Guests</option>
+                              </select>
+                        </div>
+                        <div class="input">
+                            <label for="input4">Travel Date</label>
+                            <input type="date" name="startDate" id="input4">
+                        </div>
+                        <div class="input">
+                            <label for="input5">Return Date</label>
+                            <input type="date" name="endDate" id="input5">
+                        </div>    
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <div class="container">
-        
+        <section class="destination section" id="destination">
+            <div class="destination--container">
+                <div class="destination--dText">
+                    <div class="dText--title">Destinations To Explore</div>
+                    <div class="dText--subtitle">Popular Destinations This Season</div>
+                </div>
+                <div class="destination--dImage">
+                    <div class="dImage--layer layer1">
+                        <div class="dImage--block large">
+                            <div class="dImage--text">
+                                <div class="text--city">San Quirico d'Orcia</div>
+                                <div class="text--country">Italy</div>
+                            </div>
+                        </div>
+                        <div class="dImage--block long">
+                            <div class="dImage--text">
+                                <div class="text--city">Sydney Harbour Bridge</div>
+                                <div class="text--country">Australia</div>
+                            </div>
+                        </div>
+                        <div class="dImage--block small--1">
+                            <div class="dImage--text">
+                                <div class="text--city">Trou d'Eau Douce</div>
+                                <div class="text--country">Mauritius</div>
+                            </div>
+                        </div>
+                        <div class="dImage--block small--2">
+                            <div class="dImage--text">
+                                <div class="text--city">Hamburg</div>
+                                <div class="text--country">Germany</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dImage--layer layer2">
+                        <div class="dImage--block small--1">
+                            <div class="dImage--text">
+                                <div class="text--city">Dubai</div>
+                                <div class="text--country">United Arab Emirates</div>
+                            </div>
+                        </div>
+                        <div class="dImage--block small--2">
+                            <div class="dImage--text">
+                                <div class="text--city">Hatsukaichi-shi</div>
+                                <div class="text--country">Japan</div>
+                            </div>
+                        </div>
+                        <div class="dImage--block long">
+                            <div class="dImage--text">
+                                <div class="text--city">Alappuzha, Kerala</div>
+                                <div class="text--country">India</div>
+                            </div>
+                        </div>
+                        <div class="dImage--block large">
+                            <div class="dImage--text">
+                                <div class="text--city">Lelystad</div>
+                                <div class="text--country">Netherlands</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
 
