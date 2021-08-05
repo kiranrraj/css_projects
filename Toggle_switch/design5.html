@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            background: linear-gradient(to right, #ffa751, #ffe259);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .style {
+            width: 300px;
+            height: 200px;
+            background-color: slateblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #fff;
+        }
+
+        .block {
+            width: 200px;
+            height: 50px;
+            background-color: violet;
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+            border: 2px solid #fff;
+            overflow: hidden;
+        }
+
+        #cbox1, #cbox2, #cbox3, #cbox4, #cbox5, #cbox6 {
+            display: none;
+        }
+
+        /* Style 1 */
+        .style1--block .label1 {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .style1--block .label1:before {
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            display: block;
+            content: "No";
+            color: azure;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: red;
+            height: 100%;
+            width: 50px;
+            border-radius: 100%;
+            border: 2px solid #f00;
+            transition: all 300ms ease;
+        }
+
+        #cbox1:checked~.label1::before {
+            left: calc(100% - 52px);
+            content: "Yes";
+            background-color: #0f0;
+            color: #111;
+            border: 2px solid #0f0;
+        }
+
+
+        /* Style 2 */
+        .label2 {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .label2:before,
+        .label2:after {
+            position: absolute;
+            display: block;
+            color: azure;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 50px;
+            border-radius: 100%;
+        }
+
+        .label2::before {
+            top: -2px;
+            left: -2px;
+            content: "No";
+            background-color: red;
+            border: 2px solid #fff;
+            transform: scale(1);
+        }
+
+        .label2::after {
+            top: -2px;
+            right: -2px;
+            content: "Yes";
+            background-color: #0f0;
+            border: 2px solid #fff;
+            color: #111;
+            transform: scale(0);
+        }
+
+        #cbox2:checked~.label2::before {
+            animation: anim1 300ms ease-in forwards;
+        }
+
+        #cbox2:checked~.label2::after {
+            animation: anim1 300ms ease-in forwards reverse;
+        }
+
+        #cbox2~.label2::before {
+            animation: anim2 300ms ease-in forwards;
+        }
+
+        #cbox2~.label2::after {
+            animation: anim2 300ms ease-in forwards reverse;
+        }
+
+        @keyframes anim1 {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(0);
+            }
+        }
+
+        @keyframes anim2 {
+            0% {
+                transform: scale(0);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+
+        /* Style 3 */
+        .style3--block {
+            transition: all 300ms ease;
+        }
+
+        .label3 {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: block;
+            overflow: hidden;
+        }
+
+        .label3:before,
+        .label3:after {
+            position: absolute;
+            display: block;
+            color: azure;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 50px;
+            border-radius: 100%;
+            transition: all 300ms ease;
+        }
+
+        .label3::before {
+            top: -2px;
+            left: -2px;
+            content: "No";
+            background-color: red;
+            border: 2px solid #fff;
+        }
+
+        .label3::after {
+            top: -2px;
+            right: -54px;
+            content: "Yes";
+            background-color: #0f0;
+            border: 2px solid #fff;
+            color: #111;
+        }
+
+        #cbox3:checked ~ .label3::after{
+            right: -2px;
+        }
+
+        #cbox3:checked ~ .label3::before{
+            left: -54px;
+        }
+
+        /* Style4 */
+        .label4 {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: block;
+            overflow: hidden;
+        }
+
+        .block--square {
+            width: 200px;
+            height: 50px;
+            background-color: violet;
+            border: 2px solid #fff;
+            overflow: hidden;
+        }
+
+        .label4:before,
+        .label4:after {
+            position: absolute;
+            display: block;
+            color: azure;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 50px;
+            transition: all 300ms ease;
+        }
+
+        .label4::before {
+            bottom: -2px;
+            left: -2px;
+            content: "No";
+            background-color: red;
+            border: 2px solid #fff;
+        }
+
+        .label4::after {
+            top: -52px;
+            right: -2px;
+            content: "Yes";
+            background-color: #0f0;
+            border: 2px solid #fff;
+            color: #111;
+        }
+
+        #cbox4:checked ~ .label4::after{
+            top: -2px;
+        }
+
+        #cbox4:checked ~ .label4::before{
+            bottom: -54px;
+        }
+
+
+         /* Style 5 */
+         .label5 {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: block;
+            overflow: hidden;
+        }
+
+        .block--square {
+            width: 200px;
+            height: 50px;
+            background-color: violet;
+            border: 2px solid #fff;
+            overflow: hidden;
+        }
+
+        .label5:before,
+        .label5:after {
+            position: absolute;
+            display: block;
+            color: azure;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 50px;
+            transition: all 300ms ease;
+        }
+
+        .label5::before {
+            bottom: -2px;
+            left: -2px;
+            content: "No";
+            background-color: red;
+            border: 2px solid #fff;
+        }
+
+        .label5::after {
+            top: -2px;
+            right: -2px;
+            content: "Yes";
+            background-color: #0f0;
+            border: 2px solid #fff;
+            color: #111;
+            transform: translateX(-150px);
+            opacity: 0;
+        }
+
+        #cbox5:checked ~ .label5::after{
+            transform: translateX(0px);
+            opacity: 1;
+        }
+
+        #cbox5:checked ~ .label5::before{
+            transform: translateX(100px);
+            opacity: 0;
+        }
+        
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="style1 style">
+            <div class="style1--block block">
+                <input type="checkbox" name="cbox1" id="cbox1">
+                <label for="cbox1" class="label1"></label>
+            </div>
+        </div>
+
+        <div class="style2 style">
+            <div class="style2--block block">
+                <input type="checkbox" name="cbox2" id="cbox2">
+                <label class="label2" for="cbox2"></label>
+            </div>
+        </div>
+
+        <div class="style3 style">
+            <div class="style3--block block">
+                <input type="checkbox" name="cbox3" id="cbox3">
+                <label class="label3" for="cbox3"></label>
+            </div>
+        </div>
+
+        <div class="style4 style">
+            <div class="style4--block block--square">
+                <input type="checkbox" name="cbox4" id="cbox4">
+                <label class="label4" for="cbox4"></label>
+            </div>
+        </div>
+
+        <div class="style5 style">
+            <div class="style5--block block--square">
+                <input type="checkbox" name="cbox5" id="cbox5">
+                <label class="label5" for="cbox5"></label>
+            </div>
+        </div>
+
+        <div class="style6 style">
+            <div class="style6--block block--square">
+                <input type="checkbox" name="cbox6" id="cbox6">
+                <label class="label6" for="cbox6"></label>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
