@@ -22,6 +22,11 @@ body{
     font-weight: 400;
 }
 
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .header--navBar{
     position: fixed;
     left: 0;
@@ -198,9 +203,10 @@ input, select{
 
 .destination{
     width: 100%;
-    padding-bottom: 20rem;
+    padding-bottom: 10rem;
 }
 
+/* ------------------------ */
 .destination--container{
     width: 100%;
     position: relative;
@@ -222,6 +228,7 @@ input, select{
     font-size: 2.2rem;
     letter-spacing: 0.3rem;
 }
+/* ----------------------------- */
 
 .destination--dImage{
     display: flex;
@@ -337,6 +344,87 @@ input, select{
 }
 
 /* Destination Section Ends */
+
+
+/* About Section */
+
+
+/* ------------------------ */
+.section{
+    padding-bottom: 10rem;
+}
+
+.about--container{
+    width: 100%;
+    position: relative;
+    margin-top: 20rem;
+}
+
+.about--aText{
+    width: 100%;
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.aText--title{
+    font-size: 3.5rem;
+    letter-spacing: 0.5rem;
+}
+
+.aText--subtitle{
+    font-size: 2.2rem;
+    letter-spacing: 0.3rem;
+}
+/* ----------------------------- */
+
+
+.about--aData{
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: repeat(2, 30rem);
+    gap: 5rem;
+    justify-content: center;
+}
+
+.aData--block{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    align-items: center;
+    justify-items: center;
+}
+
+.aData--text{
+    padding: 2rem 5rem 2rem 2rem;
+    background-color: bisque;
+    height: 100%;
+    border: 0.1rem solid #fff;
+    box-shadow: 0 0 1rem 0.1rem #111;
+    height: 30rem;
+}
+
+.aData--h3{
+    font-size: 3rem;
+    letter-spacing: 0.3rem;
+    margin-bottom: 2rem;
+}
+
+.aData--para{
+    font-size: 1.4rem;
+    letter-spacing: 0.11rem;
+    line-height: 150%;
+}
+
+.aData--img{
+    height: 26rem;
+    overflow: hidden;
+}
+/* About Section Ends */
+
+
+/* Gallery Section */
+/* Gallery Section Ends */
 
 
 /* .aboutUs{
