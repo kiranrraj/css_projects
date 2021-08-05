@@ -420,11 +420,361 @@ input, select{
     height: 26rem;
     overflow: hidden;
 }
+
+.aData--b2 .aData--text{
+    grid-column: 2/3;
+    padding: 2rem 2rem 2rem 5rem;
+}
+
+.aData--b2 .aData--img{
+    grid-column: 1/2;
+    grid-row: 1/ 2;
+}
+
 /* About Section Ends */
 
 
-/* Gallery Section */
-/* Gallery Section Ends */
+/* Recoomendations Section */
+
+/* ------------------------ */
+
+.recommended--container{
+    width: 100%;
+    min-height: 200vh;
+    height: auto;
+    position: relative;
+    margin: 10rem auto;
+}
+
+.recommended--content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    background-color: #450dc9;
+}
+
+.recommended--block{
+    width: 100%;
+    min-height: 100vh;
+}
+
+.recommended--rText{
+    width: 100%;
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.rText--title{
+    font-size: 3.5rem;
+    letter-spacing: 0.5rem;
+}
+
+.rText--subtitle{
+    font-size: 2.2rem;
+    letter-spacing: 0.3rem;
+}
+/* ----------------------------- */
+
+.recommended--hotels,
+.recommended--cars{
+    width: 100%;
+    padding: 5rem;
+}
+
+.hotel--title,
+.cars--title{
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: .12rem;
+}
+
+.hotel--scrollContainer,
+.cars--scrollContainer{
+    width: 100%;
+    height: 4rem;
+    margin: 5rem 0;
+}
+
+.hotel--scroll,
+.cars--scroll{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 2rem 0;
+}
+
+.scroll--icon{
+    position: absolute;
+    font-size: 4rem;
+    padding: 1rem 2rem;
+    background-color: #fff;
+}
+
+.scroll--left{
+    left: 0;
+}
+
+.scroll--right{
+    right: 0;
+}
+
+.scroll--list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    width: 100rem;
+    overflow: hidden;
+}
+
+.scroll--item{
+    min-width: 12rem;
+    height: 5rem;
+    font-size: 1.6rem;
+    background-color: #FFAA4C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    margin: 0 1rem;
+}
+
+.hotel--cards,
+.cars--cards{
+    height: 30rem;
+    width: 100%;
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.hotel--card,
+.cars--card{
+    height: 100%;
+    width: 35rem;
+    background-color: #450dc9;
+    position: relative;
+    border: 0.1rem #fff solid;
+    box-shadow: 0 0 2rem 0.2rem #111;
+    overflow: hidden;
+}
+
+.hotel--card:hover,
+.cars--card:hover{
+    box-shadow: 0 0 1rem 0.1rem #111;
+}
+
+.hotel--card:hover .hotel--img,
+.cars--card:hover .cars--img{
+    transform: scale(1.2);
+}
+
+.hotel--imgContainer,
+.cars--imgContainer{
+    width: 100%;
+    height: 18rem;
+    overflow: hidden;
+}
+
+.hotel--img,
+.cars--img{
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    transition: all 300ms ease-in;
+}
+
+.card1 .hotel--img{
+    background-image: url('../images/hotel--1.jpg');
+}
+
+.card2 .hotel--img{
+    background-image: url('../images/hotel--2.jpg');
+}
+
+.card3 .hotel--img{
+    background-image: url('../images/hotel--3.jpg');
+}
+
+.hotel--head,
+.cars--head{
+    position: absolute;
+    text-align: center;
+    top: 2rem;
+    background-color: #5076e0;
+    width: 70%;
+    padding: 0.5rem;
+    font-size: 1.8rem;
+    letter-spacing: 0.2rem;
+    color: #fff;
+    box-shadow: 0 0 2rem 0.2rem #111;
+    z-index: 2;
+}
+
+.hotel--content{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    height: 12rem;
+}
+
+.hotel--amenities,
+.hotel--features{
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    letter-spacing: 0.12rem;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    text-transform: capitalize;
+    justify-content: space-around;
+    padding: 1rem 0;
+}
+
+.hotel--features{
+    width: 95%;
+    height: 100%;
+    color: #fff;
+}
+
+.hotel--features p{
+    background-color: #5076e0;
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+    border-left: 0.2rem solid #fff;
+}
+
+.hotel--amenities li{
+    list-style-type:circle;
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    color: rgb(238, 238, 231);
+}
+
+.cars--top{
+    display: flex;
+    justify-content: space-between;
+    border-left: 0.5rem #fff solid;
+    border-right: 0.5rem #fff solid;
+    padding: 0 0.5rem;
+}
+
+.cars--name{
+    font-size: 2rem;
+    color: #fff;
+}
+
+.cars--location{
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+.cars--middle{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+
+.cars--rating, 
+.cars--price{
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    color: #fff;
+    font-size: 1.4rem;
+    margin-top: 1rem;
+}
+
+.cars--rating{
+    justify-content: space-between;
+}
+
+.cars--rating> div{
+    border-left: 0.5rem #fff solid;
+    padding-left: 0.5rem;
+}
+
+.cars--rating .ratings--review{
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    color: #a1abc9;
+    margin-top: 2rem;
+    border-left: none;
+}
+
+.cars--price > div{
+    color: #fff;
+    letter-spacing: 0.2rem;
+    margin: 0.5rem 0;
+    border-right: 0.5rem #fff solid;
+    padding-right: 0.5rem;
+    align-self: flex-end;
+    font-family:Arial, Helvetica, sans-serif
+}
+.price--num span,
+.price--day span{
+    font-size: 1.6rem;
+    padding: 0 0.5;
+}
+
+.rating--num span{
+    color: #fff;
+    padding-right: 1rem;
+    font-size: 2rem;
+}
+
+.rating--num span:nth-child(2){
+    padding-left: 1rem;
+}
+
+.rating--words{
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+/* Car Rentals */
+
+.cars--cards{
+    height: 35rem;
+}
+
+.cars--card{
+    height: 100%;
+}
+
+.cars--content{
+    height: 17rem;
+    padding: 1rem;
+}
+
+.card1 .cars--img{
+    background-image: url('../images/cars--1.jpg');
+}
+
+.card2 .cars--img{
+    background-image: url('../images/car--2.jpg');
+}
+
+.card3 .cars--img{
+    background-image: url('../images/cars--3.jpg');
+}
+
+.cars--btn{
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    padding: 0.5rem 2rem;
+    background-color:#FFAA4C;
+}
+
+
+/* Recoomendations Section Ends */
 
 
 /* .aboutUs{
