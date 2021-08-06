@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Switches</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            grid-template-columns: repeat(3, 200px);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 50px;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to right, #b24592, #f15f79);
+        }
+
+        .cbox{
+            display: none;
+        }
+
+        .block{
+            width: 200px;
+            height: 200px;
+            background: #b6ccfe;
+            box-shadow: 0 0 20px 2px #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+        }
+
+        .wrapper{
+            width: 100px;
+            height: 50px;
+            position: relative;
+        }
+
+        .wrapper1 .label1{
+            position: absolute;
+            background: linear-gradient(to right, #fff, #eb300f);
+            border: 2px solid #eb300f;
+            color: #fff;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 20;
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+            transition: left 300ms linear;
+        }
+
+        .wrapper1 .label1:after{
+            position: absolute;
+            content: "No";
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            height: 100%;
+            background-color: #eb300f;
+            z-index: 2;
+            left: -2px;
+            top: 0;
+            transition: left 300ms linear;
+        }
+
+        #cbox1:checked ~ .label1:after{
+            left: calc(100% - 46px);
+            content: "Yes";
+            background-color: #23a503;
+            color: aliceblue;
+        }
+
+        #cbox1:checked ~ .label1{
+            background: linear-gradient(to right, #23a503, #fff);
+            border: 2px solid #23a503;
+        }
+
+        /* /////////////////////////////// */
+        /* /////////////Style 2/////////// */
+        /* /////////////////////////////// */
+
+        .wrapper2 .label2{
+            position: absolute;
+            background: linear-gradient(to right, #fff, #eb300f);
+            border: 2px solid #eb300f;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 20;
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+            transition: left 300ms linear;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .wrapper2 .label2:after{
+            position: absolute;
+            content: "No";
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            height: 100%;
+            background-color: #eb300f;
+            z-index: 2;
+            left: -2px;
+            top: 0;
+            transition: left 300ms linear;
+            color: aliceblue;
+        }
+
+        #cbox2:checked ~ .label2:after{
+            left: calc(100% - 46px);
+            content: "Yes";
+            background-color: #23a503;
+            color: aliceblue;
+        }
+
+        #cbox2:checked ~ .label2{
+            background: linear-gradient(to right, #23a503, #fff);
+            border: 2px solid #23a503;
+        }
+
+        .label2 .text{
+            pointer-events: none;
+            color: #fff;
+        }
+
+
+        /* /////////////////////////////// */
+        /* /////////////Style 3/////////// */
+        /* /////////////////////////////// */
+
+        .wrapper3 .label3{
+            position: absolute;
+            background: #111;
+            border: 2px solid #fff;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 20;
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+            transition: left 300ms linear;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .wrapper3 .label3:after{
+            position: absolute;
+            content: "";
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            height: 100%;
+            background-color: #111;
+            border: 2px solid #fff;
+            z-index: 2;
+            left: -2px;
+            top: -2px;
+            transition: left 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            color: aliceblue;
+        }
+
+        #cbox3:checked ~ .label3:after{
+            left: calc(100% - 46px);
+            background-color: #ffb703;
+            color: aliceblue;
+        }
+
+        #cbox3:checked ~ .label3{
+            background: linear-gradient(to right, #ffb703, #fff);
+            box-shadow: 0 0 30px 2px #ffb703;
+            border: 2px solid #ffb703;
+        }
+
+        .label3 .text{
+            pointer-events: none;
+            color: #fff;
+        }
+
+        /* /////////////////////////////// */
+        /* /////////////Style 4/////////// */
+        /* /////////////////////////////// */
+
+        .wrapper4{
+            width: 100px;
+            height: 50px;
+            position: relative;
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+            border: 2px solid #111;
+            overflow: hidden;
+        }
+
+        .wrapper4 .label4{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #111;
+            z-index: 10;
+            color: #fff;
+            display: flex;
+            padding-left: 15px;
+            justify-content: left;
+            align-items: center;
+            font-size: 20px;
+        }
+
+        .wrapper4 .label4:after{
+            position: absolute;
+            content: "Yes";
+            top: 0;
+            right: -15px;
+            width: 0%;
+            height: 100%;
+            background-color: #fff;
+            color: #111;
+            transition: all 300ms ease;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            pointer-events: none;
+        }
+
+        #cbox4:checked ~ .label4:after{
+            width: calc(100% + 5px);
+        }
+
+
+        /* /////////////////////////////// */
+        /* /////////////Style 5/////////// */
+        /* /////////////////////////////// */
+
+        .wrapper5{
+            width: 150px;
+            height: 50px;
+            position: relative;
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+            overflow: hidden;
+        }
+
+        .wrapper5 .label5{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            z-index: 10;
+            color: #fff;
+            display: flex;
+            padding-left: 15px;
+            justify-content: left;
+            align-items: center;
+            font-size: 20px;
+        }
+
+        .wrapper5 .label5:after,
+        .wrapper5 .label5:before{
+            position: absolute;
+            content: "";
+            top: 0;
+            right: 0;
+            width: 0%;
+            height: 100%;
+            background-color: #111;
+            color: #111;
+            transition: all 500ms ease;
+            display: flex;
+            align-items: center;
+            color: #fff;
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+
+        .wrapper5 .label5:before{
+            width: 100%;
+            content: "";
+        }
+
+        .wrapper5 .label5:after{
+            background-color: #fff;
+            color: #111;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end
+        }
+
+        #cbox5:checked ~ .label5::after{
+            width: 100%;
+            content: "";
+        }
+
+        .label5 .text1{
+            color: #fff;
+            position: absolute;
+            font-size: 20px;
+        }
+
+        .label5 .text2{
+            opacity: 0;
+            font-size: 20px;
+            transition: all 300ms ease;
+        }
+
+        #cbox5:checked ~ .label5 .text2{
+            color: #111;
+            position: relative;
+            left: 70%;
+            z-index: 10;
+            opacity: 1;
+        }
+
+
+        /* /////////////////////////////// */
+        /* /////////////Style 6/////////// */
+        /* /////////////////////////////// */
+
+        .wrapper6{
+            width: 150px;
+            height: 50px;
+            position: relative;
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+            background-color: transparent;
+        }
+
+        .wrapper6 .label6{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 100%;
+            background-color: red;
+            border-radius: 100%;
+            z-index: 10;
+            color: #fff;
+            display: flex;
+            padding-left: 15px;
+            justify-content: left;
+            align-items: center;
+            font-size: 20px;
+            transition: transform 300ms ease;
+        }
+
+        .wrapper6 .bg{
+            width: 100%;
+            height: 100%;
+            background-color: #111;
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+            transition: transform 300ms ease;
+        }
+
+        #cbox6:checked ~ .bg{
+            transform: rotate(20deg);
+            background-color: #23a503;
+        }
+
+        #cbox6:checked ~ .bg .label6{
+            transform: translate(100px);
+            background-color: green;
+        }
+
+
+        /* /////////////////////////////// */
+        /* /////////////Style 7/////////// */
+        /* /////////////////////////////// */
+
+
+        .wrapper7{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .label7{
+            width: 70%;
+            height: 3px;
+            background-color: #fff;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .label7 .circle{
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            left: -10px;
+            background-color: #fff;
+            border-radius: 100%;
+            z-index: 10;
+            color: #fff;
+            transition: left 300ms ease, color 200ms ease-out;
+            box-shadow: 0 0 5px 1px #111;
+        }
+
+        .label7 .circle:hover{
+            box-shadow: 0 0 1px 1px #111;
+        }
+
+        #cbox7:checked ~ .label7 .circle{
+            left: 110px;
+            background-color: #23a503;
+        }
+
+        #cbox7:checked ~ .label7{
+            background-color: #23a503;
+        }
+
+
+        /* /////////////////////////////// */
+        /* /////////////Style 8/////////// */
+        /* /////////////////////////////// */
+
+
+        .wrapper8{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .label8{
+            width: 80%;
+            height: 40px;
+            background-color: #9c9797;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 0 1px 5px #c70912,0 0 10px 5px #fff;
+        }
+
+        .label8 .circle{
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            left: 5px;
+            background-color: #c70912;
+            border-radius: 100%;
+            z-index: 10;
+            color: #fff;
+            transition: left 300ms ease, color 200ms ease-out;
+            box-shadow: 0 0 1px 1px #9c9797;
+            
+        }
+
+        .label8:hover .circle{
+            box-shadow: 0 0 15px 1px #9c9797;
+        }
+
+        #cbox8:checked ~ .label8 .circle{
+            left: 120px;
+            background-color: #23a503;
+            box-shadow: 0 0 1px 1px #9c9797;
+        }
+
+        #cbox8:checked ~ .label8{
+            box-shadow: 0 0 1px 5px #23a503,0 0 10px 5px #fff;
+        }
+
+
+        /* /////////////////////////////// */
+        /* /////////////Style 9/////////// */
+        /* /////////////////////////////// */
+
+
+        .wrapper9{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .label9{
+            width: 60%;
+            height: 40px;
+            background-color: #fff;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            box-shadow: 0 0 1px 2px #c70912;
+        }
+
+        .label9 .circle{
+            position: absolute;
+            width: 50px;
+            height: 55px;
+            left: -10px;
+            border-radius: 8px;
+            background-color: #c70912;
+            z-index: 10;
+            color: #fff;
+            transition: left 300ms ease, color 200ms ease-out;
+            box-shadow: 0 0 1px 1px #9c9797;
+            
+        }
+
+        #cbox9:checked ~ .label9 .circle{
+            left: 80px;
+            background-color: #23a503;
+            box-shadow: 0 0 1px 1px #9c9797;
+        }
+
+        #cbox9:checked ~ .label9{
+            box-shadow: 0 0 1px 2px #23a503,0 0 20px 5px #38f807;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="block1 block">
+            <div class="wrapper wrapper1">
+                <input type="checkbox" name="check" id="cbox1" class="cbox">
+                <label for="cbox1" class="label label1"></label>
+            </div>
+        </div>
+
+        <div class="block2 block">
+            <div class="wrapper wrapper2">
+                <input type="checkbox" name="check" id="cbox2" class="cbox">
+                <label for="cbox2" class="label label2">
+                    <div class="text text1">No</div>
+                    <div class="text text2">Yes</div>
+                </label>
+            </div>
+        </div>
+
+        <div class="block3 block">
+            <div class="wrapper wrapper3">
+                <input type="checkbox" name="check" id="cbox3" class="cbox">
+                <label for="cbox3" class="label label3"></label>
+            </div>
+        </div>
+
+        <div class="block4 block">
+            <div class="wrapper wrapper4">
+                <input type="checkbox" name="check" id="cbox4" class="cbox">
+                <label for="cbox4" class="label label4">No</label>
+            </div>
+        </div>
+
+        <div class="block5 block">
+            <div class="wrapper wrapper5">
+                <input type="checkbox" name="check" id="cbox5" class="cbox">
+                <label for="cbox5" class="label label5">
+                    <div class="text1">No</div>
+                    <div class="text2">Yes</div>
+                </label>
+            </div>
+        </div>
+
+        <div class="block6 block">
+            <div class="wrapper wrapper6">
+                <input type="checkbox" name="check" id="cbox6" class="cbox">
+                <div class="bg">
+                    <label for="cbox6" class="label label6"></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="block block7">
+            <div class="wrapper7">
+                <input type="checkbox" name="check" id="cbox7" class="cbox">
+                <label for="cbox7" class="label label7">
+                    <div class="circle"></div>
+                </label>
+            </div>
+        </div>
+
+        <div class="block block8">
+            <div class="wrapper8">
+                <input type="checkbox" name="check" id="cbox8" class="cbox">
+                <label for="cbox8" class="label label8">
+                    <div class="circle"></div>
+                </label>
+            </div>
+        </div>
+
+        <div class="block block9">
+            <div class="wrapper9">
+                <input type="checkbox" name="check" id="cbox9" class="cbox">
+                <label for="cbox9" class="label label9">
+                    <div class="circle"></div>
+                </label>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
