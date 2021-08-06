@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Switch</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #003566;
+        }
+
+        .block{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 5px;
+            margin: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            perspective: 200px;
+        }
+
+        .cbox{
+            display: none;
+        }
+
+        .block1 .cbox-label{
+            width: 150px;
+            height: 50px;
+            background-color: purple;
+            position: relative;
+            border-radius: 5px;
+        }
+
+        .block1 .text{
+            position: absolute;
+            height: 100%;
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 20px;
+            letter-spacing: 5px;
+        }
+
+        .block1 .text1{
+            left: 0px;
+            background-color: rgba(255, 0, 0, 0.726);
+        }
+
+        .block1 .text2{
+            right: 0px;
+            background-color: green;
+        }
+
+        .block1 .btn{
+            height: 50px;
+            width: 75px;
+            position: absolute;
+            background-color: darkorange;
+            left: 25px;
+            transform-origin: right;
+            transform-style: preserve-3d;
+            transition: all 1s ease;
+        }
+
+        #cbox1:checked ~ .btn{
+            transform: rotateY(180deg);
+        }
+
+
+        /* Style 2 */
+
+        .block2 .cbox-label{
+            width: 150px;
+            height: 50px;
+            background-color: purple;
+            position: relative;
+            border-radius: 5px;
+        }
+
+        .block2 .text{
+            position: absolute;
+            height: 100%;
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 20px;
+            letter-spacing: 5px;
+        }
+
+        .block2 .text1{
+            left: 0px;
+            background-color: rgba(255, 0, 0, 0.726);
+        }
+
+        .block2 .text2{
+            right: 0px;
+            background-color: green;
+        }
+
+        .block2 .btn{
+            height: 50px;
+            width: 75px;
+            position: absolute;
+            background-color: darkorange;
+            transform-style: preserve-3d;
+            transition: all 1s ease;
+        }
+
+        .block2 .btn1{
+            left: 25px;
+            transform-origin: left;
+        }
+
+        .block2 .btn2{
+            right: 25px;
+            transform-origin: right;
+            transform: rotateY(180deg);
+        }
+
+        #cbox2:checked ~ .btn1{
+            transform: rotateY(-180deg);
+        }
+
+        #cbox2:checked ~ .btn2{
+            transform: rotateY(0deg);
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="block block1">
+            <input type="checkbox" name="" id="cbox1" class="cbox">
+            <label for="cbox1" class="cbox-label">
+                <div class="text1 text">No</div>
+                <div class="text2 text">Yes</div>
+            </label>
+            <div class="btn"></div>
+        </div>
+
+        <div class="block block2">
+            <input type="checkbox" name="" id="cbox2" class="cbox">
+            <label for="cbox2" class="cbox-label">
+                <div class="text1 text">No</div>
+                <div class="text2 text">Yes</div>
+            </label>
+            <div class="btn btn1"></div>
+            <div class="btn btn2"></div>
+        </div>
+    </div>
+</body>
+</html>
