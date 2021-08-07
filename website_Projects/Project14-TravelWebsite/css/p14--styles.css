@@ -777,6 +777,247 @@ input, select{
 /* Recoomendations Section Ends */
 
 
+/* Testimonial Section */
+
+/* ------------------------ */
+.section{
+    padding-bottom: 10rem;
+}
+
+.testimonials--container{
+    width: 100%;
+    position: relative;
+    margin-top: 20rem;
+}
+
+.testimonials--tmText{
+    width: 100%;
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.tmText--title{
+    font-size: 3.5rem;
+    letter-spacing: 0.5rem;
+}
+
+.tmText--subtitle{
+    font-size: 2.2rem;
+    letter-spacing: 0.3rem;
+}
+/* ----------------------------- */
+
+
+.testimonials--container{
+    width: 100%;
+}
+
+.testimonials--slides{
+    width: 100%;
+    height: 60rem;
+    position: relative;
+    display: flex;
+}
+
+.slides--icon{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5rem;
+}
+
+.icon--block{
+    font-size: 5rem;
+    top: 50%;
+    position: absolute;
+
+}
+
+.slides--inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide{
+    width: 600px;
+    position: absolute;
+    opacity: 0;
+}
+
+.active{
+    opacity: 1;
+}
+
+.slide--content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #450dc9;
+    padding: 2rem;
+    border-radius: 2rem;
+    color: #fff;
+}
+
+.slide--img{
+    border-radius: 15rem;
+    height: 15rem;
+    width: 15rem;
+}
+
+.slide--text{
+    font-size: 1.6rem;
+    padding: 3rem 2rem 2rem;
+    line-height: 150%;
+    letter-spacing: 1.2px;
+}
+
+.slide--h4{
+    font-size: 2.2rem;
+    text-align: right;
+    width: 100%;
+    padding-right: 2rem;
+}
+
+.icon--right{
+    right: 20rem;
+}
+
+.icon--left{
+    left: 20rem;
+}
+
+/* Testimonial Section Ends */
+
+
+/* Contact */
+
+/* ------------------------ */
+.section{
+    padding-bottom: 10rem;
+}
+
+.contact--container{
+    width: 100%;
+    position: relative;
+    margin-top: 20rem;
+}
+
+.contact--ctnText{
+    width: 100%;
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.ctnText--title{
+    font-size: 3.5rem;
+    letter-spacing: 0.5rem;
+}
+
+.ctnText--subtitle{
+    font-size: 2.2rem;
+    letter-spacing: 0.3rem;
+}
+/* ----------------------------- */
+
+.contact--content{
+    background-color: #c90d9a;
+    color: #fff;
+    padding: 3rem 6rem;
+}
+
+.ctn--h2 {
+    font-size: 2rem;
+    letter-spacing: 0.5rem;
+    text-align: center;
+  }
+  
+.ctn--para {
+    margin: 1rem 0 2rem ;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 150%;
+    padding: 0 3rem;
+    font-weight: 300;
+}
+
+.contact--content{
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    width: 100%;
+}
+
+.content--right{
+    padding: 1.5rem;
+}
+  
+  .contact-form {
+    position: relative;
+    margin-top: 3rem;
+  }
+  
+  label{
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      width: 100%;
+    display: block;
+  }
+  
+  input::placeholder, textarea::placeholder,
+  input:placeholder-shown, textarea:placeholder-shown {
+    color: #450dc9;
+    font-size: 1.5rem;
+    letter-spacing: 1.4px;
+  }
+  
+  input, textarea {
+    font-weight: 500;
+    background: #FFAA4C;
+    padding: 2rem 1rem;
+    margin-bottom: 3rem;
+    outline: none;
+    border: none;
+  }
+  
+  textarea {
+    resize: none;
+    width: 100%;
+    display: block;
+  }
+
+  textarea::placeholder{
+    font-family: 'Raleway', sans-serif;
+  }
+  
+.btn {
+    text-transform: uppercase;
+    background: #FFAA4C;
+    color: #fff;
+    width: 10rem;
+    height: 3rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 0 1rem 1px #5076e0;
+  }
+  
+.btn:hover{
+    background-color: #5076e0;
+    box-shadow: 0 0 0.4rem 1px #FFAA4C;
+    color: #FFAA4C;
+}
+  
+
+
 /* .aboutUs{
     min-height: 100vh;
     display: grid;
