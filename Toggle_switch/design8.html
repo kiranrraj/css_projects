@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Toggle Switch</title>
     <style>
-        *{
+        * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
         }
 
-        .container{
+        .container {
             width: 100%;
             height: 100vh;
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(3, 200px);
+            grid-template-rows: repeat(3, 200px);
             justify-content: center;
-            align-items: center;
+            gap: 100px;
             background-color: #003566;
         }
 
-        .block{
+        .block {
             width: 200px;
             height: 200px;
-            background-color: rgb(255, 255, 255);
+            background-color: rgb(71, 137, 139);
+            box-shadow: 0 0 40px 1px #111;
             border-radius: 5px;
             margin: 50px;
             display: flex;
@@ -34,11 +38,11 @@
             perspective: 200px;
         }
 
-        .cbox{
+        .cbox {
             display: none;
         }
 
-        .block1 .cbox-label{
+        .block1 .cbox-label {
             width: 150px;
             height: 50px;
             background-color: purple;
@@ -46,10 +50,10 @@
             border-radius: 5px;
         }
 
-        .block1 .text{
+        .block1 .text {
             position: absolute;
-            height: 100%;
-            width: 50%;
+            height: 50px;
+            width: 75px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -58,35 +62,35 @@
             letter-spacing: 5px;
         }
 
-        .block1 .text1{
+        .block1 .text1 {
             left: 0px;
             background-color: rgba(255, 0, 0, 0.726);
         }
 
-        .block1 .text2{
+        .block1 .text2 {
             right: 0px;
             background-color: green;
         }
 
-        .block1 .btn{
+        .block1 .btn {
             height: 50px;
             width: 75px;
             position: absolute;
-            background-color: darkorange;
+            background-color: rgba(64, 10, 189, 0.877);
             left: 25px;
             transform-origin: right;
             transform-style: preserve-3d;
             transition: all 1s ease;
         }
 
-        #cbox1:checked ~ .btn{
+        #cbox1:checked~.btn {
             transform: rotateY(180deg);
         }
 
 
         /* Style 2 */
 
-        .block2 .cbox-label{
+        .block2 .cbox-label {
             width: 150px;
             height: 50px;
             background-color: purple;
@@ -94,10 +98,10 @@
             border-radius: 5px;
         }
 
-        .block2 .text{
+        .block2 .text {
             position: absolute;
-            height: 100%;
-            width: 50%;
+            height: 50px;
+            width: 75px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -106,47 +110,609 @@
             letter-spacing: 5px;
         }
 
-        .block2 .text1{
+        .block2 .text1 {
             left: 0px;
             background-color: rgba(255, 0, 0, 0.726);
         }
 
-        .block2 .text2{
+        .block2 .text2 {
             right: 0px;
             background-color: green;
         }
 
-        .block2 .btn{
+        .block2 .btn {
             height: 50px;
             width: 75px;
             position: absolute;
-            background-color: darkorange;
+            background-color: #fff;
             transform-style: preserve-3d;
             transition: all 1s ease;
         }
 
-        .block2 .btn1{
+        .block2 .btn1 {
             left: 25px;
             transform-origin: left;
         }
 
-        .block2 .btn2{
+        .block2 .btn2 {
             right: 25px;
             transform-origin: right;
             transform: rotateY(180deg);
         }
 
-        #cbox2:checked ~ .btn1{
+        #cbox2:checked~.btn1 {
             transform: rotateY(-180deg);
         }
 
-        #cbox2:checked ~ .btn2{
+        #cbox2:checked~.btn2 {
             transform: rotateY(0deg);
         }
 
+        /* Style 3*/
+
+        .cbox-label3 {
+            width: 160px;
+            height: 60px;
+            background: linear-gradient(to right, #aaa, red);
+            border-radius: 50px;
+            position: relative;
+            filter: drop-shadow(0px 0px 15px #111);
+            border: 5px solid #fff;
+            transition: background-color 300ms ease;
+        }
+
+        .text31 {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50px;
+        }
+
+        .text31:before,
+        .text31:after {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(17, 17, 17, 0.459);
+            font-size: 20px;
+            padding: 0 10px;
+        }
+
+        .text31:after {
+            right: 0px;
+            content: attr(data-2);
+        }
+
+        .text31:before {
+            left: 0px;
+            content: attr(data-1);
+        }
+
+        .btn31 {
+            width: 50px;
+            height: 50px;
+            left: 0;
+            background-color: #f8f7f8;
+            border-radius: 50px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: left 300ms cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        .btn31:before {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: red;
+            content: "";
+            border-radius: 50px;
+            box-shadow: 0 0 10px 3px rgb(221, 212, 212), 0 0 10px 6px red;
+        }
+
+        #cbox3:checked~.cbox-label3 {
+            background: linear-gradient(to left, #aaa, green);
+        }
+
+        #cbox3:checked~.cbox-label3 .btn31 {
+            left: 100px;
+        }
+
+        #cbox3:checked~.cbox-label3 .btn31:before {
+            background-color: green;
+            box-shadow: 0 0 10px 3px rgb(221, 212, 212), 0 0 10px 6px green;
+        }
+
+
+        /* Style 4 */
+
+        .cbox--label4 {
+            position: relative;
+            width: 120px;
+            height: 34px;
+            background: linear-gradient(to bottom, #bbb, #fff );
+            border-radius: 50px;
+            border: 2px solid #fff;
+            filter: drop-shadow(0px 0px 4px #ddd);
+        }
+
+        .text4 {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            width: 100%;
+            text-transform: uppercase;
+            border-radius: 50px;
+            transition: all 100ms linear;
+        }
+
+        #cbox4:checked~.text4 {
+            background: #55e12b;
+        }
+
+        .text4:before,
+        .text4:after {
+            position: absolute;
+            top: 25%;
+            transition: color 200ms ease-out;
+            font-size: 12px;
+            color: #555;
+            text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+            transition: all 100ms ease;
+        }
+
+        .text4:before {
+            content: attr(data-1);
+            left: 15px;
+            opacity: 0;
+        }
+
+        #cbox4:checked~.text4:before {
+            opacity: 1;
+        }
+
+        .text4:after {
+            content: attr(data-2);
+            right: 15px;
+        }
+
+        #cbox4:checked~.text4:after {
+            opacity: 0;
+        }
+
+        .btn41 {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(to bottom, #e7e407, #1ec8e6);
+            border-radius: 100%;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+            transition: all 300ms linear;
+        }
+
+        .btn41:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -6px 0 0 -6px;
+            width: 12px;
+            height: 12px;
+            background: rgb(209, 61, 61);
+            border-radius: 6px;
+            box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);
+            transition: all 300ms ease;
+        }
+
+        #cbox4:checked~.btn41 {
+            left: 86px;
+            box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        #cbox4:checked~.btn41:before {
+            background: green;
+        }
+
+
+
+        /* Style 5 */
+
+        .cbox--label5 {
+            position: relative;
+            width: 120px;
+            height: 34px;
+            background: linear-gradient(to bottom, #bbb, #fff);
+            border-radius: 50px;
+            border: 2px solid #f8f5f7;
+            filter: drop-shadow(0px 0px 4px #e7f0e8);
+            overflow: hidden;
+        }
+
+        .text5 {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            width: 100%;
+            text-transform: uppercase;
+            border-radius: 50px;
+            background-color: #07e725;
+            transition: all 100ms linear;
+        }
+
+        .text5:before,
+        .text5:after {
+            height: 100%;
+            width: 100%;
+            top: 0px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 20px;
+            padding-left: 10px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            transition: all 100ms linear;
+            color: #fff;
+        }
+
+        .text5:before{
+            content: attr(data-1);
+        }
+
+        .text5:after{
+            content: attr(data-2);
+        }
+
+        #cbox5:checked~.text5{
+            background-color: #ec1077;
+        }
+
+        #cbox5:checked~.text5::before{
+            transform: translateY(-100%);
+        }
+
+        #cbox5:checked~.text5::after{
+            transform: translateY(-100%);
+        }
+
+        .btn51 {
+            position: absolute;
+            right: 2px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 25px;
+            height: 25px;
+            background: linear-gradient(to right, #4ee707, #f5f4f4);
+            border-radius: 100%;
+            transition: all 300ms ease-in;
+            box-shadow: 0 0 10px 1px #111;
+        }
+
+        #cbox5:checked~.btn51 {
+            left: 50px;
+            background: linear-gradient(to left, #e70e07, #f3f7f8);
+        }
+
+
+        /* Style 6 */
+        .cbox--label6 {
+            position: relative;
+            width: 120px;
+            height: 34px;
+            background: linear-gradient(to bottom, #bbb, #ffd);
+            border-radius: 50px;
+            border: 2px solid #f8f5f7;
+            filter: drop-shadow(0px 0px 4px #e7f0e8);
+            overflow: hidden;
+        }
+
+        .text6 {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            width: 200%;
+            text-transform: uppercase;
+            border-radius: 50px;
+            background-color: #07e725;
+            display: flex;
+            transition: all 100ms ease-out;
+        }
+
+        .text6:before,
+        .text6:after {
+            height: 100%;
+            width: 120px;
+            display: inline-block;
+            display: flex;
+            align-items: center;
+            border-radius: 20px;
+            padding-left: 15px;
+            color: #fff;
+        }
+
+        .text6:before{
+            content: attr(data-1);
+        }
+
+        .text6:after{
+            content: attr(data-2);
+        }
+
+        #cbox6:checked~.text6{
+            background-color: #ec1077;
+            transform: translateX(-25%);
+        }
+
+        .btn61 {
+            position: absolute;
+            display: inline-block;
+            right: 2px;
+            top: 2px;
+            left: 90px;
+            width: 25px;
+            height: 25px;
+            background: linear-gradient(to right, #4ee707, #f5f4f4);
+            border-radius: 100%;
+            transition: all 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+            box-shadow: 0 0 10px 1px #111;
+        }
+
+        #cbox6:checked~.btn61 {
+            left: 2px;
+            background: linear-gradient(to left, #e70e07, #f3f7f8);
+        }
+
+        /* Style 7 */
+
+        .cbox--label7 {
+            position: relative;
+            width: 120px;
+            height: 30px;
+            border-radius: 5px;
+        }
+
+        .text7 {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            width: 100%;
+            text-transform: uppercase;
+            border-radius: 5px;
+            perspective: 100px;
+        }
+
+        .text7:before,
+        .text7:after {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            color: #fff;
+            backface-visibility: hidden;
+            transition: all 400ms linear;
+            border: 2px solid #f8f5f7;
+        }
+
+        .text7:before{
+            content: attr(data-1);
+            background-color: #07e725;
+            transform: rotateY(0deg);
+        }
+
+        .text7:after{
+            content: attr(data-2);
+            transform: rotateY(180deg);
+            background-color: #e70e07;
+        }
+
+        #cbox7:checked ~ .text7:after{
+            transform: rotateY(0deg);
+        }
+
+        #cbox7:checked ~ .text7:before{
+            transform: rotateY(-180deg);
+        }
+
+
+        /* Style 8 */
+
+        .cbox--label8 {
+            position: relative;
+            width: 120px;
+            height: 34px;
+            background: linear-gradient(to bottom, #bbb, #fff);
+            border-radius: 50px;
+            border: 2px solid #f8f5f7;
+            filter: drop-shadow(0px 0px 4px #1f221f);
+            overflow: hidden;
+        }
+
+        .text8 {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            width: 200%;
+            text-transform: uppercase;
+            border-radius: 50px;
+            background: linear-gradient(to left, rgb(250, 247, 247), #ec0a0a);
+            display: flex;
+            transition: all 100ms ease-out;
+        }
+
+        .text8:before,
+        .text8:after {
+            position: absolute;
+            height: 100%;
+            width: 30px;
+            display: flex;
+            align-items: center;
+            border-radius: 20px;
+            padding-left: 15px;
+            color: #fff;
+            transition: opacity 250ms linear;
+            opacity: 1;
+        }
+
+        .text8:before{
+            content: attr(data-1);
+            opacity: 0;
+        }
+
+        .text8:after{
+            content: attr(data-2);
+        }
+
+        #cbox8:checked ~ .text8{
+            background: linear-gradient(to left, rgb(250, 247, 247), green);
+        }
+
+        #cbox8:checked ~ .text8:before{
+            opacity: 1;
+        }
+
+        #cbox8:checked ~ .text8:after{
+            opacity: 0;
+        }
+
+        .btn81 {
+            position: absolute;
+            display: inline-block;
+            right: 2px;
+            top: 2px;
+            left: 90px;
+            width: 25px;
+            height: 25px;
+            background: rgb(243, 239, 239);
+            border-radius: 100%;
+            transition: all 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+            box-shadow: 0 0 10px 1px rgb(209, 194, 194);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dot{
+            width: 5px;
+            height: 5px;
+            background: #e7073f;
+            box-shadow: 0 0 10px 2px #e7073f;
+            border-radius: 10px;
+        }
+
+        #cbox8:checked ~ .btn81 .dot{
+            background: green;
+            box-shadow: 0 0 10px 2px green;
+        }
+
+         /* Style 9 */
+
+         .cbox--label9 {
+            position: relative;
+            width: 120px;
+            height: 34px;
+            background: linear-gradient(to bottom, #bbb, #fff);
+            border-radius: 50px;
+            border: 2px solid #f9f5f7;
+            filter: drop-shadow(0px 0px 4px #d7e4d7);
+            overflow: hidden;
+        }
+
+        .text9 {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            width: 200%;
+            text-transform: uppercase;
+            border-radius: 50px;
+            background: #eceeef;
+            display: flex;
+            transition: all 100ms ease-out;
+        }
+
+        .text9:before,
+        .text9:after {
+            position: absolute;
+            height: 100%;
+            width: 30px;
+            display: flex;
+            align-items: center;
+            border-radius: 20px;
+            padding-left: 15px;
+            transition: opacity 250ms linear;
+            opacity: 1;
+        }
+
+        .text9:before{
+            content: attr(data-1);
+            opacity: 0;
+        }
+
+        .text9:after{
+            content: attr(data-2);
+            color: rgba(31, 27, 27, 0.418);
+        }
+
+        #cbox9:checked ~ .text9{
+            background: linear-gradient(to left, rgb(250, 247, 247), green);
+        }
+
+        #cbox9:checked ~ .text9:before{
+            opacity: 1;
+            color: #fff;
+        }
+
+        #cbox9:checked ~ .text9:after{
+            opacity: 0;
+        }
+
+        .btn91 {
+            position: absolute;
+            display: inline-block;
+            right: 2px;
+            top: 2px;
+            left: 90px;
+            width: 25px;
+            height: 25px;
+            background: rgb(243, 239, 239);
+            border-radius: 100%;
+            transition: all 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+            box-shadow: 0 0 10px 1px rgb(209, 194, 194);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dot{
+            width: 5px;
+            height: 5px;
+            background: #e7073f;
+            box-shadow: 0 0 10px 2px #e7073f;
+            border-radius: 10px;
+        }
+
+        #cbox9:checked ~ .btn91 .dot{
+            background: green;
+            box-shadow: 0 0 10px 2px green;
+        }
 
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="block block1">
@@ -167,6 +733,68 @@
             <div class="btn btn1"></div>
             <div class="btn btn2"></div>
         </div>
+
+        <div class="block block3">
+            <input type="checkbox" name="" id="cbox3" class="cbox">
+            <label for="cbox3" class="cbox-label3">
+                <div class="text31" data-1="Off" data-2="On"></div>
+                <div class="btn31"></div>
+            </label>
+        </div>
+
+        <div class="block block4">
+            <label class="cbox--label4">
+                <input class="cbox" type="checkbox" id="cbox4" />
+                <span class="text4" data-1="On" data-2="Off"></span>
+                <span class="btn41"></span>
+            </label>
+        </div>
+
+        <div class="block block5">
+            <label class="cbox--label5">
+                <input class="cbox" type="checkbox" id="cbox5" />
+                <div class="text5" data-1="On" data-2="Off"></div>
+                <div class="btn51"></div>
+            </label>
+        </div>
+
+        <div class="block block6">
+            <label class="cbox--label6">
+                <input class="cbox" type="checkbox" id="cbox6" />
+                <div class="text6" data-1="On" data-2="Off"></div>
+                <div class="btn61"></div>
+            </label>
+        </div>
+
+        <div class="block block7">
+            <label class="cbox--label7">
+                <input class="cbox" type="checkbox" id="cbox7" />
+                <div class="text7" data-1="On" data-2="Off"></div>
+                <div class="btn71"></div>
+            </label>
+        </div>
+
+        <div class="block block8">
+            <label class="cbox--label8">
+                <input class="cbox" type="checkbox" id="cbox8" />
+                <div class="text8" data-1="On" data-2="Off"></div>
+                <div class="btn81">
+                    <div class="dot"></div>
+                </div>
+            </label>
+        </div>
+
+        <div class="block block9">
+            <label class="cbox--label9">
+                <input class="cbox" type="checkbox" id="cbox9" />
+                <div class="text9" data-1="On" data-2="Off"></div>
+                <div class="btn91">
+                    <div class="dot"></div>
+                </div>
+            </label>
+        </div>
+
     </div>
 </body>
+
 </html>
