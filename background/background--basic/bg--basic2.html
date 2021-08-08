@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Example</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(to right, #fdc830, #f37335);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .wrapper {
+            width: 100vw;
+            height: 600px;
+            display: grid;
+            grid-template-columns: repeat(2, 300px);
+            grid-template-rows: repeat(5, 300px);
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .block {
+            width: 250px;
+            height: 250px;
+            background: url('./img200.jpg') center center no-repeat #ff00ff;
+            box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            transition: all 300ms ease;
+            border: 10px dashed #111;
+            padding: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .block:before{
+            background: rgba(250, 250, 249, 0.5);
+            content: '';
+            display: block;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            z-index: -1;
+        }
+
+        .block:nth-child(1):hover{
+            background-origin: content-box;
+            background-position: top;
+        }
+
+        .block:nth-child(1) .text,
+        .block:nth-child(2) .text,
+        .block:nth-child(3) .text {
+            animation: 5s anim1 ease infinite;
+        }
+
+        .block:nth-child(2):hover {
+            background-origin: padding-box;
+            background-position: top;
+        }
+
+        .block:nth-child(3):hover {
+            background-origin: border-box;
+            background-position: top;
+        }
+
+        p {
+            position: absolute;
+            width: 100%;
+            bottom: 40px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .text {
+            color: #fff;
+            font-weight: 600;
+            letter-spacing: 2px;
+            background-color: rgba(17, 17, 17, 0.397);
+            padding: 5px;
+            position: absolute;
+            bottom: 20px;
+            opacity: 0;
+        }
+
+        @keyframes anim1 {
+            0%{
+                opacity: 0;
+            }
+
+            50%,100%{
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p>Background Position <br> Hover on Image</p>
+        <div class="wrapper">
+            <div class="block">
+                <div class="text">Content Box</div>
+            </div>
+            <div class="block">
+                <div class="text">Padding Box</div>
+            </div>
+            <div class="block">
+                <div class="text">Border Box</div>
+            </div>
+            <div class="block"></div>
+        </div>
+    </div>
+</body>
+
+</html>
