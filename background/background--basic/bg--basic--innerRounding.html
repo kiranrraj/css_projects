@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Border Styling</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(to right, #fdc830, #f37335);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .wrapper {
+            width: 100vw;
+            height: 600px;
+            display: grid;
+            grid-template-columns: repeat(4, 250px);
+            grid-template-rows: repeat(2, 250px);
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .block {
+            width: 250px;
+            height: 250px;
+            position: relative;
+            background: #ff00ffb9;
+            box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+
+        /* ---------------------------------- */
+
+        .block1:before {
+            width: calc(100% - 44px);
+            height: calc(100% - 44px);
+            content: "";
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #ff00bfb9;
+            border: 2px dashed #fff;
+            z-index: -1;
+        }
+
+
+        /* ---------------------------------- */
+
+        .block2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: #e2540d;
+        }
+
+        .innerBlock {
+            position: absolute;
+            width: calc(100% - 80px);
+            height: calc(100% - 80px);
+            background-color: rgb(218, 13, 40);
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .block2:before {
+            width: calc(100% - 40px);
+            height: calc(100% - 40px);
+            content: "";
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #ff73009a;
+            border: 1px dashed #fff;
+            z-index: -1;
+        }
+
+
+        /* ---------------------------------- */
+
+        .block3 {
+            outline: 2px dashed #fff;
+            outline-offset: -20px;
+        }
+
+
+        /* ---------------------------------- */
+
+        .block4 {
+            background-color: rgb(129, 12, 145);
+            width: 250px;
+            height: 250px;
+            box-shadow: 0 0 0px 10px rgb(240, 16, 16) inset,
+                0 0 0 20px #3b0de2 inset,
+                0 0 0 30px rgb(65, 231, 15) inset,
+                0 0 0 40px #fdc830 inset,
+                0 0 0 50px #0da6e2 inset;
+        }
+
+
+        /* ---------------------------------- */
+
+        .block5 {
+            border: solid 10px #1d06f0;
+            padding: 10px;
+            background-clip: content-box;
+            background-color: rgb(23, 201, 233);
+        }
+
+
+        /* ---------------------------------- */
+
+        .block6 {
+            background: #0da0e4;
+        }
+
+        .block6:before {
+            content: " ";
+            position: absolute;
+            z-index: -1;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            border: 10px solid #5405e7
+        }
+
+
+        /* ---------------------------------- */
+
+        .block7 {
+            padding: 20px;
+            background-image: linear-gradient(to bottom, rgb(158, 40, 255) 0%, rgb(13, 42, 206) 100%),
+                linear-gradient(to bottom, rgb(227, 240, 40) 0%, rgb(40, 210, 240) 100%);
+            background-clip: content-box, padding-box;
+        }
+
+
+        /* ---------------------------------- */
+
+        .block8 {
+            border: 20px solid rgba(255, 0, 255, 0.733);
+            background-clip: content-box;
+            padding: 40px;
+            box-shadow: inset 0 0 0 20px lightGreen;
+            background-color: #6730fd;
+        }
+
+
+        /* ---------------------------------- */
+
+        p {
+            position: absolute;
+            width: 100%;
+            bottom: 40px;
+            font-size: 35px;
+            text-align: center;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+
+        .text {
+            color: #fff;
+            font-weight: 600;
+            letter-spacing: 2px;
+            background-color: rgba(17, 17, 17, 0.397);
+            padding: 5px;
+            position: absolute;
+            bottom: 20px;
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p>Border Styling</p>
+        <div class="wrapper">
+            <div class="block block1">Simple Border</div>
+            <div class="block block2">
+                <div class="innerBlock">Nested Div</div>
+            </div>
+            <div class="block block3">Outline / Outline Offset</div>
+            <div class="block block4">Multiple Shadows</div>
+            <div class="block block5">Background Clip</div>
+            <div class="block block6">Negative Positioning</div>
+            <div class="block block7"></div>
+            <div class="block block8"></div>
+        </div>
+    </div>
+</body>
+
+</html>
