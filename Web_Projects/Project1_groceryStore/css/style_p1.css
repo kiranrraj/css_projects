@@ -1,0 +1,152 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+html{
+    font-family: 'Roboto', sans-serif;
+    font-size: 62.5%;
+    letter-spacing: 1.5;
+    line-height: 150%;
+}
+
+.container{
+    width: 100%;
+    max-width: 100vw;
+}
+
+.landing{
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-image: url('../image/hero1.jpg');
+    position: relative;
+}
+
+/* NavBar */
+.navBar{
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.navBar--1, 
+.navBar--2, 
+.navBar--social, 
+.navBar--links,
+.navBar--search,
+.nav--icon1{
+    display: flex;
+    color: #fff;
+    font-size: 1.6rem;
+}
+
+/* Section---1 */
+.navBar--1{
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.nav--icon1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav--search{
+    /* background-color: slateblue; */
+}
+
+.icon--text{
+    font-size: 1.2rem;
+}
+
+.search--btn{
+    padding: 0.5rem 1rem;
+    margin-left: -1rem;
+    box-shadow: 0 0 1rem 0 springgreen;
+    outline: none;
+    border: none;
+}
+
+.search--text{
+    padding: 0 1rem 0 0.5rem;
+    outline: none;
+    border: none;
+}
+
+.search--btn:hover{
+    background-color: springgreen;
+    color: #fff;
+}
+
+/* Section---2 */
+
+.navBar--2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50%;
+}
+
+.nav--icon2{
+    display: none;
+    padding: 0 2rem;
+}
+
+.nav--icon2:hover{
+    color: springgreen;
+}
+
+.navBar--social{
+    padding: 0 2rem;
+}
+
+.navBar--social i {
+    padding: 0 1rem;
+    transition: all 300ms ease;
+}
+
+.navBar--social i:hover{
+    color: springgreen;
+    transform: scale(1.5);
+}
+
+.navBar--links .link{
+    padding: 0 2rem;
+    transition: all 300ms ease;
+}
+
+.navBar--links .link:hover{
+    color: springgreen;
+    transform: scale(1.2);
+}
+/* NavBar */
+
+.landing--text{
+    font-size: 3rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.landing--text{
+    
+}

@@ -1,0 +1,179 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+html{
+    font-size: 100%;
+    font-family: 'Raleway', sans-serif;
+}
+
+img{
+    width: 100%;
+}
+
+
+/* Slide Show Stars */
+.header{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.header--slideShow{
+    width: 100%;
+    height: 100vh;
+    background-color: slateblue;
+    position: relative;
+}
+
+.slideShow--content{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.slideShow--content:nth-child(1){
+    background-image: url('../images/carousel_1.jpg');
+}
+
+.slideShow--content:nth-child(2){
+    background-image: url('../images/carousel_2.jpg');
+}
+
+.slideShow--content:nth-child(3){
+    background-image: url('../images/carousel_3.jpg');
+}
+
+.slideShow--content:nth-child(4){
+    background-image: url('../images/carousel_4.jpg');
+}
+
+.slideShow--content:nth-child(5){
+    background-image: url('../images/carousel_5.jpg');
+}
+
+.block{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.content--number{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: #fff;
+}
+
+.content--info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background-color: rgba(255,255,255,0.2);
+    padding: 20px;
+}
+
+.info--head{
+    font-size: 45px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.info--sub{
+    font-size: 30px;
+    color: #fff;
+    padding-bottom: 1em;
+}
+
+.info--para{
+    font-size: 16px;
+    letter-spacing: 1.2px;
+    line-height: 150%;
+    width: 60%;
+}
+
+.slideShow--btn{
+    width: 40px;
+    height: 40px;
+    z-index: 10;
+    position: absolute;
+    font-size: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
+.slideShow--btn i{
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.btn--left{
+    left: 50px;
+}
+
+.btn--right {
+    right: 50px;
+}
+
+.indicators{
+    position: absolute;
+    z-index: 20;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.indicator{
+    display: block;
+    margin: 0 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px 1px gold;
+}
+
+.activeDot{
+    background-color: gold;
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+/* Slide Show Ends */
+
+
+/* Go Button */
+.goBtn{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+/* Go Button */
