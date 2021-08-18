@@ -1,3 +1,11 @@
+:root{
+    --color--main: #F43B86;
+    --color--sub: #FFE459;
+    --color--dark1: #3D087B;
+    --color--dark2: #11052C;
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -16,8 +24,6 @@ html {
 
 .section {
     width: 100%;
-    height: 100vh;
-    min-height: 650px;
     padding: 5rem;
 }
 
@@ -88,18 +94,17 @@ html {
     font-size: 1.6rem;
     margin-right: 1rem;
     text-decoration: none;
-    color: #ffab23;
+    color: var(--color--main);
     display: block;
     position: relative;
 }
 
-.nav--container a:after,
 .nav--container a:before{
     content: "";
     position: absolute;
     width: 0%;
     height: 0%;
-    background-color: #ffab23;
+    background-color: var(--color--sub);
     transition: all 300ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
 }
 
@@ -108,13 +113,8 @@ html {
     left: 0;
 }
 
-.nav--container a:after{
-    right: 0;
-    top: 2rem;
-}
-
 .nav--container a:hover{
-    color: #fff;
+    color: var(--color--sub);
 }
 
 .nav--container a:hover:after,
@@ -122,9 +122,11 @@ html {
     width: 100%;
     height: 2px;
 }
+
 /* Navigation Bar Ends */
 
 
+/* Landing Page */
 .landing--text {
     display: flex;
     flex-direction: column;
@@ -135,53 +137,36 @@ html {
     background-color: rgba(0, 0, 0, .3);
 }
 
-.text--h1 {
-    text-transform: uppercase;
-    font-size: 5rem;
-    color: #fff;
-    position: relative;
+.text--blk{
+    text-align: center;
 }
 
-.text--h1 span{
-    display: inline-block;
-    color: #ffab23;
-    text-align: center;
+.text--blk:hover .text--h1{
+    text-shadow: 0 0 2px var(--color--main);
+}
+
+.text--h1 {
+    text-transform: uppercase;
+    font-size: 8rem;
+    letter-spacing: .5rem;
+    position: relative;
+    color: var(--color--sub);
+    text-shadow:  4px 4px 2px var(--color--main);
     transition: all 500ms ease;
 }
 
-.text--h1:before{
-    content: "";
-    position: absolute;
-    top: 1rem;
-    left: -1.5rem;
-    width: 1rem;
-    height: 5rem;
-    background-color: #ff2348;
-    transition: all 300ms ease;
-}
-
-.text--h1:hover:before{
-    left: 100%;
-    opacity: 0;
-}
-
-.text--h1:hover span{
-    color: #ff2348;
-}
-
 .text--h2 {
-    letter-spacing: 0.5rem;
+    letter-spacing: 0.3rem;
     font-weight: 400;
     font-size: 2.5rem;
     color: #fff;
-    margin-top: 0.3rem;
     text-transform: uppercase;
+    position: relative;
 }
 
 .text--h2 span{
-    color: #ffab23;
+    color: var(--color--main);
 }
-
 .text--ctn{
     display: flex;
     justify-content: center;
@@ -192,22 +177,24 @@ html {
 
 .text--btn {
     font-size: 1.6rem;
+    width: 15rem;
     margin: 0 1rem;
 	border-radius:6px;
 	border:1px solid #ffaa22;
+    text-align: center;
 	display:inline-block;
+    letter-spacing: 0.2rem;
 	cursor:pointer;
-	color:#111;
-	font-weight:bold;
+	color:var(--color--dark2);
 	padding:6px 24px;
-	text-shadow:0px 1px 0px #ffee66;
-    box-shadow: 0px 1px 0px 0px #fff6af;
-    background-color:#ffec64;
-	background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+    box-shadow: 0px 1px 0px 0px #111;
+    background-color:var(--color--sub);
+	background:linear-gradient(to bottom, var(--color--sub) 5%, var(--color--main) 100%);
 }
 .text--btn:hover {
-	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
-	background-color:#ffab23;
+	background:linear-gradient(to bottom, var(--color--main) 5%, var(--color--sub) 100%);
+	background-color:var(--color--main);
+    color: #fff;
 }
 .text--btn:active {
 	position:relative;
@@ -215,7 +202,7 @@ html {
 }
 
 /*  */
-/* about */
+/* About Section */
 /*  */
 
 .about {
@@ -224,7 +211,6 @@ html {
     background-attachment: fixed;
     color: #111;
     padding-bottom: 3rem;
-    min-height: 120rem;
 }
 
 .about--container{
@@ -249,6 +235,7 @@ html {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-gap: 4rem;
+    padding-bottom: 10rem;
 }
 
 .features--card{
