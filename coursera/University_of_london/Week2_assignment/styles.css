@@ -1,0 +1,21 @@
+/** This is a comment that the browser will ignore,
+* Put your CSS code into this file
+*/
+
+/* Styling body of the page */
+body{
+    background:royalblue; /* Change background color to royalblue */
+}
+
+/* Styling h1 tag */
+h1{
+    background-color: yellow; /* Change background color to yellow */
+    color: black;             /* Change font color to black */
+    font-family: monospace;     /* Change font-family to monospace*/
+    font-size: 20px;            /* Change font-size to 20px*/
+}
+
+/* Styling h1 tag on hover */
+h1:hover{
+    color: crimson; /* Change font color to crimson on hover*/
+}
