@@ -238,6 +238,85 @@ section{
     width: 600px;
 }
 
+/* Skills */
+
+.skills{
+    background-color: cornflowerblue;
+}
+
+.skills--container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding:2rem 5rem;
+}
+
+.skills--cards{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.scard{
+    font-size: 2rem;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+    border-radius: 1.5rem;
+    width: 30rem;
+    height: 25rem;
+    position: relative;
+}
+
+.scard--logo{
+    font-size: 6rem;
+    margin-bottom: 3rem;
+    color: cornflowerblue;
+}
+
+.scard--heading{
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: cornflowerblue;
+}
+
+.scard--btn{
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    font-size: 1.5rem;
+    color: cornflowerblue;
+}
+
+.scard--btn i{
+    color: #111;
+    transition: transform 200ms ease;
+}
+
+.scard--btn:hover{
+    color: deeppink;
+}
+
+.scard--btn:hover i{
+    transform: translateX(1rem);
+    animation: blinkBtn infinite ease 500ms;
+}
+
+@keyframes blinkBtn {
+    0%, 100%{
+        opacity: 1;
+        color: deeppink;
+    }
+
+    50%{
+        opacity: 0;
+    }
+}
+
 /* Blog */
 
 .blog{
@@ -336,4 +415,114 @@ section{
 .details i{
     color: rgb(230, 188, 24);;
     padding-right: 0.5rem;
+}
+
+/* Portfolio */
+
+.portfolio{
+    /* background-color: deepskyblue; */
+}
+
+.portfolio--content{
+    padding: 2rem;
+}
+
+.portfolio--cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 2rem 5rem;
+}
+
+.pcard{
+    padding: 2rem;
+    border-radius: 2rem;
+    background-color: dodgerblue;
+    height: 30rem;
+    width: 35rem;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.pcard:nth-child(1){
+    background-image: url('./images/hero1.jpg');
+}
+
+.pcard:nth-child(2){
+    background-image: url('./images/hero1.jpg');
+}
+
+.pcard:nth-child(3){
+    background-image: url('./images/hero1.jpg');
+}
+
+.pcard:nth-child(4){
+    background-image: url('./images/hero1.jpg');
+}
+
+.pcard:nth-child(5){
+    background-image: url('./images/hero1.jpg');
+}
+
+.pcard:nth-child(6){
+    background-image: url('./images/hero1.jpg');
+}
+
+.pcard--text{
+    background-color: rgb(8, 99, 204);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 2rem;
+    top: 60%;
+    color: #fff;
+}
+
+.pcard--head{
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: absolute;
+    top: -120%;
+}
+
+.pcard--desc{
+    font-size: 1.6rem;
+    line-height: 110%;
+    letter-spacing: 1.2px;
+}
+
+.pcard--overlay{
+    display: none;
+}
+
+.pcard:hover .pcard--overlay{
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(1,1,1,0.6);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pcard--btn{
+    color: #fff;
+    font-size: 2.5rem;
+    transition: all 300ms ease;
+}
+
+.pcard--btn:hover{
+    color: firebrick;
+}
+
+.pcard--btn:hover i{
+    transform: translateX(1rem);
+    animation: blinkBtn infinite ease 500ms;
 }
