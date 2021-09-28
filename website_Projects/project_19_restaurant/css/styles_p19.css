@@ -1,0 +1,416 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Header */
+header{
+    width: 100%;
+    height: 100vh;
+    background-image: url('../images/hero_img.jpg');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.logo{
+    font-size: 2rem;
+    letter-spacing: 1.2px;
+}
+
+.navBar{
+    height: 70px;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+}
+
+.navList{
+    display: flex;
+    font-size: 1.8rem;
+}
+
+.navItem a{
+    padding: 0 1rem;
+}
+
+.navBar i{
+    font-size: 3rem;
+    display: none;
+}
+
+.collapse{
+    background-color: darkorange;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+
+.home__content{
+    width: 100%;
+    min-height: calc(100vh - 70px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.3);
+    color: #fff;
+}
+
+.home__content--heading{
+    font-size: 5rem;
+    letter-spacing: 2px;
+}
+
+.home__content--subHeading{
+    font-size: 2rem;
+    margin-bottom: 4rem;
+    letter-spacing: 1.2px;
+}
+
+.home__content--btn{
+    outline: none;
+    border: none;
+    background: transparent;
+    font-size: 1.6rem;
+    background-color: darkorange;
+    padding: 1rem 3rem;
+    border-radius: 2rem;
+    color: #fff;
+    letter-spacing: 1.4px;
+    border: 2px solid darkorange;
+    text-shadow: 0 0 1px #fff;
+    box-shadow: 0 0 10px 1px #111;
+    transition: all 200ms ease;
+}
+
+.home__content--btn:hover{
+    color: darkorange;
+    background-color: #fff;
+    border: 2px solid darkorange;
+    box-shadow: none;
+}
+
+/* Header */
+
+/* Section General */
+
+.section{
+    width: 100%;
+    min-height: 100vh;
+    margin-bottom: 10rem;
+}
+/* Section General */
+
+/* Heading General */
+.heading{
+    text-align: center;
+    font-size: 4rem;
+    letter-spacing: 2px;
+    padding-bottom: 2rem;
+    position: relative;
+}
+
+.heading span{
+    color: darkviolet;
+}
+
+.heading:after,
+.heading:before{
+    position: absolute;
+    content: "";
+    display: block;
+    height: 0.4rem;
+    width: 10%;
+    background-color: darkviolet;
+}
+
+.heading:after{
+    left: 50%;
+}
+
+.heading:before{
+    top: 0;
+    right: 50%;
+}
+/* Heading General */
+
+/* About */
+.about{
+    padding: 0 2rem;
+}
+
+.about__content{
+    padding-top: 10rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.about--atext{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 5rem;
+}
+
+.atext--left,
+.atext--right{
+    width: 50%;
+    padding: 1rem 2rem;
+}
+
+.atext--left p{
+    font-size: 1.8rem;
+    line-height: 140%;
+    letter-spacing: 1.2px;
+    margin-bottom: 3rem;
+}
+
+.atext--right img{
+    max-width: 100%;
+}
+
+/* Menu */
+.menu--cards{
+    display: grid;
+    padding: 2rem;
+    grid-template-columns: repeat(3, 30rem);
+    grid-template-rows: repeat(2, 45rem);
+    justify-content: center;
+    align-content: center;
+    grid-gap:10rem;
+    margin: 0 auto;
+}
+
+.mcard{
+    background-color: rgb(238, 238, 230);
+    height: 45rem;
+    width: 30rem;
+    position: relative;
+    border-radius: 2rem;
+    box-shadow:  0 0 1rem 0.1rem rgb(97, 95, 95);
+}
+
+.mcard--heading{
+    padding: 1rem 0rem;
+    color: rgb(19, 19, 20);
+    font-size: 2.5rem;
+    text-align: center;
+    /* background-color: khaki; */
+    width: 100%;
+}
+
+.mcard img{
+    width: 100%;
+}
+
+.mcard--foot{
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    line-height: 150%;
+}
+
+.foot--name{
+    font-weight: 600;
+    font-size: 3rem;
+    margin: 2rem 0;
+}
+
+.gallery{
+    padding: 10rem 5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 30rem);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 2rem;
+}
+
+.gallery--img{
+    position: relative;
+}
+
+.gallery--img img{
+    max-width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.gallery--img img:hover{
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.gallery--img .overlay{
+    transition: all 300ms ease;
+    overflow: hidden;
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    border-radius: 100%;
+}
+
+.gallery--img:hover .overlay{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 0px;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 10;
+}
+/* Menu End */
+
+
+/* Specials*/
+.specials--cards{
+    display: grid;
+    padding: 2rem;
+    grid-template-columns: repeat(3, 30rem);
+    grid-template-rows: repeat(2, 45rem);
+    justify-content: center;
+    align-content: center;
+    grid-gap:10rem;
+    margin: 0 auto;
+}
+
+.scard{
+    background-color: rgb(238, 238, 230);
+    height: 50rem;
+    width: 30rem;
+    position: relative;
+    border-radius: 2rem;
+    box-shadow:  0 0 1rem 0.1rem rgb(97, 95, 95);
+}
+
+.scard--heading{
+    padding: 1rem 0rem;
+    color: rgb(19, 19, 20);
+    font-size: 2.5rem;
+    text-align: center;
+    width: 100%;
+}
+
+.scard img{
+    width: 100%;
+}
+
+.scard--foot{
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    line-height: 150%;
+}
+
+.sfoot--name{
+    font-weight: 600;
+    font-size: 3rem;
+    margin: 2rem 0;
+}
+/* Menu End */
+
+/* yourWords */
+
+.yourWords{
+    padding: 5rem 0;
+}
+
+.yourWords__content{
+    /* background-color: rgba(0, 0, 0, 0.19); */
+}
+
+.yourWords--subHeading{
+    text-align: center;
+    font-size: 3rem;
+    margin: 5rem 0;
+    letter-spacing: 1.5px;
+    color: #fff;
+    font-weight: 400;
+}
+
+.slideShow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    position: relative;
+}
+
+.slide{
+    display: none;
+    width: 60rem;
+    height: 20rem;
+    padding: 2rem;
+    background-color: tomato;
+    color: #fff;
+    border-radius: 2rem;
+    padding: 5rem;
+}
+
+.author{
+    color: rgb(238, 245, 238);
+    text-shadow: 0 0 5px #111;
+    margin-top: 1rem;
+    font-size: 2.5rem;
+    text-align: right;
+}
+
+.active{
+    display: block;
+    transition: all 300ms ease;
+}
+
+.prev, .next{
+    position: absolute;
+    font-size: 5rem;
+}
+
+.prev:hover,
+.next:hover{
+    color: springgreen;
+    cursor: pointer;
+}
+
+.prev{
+    left: 5rem;
+}
+
+.next{
+    right: 5rem;
+}
+
+/* yourWords */
+
+/* Contact */
+
+.contact--form{
+    background-color: orange;
+    padding: 5rem;
+    display: flex;
+    height: 100vh;
+}
+.form--left,
+.form--right{
+    width: 50%;
+}
+/* Contact */
