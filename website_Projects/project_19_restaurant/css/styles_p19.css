@@ -120,7 +120,6 @@ header{
 
 .section{
     width: 100%;
-    min-height: 100vh;
     margin-bottom: 10rem;
 }
 /* Section General */
@@ -131,6 +130,7 @@ header{
     font-size: 4rem;
     letter-spacing: 2px;
     padding-bottom: 2rem;
+    margin-bottom: 5rem;
     position: relative;
 }
 
@@ -157,6 +157,7 @@ header{
     right: 50%;
 }
 /* Heading General */
+
 
 /* About */
 .about{
@@ -192,6 +193,8 @@ header{
 .atext--right img{
     max-width: 100%;
 }
+/* About End*/
+
 
 /* Menu */
 .menu--cards{
@@ -206,7 +209,6 @@ header{
 }
 
 .mcard{
-    background-color: rgb(238, 238, 230);
     height: 45rem;
     width: 30rem;
     position: relative;
@@ -214,16 +216,29 @@ header{
     box-shadow:  0 0 1rem 0.1rem rgb(97, 95, 95);
 }
 
+.macrd--content{
+    background-color: rgb(238, 238, 230);
+    width: 100%;
+    height: 100%;
+}
+
 .mcard--heading{
     padding: 1rem 0rem;
     color: rgb(19, 19, 20);
     font-size: 2.5rem;
     text-align: center;
-    /* background-color: khaki; */
+    width: 100%;
+    background-color: orange;
+    border-radius:2rem 2rem 0 0;
+    height: 5rem;
+}
+
+.mcard--img{
+    height: 20rem;
     width: 100%;
 }
 
-.mcard img{
+.mcard--img img{
     width: 100%;
 }
 
@@ -231,6 +246,8 @@ header{
     padding: 1rem 2rem;
     font-size: 1.6rem;
     line-height: 150%;
+    background-color: orangered;
+    border-radius: 0 0 2rem 2rem;
 }
 
 .foot--name{
@@ -271,13 +288,25 @@ header{
     border-radius: 100%;
 }
 
+.overlay h4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: rgb(238, 235, 231);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 2rem;
+    height: 100%;
+}
+
 .gallery--img:hover .overlay{
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     border-radius: 0px;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.4);
     z-index: 10;
 }
 /* Menu End */
@@ -286,13 +315,12 @@ header{
 /* Specials*/
 .specials--cards{
     display: grid;
-    padding: 2rem;
+    padding: 5rem 0rem;
     grid-template-columns: repeat(3, 30rem);
-    grid-template-rows: repeat(2, 45rem);
     justify-content: center;
     align-content: center;
     grid-gap:10rem;
-    margin: 0 auto;
+    background-color: orange;
 }
 
 .scard{
@@ -327,29 +355,28 @@ header{
     font-size: 3rem;
     margin: 2rem 0;
 }
-/* Menu End */
+/* Specials End */
+
 
 /* yourWords */
-
 .yourWords{
     padding: 5rem 0;
 }
 
-.yourWords__content{
-    /* background-color: rgba(0, 0, 0, 0.19); */
-}
-
 .yourWords--subHeading{
     text-align: center;
+    text-transform: capitalize;
     font-size: 3rem;
-    margin: 5rem 0;
     letter-spacing: 1.5px;
-    color: #fff;
     font-weight: 400;
+    margin-bottom: 5rem;
 }
 
 .slideShow{
+    background-color: rgba(153, 21, 241, 0.575);
+    padding: 5rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 2rem;
@@ -361,7 +388,7 @@ header{
     width: 60rem;
     height: 20rem;
     padding: 2rem;
-    background-color: tomato;
+    background-color: rgb(155, 12, 221);
     color: #fff;
     border-radius: 2rem;
     padding: 5rem;
@@ -403,14 +430,85 @@ header{
 
 /* Contact */
 
-.contact--form{
-    background-color: orange;
-    padding: 5rem;
-    display: flex;
-    height: 100vh;
+.contact{
+    margin-bottom: 0rem;
 }
+
+.contact--form{
+    display: flex;
+    justify-content: space-around;
+    height: 100vh;
+    padding: 5rem;
+    background-image: radial-gradient(circle at top left, rgb(36, 82, 165) 0%, rgb(36, 82, 165) 5%,rgb(47, 100, 177) 5%, rgb(47, 100, 177) 10%,rgb(57, 117, 190) 10%, rgb(57, 117, 190) 15%,rgb(68, 135, 202) 15%, rgb(68, 135, 202) 20%,rgb(79, 152, 215) 20%, rgb(79, 152, 215) 25%,rgb(90, 170, 227) 25%, rgb(90, 170, 227) 30%,rgb(100, 187, 240) 30%, rgb(100, 187, 240) 35%,rgb(111, 205, 252) 35%, rgb(111, 205, 252) 100%);
+}
+
 .form--left,
 .form--right{
-    width: 50%;
+    width: 40%;
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5rem;
+    background-image: radial-gradient(circle at center left, rgb(46, 46, 46) 0%, rgb(46, 46, 46) 6%,rgb(41, 41, 41) 6%, rgb(41, 41, 41) 27%,rgb(36, 36, 36) 27%, rgb(36, 36, 36) 42%,rgb(31, 31, 31) 42%, rgb(31, 31, 31) 63%,rgb(25, 25, 25) 63%, rgb(25, 25, 25) 64%,rgb(20, 20, 20) 64%, rgb(20, 20, 20) 71%,rgb(15, 15, 15) 71%, rgb(15, 15, 15) 100%);
 }
+
+
+.form--left h3,
+.form--right h3{
+    color: #fff;
+    letter-spacing: 2px;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.form--left input,
+.form--left textarea,
+.form--left button{
+    border:none;
+    outline:none;
+    background-color: powderblue;
+    font-size: 1.6rem;
+    padding: 1rem 1.5rem;
+    margin-bottom: 2rem;
+    width: 30rem;
+    border-radius: 5rem;
+}
+
+.form--left textarea{
+    resize: none;
+    border-radius: 2rem;
+    height: 20rem;
+}
+
+.right--card{
+    display: flex;
+    background-color: powderblue;
+    padding: 3rem;
+    width: 30rem;
+    height: 12rem;
+    border-radius: 2rem;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.right--card i {
+    font-size: 5rem;
+    padding-right: 2rem;
+    color: rgb(255, 102, 0);
+    text-shadow: 0 0 4px #111;
+}
+
 /* Contact */
+
+/* Footer */
+footer{
+    background-color: #111;
+    font-size: 1.6rem;
+    text-align: center;
+    padding: 1rem;
+    color: #fff;
+    letter-spacing: 1.5px;
+}
+/* Footer */
