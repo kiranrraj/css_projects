@@ -6,74 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Explorer</title>
-    <link rel="stylesheet" href="./css/p3--style.css">
+    <meta name="description" content="Travel agency website">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="./images/logo/logo.svg">
     <script src="https://kit.fontawesome.com/a7e9f794eb.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Orbitron&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/p3--style.css">
 </head>
 
 <body>
-    <!-- Header Starts -->
-    <header class="navBar">
-        <div class="navBar--logo"><a href="#home">Explorer</a></div>
-        <div class="navBar--content">
-            
-            <ul class="navBar--links">
-                <li class="link"><a href="#home">Home</a></li>
-                <li class="link"><a href="#book">Booking</a></li>
-                <li class="link"><a href="#packages">Packages</a></li>
-                <li class="link"><a href="#gallery">Gallery</a></li>
-                <li class="link"><a href="#contact">Contact</a></li>
+    <header class="header">
+        <nav>
+            <h1 class="logo">The Explorer</h1>
+            <ul class="nav--list">
+                <li><a href="#locations" class="nav--item">Locations</a></li>
+                <li><a href="#benefits" class="nav--item">Benefits</a></li>
+                <li><a href="#contact" class="nav--item">Contact</a></li>
             </ul>
-
-            <div class="navBar--icons1 icon">
-                <i class="far fa-user"></i>
-                <i class="fas fa-search"></i>
-            </div>
-
-            <div class="navBar--search">
-                <input type="text" class="input--search">
-                <i class="fas fa-search"></i>
-                <i class="fas fa-times search--close"></i>
-            </div>
-            <div class="navBar--close">
-                <i class="fas fa-times"></i>
-            </div>
-        </div>
-        <div class="navBar--icons2 icon">
-            <i class="fas fa-bars"></i>
-        </div>
-
+        </nav>
     </header>
-
-    <div class="form--login">
-        <i class="fas fa-times login--close"></i>
-        <form action="#" class="login">
-            <div class="login--content">
-                <div class="login--head block">Login</div>
-                <div class="login--inputs">
-                    <div class="inputs--username block">
-                        <input type="text" name="username" placeholder="User Name">
-                    </div>
-                    <div class="inputs--password block">
-                        <input type="password" name="password" placeholder="Password">
-                    </div>
-                    <div class="inputs--btn block">
-                        <input type="submit" value="Submit" class="btn">
-                    </div>
-                </div>
-                <div class="login--links block">
-                    <div class="links--cbox login--link">
-                        <label for="cbox">Remember Me</label>
-                        <input type="checkbox" id="cbox">
-
-                    </div>
-                    <p class="links--forget login--link">Forget Password ? <a href="#" class="forget">Click Here</a></p>
-                    <p class="links--create login--link">Don't have an account ?<a href="#" class="create">Click
-                            Here</a></p>
-                </div>
-            </div>
-        </form>
-    </div>
-    <!-- Header Ends -->
+    <section class="hero">
+        <h2>Explore The World</h2>
+        <h3>Start Exploring The World Safely and Happily At Affordable Rate</h3>
+    </section>
     <script src="./js/p3--javascript.js"></script>
 </body>
 
