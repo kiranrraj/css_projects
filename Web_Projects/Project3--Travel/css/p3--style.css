@@ -1,3 +1,9 @@
+/* Colors */
+/* Color1: #FF2442 */
+/* Color2: #FFB830 */
+/* Color3: #FFEDDA */
+/* Color4: #3DB2FF */
+
 /* General Styling */
 
 *{
@@ -27,12 +33,12 @@ a{
 /* General Styling Ends */
 
 .header{
-    background-color: #000000;
-    color: #F0A500;
+    color: #FFB830;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 8rem;
+    background: #1d1c1c;
 }
 
 nav{
@@ -59,14 +65,37 @@ nav{
     font-size: 1.4rem;
     letter-spacing: 2px;
     text-transform: uppercase;
+    position: relative;
 }
 
+.nav--list a::before{
+    content: "";
+    position: absolute;
+    bottom: 1.5rem;
+    left: 2rem;
+    width: 0%;
+    height: 2px;
+    background-color: #FF2442;
+    transition: width 200ms ease;
+}
+
+.nav--list a:hover:before{
+    width: calc(100% - 4rem)
+}
+
+.nav--list li:hover{
+    color: #FF2442;
+}
+
+/* Hero Section */
+
 .hero{
-    background: linear-gradient(to top, #111, transparent), url('../images/hero1.jpg');
+    background: linear-gradient(to top, rgba(17, 17, 17, 0.8), transparent), url('../images/hero1.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 92vh;
+    height: 600px;
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -79,6 +108,7 @@ nav{
     letter-spacing: 5px;
     font-weight: 400;
     text-transform: uppercase;
+    text-shadow: 0 0 1px #111;
 }
 
 .hero h3{
@@ -86,10 +116,349 @@ nav{
     letter-spacing: 1.2px;
     font-weight: 400;
     text-transform: capitalize;
+    text-shadow: 0 0 1px #111;
 }
+/* Hero Section End*/
+
+/* Features Card Section */
+
+.featureCards{
+    width: 100%;
+    height: 20rem;
+    margin: -10rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    position: relative;
+}
+
+.featureCards--fcards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 2rem;
+}
+
+.fcard{
+    width: 30rem;
+    background-color: #FFEDDA;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    margin: 0 2rem;
+    padding: 4rem;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem 1px #111;
+    transition: all 300ms ease;
+}
+
+.fcard:hover{
+    background-color: #3DB2FF;
+    text-shadow: 0 0 1px rgb(209, 201, 201);
+}
+
+.fcard h3{
+    font-size: 2rem;
+    letter-spacing: 1.4px;
+    text-shadow: 0 0 1px #111;
+}
+
+.fcard p {
+    font-size: 1.6rem;
+    padding: 2rem;
+    text-align: center;
+    line-height: 150%;
+    text-shadow: 0 0 1px #111;
+}
+/* Features Card Section Ends*/
+
+/* Location Section */
+.locations{
+    min-height: 100vh;
+    background: linear-gradient(to bottom, rgba(17, 17, 17, 0.8), transparent),url('../images/location_hero.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    position: relative;
+}
+
+.locations--Lcontent{
+    position: relative;
+    top: 20rem;
+    text-align: left;
+    margin-left: 3rem;
+    min-height: 100vh;
+}
+
+.Lcontent--heading{
+    font-size: 4rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.Lcontent--subHeading{
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: 1.2px;
+}
+
+.quickBar{
+    position: absolute;
+    bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 20rem);
+    min-height: 5rem;
+    margin: auto 10rem;
+    border-radius: 2rem;
+    overflow:hidden;
+}
+
+.part{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 2px #000000;
+    width: 100%;
+    min-height: 5rem;
+    border-left: 2px solid #445;
+    background-color: #3DB2FF;
+}
+
+.part:nth-child(1){
+    border-left: none;
+}
+
+.part:hover{
+    background-color: #FFB830;
+    text-shadow: 0 2px 1px #0c0c0c;
+}
+/* Location Section Ends */
+
+/* Gallery */
+
+.gallery{
+    margin: 0 auto;
+    min-height: 100vh;
+    width: 100%;
+    padding: 2rem;
+    padding-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(124, 19, 19, 0.4);
+}
+
+.gallery__wrapper{
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(4, 30rem);
+    grid-template-rows: repeat(3, 30rem);
+}
+
+.gallery__card{
+    height: 30rem;
+    width: 30rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+    
+}
+
+.gallery--heading,
+.overlay--heading{
+    text-align: center;
+    font-size: 2rem;
+    margin: 2rem 1rem;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    text-shadow: 0 0 5px 1px #111;
+}
+
+.gallery__card .overlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 0;
+    transform: translateY(100%);
+    transition: transform 300ms ease;
+}
+
+.gallery__card:hover .overlay{
+    transform: translateY(0%);
+}
+
+
+.card1{
+    background-image: url('../images/card_1_dubai.jpg');
+}
+
+.card2{
+    background-image: url('../images/card_2_paris.jpg');
+}
+
+.card3{
+    background-image: url('../images/card_3_rajasthan.jpg');
+}
+
+.card4{
+    background-image: url('../images//card_4_tajmahal.jpg');
+}
+
+.card5{
+    background-image: url('../images/card_5_machuPichu.jpg');
+}
+
+.card5{
+    background-image: url('../images/card_5_machuPichu.jpg');
+}
+
+.card6{
+    background-image: url('../images/card_6_goa.jpg');
+}
+
+.card7{
+    background-image: url('../images/card_7_bali.jpg');
+}
+
+.card8{
+    background-image: url('../images/card_8_maldives.jpg');
+}
+
+.card9{
+    background-image: url('../images/card_9_vanc.jpg');
+}
+
+.card10{
+    background-image: url('../images/card_10_Moscow.jpg');
+}
+
+.card11{
+    background-image: url('../images/card_11_Seoul.jpg');
+}
+
+.card12{
+    background-image: url('../images/card_12_kerala.jpg');
+}
+
+/* Gallery */
+
+/* Book Section */
+
+.book{
+    min-height: 100vh;
+    max-height: 700px;
+    background: url('../images/book_hero.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.book--content{
+    background-color: #fff;
+    width: 45vw;
+    min-width: 300px;
+    min-height: 60vh;
+    position: absolute;
+    right: 0;
+    margin: 5rem;
+    padding: 3rem;
+    border-radius: 0 2rem;
+    box-shadow: 0 0 2rem 2px #555;
+}
+
+.book--head{
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 3rem 2rem 5rem;
+}
+
+.elem {
+    margin-bottom: 4rem;
+    display: flex;
+    font-size: 1.6rem;
+    width: 100%;
+}
+
+input[type="number"]{
+    width: 5rem;
+}
+
+.elem label{
+    font-size: 1.4rem;
+    padding-right: 1rem;
+}
+
+.elem p,
+.elementDest label{
+    margin-right: 2rem;
+    color: #FF2442;
+    width: 10rem;
+    padding: 0;
+}
+
+.elementDate .element:nth-child(3) label,
+.elementTravellers .element:nth-child(3) label{
+    padding-left: 2rem;
+}
+
+input, select{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 2px solid #FF2442;
+}
+
+.wrapper {
+    padding-right: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.wrapper label{
+    padding-right: 0.5rem;
+}
+
+.elementBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.elementBtn .btn{
+    border: none;
+    outline: none;
+    padding: 1rem 3rem;
+    border-radius: 2rem;
+    background-color: #FFB830;
+    box-shadow: 2px 2px 3px 1px rgba(9, 10, 10, 0.445);
+    color: #fff;
+    transition: all 200ms ease;
+}
+
+.elementBtn .btn:hover{
+    box-shadow: none;
+}
+
+/* Book section Ends */
+
+/* Media Query */
 
 @media screen and (max-width:500px){
     body{
-        
+
     }
 }
