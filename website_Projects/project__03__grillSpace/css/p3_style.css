@@ -1,0 +1,26 @@
+/* font-family: 'Dancing Script', cursive;
+font-family: 'Merriweather', serif; */
+
+:root{
+    --font-sub: 'Dancing Script', cursive;
+    --font-main: 'Merriweather', serif;
+    --color-dark: #0b0c10;
+    --color-dark-sub: #1f2833;
+    --color-white: #c5c6c7;
+    --color-highlight: #66fcf1;
+    --color-highlight-sub:#45a29e;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+html{
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+

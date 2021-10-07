@@ -14,14 +14,12 @@ html{
 }
 
 img{
-    width: 100%;
+    max-width: 100%;
 }
 
 .container{
-    max-width: 1920px;
-    width: 100vw;
-    min-width: 320px;
     height: auto;
+    max-width: 1440px;
     margin: 0 auto;
 }
 
@@ -74,7 +72,6 @@ img{
     text-decoration: underline;
     color: #ffaa4c;
 }
-
 
 .hamburger{
     cursor: pointer;
@@ -130,12 +127,14 @@ img{
 .landing__block h1{
     font-size: 4rem;
     letter-spacing: 0.2rem;
-    color: #FFAA4C;
+    color: #e717bad5;
+    text-shadow: 0 10px 5px rgba(17, 17, 17, 0.5);
     text-transform: uppercase;
 }
 
 .landing__block h3{
-    font-size: 2rem;
+    font-size: 1.4rem;
+    text-shadow: 0 0 2px #111;
     letter-spacing: 0.3rem;
     text-transform: uppercase;
 }
@@ -175,6 +174,13 @@ img{
 
 .landing__cards .card:hover p {
     color: #fff;
+}
+
+.card--head{
+    text-align: center;
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin: 10rem 0;
 }
 /* Landing Page Ends */
 

@@ -296,6 +296,14 @@ nav{
     transition: transform 300ms ease;
 }
 
+.overlay--subHeading{
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    font-size: 1.4rem;
+    color: #fff;
+}
+
 .gallery__card:hover .overlay{
     transform: translateY(0%);
 }
@@ -408,6 +416,8 @@ input[type="number"]{
     color: #FF2442;
     width: 10rem;
     padding: 0;
+    text-shadow: 0 0 1px #FF2442;
+    font-size: 1.6rem;
 }
 
 .elementDate .element:nth-child(3) label,
