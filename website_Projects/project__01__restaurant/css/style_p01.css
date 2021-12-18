@@ -1,0 +1,188 @@
+/* General Styles */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+}
+
+button{
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body{
+    letter-spacing: 1.2px;
+    font-family: 'Merriweather', Geneva, Tahoma, sans-serif;
+}
+
+/* General Styles --Ends*/
+
+header{
+    width: 100vw;
+    min-height: 100vh;
+    height: auto;
+    background: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,0.6)) ,url('../images/home/home_hero.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+nav{
+    width: 100%;
+    min-height: 7rem;
+    color: #fff;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar--item{
+    padding: 0 0.5rem;
+    margin: 0 1rem;
+}
+
+.navbar--item a{
+    color: #fff;
+    font-size: 1.4rem;
+}
+
+.logo{
+    background-color: royalblue;
+    padding: 1rem;
+    font-size: 1.3rem;
+}
+
+.toggle{
+    font-size: 2.5rem;
+    display: none;
+}
+
+.home{
+    width: 100%;
+    min-height: calc(100vh - 7rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home__text{
+    padding: 2rem;
+    font-family: "Merriweather Sans";
+}
+
+.home__text--heading{
+    color: #fff;
+    font-size: 6.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 0 2rem #111;
+    letter-spacing: 1rem;
+}
+
+.home__text--btns{
+    display: flex;
+    padding: 0 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home--btn{
+    color: #fff;
+    font-size: 2rem;
+    text-shadow: 0 0 1rem #111;
+    cursor: pointer;
+}
+
+/* About Section */
+
+.section{
+    min-height: 100vh;
+    height: auto;
+    width: 100vw;
+    padding: 10rem 5rem;
+    position: relative;
+}
+
+.section--container{
+    width: 100%;
+    min-height: calc(100vh - 10rem);
+    background: url('../images/about/about--hero.jpg');
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    background-position: center;
+    background-size: cover;
+}
+
+.section__text--heading{
+    padding-top: 5rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 1px #111;
+    font-size: 4rem;
+}
+
+.section__text--subheading{
+    position: absolute;
+    height: 10rem;
+    top: 5rem;
+    left: 10rem;
+    font-size: 2rem;
+    background-color: goldenrod;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 1rem;
+}
+
+.section__text--para{
+    position: absolute;
+    line-height: 150%;
+    padding: 3rem;
+    color: #fff;
+    width: 60%;
+    font-size: 1.6rem;
+    background-color: rgba(17, 17, 17, 0.5);
+    bottom: 50%;
+    transform: translateY(50%);
+    right: 5rem;
+}
+
+.section__text--heading2{
+    font-size: 4rem;
+    padding: 5rem;
+    /* background-color: rgba(0, 0, 0, 0.6); */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 60px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    margin-top: 2rem;
+    text-align: center;
+    border-radius: 2rem;
+    font-family: 'Grey Qo', cursive;
+}

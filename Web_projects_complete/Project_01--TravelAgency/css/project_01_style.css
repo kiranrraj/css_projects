@@ -1,0 +1,287 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul{
+  list-style: none;
+}
+
+a{
+  color: #000;
+  text-decoration: none;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+html{
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body{
+  font-size: 1.6rem;
+  color: #000;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 1.2px;
+  font-family: 'Sora', sans-serif;
+}
+
+section{
+  padding: 8rem 3rem;
+  text-align: center;
+  text-transform: capitalize;
+  margin-bottom: 3rem;
+  min-height: 100vh;
+}
+
+.container{
+  max-width: 96.8rem;
+  margin: auto 2rem;
+}
+
+header{
+  position: relative;
+  width: 100%;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url('../images/login_hero.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  min-height: 6rem;
+  z-index: 10;
+}
+
+.nav--logo{
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  color: rgb(87, 236, 179);
+  font-family: 'Merienda', cursive;
+}
+
+.nav--menu{
+  position: relative;
+  padding: 0 2rem;
+  display: flex;
+}
+
+.menu--list{
+  display: flex;
+  justify-self: right;
+}
+
+.list--item{
+  padding: 2rem;
+}
+
+.list--item a{
+  color: #fff;
+}
+
+.list--item:hover a{
+  color: turquoise;
+  text-shadow: 0 0 5px #111;
+}
+
+.nav--toggle{
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+
+  nav{
+    position: fixed;
+    left: 0;
+    top: 0;
+    max-width: 65%;
+    position: relative;
+  }
+
+  .nav--menu{
+    position: fixed;
+    width: 35%;
+    top: 0;
+    right: -100%;
+    background-color: lightcoral;
+    transition: 200ms ease right;
+  }
+
+  .menuActive.nav--menu{
+    right: 0;
+  }
+
+  .menu--list{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding-top: 8rem;
+  }
+
+  .nav--toggle{
+    display: block;
+    position: fixed;
+    right: 3rem;
+    font-size: 2.5rem;
+  }
+
+}
+
+.home{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home--content{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.home--text{
+  color: #fff;
+  position: relative;
+}
+
+.home--subheading_top{
+  font-weight: 300;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+
+.home--heading{
+  font-size: 4rem;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+
+.home--btn{
+  color: #fff;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  font-weight: 300;
+  padding: 1rem;
+}
+
+.home--btn i{
+  transform: translateX(1rem);
+  animation: move 2000ms ease infinite;
+}
+
+@keyframes move{
+  0%,100%{
+    transform: translateX(0.5rem);
+  }
+  50%{
+    transform: translateX(1rem);
+  }
+}
+
+.home--social{
+  position: absolute;
+  left: 1rem;
+  font-size: 2rem;
+}
+
+.home--social i{
+  color: #fff;
+}
+
+.social--item{
+  padding: 0.5rem 1rem;
+}
+
+.social--item i{
+  transition: 200ms ease-in transform;
+}
+
+.social--item:hover i{
+  transform: scale(1.6);
+}
+
+/* Pull Down Function */
+
+.pullDown{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  z-index: 100;
+  right: 50%;
+  bottom: 5%;
+  transform: translateX(50%);
+}
+
+.pullDown a{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pullDown i{
+  font-size: 3rem;
+  color: #fff;
+  margin: -1rem;
+  animation: moveDown 2000ms ease infinite;
+}
+
+.pullDown i:nth-child(1){
+  animation: moveDown 2000ms ease infinite;
+}
+
+.pullDown i:nth-child(2){
+  animation: moveDown 2000ms 200ms ease infinite;
+}
+
+.pullDown i:nth-child(3){
+  animation: moveDown 2000ms 400ms ease infinite;
+}
+
+@keyframes moveDown{
+  0%{
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+
+  50%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100%{
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+}
+
+/* Pull down function */

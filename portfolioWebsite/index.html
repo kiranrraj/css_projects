@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiran Raj | Web Developer</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Fontawesome CDN -->
+    <script src="https://kit.fontawesome.com/a7e9f794eb.js" crossorigin="anonymous"></script>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&family=Sacramento&display=swap"
+        rel="stylesheet">
+
+
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <a href="#home" class="nav__logo">Kiran Raj</a>
+            <div class="nav__menu" id="nav__menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link">
+                            <i class="fas fa-house-user"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">
+                            <i class="fas fa-mask"></i>About
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#skill" class="nav__link">
+                            <i class="fas fa-cogs"></i>Skill
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#services" class="nav__link">
+                            <i class="fas fa-code"></i>Services
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#portfolio" class="nav__link">
+                            <i class="fas fa-user-ninja"></i>Portfolio
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">
+                            <i class="far fa-paper-plane"></i>Contact
+                        </a>
+                    </li>
+                </ul>
+                <i class="fas fa-times nav__close" id="nav__close"></i>
+            </div>
+            <div class="nav__btns">
+                <div class="nav__toggle" id="nav__toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="section home" id="home">
+            <div class="home__container container">
+                <div class="home__content">
+                    <div class="home--sIcons">
+                        <a href="#" class="sIcons">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="sIcons">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="sIcons">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="sIcons">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+
+                    <div class="home__text">
+                        <h1 class="home__text--heading">Hi, I am John Doe</h1>
+                        <h3 class="home__text--subHeading">Web Developer | Web Designer</h2>
+                            <button class="btn text--btn">Get in touch <i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="home__scroll">
+                        <a href="#about" class="home__scroll--btn">
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section about" id="about">
+            <h2 class="section__title">About Me</h2>
+            <span class="section__subtitle">Who am i?</span>
+            <div class="about__container container">
+                <img src="./images/about__hero.jpg" alt="" class="about__img">
+                <div class="about__data">
+                    <p class="about__description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas
+                        laudantium magni iste, laboriosam atque veritatis nam quo, vitae accusamus numquam non quisquam!
+                        Minima placeat quia, dolorum itaque autem quisquam qui?</p>
+
+                    <div class="about__info">
+                        <div class="info__card">
+                            <span class="info__card--title">20+</span>
+                            <div class="info__card--name">Projects <br> Completed</div>
+                        </div>
+                        <div class="info__card">
+                            <span class="info__card--title">5+</span>
+                            <div class="info__card--name">Full Stack <br> Projects</div>
+                        </div>
+                        <div class="info__card">
+                            <span class="info__card--title">20+</span>
+                            <div class="info__card--name">Projects <br> Completed</div>
+                        </div>
+                    </div>
+
+                    <div class="about__buttons">
+                        <a href="#project" class="btn btn--project">Projects</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section skills" id="skills">
+            <h2 class="section__title">Skills</h2>
+            <span class="section__subtitle">My Programming Skills</span>
+            <div class="skills__container container">
+                <div class="container--wrapper">
+                    <!--  -->
+                    <div class="skills__heading" data-listNum =1>
+                        <div class="skills__heading--wrapper">
+                            <i class="fas fa-code skills__icon"></i>
+                            <div class="heading__wrapper">
+                                <h1 class="skills__titles">Frontend Developer</h1>
+                                <span class="skills__subtitle">CSS <span>|</span> JavaScript <span>|</span> React</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-sort-down arrow"></i>
+                    </div>
+                    <div class="skills__list list1 close">
+                        <div class="skills__data">
+                            <div class="skills__title">
+                                <h3 class="skills__name">HTML</h3>
+                                <span class="skills__number">90%</span>
+                            </div>
+                            <div class="skills__bar">
+                                <div class="skills__percentage skills__html"></div>
+                            </div>
+                        </div>
+
+                        <div class="skills__data">
+                            <div class="skills__title">
+                                <h3 class="skills__name">CSS</h3>
+                                <span class="skills__number">85%</span>
+                            </div>
+                            <div class="skills__bar">
+                                <div class="skills__percentage skills__css"></div>
+                            </div>
+                        </div>
+
+                        <div class="skills__data">
+                            <div class="skills__title">
+                                <h3 class="skills__name">JavaScript</h3>
+                                <span class="skills__number">80%</span>
+                            </div>
+                            <div class="skills__bar">
+                                <div class="skills__percentage skills__js"></div>
+                            </div>
+                        </div>
+
+                        <div class="skills__data">
+                            <div class="skills__title">
+                                <h3 class="skills__name">React</h3>
+                                <span class="skills__number">70%</span>
+                            </div>
+                            <div class="skills__bar">
+                                <div class="skills__percentage skills__react"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="skills__heading" data-listNum =2>
+                        <div class="skills__heading--wrapper">
+                            <i class="fas fa-code skills__icon"></i>
+                            <div class="heading__wrapper">
+                                <h1 class="skills__titles">Backend Developer</h1>
+                                <span class="skills__subtitle">Node <span>|</span> Python <span>|</span> Java</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-sort-down arrow"></i>
+                    </div>
+                    <div class="skills__list list2 close">
+                        <div class="skills__data">
+                            <div class="skills__title">
+                                <h3 class="skills__name">HTML</h3>
+                                <span class="skills__number">90%</span>
+                            </div>
+                            <div class="skills__bar">
+                                <div class="skills__percentage skills__html"></div>
+                            </div>
+                        </div>
+
+                        <div class="skills__data">
+                            <div class="skills__title">
+                                <h3 class="skills__name">CSS</h3>
+                                <span class="skills__number">85%</span>
+                            </div>
+                            <div class="skills__bar">
+                                <div class="skills__percentage skills__css"></div>
+                            </div>
+                        </div>
+
+                        <div class="skills__data">
+                            <div class="skills__title">
+                                <h3 class="skills__name">JavaScript</h3>
+                                <span class="skills__number">80%</span>
+                            </div>
+                            <div class="skills__bar">
+                                <div class="skills__percentage skills__js"></div>
+                            </div>
+                        </div>
+
+                        <div class="skills__data">
+                            <div class="skills__title">
+                                <h3 class="skills__name">React</h3>
+                                <span class="skills__number">70%</span>
+                            </div>
+                            <div class="skills__bar">
+                                <div class="skills__percentage skills__react"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="skills__heading" data-listNum =3>
+                        <div class="skills__heading--wrapper">
+                            <i class="fas fa-code skills__icon"></i>
+                            <div class="heading__wrapper">
+                                <h1 class="skills__titles">Web Design</h1>
+                                <span class="skills__subtitle">Adobe XD <span>|</span> Figma</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-sort-down arrow"></i>
+                    </div>
+                    <div class="skills__list list3 close">
+                        <div class="skills__data">
+                            <div class="skills__title">
+                                <h3 class="skills__name">HTML</h3>
+                                <span class="skills__number">90%</span>
+                            </div>
+                            <div class="skills__bar">
+                                <div class="skills__percentage skills__html"></div>
+                            </div>
+                        </div>
+
+                        <div class="skills__data">
+                            <div class="skills__title">
+                                <h3 class="skills__name">CSS</h3>
+                                <span class="skills__number">85%</span>
+                            </div>
+                            <div class="skills__bar">
+                                <div class="skills__percentage skills__css"></div>
+                            </div>
+                        </div>
+
+                        <div class="skills__data">
+                            <div class="skills__title">
+                                <h3 class="skills__name">JavaScript</h3>
+                                <span class="skills__number">80%</span>
+                            </div>
+                            <div class="skills__bar">
+                                <div class="skills__percentage skills__js"></div>
+                            </div>
+                        </div>
+
+                        <div class="skills__data">
+                            <div class="skills__title">
+                                <h3 class="skills__name">React</h3>
+                                <span class="skills__number">70%</span>
+                            </div>
+                            <div class="skills__bar">
+                                <div class="skills__percentage skills__react"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

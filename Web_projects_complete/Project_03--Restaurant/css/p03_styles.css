@@ -1,0 +1,270 @@
+/* General Styling */
+
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+img{
+    max-width: 100%;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-size: 1.6rem;
+}
+
+section{
+    min-height: 100vh;
+    padding: 10rem;
+}
+/* General Styling */
+/* ------Ends----- */
+
+/* Home Styling */
+.home{
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    background: linear-gradient(to top, rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('../images/home/home_hero.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.nav{
+    width: 100%;
+    min-height: 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4rem;
+    z-index: 10;
+}
+
+.nav--logo{
+    padding: 1rem 3rem;
+    border-radius: 3rem;
+}
+
+.logo{
+    letter-spacing: 1.4px;
+    font-size: 2rem;
+    line-height: 150%;
+    color: #fff;
+    text-shadow: 0 0 2px #111;
+}
+
+.navBar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navBar--item{
+    z-index: 1;
+    color: #fff;
+    padding: 1rem 2rem;
+    letter-spacing: 2px;
+    font-size: 1.4rem;
+    display: inline-block;
+    position: relative;
+}
+
+.navBar--item::before{
+    content: attr(data-item);
+    overflow:hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0rem;
+    bottom: 0rem;
+    width: 100%;
+    height: 0px;
+    background-color: #111;
+    color: transparent;
+    transition: all 300ms ease;
+
+}
+
+.navBar--item:hover:before{
+    left: 0;
+    right: 0;
+    height: 100%;
+    color: turquoise;
+}
+
+.bgClass{
+    background-color: goldenrod;
+    position: fixed;
+    top: 0;
+}
+
+.home--content{
+    width: 100%;
+    min-height: calc(100vh - 6rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color:#fff;
+    padding-left: 5rem;
+}
+
+.home--title{
+    font-size: 5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.home--subHeading{
+    font-weight: 400;
+    letter-spacing: 1.4px;
+}
+
+.home--btn{
+    position: relative;
+    z-index: 1;
+}
+
+.btn{
+    width: 20rem;
+    position: relative;
+    text-align: center;
+    border-radius: 3rem;
+    margin-top: 2rem;
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    border: 3px solid cyan;
+    transition: all 200ms ease;
+    overflow: hidden;
+}
+
+.btn:first-of-type{
+    margin-right: 2rem;
+}
+
+.btn:hover{
+    border: 3px solid #fff;
+}
+
+.btn span{
+    z-index: 2;
+    position: relative;
+    color: cyan;
+}
+
+.btn::after{
+    content: "";
+    z-index: -1;
+    position: absolute;
+    right: -3px;
+    bottom: -3px;
+    width: 0px;
+    height: calc(100% + 6px);
+    background-color: cyan;
+    border-radius: 3rem;
+    transition: all 200ms ease;
+}
+
+
+.btn:hover:after{
+    width: calc( 6px + 100%);
+    background-color: #000;
+}
+
+.btn:hover span{
+    color: #fff;
+}
+
+/* Home Styling */
+/* ------Ends----- */
+
+
+/* About Styling */
+.about{
+    /* background-color: honeydew; */
+}
+
+.section--content{
+    width: 100%;
+    height: 100%;
+}
+
+.section--heading{
+    text-align: center;
+    font-size: 4rem;
+    color: green;
+    margin-bottom: 5rem;
+    letter-spacing: 2px;
+    text-shadow: 1px 2px 2px #000;
+    position: relative;
+}
+
+.section--heading span{
+    color:orange;
+}
+
+.section--heading::after{
+    content: attr(data-subtitle);
+    position: absolute;
+    font-size: 2rem;
+    background-color: green;
+    padding: 1rem 2rem;
+    bottom: -5rem;
+    right: 50%;
+    transform: translateX(50%);
+    color: black;
+    text-shadow: none;
+    text-transform: uppercase;
+    color: #fff;
+    border-radius: 2rem 0;
+}
+
+.about__text{
+    display: grid;
+    grid-template-rows: repeat(2, 50%);
+    padding: 5rem 0rem;
+}
+
+.about__text--container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.about__text--text{
+    font-size: 2rem;
+    line-height: 150%;
+}
+
+.about__text--para{
+    margin-bottom: 1rem;
+}
+
+.about__text--heading{
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.data{
+    position: absolute;
+}
+
+/* About Styling */
+/* ------Ends----- */
