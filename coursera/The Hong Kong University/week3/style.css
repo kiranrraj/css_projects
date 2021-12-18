@@ -1,0 +1,46 @@
+
+  .navbar-dark {
+    background-color: #512DA8;
+  }
+
+  .fa, .fas{
+      font-size: 15px;
+  }
+
+  .container .row-header{
+      padding-top: 20px;
+  }
+
+  .row-content {
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .jumbotron {
+    padding: 50px;
+    color: #fff;
+    background-color: rgb(158, 96, 216);
+  }
+  
+  footer{
+    background-color: #825cdb;
+    color: white;
+    padding-top: 10px;
+  }
+
+  footer a{
+      color: #fff;
+  }
+
+  .address {
+    color: #0f0f0f;
+  }
+  
+
+  /* Assignment 4 */
+
+  .modal-header,
+  .close{
+    color: floralwhite;
+  }
+  

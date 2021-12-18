@@ -1,0 +1,54 @@
+/* Assignment 4 */
+.modal-header {
+  background-color: #8f00ff;
+}
+.modal-header .close {
+  color: #fffaf0;
+}
+.modal-body {
+  background-color: rgba(143, 0, 255, 0.6);
+}
+
+
+.navbar-text {
+  cursor: pointer;
+}
+
+.closeLogin:active,
+.closeLogin:focus,
+.closeLogin:hover{
+  border: none;
+  outline: none;
+  color: floralwhite;
+}
+
+/* Assignment 4 Ends */
+
+.fa,
+.fas {
+  font-size: 15px;
+}
+
+.container .row-header {
+  padding-top: 20px;
+}
+
+.row-content {
+  padding: 20px;
+}
+
+.jumbotron {
+  padding: 50px;
+  color: #fff;
+  background-color: rgb(158, 96, 216);
+}
+
+footer {
+  background-color: #825cdb;
+  color: white;
+  padding-top: 10px;
+}
+
+footer a {
+  color: #fff;
+}
