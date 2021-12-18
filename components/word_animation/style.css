@@ -1,22 +1,38 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
     justify-content: center;
     display: flex;
+    background: #001d3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .main {
     font-size: 36px;
     font-weight: 100;
-    color: tomato;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-p{
+.para{
     margin: 0;
     padding: 10px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 3px 3px 3px #fff;
+    color:#ef233c;
 }
 
-.main div {
+.wrapper {
     overflow: hidden;
     position: relative;
     float: right;
@@ -25,58 +41,41 @@ p{
     margin-top: -10px;
 }
 
-.main div li {
+.word {
     text-align: center;
-    color: tomato;
-    font-weight: 700;
+    color:#ef233c;
+    letter-spacing: 5px;
+    text-transform: uppercase;
     padding: 0 10px;
     height: 45px;
     margin-bottom: 45px;
     display: block;
+    text-shadow: 3px 3px 3px #fff;
 }
 
 .words {
-    animation: dropword 5s ease-in infinite;
+    animation: dropword 5s ease-in-out infinite;
 }
 
 @keyframes dropword {
-    0% {
+    0%, 100% {
         margin-top: -360px;
     }
 
-    5% {
+    5%, 25% {
         margin-top: -270px;
     }
 
-    25% {
-        margin-top: -270px;
-    }
-
-    30% {
+    30%, 50% {
         margin-top: -180px;
     }
 
-    50% {
-        margin-top: -180px;
-    }
-
-    55% {
+    55%, 75% {
         margin-top: -90px;
     }
 
-    75% {
-        margin-top: -90px;
-    }
-
-    80% {
+    80%, 99.999% {
         margin-top: 0px;
     }
 
-    99.999% {
-        margin-top: 0px;
-    }
-
-    100% {
-        margin-top: -270px;
-    }
 }

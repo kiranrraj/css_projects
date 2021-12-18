@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button witth shadow</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        .container{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: linear-gradient( 110.1deg,  rgba(30,2,83,1) 44.2%, rgba(198,55,160,1) 138.2% );
+        }
+
+        .button--wrapper{
+            width: 200px;
+            height: 50px;
+            background-color: aliceblue;
+            box-shadow: 5px 5px 1px rgba(251,189,100,0.8);
+            border-radius: 10px;
+            transition: all 300ms ease;
+            overflow: hidden;
+        }
+
+        .button--wrapper:hover{
+            box-shadow: 0 0 0;
+            transform: translate( 5px, 5px);
+        }
+
+        .button{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            color: #333;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+            background-image: linear-gradient( 109.9deg,  rgba(251,189,100,1) 1.8%, rgba(255,207,139,1) 95.4% );
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="button--wrapper">
+            <a href="#" class="button">Click Me</a>
+        </div>
+    </div>
+</body>
+</html>
