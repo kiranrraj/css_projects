@@ -1,0 +1,129 @@
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(90deg, hsla(152, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);
+} 
+
+.progressBar{
+    width: 500px;
+    height: 80px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 15px solid #000;
+    border-bottom: 15px solid #000;
+    padding: 0 10px;
+}
+
+.left, .right {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    background: #000;
+}
+
+.left1{
+    left: -20px;
+    top: 0px;
+}
+
+.left2{
+    left: -20px;
+    top: 35px;
+}
+
+.left3{
+    left: -45px;
+}
+
+.right1{
+    right: -20px;
+    top: 0px;
+}
+
+.right2{
+    right: -20px;
+    top: 35px;
+}
+
+.right3{
+    right: -45px;
+}
+
+.fill{
+    width: 40px;
+    height: 40px;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 100ms linear;
+    background: transparent;
+    box-shadow: 4px 4px 6px -2px #333;
+    opacity:0;
+}
+
+.fill1{
+    transition-delay: 000ms;
+    background: #301D7D;
+}
+
+.fill2{
+    transition-delay: 50ms;
+    background: #6A0487;
+}
+
+.fill3{
+    transition-delay: 100ms;
+    background: #A8186E;
+}
+
+.fill4{
+    transition-delay: 150ms;
+    background: #C91853;
+}
+
+.fill5{
+    transition-delay: 200ms;
+    background: #F2541B;
+}
+
+.fill6{
+    transition-delay: 250ms;
+    background: #FFBF15;
+}
+
+.fill7{
+    transition-delay: 300ms;
+    background-color: #138808;
+}
+
+.fill8{
+    transition-delay: 350ms;
+    background-color: #138808;
+}
+
+.fill9{
+    transition-delay: 400ms;
+    background-color: #138808;
+}
+
+
+.progressBar:hover .fill{
+    transform: scaleX(1);
+    opacity:1;
+}
+
+
+
