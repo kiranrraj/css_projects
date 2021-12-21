@@ -1,0 +1,97 @@
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --color1: #444;
+    --color2: #fff; 
+    --color3: #000;
+}
+
+.lightMode{
+    --color2: #444;
+    --color1: #fff; 
+    --color3: #aaa;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+}
+
+nav{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.navBar{
+    width: 100%;
+    height: 100%;
+    padding: 0px 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
+    background: var(--color1);
+    box-shadow: 0px 4px 16px -8px var(--color1);
+    border-bottom: 2px solid var(--color3);
+}
+
+li{
+    padding: 10px 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--color2);
+    text-shadow: 5px 5px 5px var(--color3);
+    transition: text-shadow 400ms ease;
+}
+
+li:hover{
+    text-shadow: 1px 1px 1px var(--color3);
+}
+
+.toggle{
+    background: var(--color2);
+    color: var(--color1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    padding: 10px 20px;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-right: 20px;
+    border-radius: 10px;
+    text-shadow: 1px 1px 1px var(--color3);
+    box-shadow: 0px 4px 16px -8px var(--color1);
+}
+
+.main{
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    position: relative;
+    top: 0px;
+    background: var(--color1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p{
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    word-spacing: 10px;
+    text-shadow: 5px 5px 5px var(--color3);
+    color:var(--color2);
+}
