@@ -1,0 +1,39 @@
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --strokeDashArray: 0px;
+    --strokeDashOffset: 0px;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: linear-gradient(90deg, hsla(33, 100%, 53%, 1) 0%, hsla(58, 100%, 68%, 1) 100%);
+}
+
+.wrapper{
+    transform: rotate(-90deg);
+    transform-origin: center;
+}
+
+.text{
+    position: absolute;
+}
+
+circle{
+    stroke: hsla(333, 100%, 53%, 1);
+    stroke-width: 4px;
+    stroke-dasharray: var(--strokeDashArray) var(--strokeDashArray);
+    stroke-dashoffset: var(--strokeDashOffset);
+    transition: stroke-dashoffset 100ms linear;
+}
