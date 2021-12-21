@@ -1,13 +1,31 @@
-const theme = localStorage.getItem('theme');
+let theme;
 const toggle = document.querySelector('.toggle');
-console.log(theme);
 
-if (theme === "light") document.body.classList.add("lightMode");
+// Load the previous user selected colour mode
+(() => {
+  theme = localStorage.getItem('theme');
+  if (theme === "light") document.body.classList.add("lightMode");
+})();
+
+
+function darkToLight() {
+  document.body.classList.toggle("lightMode");
+  window.localStorage.setItem("theme", "light");
+  toggle.textContent = 'Dark';
+}
+
+function lightToDark() {
+  document.body.classList.toggle("lightMode");
+  window.localStorage.setItem("theme", "dark");
+  toggle.textContent = 'Light';
+}
 
 toggle.addEventListener("click", () => {
-    document.body.classList.toggle("lightMode");
-    if (theme === "light") {
-      window.localStorage.setItem("theme", "dark");
-    } else window.localStorage.setItem("theme", "light");
- });
- 
+  theme = localStorage.getItem('theme');
+  // console.log(theme);
+  if (theme === "light") {
+    lightToDark();
+  } else {
+    darkToLight();
+  }
+});
